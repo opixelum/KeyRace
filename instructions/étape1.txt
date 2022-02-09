@@ -19,6 +19,7 @@ Il faut avoir déposer sur le drive :
 
 
 Attention :
+
 L’ensemble des outils demandés à l’étape 0 doivent être configurés (Google
 Drive avec accès pour supersmashwebproject2k22@gmail.com, VPS OVH avec IP ou
 DNS pour  supersmashwebproject2k22@gmail.com).
