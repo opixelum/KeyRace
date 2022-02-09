@@ -22,8 +22,8 @@ En terme de programmation, amener :
 Les premières pages dynamiques construites ainsi que de la base de données
 doivent être déployées sur votre serveur OVH.
 
-Attention : mettre à jour les outils pour chaque étudiant ainsi que Google
-Drive.
+Attention :
+Mettre à jour les outils pour chaque étudiant ainsi que Google Drive.
 
 
 Déposer la vidéo de l’avancement du site sur le Google Drive.
