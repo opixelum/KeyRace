@@ -1,21 +1,35 @@
 Fournir :
-    - un document listant les principaux risques de l'application et la façon d'y remédier (tout ce qui peut mal se passer lors de la fabrication du site, de son déploiement ou dans sa phase d'utilisation)
+    
+    - Un document listant les principaux risques de l'application et la façon
+      d'y remédier (tout ce qui peut mal se passer lors de la fabrication du
+      site, de son déploiement ou dans sa phase d'utilisation).
+
 
 En terme de programmation, amener : 
-    - le code du processus de connexion et de création du compte terminé (captcha, et vérification mail)
-    - le back-office quasi terminé (90% environ) 
-    - le début de fabrication du front-office (30-40% minimum)
-    - les logs de connexion et des visites sur chacune des pages du site
-    - un upload de fichier image avec intégration en filigrane du logo du site
+
+    - Le code du processus de connexion et de création du compte terminé
+      (captcha, et vérification mail).
+
+    - Le back-office quasi terminé (90% environ).
+
+    - Le début de fabrication du front-office (30-40% minimum).
+
+    - Les logs de connexion et des visites sur chacune des pages du site.
+
+    - Un upload de fichier image avec intégration en filigrane du logo du site.
 
 
-Les premières pages dynamiques construites ainsi que de la base de données doivent être déployées sur votre serveur OVH
+Les premières pages dynamiques construites ainsi que de la base de données
+doivent être déployées sur votre serveur OVH.
 
-Attention : mettre à jour les outils pour chaque étudiant ainsi que Google Drive
+Attention : mettre à jour les outils pour chaque étudiant ainsi que Google
+Drive.
 
-Déposer la vidéo de l’avancement du site sur le Google Drive
-Faire un récapitulatif des précédentes fonctionnalités réalisées puis montrer les nouveautés
-Expliquer les principaux problèmes rencontrés et les solutions apportées
+
+Déposer la vidéo de l’avancement du site sur le Google Drive.
+Faire un récapitulatif des précédentes fonctionnalités réalisées puis montrer
+les nouveautés.
+Expliquer les principaux problèmes rencontrés et les solutions apportées.
 
 1 ESGI classe 1 : 06/04/2022
 1 ESGI classe 2 : 06/04/2022  
