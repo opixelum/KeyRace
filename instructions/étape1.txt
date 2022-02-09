@@ -1,0 +1,17 @@
+Cette étape a pour but de présenter les fonctionnalités définitives du site, les données à stocker, ainsi que sa représentation graphique
+
+Il faut avoir déposer sur le drive : 
+    - la liste détaillée des fonctionnalités du logiciel (cahier des charges complet sur une dizaine de pages), ainsi que les mockups (les maquettes d’écran ou wireframes); ceux-ci devront être rattachés à chacune des fonctionnalités.
+    -  le schéma de la base de données sous la forme d'un MCD (il faut également avoir construit la base de données correspondante)
+    - la charte graphique (spécifications codes couleurs et polices,  ...) et le/les logos du site
+    - la page d'accueil doit être codée
+
+Attention :
+L’ensemble des outils demandés à l’étape 0 doivent être configurés (Google Drive avec accès pour supersmashwebproject2k22@gmail.com, VPS OVH avec IP ou DNS pour  supersmashwebproject2k22@gmail.com)
+
+Déposer la vidéo et le code du site Bootstrap sur le Google Drive
+
+1 ESGI classe 1 : 08/03/2022
+1 ESGI classe 2 : 08/03/2022  
+1 ESGI classe 3 : 09/02/2022  
+1 ESGI classe 4 : 09/02/2022

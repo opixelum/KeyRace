@@ -1,0 +1,23 @@
+Présentation des règles du projet (site dynamique, front end et back end, ...) 
+Constitution des groupes (libre)
+Définition des règles du projet et du comportement 
+
+A faire dans la séance (tout de suite) : 
+    - construction des groupes
+    - préparation d’un dossier sur Google Drive pour le projet annuel (partage des sources, ressources, documents); voir arborescence à respecter en annexe);  le GoogleDrive devra être zippé par la suite. Le partager en "édition" à supersmashwebproject2k22@gmail.com.
+    - réalisation du fichier equipe.xls, contenant les noms des étudiants du groupe, leurs adresses mails, le lien vers le GoogleDrive construit et l'URL du serveur. Indiquer qui sera le chef de projet.
+    - proposition du sujet détaillé (il est possible d'en faire plusieurs); celui-ci devra être validé à la fin de la séance. A chaque fois, attribuer un nom au projet.
+    - commander le serveur OVH et commencer la configuration du SGBD, Apache, PHP, HTTPS, etc…
+
+
+Plusieurs vidéos sont fournies pour vous aider dans cette première étape : 
+    => Commande VPS chez OVH : https://youtu.be/S7UMazNHlHc 
+    => Installation Apache : https://youtu.be/1kNeItfNYNw
+    => Installation MySQL (+création accès distant) : https://youtu.be/w7XaPIJkOXk
+
+
+A faire en plus avant la prochaine séance de projet annuel : 
+    - apprendre les bases du framework CSS Boostrap avec un site d’exemple;  en faire une vidéo pour afin de pouvoir le présenter
+
+1 ESGI classes 1 et 3 : 08/02/2022
+1 ESGI classes 2 et 4 : 08/02/2022

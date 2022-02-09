@@ -1,0 +1,21 @@
+En terme de programmation, amener : 
+    - le front-office terminé
+    - un moteur de recherche de contenu en AJAX
+    - le script de construction d’avatar
+    - l'export des infos utilisateurs
+    - un certificat SSL (HTTPS) valide pour votre serveur OVH
+
+De plus, la configuration d’un htaccess pour redirection des images de votre site devra être réalisée, et le site devra être déployé sur le serveur OVH
+
+Attention : mettre à jour les  outils pour chaque étudiant ainsi que Google Drive
+
+Le site devra être déployé sur le serveur OVH
+
+Déposer la vidéo de l’avancement du site sur le Google Drive
+Faire un récapitulatif des précédentes fonctionnalités réalisées puis montrer les nouveautés
+Expliquer les principaux problèmes rencontrés et les solutions apportées
+
+1 ESGI classe 1 : 27/04/2022 
+1 ESGI classe 2 : 27/04/2022  
+1 ESGI classe 3 : 26/04/2022  
+1 ESGI classe 4 : 26/04/2022
