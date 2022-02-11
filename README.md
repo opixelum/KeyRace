@@ -1,8 +1,14 @@
 # **KeyRace**
 
+<br>
+
 This README contains all informations needed for developers in order to
 globally understand the project and its code base.
 
+<br><hr>
+
+
+<!-------------------------------- P A G E S --------------------------------->
 
 ## <br> **Website plan**
 
@@ -55,8 +61,11 @@ Edit account & website preferences.
 
 Contact form for reaching KeyRace teams.
 
+<br><hr>
 
-## <br> **Scripts**
+<!--------------------- F R O N T - E N D   S C R I P T S -------------------->
+
+## <br> **Front-end scripts**
 
 ### <br> **main.js**
 
@@ -65,9 +74,35 @@ Manages transitions for dynamic content & pages.
 
 ### <br> **typing.js**
 
-Generates randow words, checks for errors from user's input & computes user's WPM.
+Generates randow words, checks for errors from user's input & computes user's
+WPM.
 
 
 ### <br> **race.js**
 
 Listens for winners & manages chat.
+
+
+### <br> **avatar-maker.js**
+
+Custom avatar by selecting traits.
+
+<br><hr>
+
+<!---------------------- B A C K - E N D   S C R I P T S --------------------->
+
+## <br> **Back-end scripts**
+
+### <br> **signin-check.php**
+
+Checks if sign in form is applicable.
+
+
+### <br> **login-check.php**
+
+Checks if log in form is applicable.
+
+
+### <br> **support-form.php**
+
+Send an email to the team with PHP Mailer.
