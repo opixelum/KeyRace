@@ -5,7 +5,7 @@
 This README contains all informations needed for developers in order to
 globally understand the project and its code base.
 
-<br><hr>
+<br>
 
 
 <!-------------------------------- P A G E S --------------------------------->
@@ -61,7 +61,7 @@ Edit account & website preferences.
 
 Contact form for reaching KeyRace teams.
 
-<br><hr>
+<br>
 
 
 <!--------------------- F R O N T - E N D   S C R I P T S -------------------->
@@ -88,7 +88,7 @@ Listens for winners & manages chat.
 
 Custom avatar by selecting traits.
 
-<br><hr>
+<br>
 
 
 <!---------------------- B A C K - E N D   S C R I P T S --------------------->
