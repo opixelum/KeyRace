@@ -63,6 +63,7 @@ Contact form for reaching KeyRace teams.
 
 <br><hr>
 
+
 <!--------------------- F R O N T - E N D   S C R I P T S -------------------->
 
 ## <br> **Front-end scripts**
@@ -89,6 +90,7 @@ Custom avatar by selecting traits.
 
 <br><hr>
 
+
 <!---------------------- B A C K - E N D   S C R I P T S --------------------->
 
 ## <br> **Back-end scripts**
@@ -103,6 +105,6 @@ Checks if sign in form is applicable.
 Checks if log in form is applicable.
 
 
-### <br> **support-form.php**
+### <br> **contact-form.php**
 
 Send an email to the team with PHP Mailer.
