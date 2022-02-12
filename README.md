@@ -97,6 +97,13 @@ Manages transitions for dynamic content & pages.
 <br>
 
 
+### **navbar.js**
+
+HTML component for the navbar.
+
+<br>
+
+
 ### **typing.js**
 
 Generates randow words, checks for errors from user's input & computes user's
