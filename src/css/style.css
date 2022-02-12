@@ -1,7 +1,7 @@
+/* Initial style for simpler CSS coding */
+
 * {
     box-sizing: border-box;
-}
-
-body {
     margin: 0;
+    padding: 0;
 }
