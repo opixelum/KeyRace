@@ -1,11 +1,10 @@
 # **KeyRace**
 
-<br>
 
 This README contains all informations needed for developers in order to
 globally understand the project and its code base.
 
-<br><br>
+<br>
 
 
 <!-------------------------------- P A G E S --------------------------------->
@@ -73,6 +72,13 @@ Custom interface, car & avatar (dynamic page)
 ### **settings.html**
 
 Edit account & website preferences.
+
+<br>
+
+
+### **admin.html**
+
+Database & website monitoring page for administrators.
 
 <br>
 
@@ -149,6 +155,14 @@ Checks if sign in form is applicable.
 ### **login-check.php**
 
 Checks if log in form is applicable.
+
+<br>
+
+
+### **admin.php**
+
+Contains every functions for managing the database and the website for the
+administrators.
 
 <br>
 
