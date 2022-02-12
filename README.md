@@ -83,6 +83,13 @@ Database & website monitoring page for administrators.
 <br>
 
 
+### **search.html**
+
+List search results.
+
+<br>
+
+
 ### **support.html**
 
 Contact form for reaching KeyRace teams.
