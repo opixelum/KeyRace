@@ -177,3 +177,16 @@ administrators.
 ### **contact-form.php**
 
 Send an email to the team with PHP Mailer.
+
+<br><br>
+
+
+<!----------------------------- D A T A B A S E ------------------------------>
+
+## **Data Conceptual Model**
+
+USER: user_id, username, email, password, keyboard_layout, rights, customization
+
+SEND, 0N USER, 11 MESSAGE
+
+MESSAGE: message_id, text, user, date
