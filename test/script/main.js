@@ -34,6 +34,7 @@ window.onload = function() {
         buildAvatar()
     }
 
+
     // Add all assets to the avatar
     function buildAvatar() {
         const avatar = document.querySelector("#avatar")
@@ -44,5 +45,4 @@ window.onload = function() {
         context.drawImage(vest, 0, 0)
         context.drawImage(helmet, 0, 0)
     }
-
 }
