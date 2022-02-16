@@ -37,10 +37,10 @@ window.onload = function() {
 
     // Background color
     const bgColorDropdown = document.querySelector("#bg-color-dropdown")
-    let bgColor = "#000000"
+    let bgColor = "white"
 
     bgColorDropdown.addEventListener("change", function() {
-        bgColor = '#' + bgColorDropdown.value
+        bgColor = bgColorDropdown.value
         buildAvatar()
     })
 
