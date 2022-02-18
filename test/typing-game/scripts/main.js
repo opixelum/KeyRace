@@ -19,16 +19,51 @@ let cursorIndex = 0
 let cursorCharacter = characters[cursorIndex]
 cursorCharacter.classList.add("cursor")
 
+// Stopwatch
+let startTime = null
+let endTime = null
+
 // Listen to player's keyboard
-document.addEventListener("keydown", ({key}) => {
+const keyListener = document.addEventListener("keydown", ({key}) => {
+    if (!startTime) {
+        startTime = new Date()
+    }
+    
     if (key === cursorCharacter.innerText) {
         // If right key was typed
         cursorCharacter.classList.remove("cursor")
         cursorCharacter.classList.add("done")
         cursorCharacter = characters[++cursorIndex]
-        cursorCharacter.classList.add("cursor")
     } else {
         // If wrong key was typed
         cursorCharacter.classList.add("wrong")
     }
+
+    if (cursorIndex >= characters.length) {
+        endTime = new Date()
+
+        // Get elapsed time
+        const delta = endTime - startTime
+
+        // Convert time from miliseconds (default) to seconds
+        const seconds = delta / 1000
+
+        // Get the number of word in the text
+        const numberOfWords = text.split(' ').length
+
+        // Compute words Per Seconds
+        const wps = numberOfWords / seconds
+
+        // Compute Words Per Minute
+        const wpm = wps * 60.0
+
+        // Display stats
+        document.querySelector("#stats").innerText = `WPM: ${wpm}`
+
+        // Prevent next lines to be executed after game done
+        document.removeEventListener("keydown", keyListener)
+        return
+    }
+
+    cursorCharacter.classList.add("cursor")
 })
