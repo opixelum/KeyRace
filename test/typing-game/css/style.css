@@ -1,0 +1,11 @@
+.cursor {
+    background-color: aqua;
+}
+
+.done {
+    color: green;
+}
+
+.wrong {
+    color: red;
+}
