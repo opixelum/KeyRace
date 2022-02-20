@@ -1,6 +1,6 @@
 /**
  * @file navbar.js
- * @version 1.0.0
+ * @version 1.0.1
  * 
  * @brief Navigation bar components
  * 
@@ -13,7 +13,7 @@
  * @author Anto "Opixelum" Benedetti
  * 
  * Date created  : 02/19/2022
- * Date last edit: 02/19/2022
+ * Date last edit: 02/20/2022
  */
 
 
