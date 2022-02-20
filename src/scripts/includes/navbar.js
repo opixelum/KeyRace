@@ -1,6 +1,6 @@
 /**
  * @file navbar.js
- * @version 1.0.1
+ * @version 1.0.2
  * 
  * @brief Navigation bar components
  * 
@@ -31,33 +31,47 @@ class Navbar extends HTMLElement {
         this.shadow = this.attachShadow({mode: "open"})
     }
 
-    // Method called when "nav-bar" is inserted in the DOM
-    connectedCallback() {
-        this.render()
-    }
+    header = `
+        <header>
+          <img alt="KeyRace logo" width="50px" src="./src/images/logo.png">
+
+          <input type="search" id="search-field" name="search-field"
+          placeholder="Search a player">
+        </header>
+    `
+
+    nav = `
+        <nav>
+          <ul>
+            <li><button id="login-btn">Log in</button></li>
+            <li><button id="signin-btn">Sign in</button></li>
+            <li><button id="leaderboard-btn">Leaderboard</button></li>
+            <li><button id="settings-btn">Settings</button></li>
+          </ul>
+        </nav>
+    `
+
+    footer = `
+        <footer>
+          <a href="./src/php/contact.php">Support</a>
+
+          <small>© KeyRace 2022</small>
+        </footer>
+    `
 
     render() {
         this.shadow.innerHTML = `
             <div id="navbar">
-              <img alt="KeyRace logo" width="50px" src="./src/images/logo.png">
-
-              <input type="search" id="search-field" name="search-field"
-              placeholder="Search a player">
-
-              <nav>
-                <ul>
-                  <li><button id="login-btn">Log in</button></li>
-                  <li><button id="signin-btn">Sign in</button></li>
-                  <li><button id="leaderboard-btn">Leaderboard</button></li>
-                  <li><button id="settings-btn">Settings</button></li>
-                </ul>
-              </nav>
-
-              <a href="./src/php/contact.php">Support</a>
-
-              <small>© KeyRace 2022</small>
+              ${this.header}
+              ${this.nav}
+              ${this.footer}
             </div>
         `
+    }
+
+    // Method called when "nav-bar" is inserted in the DOM
+    connectedCallback() {
+        this.render()
     }
 }
 
