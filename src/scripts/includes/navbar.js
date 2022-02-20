@@ -1,6 +1,6 @@
 /**
  * @file navbar.js
- * @version 1.0.2
+ * @version 1.0.3
  * 
  * @brief Navigation bar components
  * 
@@ -8,9 +8,9 @@
  * website. It will be displayed on all pages and its content will differ,
  * depending on multiple factors such as if a user is logged in or not.
  * 
- * @author Jérémy "Saygel" Micu
- * @author Romain "Invorom" Nerot
- * @author Anto "Opixelum" Benedetti
+ * @author Jérémy "Saygel"   Micu
+ * @author Romain "Invorom"  Nerot
+ * @author Anto   "Opixelum" Benedetti
  * 
  * Date created  : 02/19/2022
  * Date last edit: 02/20/2022
