@@ -1,6 +1,6 @@
 /**
  * @file navbar.js
- * @version 1.0.5
+ * @version 1.0.6
  * 
  * @brief Navigation bar components
  * 
@@ -17,76 +17,83 @@
  */
 
 
-// Create "Navbar" class, inherited from "HTMLElement" class with "extends"
-class Navbar extends HTMLElement {
-    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ S E T U P ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Create a class for our navbar, inherited from "HTMLElement"
+customElements.define("nav-bar", class extends HTMLElement {
 
-    // Constructor method for initiate objects automatically
-    constructor() {
-        super() // Call "HTMLElement"'s constructor
+    // Method fired when "nav-bar" is inserted in the DOM
+    connectedCallback() {
 
-        // Our Navbar is a "shadow" element that will be attached to the DOM
-        // of our website's pages.
-        // The 'mode: "open"' makes the shadow element visible globally to all
-        // of our JavaScript code.
-        this.shadow = this.attachShadow({mode: "open"})
-    }
+        // Our navbar is a shadow elememt that will be attached to each of our
+        // website pages DOM.
+        // {mode: "open"} makes the shadow element visible globally to all of
+        // our JavaScript code.
+        const shadow = this.attachShadow({mode: "open"})
 
+        // Header HTML code
+        const header = `
+            <header>
+            <a href="./index.html">
+                <img alt="KeyRace logo" width="50px" src="./src/images/logo.png">
+            </a>
+            <input type="search" id="search-field" name="search-field"
+            placeholder="Search a player">
+            </header>
+        `
 
-    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ H T M L ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Nav buttons HTML code
+        const navOpening = `<nav><ul>`
 
-    header = `
-        <header>
-          <a href="./index.html">
-            <img alt="KeyRace logo" width="50px" src="./src/images/logo.png">
-          </a>
+        // Create nav buttons dynamically, depending on user status (logged in
+        // or not).
+        let isLoggedIn = false // DEV: CHANGE LINE TO A LOGGED IN VERIFICATION
+        let navButtons = ``
 
-          <input type="search" id="search-field" name="search-field"
-          placeholder="Search a player">
-        </header>
-    `
+        if (isLoggedIn) {
+            // If user is logged in
+            navButtons = `
+                <li><button>Profile</button></li>
+                <li><button>Campaign</button></li>
+                <li><button>Multiplayer</button></li>
+                <li><button>Training</button></li>
+                <li><button>Leaderboard</button></li>
+                <li><button>Customization</button></li>
+                <li><button>Settings</button></li>
+            `
+        } else {
+            // If user isn't logged in
+            navButtons = `
+                <li><button>Log in</button></li>
+                <li><button>Sign in</button></li>
+                <li><button>Leaderboard</button></li>
+                <li><button>Settings</button></li>
+            `
+        }
 
-    navOpening = `<nav><ul>`
-    navButtons = `
-        <li><button id="login-btn">Log in</button></li>
-        <li><button id="signin-btn">Sign in</button></li>
-        <li><button id="leaderboard-btn">Leaderboard</button></li>
-        <li><button id="settings-btn">Settings</button></li>
-    `
-    navClosing = `</ul></nav>`
-    nav = `
-        ${this.navOpening}
-        ${this.navButtons}
-        ${this.navClosing}
-    `
+        const navClosing = `</ul></nav>`
 
-    footer = `
-        <footer>
-          <a href="./support.html">Support</a>
+        // Bundle all parts together
+        const nav = `
+            ${navOpening}
+            ${navButtons}
+            ${navClosing}
+        `
 
-          <small>© KeyRace 2022</small>
-        </footer>
-    `
-
-
-    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ R E N D E R ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-    // Generate HTML
-    render() {
-        this.shadow.innerHTML = `
+        // Footer HTML code
+        const footer = `
+            <footer>
+            <a href="./support.html">Support</a>
+            <small>© KeyRace 2022</small>
+            </footer>
+        `
+        
+        // Add all parts to shadow's HTML
+        shadow.innerHTML = `
             <div id="navbar">
-              ${this.header}
-              ${this.nav}
-              ${this.footer}
+              ${header}
+              ${nav}
+              ${footer}
             </div>
         `
     }
+})
 
-    // Method called when "nav-bar" is inserted in the DOM
-    connectedCallback() {
-        this.render()
-    }
-}
-
-// Make our elememt available for the HTML
-customElements.define("nav-bar", Navbar)
