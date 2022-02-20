@@ -1,6 +1,6 @@
 /**
  * @file navbar.js
- * @version 1.0.3
+ * @version 1.0.4
  * 
  * @brief Navigation bar components
  * 
@@ -19,6 +19,7 @@
 
 // Create "Navbar" class, inherited from "HTMLElement" class with "extends"
 class Navbar extends HTMLElement {
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ S E T U P ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     // Constructor method for initiate objects automatically
     constructor() {
@@ -30,6 +31,9 @@ class Navbar extends HTMLElement {
         // of our JavaScript code.
         this.shadow = this.attachShadow({mode: "open"})
     }
+
+
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ H T M L ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     header = `
         <header>
@@ -59,6 +63,10 @@ class Navbar extends HTMLElement {
         </footer>
     `
 
+
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ R E N D E R ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    // Generate HTML
     render() {
         this.shadow.innerHTML = `
             <div id="navbar">
