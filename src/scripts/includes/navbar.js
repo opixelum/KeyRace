@@ -1,6 +1,6 @@
 /**
  * @file navbar.js
- * @version 1.0.4
+ * @version 1.0.5
  * 
  * @brief Navigation bar components
  * 
@@ -37,27 +37,32 @@ class Navbar extends HTMLElement {
 
     header = `
         <header>
-          <img alt="KeyRace logo" width="50px" src="./src/images/logo.png">
+          <a href="./index.html">
+            <img alt="KeyRace logo" width="50px" src="./src/images/logo.png">
+          </a>
 
           <input type="search" id="search-field" name="search-field"
           placeholder="Search a player">
         </header>
     `
 
+    navOpening = `<nav><ul>`
+    navButtons = `
+        <li><button id="login-btn">Log in</button></li>
+        <li><button id="signin-btn">Sign in</button></li>
+        <li><button id="leaderboard-btn">Leaderboard</button></li>
+        <li><button id="settings-btn">Settings</button></li>
+    `
+    navClosing = `</ul></nav>`
     nav = `
-        <nav>
-          <ul>
-            <li><button id="login-btn">Log in</button></li>
-            <li><button id="signin-btn">Sign in</button></li>
-            <li><button id="leaderboard-btn">Leaderboard</button></li>
-            <li><button id="settings-btn">Settings</button></li>
-          </ul>
-        </nav>
+        ${this.navOpening}
+        ${this.navButtons}
+        ${this.navClosing}
     `
 
     footer = `
         <footer>
-          <a href="./src/php/contact.php">Support</a>
+          <a href="./support.html">Support</a>
 
           <small>© KeyRace 2022</small>
         </footer>
