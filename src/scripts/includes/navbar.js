@@ -40,56 +40,49 @@ customElements.define("nav-bar", class extends HTMLElement {
 
         // Header HTML code
         const header = `
-            <header>
-              <a href="./index.html">
+            <header class="d-flex flex-wrap justify-content-center">
+              <a navbar-brand href="./index.html">
                 <img alt="KeyRace logo" width="50px" src="./src/images/logo.png">
               </a>
-              <input type="search" id="search-field" name="search-field"
-              placeholder="Search for a player">
+              <input class="w-100" type="search" id="search-field"
+              name="search-field" placeholder="Search for a player">
             </header>
         `
-
-        // Nav buttons HTML code
-        const navOpening = `<nav><ul>`
 
         // Create nav buttons dynamically, depending on user status (logged in
         // or not).
         let isLoggedIn = false // DEV: CHANGE LINE TO A LOGGED IN VERIFICATION
-        let navButtons = ``
+        let nav = ``
 
         if (isLoggedIn) {
             // If user is logged in
-            navButtons = `
-                <li><button>Profile</button></li>
-                <li><button>Campaign</button></li>
-                <li><button>Multiplayer</button></li>
-                <li><button>Training</button></li>
-                <li><button>Leaderboard</button></li>
-                <li><button>Customization</button></li>
-                <li><button>Settings</button></li>
+            nav = `
+                <nav class="navbar">
+                  <button>Profile</button>
+                  <button>Campaign</button>
+                  <button>Multiplayer</button>
+                  <button>Training</button>
+                  <button>Leaderboard</button>
+                  <button>Customization</button>
+                  <button>Settings</button>
+                </nav>
             `
         } else {
             // If user isn't logged in
-            navButtons = `
-                <li><button>Log in</button></li>
-                <li><button>Sign in</button></li>
-                <li><button>Leaderboard</button></li>
-                <li><button>Settings</button></li>
+            nav = `
+                <nav class="navbar justify-content-center w-100">
+                  <button class="btn w-90">Sign in</button>
+                  <button class="btn w-90">Log in</button>
+                  <button class="btn w-90">Leaderboard</button>
+                  <button class="btn w-90">Settings</button>
+                </nav>
             `
         }
 
-        const navClosing = `</ul></nav>`
-
-        // Bundle all parts together
-        const nav = `
-            ${navOpening}
-            ${navButtons}
-            ${navClosing}
-        `
 
         // Footer HTML code
         const footer = `
-            <footer>
+            <footer class="d-flex flex-wrap justify-content-center">
               <a href="./support.html">Support</a>
               <small>© KeyRace 2022</small>
             </footer>
@@ -97,7 +90,7 @@ customElements.define("nav-bar", class extends HTMLElement {
         
         // Add all parts to shadow's HTML
         shadow.innerHTML = `
-            <div id="navbar">
+            <div id="navbar" class="d-flex h-100 flex-wrap justify-content-between">
               ${includes}
               ${header}
               ${nav}
@@ -106,4 +99,3 @@ customElements.define("nav-bar", class extends HTMLElement {
         `
     }
 })
-

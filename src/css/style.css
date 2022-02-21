@@ -5,3 +5,8 @@
 .custom-shadow {
     box-shadow: 0 0 5px 1px red;
 }
+
+.btn {
+    background-color: #888;
+    color: white;
+}
