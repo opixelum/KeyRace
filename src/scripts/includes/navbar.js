@@ -71,10 +71,10 @@ customElements.define("nav-bar", class extends HTMLElement {
             // If user isn't logged in
             nav = `
                 <nav class="navbar justify-content-center w-100">
-                  <button class="btn w-90">Sign in</button>
-                  <button class="btn w-90">Log in</button>
-                  <button class="btn w-90">Leaderboard</button>
-                  <button class="btn w-90">Settings</button>
+                  <button class="btn">Sign in</button>
+                  <button class="btn">Log in</button>
+                  <button class="btn">Leaderboard</button>
+                  <button class="btn">Settings</button>
                 </nav>
             `
         }
