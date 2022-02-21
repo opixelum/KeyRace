@@ -29,6 +29,15 @@ customElements.define("nav-bar", class extends HTMLElement {
         // our JavaScript code.
         const shadow = this.attachShadow({mode: "open"})
 
+        // Files to include for styling
+        const includes = `
+            <!-- Bootstrap CSS -->
+            <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css">
+
+            <!-- Custom CSS -->
+            <link rel="stylesheet" href="./src/css/style.css">
+        `
+
         // Header HTML code
         const header = `
             <header>
@@ -89,6 +98,7 @@ customElements.define("nav-bar", class extends HTMLElement {
         // Add all parts to shadow's HTML
         shadow.innerHTML = `
             <div id="navbar">
+              ${includes}
               ${header}
               ${nav}
               ${footer}
