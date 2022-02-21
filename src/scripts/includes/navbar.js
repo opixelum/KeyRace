@@ -41,11 +41,11 @@ customElements.define("nav-bar", class extends HTMLElement {
         // Header HTML code
         const header = `
             <header>
-            <a href="./index.html">
+              <a href="./index.html">
                 <img alt="KeyRace logo" width="50px" src="./src/images/logo.png">
-            </a>
-            <input type="search" id="search-field" name="search-field"
-            placeholder="Search a player">
+              </a>
+              <input type="search" id="search-field" name="search-field"
+              placeholder="Search for a player">
             </header>
         `
 
@@ -90,8 +90,8 @@ customElements.define("nav-bar", class extends HTMLElement {
         // Footer HTML code
         const footer = `
             <footer>
-            <a href="./support.html">Support</a>
-            <small>© KeyRace 2022</small>
+              <a href="./support.html">Support</a>
+              <small>© KeyRace 2022</small>
             </footer>
         `
         
