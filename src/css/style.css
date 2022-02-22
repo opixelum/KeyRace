@@ -1,0 +1,44 @@
+/*********************** M A I N   C O N T A I N E R S ***********************/
+
+.navbar, .main{
+    background-color: #dddddd;
+}
+
+.custom-shadow {
+    box-shadow: 0 0 5px 1px red;
+}
+
+
+/******************************** N A V B A R ********************************/
+
+/* Header */
+
+.search {
+    background-color: #888;
+    color: white;
+    font-size: 1.2em;
+}
+.search::placeholder {
+    color: #dddddd;
+}
+
+
+/* Nav */
+
+.btn {
+    background-color: #888;
+    color: white;
+    border-radius: 10px;
+    height: 50px;
+}
+
+
+/* Footer */
+
+.footer a {
+    color: #888;
+}
+.footer small {
+    color: #888;
+    font-size: .8em;
+}
