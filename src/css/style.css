@@ -1,11 +1,11 @@
 /*********************** M A I N   C O N T A I N E R S ***********************/
 
 .navbar, .main{
-    background-color: #dddddd;
+    background-color: #444;
 }
 
 .custom-shadow {
-    box-shadow: 0 0 5px 1px red;
+    box-shadow: 0 0 10px 3px red;
 }
 
 
@@ -15,11 +15,19 @@
 
 .search {
     background-color: #888;
-    color: white;
+    color: black;
     font-size: 1.2em;
 }
 .search::placeholder {
-    color: #dddddd;
+    color: #444;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  height: 13px;
+  width: 13px;
+  margin-left: 10px;
+  background: url("data:image/svg+xml;charset=UTF-8,%3csvg viewPort='0 0 12 12' version='1.1' xmlns='http://www.w3.org/2000/svg'%3e%3cline x1='1' y1='11' x2='11' y2='1' stroke='black' stroke-width='3'/%3e%3cline x1='1' y1='1' x2='11' y2='11' stroke='black' stroke-width='3'/%3e%3c/svg%3e");
 }
 
 
@@ -27,9 +35,12 @@
 
 .btn {
     background-color: #888;
-    color: white;
+    color: black;
     border-radius: 10px;
     height: 50px;
+}
+.btn:hover {
+    background-color: #c00;
 }
 
 
