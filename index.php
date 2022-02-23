@@ -18,7 +18,7 @@
       <div class="row h-100 g-0">
         <!-- Navbar -->
         <div class="navbar col-2 p-0 me-2 rounded custom-shadow">
-          <?php include("./includes/navbar.php");?>
+          <?php include("includes/navbar.php");?>
         </div>
 
         <!-- Main -->
