@@ -17,7 +17,7 @@
   </div>
 </div>
 
-<?php
+<!--
 /**
  * @file navbar.js
  * @version 1.0.6
@@ -35,10 +35,8 @@
  * Date created  : 02/19/2022
  * Date last edit: 02/20/2022
  */
-?>
 
 
-<?php
 /* OLD JAVASCRIPT
 // Create a class for our navbar, inherited from "HTMLElement"
 customElements.define("nav-bar", class extends HTMLElement {
@@ -54,10 +52,8 @@ customElements.define("nav-bar", class extends HTMLElement {
 
         // Files to include for styling
         const includes = `
-            <!-- Bootstrap CSS -->
             <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css">
 
-            <!-- Custom CSS -->
             <link rel="stylesheet" href="./src/css/style.css">
         `
 
@@ -123,6 +119,4 @@ customElements.define("nav-bar", class extends HTMLElement {
         `
     }
 })
-*/
-
-?>
+-->
