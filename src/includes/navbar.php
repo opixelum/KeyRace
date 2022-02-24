@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <div class="d-flex flex-column h-100 justify-content-between">
   <!-- Header -->
   <div class="d-flex flex-wrap justify-content-center">
@@ -8,7 +10,34 @@
     name="search-field" placeholder="Search for a player">
   </div>
 
-  <?php // Buttons here ?>
+  <?php
+      if ($_SESSION["loggedin"])
+      {
+          echo `
+              <div class="navbar">
+                <button>Profile</button>
+                <button>Campaign</button>
+                <button>Multiplayer</button>
+                <button>Training</button>
+                <button>Leaderboard</button>
+                <button>Customization</button>
+                <button>Settings</button>
+              </div>
+            `;
+      }
+
+      else
+      {
+          echo `
+              <div class="navbar">
+                <button>Sign in</button>
+                <button>Log in</button>
+                <button>Leaderboard</button>
+                <button>Settings</button>
+              </div>
+            `;
+      }
+  ?>
 
   <div class="footer d-flex w-100 flex-wrap justify-content-center">
     <a href="./support.html">Support</a>
