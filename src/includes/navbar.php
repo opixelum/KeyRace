@@ -13,7 +13,7 @@
   <?php
       if ($_SESSION["loggedin"])
       {
-          echo `
+          echo '
               <div class="navbar">
                 <button>Profile</button>
                 <button>Campaign</button>
@@ -23,19 +23,19 @@
                 <button>Customization</button>
                 <button>Settings</button>
               </div>
-            `;
+            ';
       }
 
       else
       {
-          echo `
-              <div class="navbar">
-                <button>Sign in</button>
-                <button>Log in</button>
-                <button>Leaderboard</button>
-                <button>Settings</button>
+          echo '
+              <div class="d-flex flex-column justify-content-between">
+                <button class="btn m-2">Sign in</button>
+                <button class="btn m-2">Log in</button>
+                <button class="btn m-2">Leaderboard</button>
+                <button class="btn m-2">Settings</button>
               </div>
-            `;
+            ';
       }
   ?>
 
