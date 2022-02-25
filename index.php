@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,7 +20,7 @@
       <div class="row h-100 g-0">
         <!-- Navbar -->
         <div class="navbar col-2 p-0 me-2 rounded custom-shadow">
-          <nav-bar class="w-100 h-100"></nav-bar>
+          <?php include("src/includes/navbar.php");?>
         </div>
 
         <!-- Main -->
