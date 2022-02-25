@@ -47,15 +47,16 @@
           </form>
 
           <!-- Log in form -->
-          <form id="log-in-form">
+          <form id="log-in-form" class="d-none">
             <label for="email-or-username">Email or username</label><br>
-            <input type="text" id="email-or-username-inpt" name="email-or-username"><br><br>
+            <input type="text" id="email-or-username-inpt"
+            name="email-or-username"><br><br>
 
             <label for="password">Password</label><br>
-            <input type="pasword" id="password-inpt" name="password"
-            placeholder="••••••••••••••••"><br><br>
+            <input type="pasword" id="password-inpt" name="password"><br><br>
 
-            <input type="checkbox" id="stay-connected-chckbx" name="stay-connected" value="stay-connected">
+            <input type="checkbox" id="stay-connected-chckbx"
+            name="stay-connected" value="stay-connected">
             <label for="stay-connected">Stay connected</label><br><br>
 
             <input type="submit">
