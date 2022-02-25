@@ -37,7 +37,7 @@
   ?>
 
   <div class="footer d-flex w-100 flex-wrap justify-content-center">
-    <a href="./support.html">Support</a>
+    <a href="./support.php">Support</a>
     <br><br>
     <small class="w-100 mb-3 text-center">© KeyRace 2022</small>
   </div>
