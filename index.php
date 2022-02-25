@@ -21,7 +21,6 @@
         <!-- Navbar -->
         <div class="navbar col-2 p-0 me-2 rounded custom-shadow">
           <?php include("src/includes/navbar.php");?>
-          test
         </div>
 
         <!-- Main -->
