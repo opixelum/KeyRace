@@ -22,7 +22,8 @@
           <!-- Sign in form -->
           <form id="sign-in-form" class="d-none">
             <label for="username">Username</label><br>
-            <input type="text" id="username-inpt" name="username"><br><br>
+            <input type="text" id="username-inpt" name="username"
+            placeholder="JDoe"><br><br>
 
             <label for="email">Email</label><br>
             <input type="email" id="email-inpt" name="email"
