@@ -19,7 +19,8 @@
 
         <!-- Main -->
         <div class="main col ms-2 rounded custom-shadow">
-          <form id="sign-in-form">
+          <!-- Sign in form -->
+          <form id="sign-in-form" class="d-none">
             <label for="username">Username</label><br>
             <input type="text" id="username-inpt" name="username"><br><br>
 
@@ -41,6 +42,21 @@
               <option value="azerty">AZERTY</option>
               <option value="dvorak">DVORAK</option>
             </select><br><br>
+
+            <input type="submit">
+          </form>
+
+          <!-- Log in form -->
+          <form id="log-in-form">
+            <label for="email-or-username">Email or username</label><br>
+            <input type="text" id="email-or-username-inpt" name="email-or-username"><br><br>
+
+            <label for="password">Password</label><br>
+            <input type="pasword" id="password-inpt" name="password"
+            placeholder="••••••••••••••••"><br><br>
+
+            <input type="checkbox" id="stay-connected-chckbx" name="stay-connected" value="stay-connected">
+            <label for="stay-connected">Stay connected</label><br><br>
 
             <input type="submit">
           </form>
