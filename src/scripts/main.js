@@ -10,6 +10,10 @@
 
 const signInBtn = document.querySelector("#sign-in-btn")
 signInBtn.addEventListener("click", function() {
-    console.log("Button clicked")
-    window.location.href = "../connect.php"
+    window.location.href = "./connect.php"
+})
+
+const logInBtn = document.querySelector("#log-in-btn")
+logInBtn.addEventListener("click", function() {
+    window.location.href = "./connect.php"
 })

@@ -19,6 +19,31 @@
 
         <!-- Main -->
         <div class="main col ms-2 rounded custom-shadow">
+          <form id="sign-in-form">
+            <label for="username">Username</label><br>
+            <input type="text" id="username-inpt" name="username"><br><br>
+
+            <label for="email">Email</label><br>
+            <input type="email" id="email-inpt" name="email"
+            placeholder="john.doe@email.com"><br><br>
+
+            <label for="password">Password</label><br>
+            <input type="pasword" id="password-inpt" name="password"
+            placeholder="••••••••••••••••"><br><br>
+
+            <label for="confirm-password">Confirm password</label><br>
+            <input type="pasword" id="confirm-password-inpt"
+            name="confirm-password" placeholder="••••••••••••••••"><br><br>
+
+            <label for="keyboard-layout">Keyboard layout</label><br>
+            <select name="keyboard-layout" id="keyboard-layout-drpdwn">
+              <option value="qwerty">QWERTY</option>
+              <option value="azerty">AZERTY</option>
+              <option value="dvorak">DVORAK</option>
+            </select><br><br>
+
+            <input type="submit">
+          </form>
         </div>
       </div>
     </div>

@@ -10,7 +10,9 @@
   </div>
 
   <?php
-      if ($_SESSION["loggedin"]) {
+      $isLoggedIn = false; // Temporary
+
+      if ($isLoggedIn) {
           echo '
               <div class="navbar">
                 <button>Profile</button>
