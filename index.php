@@ -13,14 +13,16 @@
     <div class="container-fluid vh-100 p-3 bg-black">
       <div class="row h-100 g-0">
         <!-- Navbar -->
-        <div class="rgb-shadow">
+        <div class=rgb-shadow>
           <div class="navbar col-2 p-0 me-2 rounded">
             <?php include("src/includes/navbar.php");?>
           </div>
         </div>
 
         <!-- Main -->
-        <div class="main col ms-2 rounded rgb-shadow">
+        <div class="rgb-shadow">
+          <div class="main col ms-2 rounded">
+          </div>
         </div>
       </div>
     </div>
