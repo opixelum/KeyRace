@@ -35,7 +35,7 @@
           <div class="row">
             <div class="col">
             </div>
-            <div class="col-6 d-flex justify-content-center flex-wrap" style="color:white; word-spacing:1em">
+            <div class="col-6 d-flex justify-content-center flex-wrap rgb-text" style="color:white; word-spacing:1em">
               <h1 class="fw-bold text-center mb-5" style="font-size:60px; letter-spacing: 0.5em">KeyRace</h1>
               <h3 class="w-100 fs-1 m-0 text-center"><span>Race</span> against fast typers</h3>
               <h3 class="w-100 fs-1 m-0 text-center">Show off your <span>speed</span></h3>
