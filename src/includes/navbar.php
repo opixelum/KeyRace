@@ -30,7 +30,7 @@
                 <button id="sign-in-btn" class="btn m-2">Sign in</button>
                 <button id="log-in-btn" class="btn m-2">Log in</button>
                 <button id="leaderboard-btn" class="btn m-2">Leaderboard</button>
-                <button id="settings-btn" class="btn m-2">Settings</button>
+                <button id="settings-btn" class="btn m-2 rgb-shadow-button">Settings</button>
               </div>
             ';
       }
