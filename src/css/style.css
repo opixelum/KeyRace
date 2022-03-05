@@ -25,7 +25,7 @@
     height: calc(100% + 4px);
     border-radius: 5px;
 
-    animation: animate 20s linear infinite;
+    animation: animate 30s linear infinite;
 }
 
 .rgb-shadow:after {
@@ -51,7 +51,7 @@
     height: calc(100% + 4px);
     border-radius: 5px;
 
-    animation: animate 20s linear infinite;
+    animation: animate 30s linear infinite;
 }
 
 .rgb-shadow-button:after {
