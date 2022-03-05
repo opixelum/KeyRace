@@ -29,11 +29,11 @@
             placeholder="john.doe@email.com"><br><br>
 
             <label for="password">Password</label><br>
-            <input type="pasword" id="password-inpt" name="password"
+            <input type="password" id="password-inpt" name="password"
             placeholder="••••••••••••••••"><br><br>
 
             <label for="confirm-password">Confirm password</label><br>
-            <input type="pasword" id="confirm-password-inpt"
+            <input type="password" id="confirm-password-inpt"
             name="confirm-password" placeholder="••••••••••••••••"><br><br>
 
             <label for="keyboard-layout">Keyboard layout</label><br>

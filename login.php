@@ -25,7 +25,7 @@
             name="email-or-username"><br><br>
 
             <label for="password">Password</label><br>
-            <input type="pasword" id="password-inpt" name="password"><br><br>
+            <input type="password" id="password-inpt" name="password"><br><br>
 
             <input type="checkbox" id="stay-connected-chckbx"
             name="stay-connected" value="stay-connected">
