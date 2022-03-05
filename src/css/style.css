@@ -53,7 +53,8 @@ input[type="search"]::-webkit-search-cancel-button {
 /* RGB SHADOW */
 
 .rgb-shadow {
-    background: linear-gradient(0deg, #000, #262626);
+    position: relative;
+    background: #444444;
 }
 
 .rgb-shadow:before {

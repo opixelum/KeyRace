@@ -13,8 +13,10 @@
     <div class="container-fluid vh-100 p-3 bg-black">
       <div class="row h-100 g-0">
         <!-- Navbar -->
-        <div class="navbar col-2 p-0 me-2 rounded rgb-shadow">
-          <?php include("src/includes/navbar.php");?>
+        <div class="rgb-shadow">
+          <div class="navbar col-2 p-0 me-2 rounded">
+            <?php include("src/includes/navbar.php");?>
+          </div>
         </div>
 
         <!-- Main -->
