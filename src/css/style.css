@@ -2,54 +2,11 @@
 
 .navbar, .main{
     background-color: #444;
-}
-
-/******************************** N A V B A R ********************************/
-
-/* Header */
-
-.search {
-    background-color: #888;
-    color: black;
-    font-size: 1.2em;
-}
-.search::placeholder {
-    color: #444;
-}
-
-input[type="search"]::-webkit-search-cancel-button {
-  -webkit-appearance: none;
-  height: 13px;
-  width: 13px;
-  margin-left: 10px;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg viewPort='0 0 12 12' version='1.1' xmlns='http://www.w3.org/2000/svg'%3e%3cline x1='1' y1='11' x2='11' y2='1' stroke='black' stroke-width='3'/%3e%3cline x1='1' y1='1' x2='11' y2='11' stroke='black' stroke-width='3'/%3e%3c/svg%3e");
+    font-family: "Reem Kufi";
 }
 
 
-/* Nav */
-
-.btn {
-    background-color: #888;
-    color: black;
-    border-radius: 10px;
-    height: 50px;
-}
-.btn:hover {
-    background-color: #c00;
-}
-
-
-/* Footer */
-
-.footer a {
-    color: #888;
-}
-.footer small {
-    color: #888;
-    font-size: .8em;
-}
-
-/* Rgb shadow */
+/***************************** R G B   S H A D O W *****************************/
 
 .rgb-shadow {
     position: relative;
@@ -119,4 +76,69 @@ body {
 
 .justify-content-between {
     z-index: 0;
+  
+
+
+/******************************** N A V B A R ********************************/
+
+/* Header */
+
+.search {
+    background-color: #888;
+    color: black;
+    font-size: 1.2em;
+}
+.search::placeholder {
+    color: #444;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  height: 13px;
+  width: 13px;
+  margin-left: 10px;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg viewPort='0 0 12 12' version='1.1' xmlns='http://www.w3.org/2000/svg'%3e%3cline x1='1' y1='11' x2='11' y2='1' stroke='black' stroke-width='3'/%3e%3cline x1='1' y1='1' x2='11' y2='11' stroke='black' stroke-width='3'/%3e%3c/svg%3e");
+}
+
+
+/* Nav */
+
+.btn {
+    background-color: #888;
+    color: black;
+    border-radius: 10px;
+    height: 50px;
+}
+.btn:hover {
+    background-color: #c00;
+}
+
+
+/* Footer */
+
+.footer a {
+    color: #888;
+}
+.footer small {
+    color: #888;
+    font-size: .8em;
+}
+
+
+/********************************** M A I N **********************************/
+
+#welcome .row:nth-child(1), #welcome .row:nth-child(3){
+    height: 30%;
+}
+
+#welcome .row:nth-child(2) {
+    height: 40%;
+}
+
+.main img {
+    height: 250px;
+}
+
+#start-btn {
+    width: 50%;
 }

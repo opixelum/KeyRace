@@ -20,3 +20,9 @@ const logInBtn = document.querySelector("#log-in-btn")
 logInBtn.addEventListener("click", function() {
     window.location.href = "./login.php"
 })
+
+// Start button
+const startBtn = document.querySelector("#start-btn")
+startBtn.addEventListener("click", function() {
+    window.location.href = "./signin.php"
+})
