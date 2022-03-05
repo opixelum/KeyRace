@@ -43,7 +43,7 @@
               <option value="dvorak">DVORAK</option>
             </select><br><br>
 
-            <input type="submit">
+            <input type="submit" placeholder="submit">
           </form>
         </div>
       </div>
