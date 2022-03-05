@@ -54,3 +54,17 @@ input[type="search"]::-webkit-search-cancel-button {
     color: #888;
     font-size: .8em;
 }
+
+/********************************** M A I N **********************************/
+
+#welcome .row:nth-child(1), #welcome .row:nth-child(3){
+    height: 30%;
+}
+
+#welcome .row:nth-child(2) {
+    height: 40%;
+}
+
+.main img {
+    height: 250px;
+}

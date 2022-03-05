@@ -21,38 +21,37 @@
         </div>
 
         <!-- Main -->
-        <div class="main col ms-2 rounded custom-shadow">
-          <div class="container-fluid h-100">
+        <div class="main col ms-2 h-100 rounded custom-shadow">
+          <div id="welcome" class="container-fluid h-100 p-3">
           <div class="row">
             <div class="col">
               <img alt="Top-left cars" src="./src/images/ts-cars.png">
             </div>
-            <div class="col"></div>
-            <div class="col">
-              <img alt="Top-right resources" src="./src/images/te-resources.png">
+            <div class="col d-flex justify-content-end">
+              <img class="img-fluid" alt="Top-right resources" src="./src/images/te-resources.png">
             </div>
           </div>
 
           <div class="row">
-            <div class="col-3">
+            <div class="col">
             </div>
-            <div class="col-6">
+            <div class="col-6 d-flex justify-content-center flex-wrap">
               <h1>KeyRace</h1>
               <h3><span>Race</span> against fast typers</h3>
               <h3>Show off your <span>speed</span></h3>
               <h3><span>Play</span> and earn now!</h3>
               <button id="start-btn" class="btn">Start</button>
             </div>
-            <div class="col-3"></div>
+            <div class="col"></div>
           </div>
 
           <div class="row">
-            <div class="col">
+            <div class="col d-flex align-items-end">
               <img alt="Bottom-left avatars" src="./src/images/bs-avatars.png">
             </div>
             <div class="col"></div>
-            <div class="col">
-              <img alt="Bottom-right cars" src="./src/images/be-cars.png">
+            <div class="col d-flex justify-content-end align-items-end">
+              <img alt="Bottom-right cars" width="250px" src="./src/images/be-cars.png">
             </div>
           </div>
         </div>
