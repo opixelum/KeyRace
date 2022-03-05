@@ -56,7 +56,7 @@ input[type="search"]::-webkit-search-cancel-button {
     background: #444444;
 }
 
-.rgb-shadow:before {
+.rgb-shadow:before, .rgb-shadow:after {
     content:"";
     position: absolute;
     top: -2px;
@@ -66,12 +66,39 @@ input[type="search"]::-webkit-search-cancel-button {
     background-size: 400%;
     width: calc(100% + 4px);
     height: calc(100% + 4px);
+    border-radius: 5px;
 
     animation: animate 20s linear infinite;
 }
 
 .rgb-shadow:after {
-    filter: blur(20px);
+    filter: blur(8px);
+}
+
+/* rgb shadow button */
+
+.rgb-shadow-button {
+    position: relative;
+    background: #888888;
+}
+
+.rgb-shadow-button:before, .rgb-shadow-button:after {
+    content:"";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    z-index: -1;
+    background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000);
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border-radius: 5px;
+
+    animation: animate 20s linear infinite;
+}
+
+.rgb-shadow-button:after {
+    filter: blur(8px);
 }
 
 @keyframes animate {
@@ -84,4 +111,12 @@ input[type="search"]::-webkit-search-cancel-button {
     100% {
         background-position: 0 0;
     }
+}
+
+body {
+    background-color: #000000;
+}
+
+.justify-content-between {
+    z-index: 0;
 }

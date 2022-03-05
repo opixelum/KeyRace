@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <div class="container-fluid vh-100 p-3 bg-black">
+    <div class="container-fluid vh-100 p-3">
       <div class="row h-100 g-0">
         <!-- Navbar -->
           <div class="navbar col-2 p-0 me-2 rounded rgb-shadow">
@@ -18,7 +18,7 @@
         </div>
 
         <!-- Main -->
-        <div class="main col ms-2 rounded">
+        <div class="main col ms-2 rounded rgb-shadow">
         </div>
       </div>
     </div>
