@@ -31,7 +31,7 @@
             name="stay-connected" value="stay-connected">
             <label for="stay-connected">Stay connected</label><br><br>
 
-            <input type="submit">
+            <input type="submit" placeholder="submit">
           </form>
         </div>
       </div>
