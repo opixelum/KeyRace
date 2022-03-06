@@ -5,7 +5,7 @@ let mode = 0
 
 const navbar = document.querySelector("#navbar")
 const main = document.querySelector("#main")
-const search_field = document.querySelector("#search-field")
+const searchField = document.querySelector("#search-field")
 const body = document.querySelector("body")
 const modeBtn = document.querySelector("#mode-btn")
 
@@ -18,6 +18,7 @@ modeBtn.addEventListener("click", function() {
         navbar.classList.add("light")
         main.classList.add("light")
         body.style.backgroundColor = "white"
+        searchField.style.color = "white"
 
         // Change all buttons font color to white
         for (let i = 0; i < allBtns.length; i++) {
@@ -29,6 +30,7 @@ modeBtn.addEventListener("click", function() {
         navbar.classList.remove("light")
         main.classList.remove("light")
         body.style.backgroundColor = "black";
+        searchField.style.color = "black"
 
         // Change all buttons font color to black 
         for (let i = 0; i < allBtns.length; i++) {
