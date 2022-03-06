@@ -36,6 +36,14 @@ modeBtn.addEventListener("click", function() {
     darkMain.className = "main col ms-2 rounded rgb-shadow-light"
     darkBody = document.querySelector("body")
     darkBody.style.backgroundColor = "#ffffff";
-    const darkText = document.querySelectorAll(".dark-btn")
-    darkText.className = "btn m-2 light-btn"
+    const sign_in_btn = document.querySelector("#sign-in-btn")
+    sign_in_btn.style.color = "#ffffff"
+    const log_in_btn = document.querySelector("#log-in-btn")
+    log_in_btn.style.color = "#ffffff"
+    const leaderboard_btn = document.querySelector("#leaderboard-btn")
+    leaderboard_btn.style.color = "#ffffff"
+    const settings_btn = document.querySelector("#settings-btn")
+    settings_btn.style.color = "#ffffff"
+    const start_btn = document.querySelector("#start-btn")
+    start_btn.style.color = "#ffffff"
 })
