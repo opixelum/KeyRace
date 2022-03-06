@@ -23,7 +23,6 @@
         <!-- Main -->
         <div id="main" class="main col ms-2 rounded rgb-shadow">
             <button id="mode-btn" class="btn m-2">Mode</button>
-            <p>qsdf<p>
         </div>
       </div>
     </div>
