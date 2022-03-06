@@ -5,81 +5,39 @@
     font-family: "Reem Kufi";
 }
 
-
-/***************************** R G B   S H A D O W *****************************/
-
-.rgb-shadow-dark {
-    position: relative;
-    background: #444444;
-}
-.rgb-shadow-light {
-    position: relative;
-    background: #dddddd;
-}
-
-.rgb-shadow-dark:before, .rgb-shadow-dark:after, rgb-shadow-light:before, .rgb-shadow-light:after{
-    content:"";
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    z-index: -1;
-    background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000);
-    background-size: 400%;
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    border-radius: 5px;
-
-    animation: animate 30s linear infinite;
-}
-
-.rgb-shadow-dark:after, .rgb-shadow-light:after{
-    filter: blur(8px);
-}
-
-/* rgb shadow button */
-
-.rgb-shadow-button {
-    position: relative;
-    background: #888888;
-}
-
-.rgb-shadow-button:before, .rgb-shadow-button:after {
-    content:"";
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    z-index: -1;
-    background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000);
-    background-size: 400%;
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    border-radius: 5px;
-
-    animation: animate 30s linear infinite;
-}
-
-.rgb-shadow-button:after {
-    filter: blur(8px);
-}
-
-@keyframes animate {
-    0% {
-        background-position: 0 0;
-    }
-    50% {
-        background-position: 300% 0;
-    }
-    100% {
-        background-position: 0 0;
-    }
+.light{
+    background-color: #dddddd;
 }
 
 body {
     background-color: #000000;
 }
 
-.justify-content-between {
-    z-index: 0;
+
+
+/***************************** R G B   S H A D O W *****************************/
+
+.rgb-shadow{
+    position: relative;
+}
+
+.rgb-shadow:before, .rgb-shadow:after {
+    content:"";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    z-index: -1;
+    background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000);
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border-radius: 5px;
+
+    animation: animate 30s linear infinite;
+}
+
+.rgb-shadow:after{
+    filter: blur(8px);
 }
 
 /* rgb text */

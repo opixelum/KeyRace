@@ -16,12 +16,12 @@
     <div class="container-fluid vh-100 p-3">
       <div class="row h-100 g-0">
         <!-- Navbar -->
-        <div id="navbar" class="navbar col-2 p-0 me-2 rounded rgb-shadow-dark">
+        <div id="navbar" class="navbar col-2 p-0 me-2 rounded rgb-shadow">
           <?php include("src/includes/navbar.php");?>
         </div>
 
         <!-- Main -->
-        <div id="main" class="main col ms-2 rounded rgb-shadow-dark">
+        <div id="main" class="main col ms-2 rounded rgb-shadow">
           <form>
             <label for="username">Username</label><br>
             <input type="text" id="username-inpt" name="username"
