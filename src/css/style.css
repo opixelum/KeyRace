@@ -40,6 +40,18 @@ body {
     filter: blur(8px);
 }
 
+@keyframes animate {
+    0% {
+        background-position: 0%;
+    }
+    50%{
+        background-position: 300%;
+    }
+    100%{
+        background-position: 0%;
+    }
+}
+
 /* rgb text */
 
 .rgb-text span, .rgb-text h1 {
