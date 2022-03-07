@@ -1,10 +1,11 @@
 /**
  * @file main.js
- * @version 1.1.1
  * 
  * @brief Script for dynamic UI. 
  * 
  * @author Anto "Opixelum" Benedetti
+ * @author Romain "Invorom" Nerot 
+ * 
  * @bug No known bug
  */
 
