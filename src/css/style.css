@@ -81,7 +81,7 @@ body {
     background-color: var(--bodyBg);
 }
 
-.navbar, .main{
+header, main{
     background-color: var(--containersBg);
 }
 

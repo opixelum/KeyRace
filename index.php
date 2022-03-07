@@ -8,13 +8,11 @@
   <body class="dark-theme">
     <div class="container-fluid vh-100 g-0">
       <div class="row h-100 p-3 g-0">
-        <!-- Navbar -->
-          <div id="navbar" class="navbar col-2 p-0 me-2 rounded rgb-shadow">
-            <?php include("src/includes/navbar.php");?>
-        </div>
+        <header class="col-2 p-0 me-2 rounded rgb-shadow">
+          <?php include("src/includes/navbar.php");?>
+        </header>
 
-        <!-- Main -->
-        <div id="main" class="main h-100 col ms-2 rounded rgb-shadow">
+        <main class="col h-100 ms-2 rounded rgb-shadow">
           <div id="welcome" class="container-fluid h-100 p-3">
             <div class="row h-25">
               <div class="col-3 h-100">
@@ -49,8 +47,9 @@
               <div class="col-3 h-100 d-flex justify-content-end align-items-end">
                 <img src="./src/images/be-cars.png" class="img-fluid" alt="Bottom-right cars">
               </div>
+            </div>
           </div>
-        </div>
+        </main>
       </div>
     </div>
 
