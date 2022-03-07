@@ -8,13 +8,12 @@
   <body class="dark-theme">
     <div class="container-fluid vh-100 g-0">
       <div class="row h-100 p-3 g-0">
-        <!-- Navbar -->
-        <div id="navbar" class="navbar col-2 p-0 me-2 rounded rgb-shadow">
+        <header class="col-2 p-0 me-2 rounded rgb-shadow">
           <?php include("src/includes/navbar.php");?>
-        </div>
+        </header>
 
         <!-- Main -->
-        <div id="main" class="main col ms-2 rounded rgb-shadow">
+        <main class="col ms-2 rounded rgb-shadow">
           <form>
             <label for="email-or-username">Email or username</label><br>
             <input type="text" id="email-or-username-inpt"
@@ -29,7 +28,7 @@
 
             <input type="submit" placeholder="submit">
           </form>
-        </div>
+        </main>
       </div>
     </div>
 
