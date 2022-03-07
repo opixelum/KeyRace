@@ -1,13 +1,11 @@
 /**
  * @file main.js
  * 
- * @brief Script for dynamic UI. 
+ * @brief Script for the whole website. 
  * 
- * @author Anto "Opixelum" BENEDETTI
- * @author Romain "Invorom" NEROT
- * @author Jérémy "Saygel" MICU
- * 
- * @bug No known bug
+ * @author Anto "Opixelum" Benedetti
+ * @author Romain "Invorom" Nerot
+ * @author Jérémy "Saygel" Micu
  */
 
 

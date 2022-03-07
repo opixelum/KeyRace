@@ -1,33 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./src/css/style.css">
-    <title>KeyRace | Settings</title>
-  </head>
+  <?php
+      $title = "Settings | KeyRace";
+      include("./src/includes/head.php");
+  ?>
 
   <body class="dark-theme">
-    <div class="container-fluid vh-100 p-3">
-      <div class="row h-100 g-0">
-        <!-- Navbar -->
-        <div id="navbar" class="navbar col-2 p-0 me-2 rounded rgb-shadow">
+    <div class="container-fluid vh-100 g-0">
+      <div class="row h-100 p-3 g-0">
+        <header class="col-2 p-0 me-2 rounded rgb-shadow">
           <?php include("src/includes/navbar.php");?>
-        </div>
+        </header>
 
-        <!-- Main -->
-        <div id="main" class="main col ms-2 rounded rgb-shadow">
+        <main class="col ms-2 rounded rgb-shadow">
           <form class="form-check form-switch">
             <input class="form-check-input" type="checkbox" role="switch"
             id="theme-switch">
             <label class="form-check-label" for="theme-switch">
             Dark / Light mode</div>
-        </div>
+          </form>
+        </main>
       </div>
     </div>
 

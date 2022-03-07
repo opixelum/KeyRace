@@ -1,15 +1,14 @@
-//Dark mode / Light mode
+/**
+ * @file settings.js
+ * 
+ * @brief Script for the settings page.
+ * 
+ * @author Anto "Opixelum" Benedetti
+ * @author Romain "Invorom" Nerot
+ * @author Jérémy "Saygel" Micu
+ */
 
-// 0 = dark mode, 1 = light mode
-let mode = 0
-
-const navbar = document.querySelector("#navbar")
-const main = document.querySelector("#main")
-const searchField = document.querySelector("#search-field")
-const body = document.querySelector("body")
 const themeSwitch = document.querySelector("#theme-switch")
-
-// Select all buttons on website
 
 window.onload = () => {
     if (localStorage.getItem("theme") === "dark") {
