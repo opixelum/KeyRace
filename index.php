@@ -12,7 +12,7 @@
     <title>KeyRace | Home</title>
   </head>
 
-  <body>
+  <body class="dark-theme">
     <div class="container-fluid vh-100 p-3">
       <div class="row h-100 g-0">
         <!-- Navbar -->

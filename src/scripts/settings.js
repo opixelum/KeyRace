@@ -11,6 +11,14 @@ const themeSwitch = document.querySelector("#theme-switch")
 
 // Select all buttons on website
 
+window.onload = () => {
+    if (localStorage.getItem("theme") === "dark") {
+        themeSwitch.checked = false
+    } else {
+        themeSwitch.checked = true
+    }
+}
+
 themeSwitch.addEventListener("change", function() {
     if (this.checked) {
         // Change from dark to light theme
