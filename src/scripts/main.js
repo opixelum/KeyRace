@@ -3,8 +3,9 @@
  * 
  * @brief Script for dynamic UI. 
  * 
- * @author Anto "Opixelum" Benedetti
- * @author Romain "Invorom" Nerot 
+ * @author Anto "Opixelum" BENEDETTI
+ * @author Romain "Invorom" NEROT
+ * @author Jérémy "Saygel" MICU
  * 
  * @bug No known bug
  */
