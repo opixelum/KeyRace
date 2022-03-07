@@ -8,13 +8,7 @@
  * @author Jérémy "Saygel" Micu
  */
 
-const navbar = document.querySelector("#navbar")
-const main = document.querySelector("#main")
-const searchField = document.querySelector("#search-field")
-const body = document.querySelector("body")
 const themeSwitch = document.querySelector("#theme-switch")
-
-// Select all buttons on website
 
 window.onload = () => {
     if (localStorage.getItem("theme") === "dark") {
