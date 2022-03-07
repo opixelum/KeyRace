@@ -27,6 +27,9 @@
             <div class="col">
               <img alt="Top-left cars" src="./src/images/ts-cars.png">
             </div>
+            <div class="col d-flex justify-content-center align-items-end rgb-text">
+              <h1 class="fw-bold text-center mb-5" style="font-size:60px; letter-spacing: 0.5em">KeyRace</h1>
+            </div>
             <div class="col d-flex justify-content-end">
               <img class="img-fluid" alt="Top-right resources" src="./src/images/te-resources.png">
             </div>
@@ -35,12 +38,10 @@
           <div class="row">
             <div class="col">
             </div>
-            <div class="col-6 d-flex justify-content-center flex-wrap rgb-text" style="color:white; word-spacing:1em">
-              <h1 class="fw-bold text-center mb-5" style="font-size:60px; letter-spacing: 0.5em">KeyRace</h1>
+            <div class="col-6 d-flex justify-content-center flex-wrap align-item-center rgb-text" style="color:white; word-spacing:1em">
               <h3 class="w-100 fs-1 m-0 text-center"><span>Race</span> against fast typers</h3>
               <h3 class="w-100 fs-1 m-0 text-center">Show off your <span>speed</span></h3>
               <h3 class="w-100 fs-1 m-0 text-center"><span>Play</span> and earn now!</h3>
-              <button id="start-btn" class="btn mt-5">Start</button>
             </div>
             <div class="col"></div>
           </div>
@@ -49,7 +50,9 @@
             <div class="col d-flex align-items-end">
               <img alt="Bottom-left avatars" src="./src/images/bs-avatars.png">
             </div>
-            <div class="col"></div>
+            <div class="col d-flex justify-content-center align-items-start">
+              <button id="start-btn" class="btn">Start</button>
+            </div>
             <div class="col d-flex justify-content-end align-items-end">
               <img alt="Bottom-right cars" width="250px" src="./src/images/be-cars.png">
             </div>
