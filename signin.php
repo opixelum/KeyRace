@@ -12,7 +12,6 @@
           <?php include("src/includes/navbar.php");?>
         </header>
 
-        <!-- Main -->
         <main class="col ms-2 rounded rgb-shadow">
           <form>
             <label for="username">Username</label><br>

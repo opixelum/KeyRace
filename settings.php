@@ -8,19 +8,18 @@
   <body class="dark-theme">
     <div class="container-fluid vh-100 g-0">
       <div class="row h-100 p-3 g-0">
-        <!-- Navbar -->
-        <div id="navbar" class="navbar col-2 p-0 me-2 rounded rgb-shadow">
+        <header class="col-2 p-0 me-2 rounded rgb-shadow">
           <?php include("src/includes/navbar.php");?>
-        </div>
+        </header>
 
-        <!-- Main -->
-        <div id="main" class="main col ms-2 rounded rgb-shadow">
+        <main class="col ms-2 rounded rgb-shadow">
           <form class="form-check form-switch">
             <input class="form-check-input" type="checkbox" role="switch"
             id="theme-switch">
             <label class="form-check-label" for="theme-switch">
             Dark / Light mode</div>
-        </div>
+          </form>
+        </main>
       </div>
     </div>
 
