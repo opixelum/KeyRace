@@ -15,7 +15,9 @@
 }
 
 
-/**************************** R G B   S H A D O W ****************************/
+/*************************** R G B   E F F E C T S ***************************/
+
+/*----------------------- R G B   B O X   S H A D O W -----------------------*/
 
 .rgb-shadow{
     position: relative;
@@ -52,7 +54,8 @@
     }
 }
 
-/* rgb text */
+
+/*----------------------------- R G B   T E X T -----------------------------*/
 
 .rgb-text span, .rgb-text h1 {
     background: repeating-linear-gradient(90deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000);
@@ -62,6 +65,7 @@
     -webkit-background-clip: text;
     animation: slide 30s linear infinite forwards;
 }
+
 
 @keyframes slide {
     0%{
@@ -88,7 +92,7 @@ header, main{
 
 /******************************** N A V B A R ********************************/
 
-/* Header */
+/*------------------------------- H E A D E R -------------------------------*/
 
 .search {
     background-color: #888;
@@ -108,7 +112,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 
-/* Nav */
+/*---------------------------------- N A V ----------------------------------*/
 
 .btn {
     background-color: #888;
@@ -121,7 +125,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 
-/* Footer */
+/*------------------------------- F O O T E R -------------------------------*/
 
 .footer a {
     color: #888;
