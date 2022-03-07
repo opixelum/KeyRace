@@ -15,19 +15,6 @@
 }
 
 
-/*********************** M A I N   C O N T A I N E R S ***********************/
-
-body {
-    font-family: "Reem Kufi";
-    color: var(--fontColor);
-    background-color: var(--bodyBg);
-}
-
-.navbar, .main{
-    background-color: var(--containersBg);
-}
-
-
 /***************************** R G B   S H A D O W *****************************/
 
 .rgb-shadow{
@@ -83,6 +70,19 @@ body {
     100%{
         background-position-x: 0;
     }
+}
+
+
+/*********************** M A I N   C O N T A I N E R S ***********************/
+
+body {
+    font-family: "Reem Kufi";
+    color: var(--fontColor);
+    background-color: var(--bodyBg);
+}
+
+.navbar, .main{
+    background-color: var(--containersBg);
 }
 
 

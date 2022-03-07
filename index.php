@@ -38,10 +38,10 @@
           <div class="row">
             <div class="col">
             </div>
-            <div class="col-6 d-flex justify-content-center flex-wrap align-item-center rgb-text" style="color:white; word-spacing:1em">
-              <h3 class="w-100 fs-1 m-0 text-center"><span>Race</span> against fast typers</h3>
-              <h3 class="w-100 fs-1 m-0 text-center">Show off your <span>speed</span></h3>
-              <h3 class="w-100 fs-1 m-0 text-center"><span>Play</span> and earn now!</h3>
+            <div class="col-6 d-flex flex-column justify-content-center align-item-center rgb-text" style="color:white; word-spacing:1em">
+              <h3 class="w-100 fs-1 text-center"><span>Race</span> against fast typers</h3>
+              <h3 class="w-100 fs-1 text-center">Show off your <span>speed</span></h3>
+              <h3 class="w-100 fs-1 text-center"><span>Play</span> and earn now!</h3>
             </div>
             <div class="col"></div>
           </div>
