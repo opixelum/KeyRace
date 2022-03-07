@@ -13,16 +13,16 @@
 window.onload = () => {
     if (localStorage.getItem("theme") === "dark") {
         // Change from light to dark theme
-        console.log("dark theme")
         document.body.classList.remove("light-theme")
         document.body.classList.add("dark-theme")
         localStorage.setItem("theme", "dark")
+        setTimeout(() => {themeSwitch.checked = false}, 100)
     } else {
         // Change from dark to light theme
-        console.log("light theme")
         document.body.classList.remove("dark-theme")
         document.body.classList.add("light-theme")
         localStorage.setItem("theme", "light")
+        setTimeout(() => {themeSwitch.checked = true}, 100)
     }
 }
 
