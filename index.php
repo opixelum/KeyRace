@@ -9,7 +9,7 @@
     <div class="container-fluid vh-100 g-0">
       <div class="row h-100 p-3 g-0">
         <header class="col-2 p-0 me-2 rounded rgb-shadow">
-          <?php include("src/includes/navbar.php");?>
+          <?php include("src/includes/navbar.php"); ?>
         </header>
 
         <main class="col h-100 ms-2 rounded rgb-shadow">
@@ -27,8 +27,7 @@
             </div>
 
             <div class="row h-50">
-              <div class="col-3 h-100">
-              </div>
+              <div class="col-3 h-100"></div>
               <div class="col-6 h-100 d-flex flex-column justify-content-center align-item-center rgb-text" style="color:white; word-spacing:1em">
                 <h3 class="w-100 fs-1 text-center"><span>Race</span> against fast typers</h3>
                 <h3 class="w-100 fs-1 text-center">Show off your <span>speed</span></h3>
