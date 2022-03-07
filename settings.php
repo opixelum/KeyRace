@@ -12,7 +12,7 @@
     <title>KeyRace | Settings</title>
   </head>
 
-  <body>
+  <body class="dark-theme">
     <div class="container-fluid vh-100 p-3">
       <div class="row h-100 g-0">
         <!-- Navbar -->
@@ -22,7 +22,11 @@
 
         <!-- Main -->
         <div id="main" class="main col ms-2 rounded rgb-shadow">
-          <button id="mode-btn" class="btn m-2">Mode</button>
+          <form class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch"
+            id="theme-switch">
+            <label class="form-check-label" for="theme-switch">
+            Dark / Light mode</div>
         </div>
       </div>
     </div>

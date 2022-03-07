@@ -1,18 +1,31 @@
+/*********************** D A R K / L I G H T   M O D E ***********************/
+
+.dark-theme {
+    --bodyBg: black;
+    --containersBg: #444;
+    --fontColor: white;
+    --buttonFontColor: black;
+}
+
+.light-theme {
+    --bodyBg: white;
+    --containersBg: #ddd;
+    --fontColor: black;
+    --buttonFontColor: white;
+}
+
+
 /*********************** M A I N   C O N T A I N E R S ***********************/
 
-.navbar, .main{
-    background-color: #444;
-    font-family: "Reem Kufi";
-}
-
-.light{
-    background-color: #dddddd;
-}
-
 body {
-    background-color: #000000;
+    font-family: "Reem Kufi";
+    color: var(--fontColor);
+    background-color: var(--bodyBg);
 }
 
+.navbar, .main{
+    background-color: var(--containersBg);
+}
 
 
 /***************************** R G B   S H A D O W *****************************/
@@ -79,11 +92,11 @@ body {
 
 .search {
     background-color: #888;
-    color: black;
+    color: var(--buttonFontColor);
     font-size: 1.2em;
 }
 .search::placeholder {
-    color: #444;
+    color: var(--containersBg);
 }
 
 input[type="search"]::-webkit-search-cancel-button {
@@ -99,7 +112,7 @@ input[type="search"]::-webkit-search-cancel-button {
 
 .btn {
     background-color: #888;
-    color: black;
+    color: var(--buttonFontColor);
     border-radius: 10px;
     height: 50px;
 }
