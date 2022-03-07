@@ -1,7 +1,12 @@
-//Dark mode / Light mode
-
-// 0 = dark mode, 1 = light mode
-let mode = 0
+/**
+ * @file settings.js
+ * 
+ * @brief Script for the settings page.
+ * 
+ * @author Anto "Opixelum" Benedetti
+ * @author Romain "Invorom" Nerot
+ * @author Jérémy "Saygel" Micu
+ */
 
 const navbar = document.querySelector("#navbar")
 const main = document.querySelector("#main")
