@@ -1,16 +1,37 @@
+/*********************** D A R K / L I G H T   M O D E ***********************/
+
+.dark-theme {
+    --bodyBg: black;
+    --containersBg: #444;
+    --fontColor: white;
+    --buttonFontColor: black;
+}
+
+.light-theme {
+    --bodyBg: white;
+    --containersBg: #ddd;
+    --fontColor: black;
+    --buttonFontColor: white;
+}
+
+
 /*********************** M A I N   C O N T A I N E R S ***********************/
 
-.navbar, .main{
-    background-color: #444;
+body {
     font-family: "Reem Kufi";
+    color: var(--fontColor);
+    background-color: var(--bodyBg);
+}
+
+.navbar, .main{
+    background-color: var(--containersBg);
 }
 
 
 /***************************** R G B   S H A D O W *****************************/
 
-.rgb-shadow {
+.rgb-shadow{
     position: relative;
-    background: #444444;
 }
 
 .rgb-shadow:before, .rgb-shadow:after {
@@ -28,33 +49,7 @@
     animation: animate 30s linear infinite;
 }
 
-.rgb-shadow:after {
-    filter: blur(8px);
-}
-
-/* rgb shadow button */
-
-.rgb-shadow-button {
-    position: relative;
-    background: #888888;
-}
-
-.rgb-shadow-button:before, .rgb-shadow-button:after {
-    content:"";
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    z-index: -1;
-    background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000);
-    background-size: 400%;
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    border-radius: 5px;
-
-    animation: animate 30s linear infinite;
-}
-
-.rgb-shadow-button:after {
+.rgb-shadow:after{
     filter: blur(8px);
 }
 
@@ -70,18 +65,10 @@
     }
 }
 
-body {
-    background-color: #000000;
-}
-
-.justify-content-between {
-    z-index: 0;
-}
-
 /* rgb text */
 
 .rgb-text span, .rgb-text h1 {
-    background: repeating-linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000);
+    background: repeating-linear-gradient(90deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000);
     background-size: 600%;
     -webkit-text-fill-color: transparent;
     background-clip: border-box;
@@ -105,11 +92,11 @@ body {
 
 .search {
     background-color: #888;
-    color: black;
+    color: var(--buttonFontColor);
     font-size: 1.2em;
 }
 .search::placeholder {
-    color: #444;
+    color: var(--containersBg);
 }
 
 input[type="search"]::-webkit-search-cancel-button {
@@ -125,7 +112,7 @@ input[type="search"]::-webkit-search-cancel-button {
 
 .btn {
     background-color: #888;
-    color: black;
+    color: var(--buttonFontColor);
     border-radius: 10px;
     height: 50px;
 }

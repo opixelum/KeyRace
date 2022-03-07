@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./src/css/style.css">
-    <title>KeyRace | Connect</title>
+    <title>KeyRace | Settings</title>
   </head>
 
   <body class="dark-theme">
@@ -22,25 +22,17 @@
 
         <!-- Main -->
         <div id="main" class="main col ms-2 rounded rgb-shadow">
-          <form>
-            <label for="email-or-username">Email or username</label><br>
-            <input type="text" id="email-or-username-inpt"
-            name="email-or-username"><br><br>
-
-            <label for="password">Password</label><br>
-            <input type="password" id="password-inpt" name="password"><br><br>
-
-            <input type="checkbox" id="stay-connected-chckbx"
-            name="stay-connected" value="stay-connected">
-            <label for="stay-connected">Stay connected</label><br><br>
-
-            <input type="submit" placeholder="submit">
-          </form>
+          <form class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch"
+            id="theme-switch">
+            <label class="form-check-label" for="theme-switch">
+            Dark / Light mode</div>
         </div>
       </div>
     </div>
 
     <script src="./src/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./src/scripts/settings.js"></script>
     <script src="./src/scripts/main.js"></script>
   </body>
 </html>
