@@ -13,48 +13,48 @@
   </head>
 
   <body class="dark-theme">
-    <div class="container-fluid vh-100 p-3">
-      <div class="row h-100 g-0">
+    <div class="container-fluid vh-100 g-0">
+      <div class="row h-100 p-3 g-0">
         <!-- Navbar -->
           <div id="navbar" class="navbar col-2 p-0 me-2 rounded rgb-shadow">
             <?php include("src/includes/navbar.php");?>
         </div>
 
         <!-- Main -->
-        <div id="main" class="main col ms-2 rounded rgb-shadow">
+        <div id="main" class="main h-100 col ms-2 rounded rgb-shadow">
           <div id="welcome" class="container-fluid h-100 p-3">
-          <div class="row">
-            <div class="col">
-              <img alt="Top-left cars" src="./src/images/ts-cars.png">
+          <div class="row h-30">
+            <div class="col-3 h-100">
+              <img src="./src/images/ts-cars.png" class="img-fluid" alt="Top-left cars">
             </div>
-            <div class="col d-flex justify-content-center align-items-end rgb-text">
+            <div class="col-6 h-100 d-flex justify-content-center align-items-end rgb-text">
               <h1 class="fw-bold text-center mb-5" style="font-size:60px; letter-spacing: 0.5em">KeyRace</h1>
             </div>
-            <div class="col d-flex justify-content-end">
-              <img class="img-fluid" alt="Top-right resources" src="./src/images/te-resources.png">
+            <div class="col-3 h-100 d-flex justify-content-end">
+              <img alt="Top-right resources" src="./src/images/te-resources.png" class="img-fluid" class="img-fluid">
             </div>
           </div>
 
-          <div class="row">
-            <div class="col">
+          <div class="row h-40">
+            <div class="col-3 h-100">
             </div>
-            <div class="col-6 d-flex flex-column justify-content-center align-item-center rgb-text" style="color:white; word-spacing:1em">
+            <div class="col-6 h-100 d-flex flex-column justify-content-center align-item-center rgb-text" style="color:white; word-spacing:1em">
               <h3 class="w-100 fs-1 text-center"><span>Race</span> against fast typers</h3>
               <h3 class="w-100 fs-1 text-center">Show off your <span>speed</span></h3>
               <h3 class="w-100 fs-1 text-center"><span>Play</span> and earn now!</h3>
             </div>
-            <div class="col"></div>
+            <div class="col-3 h-100"></div>
           </div>
 
-          <div class="row">
-            <div class="col d-flex align-items-end">
-              <img alt="Bottom-left avatars" src="./src/images/bs-avatars.png">
+          <div class="row h-30">
+            <div class="col-3 h-100 d-flex align-items-end">
+              <img src="./src/images/bs-avatars.png" class="img-fluid" alt="Bottom-left avatars">
             </div>
-            <div class="col d-flex justify-content-center align-items-start">
+            <div class="col-6 h-100 d-flex justify-content-center align-items-start">
               <button id="start-btn" class="btn">Start</button>
             </div>
-            <div class="col d-flex justify-content-end align-items-end">
-              <img alt="Bottom-right cars" width="250px" src="./src/images/be-cars.png">
+            <div class="col-3 h-100 d-flex justify-content-end align-items-end">
+              <img src="./src/images/be-cars.png" class="img-fluid" alt="Bottom-right cars">
             </div>
           </div>
         </div>
