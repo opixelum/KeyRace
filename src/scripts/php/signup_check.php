@@ -4,15 +4,16 @@
     $email            = $_POST["email"];
     $password         = $_POST["password"];
     $confirm_password = $_POST["confirm-password"];
-
+    $keyboard_layout  = $_POST["keyboard-layout"];
+;
 
     // *************** F I E L D S   V E R I F I C A T I O N S ****************
 
     // If an error is caught, redirect to signup page with the error message 
 
     // If at least one field is empty
-    if (empty($username) || empty($email) ||
-    empty($password) || empty($confirm_password))
+    if (empty($username) || empty($email) || empty($password) ||
+    empty($confirm_password) || empty($keyboard_layout))
     {
         header("location: ../../../signup.php?type=warning&message=Please fill all fields.");
         exit();

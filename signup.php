@@ -32,9 +32,10 @@
 
             <label for="keyboard-layout">Keyboard layout</label><br>
             <select name="keyboard-layout" id="keyboard-layout-drpdwn">
-              <option value="qwerty">QWERTY</option>
-              <option value="azerty">AZERTY</option>
-              <option value="dvorak">DVORAK</option>
+              <option value="">--- Choose a layout ---</option>
+              <option value="1">QWERTY</option>
+              <option value="2">AZERTY</option>
+              <option value="3">DVORAK</option>
             </select><br><br>
 
             <input type="submit" placeholder="submit">
