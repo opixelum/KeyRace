@@ -27,7 +27,7 @@
       } else {
           echo '
               <div class="d-flex flex-column justify-content-between">
-                <button id="sign-in-btn" class="btn m-2">Sign in</button>
+                <button id="sign-up-btn" class="btn m-2">Sign up</button>
                 <button id="log-in-btn" class="btn m-2">Log in</button>
                 <button id="leaderboard-btn" class="btn m-2">Leaderboard</button>
                 <button id="settings-btn" class="btn m-2">Settings</button>

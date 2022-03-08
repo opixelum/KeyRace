@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <?php
-      $title = "Sign in | KeyRace";
+      $title = "Sign up | KeyRace";
       include("./src/includes/head.php");
   ?>
 
@@ -13,7 +13,7 @@
         </header>
 
         <main class="col ms-2 rounded rgb-shadow">
-          <form>
+          <form method="POST" action="./src/scripts/php/signup_check.php">
             <label for="username">Username</label><br>
             <input type="text" id="username-inpt" name="username"
             placeholder="JDoe"><br><br>

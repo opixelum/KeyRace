@@ -26,9 +26,9 @@ window.onload = () => {
 }
 
 // Sign in button
-const signInBtn = document.querySelector("#sign-in-btn")
-signInBtn.addEventListener("click", function() {
-    window.location.href = "./signin.php"
+const signUpBtn = document.querySelector("#sign-up-btn")
+signUpBtn.addEventListener("click", function() {
+    window.location.href = "./signup.php"
 })
 
 // Log in button
