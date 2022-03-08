@@ -44,6 +44,6 @@
     </div>
 
     <script src="./src/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="./src/scripts/main.js"></script>
+    <script src="./src/scripts/js/main.js"></script>
   </body>
 </html>
