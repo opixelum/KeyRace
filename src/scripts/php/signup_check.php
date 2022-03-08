@@ -55,16 +55,46 @@
     }
 
     // If confirm_password is different than password
-    if ($password != $confirm_password)
+    if ($confirm_password != $password)
     {
         header("location: ../../../signup.php?type=warning&message=Confirm password is different.");
         exit();
     }
 
+
+    // ********************* A D D   U S E R   T O   D B **********************
+    
+    // Encrypt password
+    $salt = "5gd87sdfnh6jytr98bd4qsdvzeye1sfdf3gh4zert9qsdti16f4aer9jbhl67ivl";
+    $encrypted_password = hash("sha512", $salt . $password);
+
+
     // Connect to database
     include("./db_connect.php");
 
 
-    header("location: ../../../login.php");
+    // Prepare query to insert into the USER table in the database
+    $query = "INSERT INTO USER (username, email, password) VALUES (:username, :email, :password);";
+    $prepared_query = $db->prepare($query);
+
+    // Execute query with user credentials
+    $result = $prepared_query->execute
+    ([
+        "username" => $username, 
+        "email" => $email,
+        "password" => $encrypted_password
+    ]);
+
+
+    // If query was successful
+    if ($result)
+    {
+        header("location: ../../../login.php?type=success&message=Accout created. Verify your email address before login in.");
+        exit();
+    }
+
+    // If query failed
+    header("location: ../../../signup.php?type=alert&message=An error occured. Please try again.");
     exit();
+
 ?>
