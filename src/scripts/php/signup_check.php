@@ -19,6 +19,13 @@
         exit();
     }
 
+    // If username not enough long
+    if (strlen($username) < 5)
+    {
+        header("location: ../../../signup.php?type=warning&message=Username must be upper than 5 characters long.");
+        exit();
+    }
+
     // If username is too long
     if (strlen($username) > 45)
     {
@@ -65,7 +72,7 @@
     // ********************* A D D   U S E R   T O   D B **********************
     
     // Encrypt password
-    $salt = "5gd87sdfnh6jytr98bd4qsdvzeye1sfdf3gh4zert9qsdti16f4aer9jbhl67ivl";
+    $salt = "5gd87sdf^nh6?jytr98b!'d4qsdvzey;e1sfdf3gh'4zert9qsdti16f'4aer9jbhl67ivl";
     $encrypted_password = hash("sha512", $salt . $password);
 
 
