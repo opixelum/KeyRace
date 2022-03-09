@@ -5,7 +5,7 @@
     $password         = $_POST["password"];
     $confirm_password = $_POST["confirm-password"];
     $keyboard_layout  = $_POST["keyboard-layout"];
-;
+
 
     // *************** F I E L D S   V E R I F I C A T I O N S ****************
 
