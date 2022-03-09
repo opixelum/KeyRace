@@ -20,7 +20,7 @@
     }
 
     // If username not enough long
-    if (strlen($username) < 5)
+    if (strlen($username) < 3
     {
         header("location: ../../../signup.php?type=warning&message=Username must be upper than 5 characters long.");
         exit();
