@@ -20,9 +20,9 @@
     }
 
     // If username not enough long
-    if (strlen($username) < 3
+    if (strlen($username) < 3)
     {
-        header("location: ../../../signup.php?type=warning&message=Username must be upper than 5 characters long.");
+        header("location: ../../../signup.php?type=warning&message=Username must be more than 3 characters long.");
         exit();
     }
 
@@ -72,7 +72,7 @@
     // ********************* A D D   U S E R   T O   D B **********************
     
     // Encrypt password
-    $salt = "5gd87sdf^nh6?jytr98b!'d4qsdvzey;e1sfdf3gh'4zert9qsdti16f'4aer9jbhl67ivl";
+    $salt = "5gd87sf^h6?jytr98b!'d4qsvzy;e1sfdf3gh'4zet9qsdt16f'4ar9jbhl67ivl";
     $encrypted_password = hash("sha512", $salt . $password);
 
 
@@ -81,7 +81,7 @@
 
 
     // Prepare query to insert into the USER table in the database
-    $query = "INSERT INTO USER (username, email, password) VALUES (:username, :email, :password);";
+    $query = "INSERT INTO USER (username, email, password, keyboard) VALUES (:username, :email, :password, :keyboard);";
     $prepared_query = $db->prepare($query);
 
     // Execute query with user credentials
@@ -89,7 +89,8 @@
     ([
         "username" => $username, 
         "email" => $email,
-        "password" => $encrypted_password
+        "password" => $encrypted_password,
+        "keyboard" => $keyboard_layout
     ]);
 
 
