@@ -13,7 +13,7 @@
         </header>
 
         <main class="col ms-2 rounded rgb-shadow">
-          <form>
+          <form method="POST" action="./src/scripts/php/login_check.php">
             <label for="email-or-username">Email or username</label><br>
             <input type="text" id="email-or-username-inpt"
             name="email-or-username"><br><br>
@@ -28,15 +28,7 @@
             <input type="submit" placeholder="submit">
           </form>
 
-          <?php
-              if(isset($_GET["message"]) && !empty($_GET["message"]))
-              {
-                  echo 
-                    "<div class='alert alert-" . htmlspecialchars($_GET["type"]) . 
-                    "' role='alert'>" . htmlspecialchars($_GET["message"]) .
-                    "</div>";
-              }
-          ?>
+          <?php include("src/includes/message.php");?>
         </main>
       </div>
     </div>
