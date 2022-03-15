@@ -15,23 +15,23 @@
         <main class="col ms-2 d-flex justify-content-center align-items-center rounded rgb-shadow">
           <form class="d-flex justify-content-center flex-wrap w-25" method="POST" action="./src/scripts/php/signup_check.php">
             <label class="w-100 text-center" for="username">Username</label><br>
-            <input type="text" id="username-inpt" name="username"
+            <input class="mb-5" type="text" id="username-inpt" name="username"
             placeholder="JDoe"><br><br>
 
             <label class="w-100 text-center" for="email">Email</label><br>
-            <input type="email" id="email-inpt" name="email"
+            <input class="mb-5" type="email" id="email-inpt" name="email"
             placeholder="john.doe@email.com"><br><br>
 
             <label class="w-100 text-center" for="password">Password</label><br>
-            <input type="password" id="password-inpt" name="password"
+            <input class="mb-5" type="password" id="password-inpt" name="password"
             placeholder="••••••••••••••••"><br><br>
 
             <label class="w-100 text-center" for="confirm-password">Confirm password</label><br>
-            <input type="password" id="confirm-password-inpt"
+            <input class="mb-5" type="password" id="confirm-password-inpt"
             name="confirm-password" placeholder="••••••••••••••••"><br><br>
 
             <label class="w-100 text-center" for="keyboard-layout">Keyboard layout</label><br>
-            <select name="keyboard-layout" id="keyboard-layout-drpdwn">
+            <select class="mb-5 rounded-3" name="keyboard-layout" id="keyboard-layout-drpdwn">
               <option value="">--- Choose a layout ---</option>
               <option value="1">QWERTY</option>
               <option value="2">AZERTY</option>
