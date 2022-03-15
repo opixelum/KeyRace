@@ -15,19 +15,19 @@
         <main class="col ms-2 d-flex justify-content-center align-items-center rounded rgb-shadow">
           <form class="d-flex justify-content-center flex-wrap w-25" method="POST" action="./src/scripts/php/signup_check.php">
             <label class="w-100 text-center" for="username">Username</label><br>
-            <input class="mb-5" type="text" id="username-inpt" name="username"
+            <input class="mb-5 rounded-3" type="text" id="username-inpt" name="username"
             placeholder="JDoe"><br><br>
 
             <label class="w-100 text-center" for="email">Email</label><br>
-            <input class="mb-5" type="email" id="email-inpt" name="email"
+            <input class="mb-5 rounded-3"  type="email" id="email-inpt" name="email"
             placeholder="john.doe@email.com"><br><br>
 
             <label class="w-100 text-center" for="password">Password</label><br>
-            <input class="mb-5" type="password" id="password-inpt" name="password"
+            <input class="mb-5 rounded-3" type="password" id="password-inpt" name="password"
             placeholder="••••••••••••••••"><br><br>
 
             <label class="w-100 text-center" for="confirm-password">Confirm password</label><br>
-            <input class="mb-5" type="password" id="confirm-password-inpt"
+            <input class="mb-5 rounded-3" type="password" id="confirm-password-inpt"
             name="confirm-password" placeholder="••••••••••••••••"><br><br>
 
             <label class="w-100 text-center" for="keyboard-layout">Keyboard layout</label><br>
