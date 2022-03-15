@@ -4,7 +4,7 @@ const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 const typingDiv = document.querySelector("#typing")
 
 // Text to type
-const text = "This is a test. Try to type as fast as possible."
+const text = "Anto est trop sexy je me l'envoie"
 
 // Split the whole text by each character
 // Then create a span for each of those
