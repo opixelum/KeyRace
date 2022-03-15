@@ -29,6 +29,7 @@
             <label for="confirm-password">Confirm password</label><br>
             <input type="password" id="confirm-password-inpt"
             name="confirm-password" placeholder="••••••••••••••••"><br><br>
+            <h1>Salut</h1>
 
             <label for="keyboard-layout">Keyboard layout</label><br>
             <select name="keyboard-layout" id="keyboard-layout-drpdwn">
