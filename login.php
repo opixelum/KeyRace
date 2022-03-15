@@ -12,8 +12,8 @@
           <?php include("src/includes/navbar.php");?>
         </header>
 
-        <main class="col ms-2 rounded rgb-shadow">
-          <form>
+        <main class="col ms-2 rounded rgb-shadow d-flex justify-content-center align-items-center">
+          <form >
             <label for="email-or-username">Email or username</label><br>
             <input type="text" id="email-or-username-inpt"
             name="email-or-username"><br><br>
