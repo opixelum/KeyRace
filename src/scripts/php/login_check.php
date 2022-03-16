@@ -20,7 +20,7 @@
 
     // Prepare query to SELECT into the USER table in the database [-! ERROR !-]
     $query = 'SELECT * FROM USER WHERE email = :email AND password = :password AND username = :username';
-    $prepared_query = $db->query($query);
+    $prepared_query = $db->prepare($query);
     $prepared_query->execute(['email' => $_POST['email-or-username'],
                     'username' => $_POST['email-or-username'],
                     'password' => $encrypted_password
