@@ -1,12 +1,12 @@
 <?php
     // Cookie for save last username / email used
-    if(isset($_POST['email-or-username']))
+    if(isset($_POST['email']))
     {
-        setcookie('cookie-email-or-username', $_POST["email-or-username"], time() + 365*24*3600);
+        setcookie('cookie-email', $_POST["email"], time() + 365*24*3600);
     }
 
     // If user forgot to fill the password or the email / username
-    if(empty($_POST['email-or-username']) || empty($_POST['password']))
+    if(empty($_POST['email']) || empty($_POST['password']))
     {
         header('location:../../../login.php?type=warning&message=You must fill in both fields');
         exit;
@@ -19,14 +19,13 @@
     include('../../includes/salt.php');
 
     // Prepare query to SELECT into the USER table in the database [-! ERROR !-]
-    $query = 'SELECT * FROM USER WHERE (email = :email OR username = :username) AND password = :password ';
+    $query = 'SELECT * FROM USER WHERE email = :email AND password = :password ';
     $prepared_query = $db->prepare($query);
 
     // Execute query with user credentials
     $prepared_query->execute
     ([
-        'email' => $_POST['email-or-username'],
-        'username' => $_POST['email-or-username'],
+        'email' => $_POST['email'],
         'password' => $encrypted_password
     ]);
 
@@ -39,8 +38,6 @@
         exit;
     }
 
-    session_start();
-    $_SESSION['username'] = $_POST['...'];
-    header('../../../location:index.php');
+    header('location: ../../../index.php');
     exit;
 ?>

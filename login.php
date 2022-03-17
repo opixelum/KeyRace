@@ -14,9 +14,9 @@
 
         <main class="col ms-2 rounded rgb-shadow">
           <form method="POST" action="./src/scripts/php/login_check.php">
-            <label for="email-or-username">Email or username</label><br>
-            <input type="text" id="email-or-username-inpt"
-            name="email-or-username"><br><br>
+            <label for="email">Email</label><br>
+            <input type="text" id="email-inpt"
+            name="email"><br><br>
 
             <label for="password">Password</label><br>
             <input type="password" id="password-inpt" name="password"><br><br>
