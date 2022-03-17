@@ -87,7 +87,7 @@
     $result = $prepared_query->execute
     ([
         "username" => $username, 
-        "email" => $email,
+        "email"    => $email,
         "password" => $encrypted_password,
         "keyboard" => $keyboard_layout
     ]);
