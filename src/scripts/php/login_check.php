@@ -2,7 +2,7 @@
     // Cookie for save last username / email used
     if(isset($_POST['email']))
     {
-        setcookie('cookie-email', $_POST["email"], time() + 365*24*3600);
+        setcookie('email', $_POST["email"], time() + 365 * 24 * 3600);
     }
 
     // If user forgot to fill the password or the email / username
@@ -18,8 +18,8 @@
     // Include $encrypted_password
     include('../../includes/salt.php');
 
-    // Prepare query to SELECT into the USER table in the database [-! ERROR !-]
-    $query = 'SELECT * FROM USER WHERE email = :email AND password = :password ';
+    // Prepare query to SELECT into the USER table in the database
+    $query = 'SELECT * FROM USER WHERE email = :email AND password = :password';
     $prepared_query = $db->prepare($query);
 
     // Execute query with user credentials
@@ -31,13 +31,15 @@
 
     $result = $prepared_query->fetchAll();
 
-    // Not finished
+    // If credentials don't match
     if(!$result)
     {
         header('location:../../../login.php?type=danger&message=Incorrect identifiers');
         exit;
     }
 
+    // If credentilals match
+    $_SESSION["email"] = $_POST["email"];
     header('location: ../../../index.php');
     exit;
 ?>
