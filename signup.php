@@ -2,7 +2,7 @@
 <html lang="en">
   <?php
       $title = "Sign up | KeyRace";
-      include("./src/includes/head.php");
+      include("src/includes/head.php");
   ?>
 
   <body class="dark-theme">
@@ -41,15 +41,7 @@
             <input type="submit" placeholder="submit">
           </form>
 
-          <?php
-              if(isset($_GET["message"]) && !empty($_GET["message"]))
-              {
-                  echo 
-                    "<div class='alert alert-" . htmlspecialchars($_GET["type"]) . 
-                    "' role='alert'>" . htmlspecialchars($_GET["message"]) .
-                    "</div>";
-              }
-          ?>
+          <?php include("src/includes/message.php");?>
         </main>
       </div>
     </div>
