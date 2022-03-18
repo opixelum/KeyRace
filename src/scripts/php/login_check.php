@@ -1,4 +1,6 @@
-<?php
+<?php 
+    session_start();
+
     // Cookie for save last username / email used
     if(isset($_POST['email']))
     {
