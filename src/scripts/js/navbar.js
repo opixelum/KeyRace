@@ -41,13 +41,13 @@ if (getCookie("isLoggedIn")) {
     })
 
     // Multiplayer button
-    const multiplayerBtn= document.querySelector("#settings-btn")
+    const multiplayerBtn= document.querySelector("#multiplayer-btn")
     multiplayerBtn.addEventListener("click", () => {
-        window.location.href = "./leaderboard.php"
+        window.location.href = "./multiplayer.php"
     })
 
     // Training button
-    const trainingBtn = document.querySelector("#settings-btn")
+    const trainingBtn = document.querySelector("#training-btn")
     trainingBtn.addEventListener("click", () => {
         window.location.href = "./training.php"
     })
@@ -76,7 +76,7 @@ if (getCookie("isLoggedIn")) {
 // Leaderboard button
 const leaderboardBtn = document.querySelector("#leaderboard-btn")
 leaderboardBtn.addEventListener("click", () => {
-    window.location.href = "./settings.php"
+    window.location.href = "./leaderboard.php"
 })
 
 // Settings button

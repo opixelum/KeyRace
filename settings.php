@@ -17,7 +17,8 @@
             <input class="form-check-input" type="checkbox" role="switch"
             id="theme-switch">
             <label class="form-check-label" for="theme-switch">
-            Dark / Light mode</div>
+              Dark / Light mode
+            </laber>
           </form>
         </main>
       </div>
