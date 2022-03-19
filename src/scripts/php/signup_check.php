@@ -1,4 +1,7 @@
 <?php 
+    // Connect to database
+    include("./db_connect.php");
+
     // Store user credentials in variables
     $username         = $_POST["username"];
     $email            = $_POST["email"];
@@ -19,7 +22,7 @@
         exit();
     }
 
-    // If username not enough long
+    // If username not long enough 
     if (strlen($username) < 3)
     {
         header("location: ../../../signup.php?type=warning&message=Username must be more than 3 characters long.");
@@ -44,6 +47,18 @@
     if (!filter_var($email, FILTER_VALIDATE_EMAIL))
     {
         header("location: ../../../signup.php?type=warning&message=Email has wrong format.");
+        exit();
+    }
+
+    // If email is already registered
+    $query = "SELECT * FROM USER WHERE email = :email";
+    $prepared_query = $db->prepare($query);
+    $prepared_query->execute(["email" => $email]);
+    $result = $prepared_query->fetchAll();
+
+    if ($result)
+    {
+        header("location: ../../../signup.php?type=warning&message=Email is already used.");
         exit();
     }
 
@@ -73,10 +88,6 @@
     
     // Encrypt password
     include("../../includes/salt.php");
-
-
-    // Connect to database
-    include("./db_connect.php");
 
 
     // Prepare query to insert into the USER table in the database
