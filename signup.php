@@ -62,7 +62,7 @@
       </div>
     </div>
 
-    <script src="./src/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="./src/scripts/js/main.js"></script>
+    <script src="./src/scripts/js/captcha.js"></script>
   </body>
 </html>
