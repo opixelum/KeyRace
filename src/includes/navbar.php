@@ -39,4 +39,5 @@
     <br><br>
     <small class="w-100 mb-3 text-center">© KeyRace 2022</small>
   </div>
+  <script src="./src/scripts/js/navbar.js"></script>
 </div>
