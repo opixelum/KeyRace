@@ -5,7 +5,7 @@
     // If user forgot to fill the password or the email / username
     if(empty($_POST['email']) || empty($_POST['password']))
     {
-        header('location:../../../login.php?type=warning&message=You must fill in both fields');
+        header('location: ../../../login.php?type=warning&message=You must fill in both fields');
         exit;
     }
 
@@ -31,7 +31,7 @@
     // If credentials don't match
     if(!$result)
     {
-        header('location:../../../login.php?type=danger&message=Incorrect identifiers');
+        header('location: ../../../login.php?type=danger&message=Incorrect identifiers');
         exit;
     }
 
