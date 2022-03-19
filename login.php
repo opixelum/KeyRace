@@ -28,11 +28,28 @@
             <input type="submit" placeholder="submit">
           </form>
 
+          <div id="puzzle_container">
+            <div class="puzzle_block">1</div>
+            <div class="puzzle_block">2</div>
+            <div class="puzzle_block">3</div>
+            <div class="puzzle_block">4</div>
+            <div class="puzzle_block">5</div>
+            <div class="puzzle_block">6</div>
+            <div class="puzzle_block">7</div>
+            <div class="puzzle_block">8</div>
+          </div>
+          <div id="difficulty_container">
+            <div class="difficulty_button active">EASY</div>
+            <div class="difficulty_button">MEDIUM</div>
+            <div class="difficulty_button">HARD</div>
+          </div>
+
           <?php include("src/includes/message.php");?>
         </main>
       </div>
     </div>
 
     <script src="./src/scripts/js/main.js"></script>
+    <script src="./src/scripts/js/captcha.js"></script>
   </body>
 </html>
