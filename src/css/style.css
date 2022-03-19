@@ -153,8 +153,8 @@ a {
 
 #captcha_container{
     position: relative;
-    width: 499px;
-    height: 499px;
+    width: 500px;
+    height: 500px;
 }
 
 .captcha_block{
@@ -164,6 +164,8 @@ a {
     width:33.4%;
     height:33.4%;
     cursor: pointer;
+    transition:left 0.4s, top 0.4s;
+    border: 1px solid #000;
 }
 
 /*reset container*/
