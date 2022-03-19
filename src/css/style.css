@@ -179,7 +179,7 @@ a {
 }
 
 /*difficulty container*/
-#difficulty_container{
+#reset_container{
     display:flex;
     flex-direction:row;
     width:50vh;
@@ -188,7 +188,7 @@ a {
     border-radius:8px;
     margin-top:22px;
 }
-.difficulty_button{
+.reset_button{
     flex-grow:1;
     background-color:inherit;
     color:var(--mcol2);
@@ -200,11 +200,11 @@ a {
     cursor: pointer;
     transition:font-size 0.3s;
 }
-.difficulty_button:hover{
+.reset_button:hover{
     opacity:0.8;
     font-size:3.5vh;
 }
-.difficulty_button.active{
+.reset_button.active{
     background-color:inherit;
     color:var(--mcol0);
 }

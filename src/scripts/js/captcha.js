@@ -92,15 +92,12 @@ class captcha {
 
 }
 
-let game=new captcha(1)//instantiate a new Game
+let game = new captcha(1)//instantiate a new Game
 
 
 //taking care of the difficulty buttons (a suppr)
-let difficulty_buttons = Array.from(document.getElementsByClassName("difficulty_button"))
-difficulty_buttons.forEach((elem,idx) => {
-    elem.addEventListener('click', (e) => {
-        difficulty_buttons[GameDifficulty.indexOf(game.difficulty)].classList.remove("active")
-        elem.classList.add("active")
-        game.setDifficulty(idx+1)
-    });
+//taking care of the difficulty buttons (a suppr)
+let reset_button = document.querySelector(".reset_button")
+reset_button.addEventListener('click', () => {
+    game.setDifficulty()
 });

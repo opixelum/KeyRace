@@ -51,10 +51,8 @@
             <div class="puzzle_block">7</div>
             <div class="puzzle_block">8</div>
           </div>
-          <div id="difficulty_container">
-            <div class="difficulty_button active">EASY</div>
-            <div class="difficulty_button">MEDIUM</div>
-            <div class="difficulty_button">HARD</div>
+          <div id="reset_container">
+            <div class="reset_button">Reset</div>
           </div>
 
           <?php include("src/includes/message.php");?>
