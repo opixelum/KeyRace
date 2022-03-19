@@ -1,11 +1,6 @@
 <?php 
     session_start();
 
-    // Cookie for save last username / email used
-    if(isset($_POST['email']))
-    {
-        setcookie('email', $_POST["email"], time() + 365 * 24 * 3600);
-    }
 
     // If user forgot to fill the password or the email / username
     if(empty($_POST['email']) || empty($_POST['password']))

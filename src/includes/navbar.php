@@ -22,10 +22,12 @@
                 <button id="customization-btn" class="btn m-2">Customization</button>
                 <button id="settings-btn" class="btn m-2">Settings</button>
               </div>
-              <a href="./scr/scripts/php/logout.php" class="w-100 mb-3 text-center">Log out</a>
+              <a href="./src/scripts/php/logout.php" class="w-100 mb-3 text-center">Log out</a>
             ';
       } else {
           unset($_COOKIE["isLoggedIn"]);
+          setcookie("isLoggedIn", '', 0, '/');
+
           echo '
               <div class="d-flex flex-column justify-content-between">
                 <button id="sign-up-btn" class="btn m-2">Sign up</button>
