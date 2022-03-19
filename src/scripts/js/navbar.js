@@ -8,6 +8,7 @@
  * @author Jérémy "Saygel" Micu
  */
 
+
 function getCookie(key) {
     var keyEQ = key + "=";
     var cookies = document.cookie.split(';');
@@ -25,7 +26,6 @@ function getCookie(key) {
 }
 
 if (getCookie("isLoggedIn")) {
-    console.log("Logged in")
     // If user isn't logged in
 
     // Profile button
@@ -58,7 +58,6 @@ if (getCookie("isLoggedIn")) {
         window.location.href = "./customization.php"
     })
 } else {
-    console.log("Not logged in")
     // If user is logged in
 
     // Sign in button
