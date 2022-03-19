@@ -27,7 +27,7 @@ class captcha {
             }
         }
         this.indexes.push(this.count-1)
-        this.randomize(this.difficulty)
+        this.randomize(20)
     }
 
     randomize(iterationCount) {//move a random block (x iterationCount)
@@ -85,11 +85,6 @@ class captcha {
         return true
     }
 
-    setDifficulty(difficultyLevel) {//set difficulty
-        this.difficulty = GameDifficulty[difficultyLevel-1]
-        this.randomize(this.difficulty)
-    }
-
 }
 
 let game = new captcha(1)//instantiate a new Game
@@ -99,5 +94,5 @@ let game = new captcha(1)//instantiate a new Game
 //taking care of the difficulty buttons (a suppr)
 let reset_button = document.querySelector(".reset_button")
 reset_button.addEventListener('click', () => {
-    game.setDifficulty()
+    game.randomize(20)
 });
