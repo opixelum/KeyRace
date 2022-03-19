@@ -124,6 +124,10 @@ input[type="search"]::-webkit-search-cancel-button {
     background-color: #c00;
 }
 
+a {
+    color: #888;
+}
+
 
 /*------------------------------- F O O T E R -------------------------------*/
 

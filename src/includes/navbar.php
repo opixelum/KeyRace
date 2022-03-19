@@ -10,21 +10,24 @@
   </div>
 
   <?php
-      $isLoggedIn = false; // Temporary
-
-      if ($isLoggedIn) {
+      if (isset($_SESSION["email"])) {
+          setcookie("isLoggedIn", true, time() + 365 * 24 * 3600, '/');
           echo '
-              <div class="navbar">
-                <button>Profile</button>
-                <button>Campaign</button>
-                <button>Multiplayer</button>
-                <button>Training</button>
-                <button>Leaderboard</button>
-                <button>Customization</button>
-                <button>Settings</button>
+              <div class="d-flex flex-column justify-content-between">
+                <button id="profile-btn" class="btn m-2">Profile</button>
+                <button id="campaign-btn" class="btn m-2">Campaign</button>
+                <button id="multiplayer-btn" class="btn m-2">Multiplayer</button>
+                <button id="training-btn" class="btn m-2">Training</button>
+                <button id="leaderboard-btn" class="btn m-2">Leaderboard</button>
+                <button id="customization-btn" class="btn m-2">Customization</button>
+                <button id="settings-btn" class="btn m-2">Settings</button>
               </div>
+              <a href="./src/scripts/php/logout.php" class="w-100 mb-3 text-center">Log out</a>
             ';
       } else {
+          unset($_COOKIE["isLoggedIn"]);
+          setcookie("isLoggedIn", '', 0, '/');
+
           echo '
               <div class="d-flex flex-column justify-content-between">
                 <button id="sign-up-btn" class="btn m-2">Sign up</button>
@@ -41,4 +44,5 @@
     <br><br>
     <small class="w-100 mb-3 text-center">© KeyRace 2022</small>
   </div>
+  <script src="./src/scripts/js/navbar.js"></script>
 </div>
