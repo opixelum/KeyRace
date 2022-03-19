@@ -8,7 +8,6 @@
  * @author Jérémy "Saygel" Micu
  */
 
-
 window.onload = () => {
     if (localStorage.getItem("theme") === "dark") {
         // Change from light to dark theme
@@ -25,9 +24,16 @@ window.onload = () => {
     }
 }
 
-
 // Start button
-const startBtn = document.querySelector("#start-btn")
-startBtn.addEventListener("click", function() {
+if ( getCookie("isLoggedIn")) {
+    const startBtn = document.querySelector("#start-btn")
+    startBtn.addEventListener("click", function() {
+    window.location.href = "./training.php"
+    })
+}
+else {
+    const startBtn = document.querySelector("#start-btn")
+    startBtn.addEventListener("click", function() {
     window.location.href = "./signup.php"
-})
+    })
+}
