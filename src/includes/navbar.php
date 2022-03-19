@@ -11,6 +11,7 @@
 
   <?php
       if (isset($_SESSION["email"])) {
+          setcookie("isLoggedIn", true, time() + 365 * 24 * 3600, '/');
           echo '
               <div class="d-flex flex-column justify-content-between">
                 <button id="profile-btn" class="btn m-2">Profile</button>
@@ -21,8 +22,10 @@
                 <button id="customization-btn" class="btn m-2">Customization</button>
                 <button id="settings-btn" class="btn m-2">Settings</button>
               </div>
+              <a href="./scr/scripts/php/logout.php">Log out</a>
             ';
       } else {
+          unset($_COOKIE["isLoggedIn"]);
           echo '
               <div class="d-flex flex-column justify-content-between">
                 <button id="sign-up-btn" class="btn m-2">Sign up</button>

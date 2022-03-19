@@ -42,7 +42,6 @@
 
     // If credentilals match
     $_SESSION["email"] = $_POST["email"];
-    setcookie("isLoggedIn", true, time() + 365 * 24 * 3600, '/');
     header('location: ../../../index.php');
     exit;
 ?>
