@@ -27,7 +27,7 @@ class captcha {
         this.randomize(20)
     }
 
-    randomize(iterationCount) {//move a random block (x iterationCount)
+    randomize(iterationCount) { // Move a random block (x iterationCount)
         for (let i = 0; i<iterationCount; i++) {
             let randomBlockIdx=Math.floor(Math.random() * (this.count-1))
             let moved = this.moveBlock(randomBlockIdx)
@@ -35,7 +35,7 @@ class captcha {
         }
     }
 
-    moveBlock(blockIdx) {//moves a block and return true if the block has moved
+    moveBlock(blockIdx) { // Moves a block and return true if the block has moved
         let block = this.blocks[blockIdx]
         let blockCoords = this.canMoveBlock(block)
         if (blockCoords != null) {
@@ -50,7 +50,7 @@ class captcha {
         return false;
     }
 
-    canMoveBlock(block) {//return the block coordinates if he can move else return null
+    canMoveBlock(block) { // Return the block coordinates if he can move else return null
         let blockPos = [parseInt(block.style.left),parseInt(block.style.top)]
         let blockWidth = block.clientWidth
         let blockCoords = [blockPos[0]/blockWidth, blockPos[1]/blockWidth]
@@ -60,13 +60,13 @@ class captcha {
         else return null
     }
 
-    positionBlockAtCoord(blockIdx, x, y) {//position the block at a certain coordinates
+    positionBlockAtCoord(blockIdx, x, y) { // Position the block at a certain coordinates
         let block = this.blocks[blockIdx]
         block.style.left = (x*block.clientWidth) + "px"
         block.style.top = (y*block.clientWidth) + "px"
     }
 
-    onClickOnBlock(blockIdx) {//try move block and check if puzzle was solved
+    onClickOnBlock(blockIdx) { // Try move block and check if puzzle was solved
         if (this.moveBlock(blockIdx)) {
             if (this.checkPuzzleSolved()) {
                 setTimeout(()=>alert("Puzzle Solved!!"), 600)
@@ -84,7 +84,7 @@ class captcha {
 
 }
 
-let game = new captcha //For reset the 
+let newCaptcha = new captcha //For create a new captcha
 
 // Re-mix the images
 let reset_button = document.querySelector(".reset_button")
