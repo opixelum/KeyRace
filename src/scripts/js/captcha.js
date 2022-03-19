@@ -1,6 +1,4 @@
-const GameDifficulty = [20,50,70];
 class captcha {
-    difficulty//difficulty based on GameDifficulty array
     cols=3 // How many colomns
     rows=3 // How many rows
     count // cols*rows
@@ -8,8 +6,7 @@ class captcha {
     emptyBlockCoords=[2,2] // The coordinates of the empty block
     indexes=[] // Keeps track of the order of the blocks
 
-    constructor(difficultyLevel = 1) {
-        this.difficulty = GameDifficulty[difficultyLevel-1]
+    constructor() {
         this.count = this.cols * this.rows
         this.blocks = document.getElementsByClassName("puzzle_block") // Grab the blocks
         this.init()
