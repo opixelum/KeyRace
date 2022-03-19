@@ -89,5 +89,5 @@ let newCaptcha = new captcha //For create a new captcha
 // Re-mix the images
 let reset_button = document.querySelector(".reset_button")
 reset_button.addEventListener('click', () => {
-    game.randomize(20)
+    newCaptcha.randomize(20)
 });
