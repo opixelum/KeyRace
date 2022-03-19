@@ -151,13 +151,13 @@ a {
 
 /*------------------------------ C A P T C H A ------------------------------*/
 
-#puzzle_container{
+#captcha_container {
     position: relative;
     width: 20%;
     height: 20%;
 }
 
-.puzzle_block{
+.captcha_block {
     position: absolute;
     left: 0;
     top: 0;
@@ -168,7 +168,7 @@ a {
 }
 
 /*reset container*/
-#reset_container{
+#reset_container {
     display: flex;
     flex-direction: row;
     width: 50vh;
@@ -177,7 +177,7 @@ a {
     border-radius: 8px;
     margin-top: 22px;
 }
-.reset_button{
+.reset_button {
     flex-grow: 1;
     background-color: inherit;
     color: var(--mcol2);
@@ -189,7 +189,7 @@ a {
     cursor:  pointer;
     transition: font-size 0.3s;
 }
-.reset_button:hover{
+.reset_button:hover {
     opacity: 0.8;
     font-size: 3.5vh;
 }

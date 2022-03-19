@@ -2,13 +2,13 @@ class captcha {
     cols=3 // How many colomns
     rows=3 // How many rows
     count // cols*rows
-    blocks // The html elements with className="puzzle_block"
+    blocks // The html elements with className="captcha_block"
     emptyBlockCoords=[2,2] // The coordinates of the empty block
     indexes=[] // Keeps track of the order of the blocks
 
     constructor() {
         this.count = this.cols * this.rows
-        this.blocks = document.getElementsByClassName("puzzle_block") // Grab the blocks
+        this.blocks = document.getElementsByClassName("captcha_block") // Grab the blocks
         this.init()
     }
 
@@ -66,15 +66,15 @@ class captcha {
         block.style.top = (y*block.clientWidth) + "px"
     }
 
-    onClickOnBlock(blockIdx) { // Try move block and check if puzzle was solved
+    onClickOnBlock(blockIdx) { // Try move block and check if captcha was solved
         if (this.moveBlock(blockIdx)) {
-            if (this.checkPuzzleSolved()) {
-                setTimeout(()=>alert("Puzzle Solved!!"), 600)
+            if (this.checkCaptchaSolved()) {
+                setTimeout(()=>alert("Captcha Solved!!"), 600)
             }
         }
     }
 
-    checkPuzzleSolved() { // Return if puzzle was solved
+    checkCaptchaSolved() { // Return if Captcha was solved
         for (let i  =0; i < this.indexes.length; i++){
             if (i==this.emptyBlockCoords[0] + this.emptyBlockCoords[1]*this.cols) continue
             if (this.indexes[i] != i) return false
