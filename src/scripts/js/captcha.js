@@ -77,7 +77,7 @@ class captcha {
         }
     }
 
-    checkPuzzleSolved() {//return if puzzle was solved
+    checkPuzzleSolved() { // Return if puzzle was solved
         for (let i  =0; i < this.indexes.length; i++){
             if (i==this.emptyBlockCoords[0] + this.emptyBlockCoords[1]*this.cols) continue
             if (this.indexes[i] != i) return false
@@ -87,11 +87,9 @@ class captcha {
 
 }
 
-let game = new captcha(1)//instantiate a new Game
+let game = new captcha //For reset the 
 
-
-//taking care of the difficulty buttons (a suppr)
-//taking care of the difficulty buttons (a suppr)
+// Re-mix the images
 let reset_button = document.querySelector(".reset_button")
 reset_button.addEventListener('click', () => {
     game.randomize(20)
