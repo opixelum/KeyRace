@@ -30,7 +30,7 @@ class captcha {
 
     randomize(iterationCount) { // Move a random block (x iterationCount)
         for (let i = 0; i < iterationCount; i++) {
-            let randomBlockIdx=Math.floor(Math.random() * (this.count-1))
+            let randomBlockIdx = Math.floor(Math.random() * (this.count-1))
             let moved = this.moveBlock(randomBlockIdx)
             if (!moved) i--
         }
