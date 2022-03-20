@@ -22,6 +22,7 @@
               required
               type="email"
               value="<?php
+                  // Set cookie value to input field
                   echo isset($_COOKIE["email"]) ? $_COOKIE["email"] : '';
               ?>" 
             ><br><br>

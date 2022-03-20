@@ -18,6 +18,7 @@
             <input
               type="text"
               value="<?php 
+                  // Set cookie value to input field
                   echo isset($_COOKIE["username"]) ? $_COOKIE["username"] : '';
               ?>" 
               id="username-inpt"
@@ -30,6 +31,7 @@
             <input
               type="email"
               value="<?php
+                  // Set cookie value to input field
                   echo isset($_COOKIE["email"]) ? $_COOKIE["email"] : '';
               ?>" 
               id="email-inpt"
