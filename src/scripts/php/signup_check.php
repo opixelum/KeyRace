@@ -16,7 +16,8 @@
 
     if (isset($_POST["username"]))
     {
-        setcookie(
+        setcookie
+        (
             "username",           // Name
             $username,            // Value
             time() + 600,         // Expiration date
@@ -26,7 +27,8 @@
 
     if (isset($_POST["email"]))
     {
-        setcookie(
+        setcookie
+        (
             "email",              // Name
             $email,               // Value
             time() + 600,         // Expiration date
@@ -36,7 +38,8 @@
 
     if (isset($_POST["keyboard-layout"]))
     {
-        setcookie(
+        setcookie
+        (
             "keyboard_layout",    // Name
             $keyboard_layout,     // Value
             time() + 600,         // Expiration date
