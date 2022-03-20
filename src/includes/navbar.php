@@ -5,36 +5,56 @@
     <a class="my-4" href="./index.php">
       <img alt="KeyRace logo" width="100px" src="./src/images/logo.png">
     </a>
-    <input class="search border-0 m-2 px-3 py-2 w-100 rounded-pill" type="search" id="search-field"
-    name="search-field" placeholder="Search for a player">
+    <input
+      class="search border-0 m-2 px-3 py-2 w-100 rounded-pill"
+      type="search"
+      id="search-field"
+      name="search-field"
+      placeholder="Search for a player"
+    >
   </div>
 
   <?php
-      if (isset($_SESSION["email"])) {
-          setcookie("isLoggedIn", true, time() + 365 * 24 * 3600, '/');
-          echo '
-              <div class="d-flex flex-column justify-content-between">
-                <button id="profile-btn" class="btn m-2">Profile</button>
-                <button id="campaign-btn" class="btn m-2">Campaign</button>
-                <button id="multiplayer-btn" class="btn m-2">Multiplayer</button>
-                <button id="training-btn" class="btn m-2">Training</button>
-                <button id="leaderboard-btn" class="btn m-2">Leaderboard</button>
-                <button id="customization-btn" class="btn m-2">Customization</button>
-                <button id="settings-btn" class="btn m-2">Settings</button>
-              </div>
-              <a href="./src/scripts/php/logout.php" class="w-100 mb-3 text-center">Log out</a>
-            ';
-      } else {
-          isset($_COOKIE["isLoggedIn"]) && setcookie("isLoggedIn", '', 0, '/');
+      // Class for buttons
+      $class = "class='btn m-2'";
 
-          echo '
-              <div class="d-flex flex-column justify-content-between">
-                <button id="sign-up-btn" class="btn m-2">Sign up</button>
-                <button id="log-in-btn" class="btn m-2">Log in</button>
-                <button id="leaderboard-btn" class="btn m-2">Leaderboard</button>
-                <button id="settings-btn" class="btn m-2">Settings</button>
+      if (isset($_SESSION["email"]))
+      {
+          setcookie("isLoggedIn", true, time() + 365 * 24 * 3600, '/');
+          echo
+          "
+              <div class='d-flex flex-column justify-content-between'>
+                <button id='profile-btn' $class>Profile</button>
+                <button id='campaign-btn' $class>Campaign</button>
+                <button id='multiplayer-btn' $class>Multiplayer</button>
+                <button id='training-btn' $class>Training</button>
+                <button id='leaderboard-btn' $class>Leaderboard</button>
+                <button id='customization-btn' $class>Customization</button>
+                <button id='settings-btn' $class>Settings</button>
               </div>
-            ';
+              <a
+                href='./src/scripts/php/logout.php'
+                class='w-100 mb-3 text-center'
+              >Log out</a>
+          ";
+      }
+      else
+      {
+          isset
+          (
+              $_COOKIE["isLoggedIn"]) && 
+              setcookie("isLoggedIn", '', 0, '/'
+          );
+
+          echo
+          "
+              <div class='d-flex flex-column justify-content-between'>
+                <button id='sign-up-btn' $class>Sign up</button>
+                <button id='log-in-btn' $class>Log in</button>
+                <button id='leaderboard-btn' $class>Leaderboard</button>
+                <button id='settings-btn' $class>Settings</button>
+              </div>
+          ";
       }
   ?>
 
