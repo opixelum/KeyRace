@@ -15,17 +15,17 @@
         $phpmailer->isSMTP();
 
         // Set the SMTP server to send through
-        $phpmailer->Host = 'smtp.mailtrap.io';
+        $phpmailer->Host = 'smtp.gmail.com';
         
         // Enable SMTP authentication
         $phpmailer->SMTPAuth = true;
 
         // TCP port to connect to;
-        $phpmailer->Port = 2525;
+        $phpmailer->Port = 465;
 
         // SMTP credentials
-        $phpmailer->Username = 'f118b92fb4780b';
-        $phpmailer->Password = '4543328055deb5';
+        $phpmailer->Username = 'Key Race';
+        $phpmailer->Password = ',N9!hQWx3X%79dc';
 
 
         // Recipients
