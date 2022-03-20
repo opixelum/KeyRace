@@ -28,7 +28,7 @@ class captcha {
     }
 
     randomize(iterationCount) { // Move a random block (x iterationCount)
-        for (let i = 0; i<iterationCount; i++) {
+        for (let i = 0; i < iterationCount; i++) {
             let randomBlockIdx=Math.floor(Math.random() * (this.count-1))
             let moved = this.moveBlock(randomBlockIdx)
             if (!moved) i--
@@ -90,5 +90,5 @@ let newCaptcha = new captcha //For create a new captcha
 // Re-mix the images
 let reset_button = document.querySelector(".reset_button")
 reset_button.addEventListener('click', () => {
-    newCaptcha.randomize(20)
+    newCaptcha.randomize(9)
 })
