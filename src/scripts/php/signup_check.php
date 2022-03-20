@@ -132,9 +132,9 @@
     if ($result)
     {
         // Delete temporary cookies
-        setcookie("username", '');
-        setcookie("email", '');
-        setcookie("keyboard_layout", '');
+        setcookie("username", '', 0, "/KeyRace/signup.php");
+        setcookie("email", '', 0, "/KeyRace/signup.php");
+        setcookie("keyboard_layout", '', 0, "/KeyRace/signup.php");
 
         header("location: ../../../login.php?type=success&message=Accout created. Verify your email address before login in.");
         exit();

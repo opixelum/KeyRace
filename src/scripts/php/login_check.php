@@ -41,7 +41,10 @@
     }
 
     // If credentilals match
+
+    // Delete temporary cookie
     setcookie("email", '', 0, "/KeyRace/login.php");
+
     $_SESSION["email"] = $_POST["email"];
     header("location: ../../../index.php");
     exit;
