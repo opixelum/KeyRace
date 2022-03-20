@@ -15,11 +15,11 @@
         <main class="col ms-2 rounded rgb-shadow">
           <form method="POST" action="./src/scripts/php/signup_check.php">
             <label for="username">Username</label><br>
-            <input type="text" value="<?php echo isset($_COOKIE['username_cookie']) ? $_COOKIE['username_cookie'] : '';?>" 
+            <input type="text" value="<?php echo isset($_COOKIE["username"]) ? $_COOKIE["username"] : '';?>" 
             id="username-inpt" name="username" placeholder="JDoe" required><br><br>
 
             <label for="email">Email</label><br>
-            <input type="email" value="<?php echo isset($_COOKIE['email_cookie']) ? $_COOKIE['email_cookie'] : '';?>" 
+            <input type="email" value="<?php echo isset($_COOKIE["email"]) ? $_COOKIE["email"] : '';?>" 
             id="email-inpt" name="email" placeholder="john.doe@email.com" required><br><br>
 
             <label for="password">Password</label><br>
@@ -32,10 +32,10 @@
 
             <label for="keyboard-layout">Keyboard layout</label><br>
             <select name="keyboard-layout" id="keyboard-layout-drpdwn" required>
-              <option value="">--- Choose a layout ---</option>
-              <option value="1">QWERTY</option>
-              <option value="2">AZERTY</option>
-              <option value="3">DVORAK</option>
+              <option value=''>--- Choose a layout ---</option>
+              <option value='1'>QWERTY</option>
+              <option value='2'>AZERTY</option>
+              <option value='3'>DVORAK</option>
             </select><br><br>
 
             <input type="submit" placeholder="submit">

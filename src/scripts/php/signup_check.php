@@ -6,16 +6,19 @@
     $confirm_password = $_POST["confirm-password"];
     $keyboard_layout  = $_POST["keyboard-layout"];
 
+
     // **************************** C O O K I E S ****************************
 
-    if(isset($_POST['username']))
+    // Set temporary cookies to prevent credentials rewriting
+
+    if(isset($_POST["username"]))
     {
-        setcookie('username_cookie', $_POST["username"], time() + 1800);
+        setcookie("username", $_POST["username"], time() + 600, "/KeyRace/signup.php");
     }
 
-    if(isset($_POST['email']))
+    if(isset($_POST["email"]))
     {
-        setcookie('email_cookie', $_POST["email"], time() + 1800);
+        setcookie("email", $_POST["email"], time() + 600, "/KeyRace/signup.php");
     }
 
 
@@ -108,6 +111,10 @@
     // If query was successful
     if ($result)
     {
+        // Delete temporary cookies
+        setcookie("username", '', 0);
+        setcookie("email", '', 0);
+
         header("location: ../../../login.php?type=success&message=Accout created. Verify your email address before login in.");
         exit();
     }
