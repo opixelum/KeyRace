@@ -1,7 +1,6 @@
 <?php 
     session_start();
 
-
     // If user forgot to fill the password or the email / username
     if(empty($_POST['email']) || empty($_POST['password']))
     {
@@ -31,7 +30,7 @@
     // If credentials don't match
     if(!$result)
     {
-        header('location: ../../../login.php?type=danger&message=Incorrect identifiers');
+        header('location: ../../../login.php?type=danger&message=Wrong email or password.');
         exit;
     }
 
