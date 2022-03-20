@@ -6,6 +6,18 @@
     $confirm_password = $_POST["confirm-password"];
     $keyboard_layout  = $_POST["keyboard-layout"];
 
+    // **************************** C O O K I E S ****************************
+
+    if(isset($_POST['username']))
+    {
+        setcookie('username_cookie', $_POST["username"], time() + 1800);
+    }
+
+    if(isset($_POST['email']))
+    {
+        setcookie('email_cookie', $_POST["email"], time() + 1800);
+    }
+
 
     // *************** F I E L D S   V E R I F I C A T I O N S ****************
 

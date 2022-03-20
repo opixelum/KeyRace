@@ -15,8 +15,8 @@
         <main class="col ms-2 rounded rgb-shadow">
           <form method="POST" action="./src/scripts/php/login_check.php">
             <label for="email">Email</label><br>
-            <input type="text" id="email-inpt"
-            name="email"><br><br>
+            <input type="email" value="<?php echo isset($_COOKIE['email_cookie']) ? $_COOKIE['email_cookie'] : '';?>" 
+            id="email-inpt" name="email"><br><br>
 
             <label for="password">Password</label><br>
             <input type="password" id="password-inpt" name="password"><br><br>

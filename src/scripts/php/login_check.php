@@ -1,6 +1,11 @@
 <?php 
     session_start();
 
+    
+    if(isset($_POST['email']))
+    {
+        setcookie('email_cookie', $_POST["email"], time() + 1800);
+    }
 
     // If user forgot to fill the password or the email / username
     if(empty($_POST['email']) || empty($_POST['password']))
