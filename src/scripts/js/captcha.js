@@ -19,7 +19,7 @@ class captcha {
                 if (blockIdx+1 >= this.count) break
                 let block = this.blocks[blockIdx]
                 this.positionBlockAtCoord(blockIdx,x,y)
-                block.addEventListener('click', (e) => this.onClickOnBlock(blockIdx))
+                block.addEventListener('click', () => this.onClickOnBlock(blockIdx))
                 this.indexes.push(blockIdx)
             }
         }
@@ -84,10 +84,11 @@ class captcha {
 
 }
 
+
 let newCaptcha = new captcha //For create a new captcha
 
 // Re-mix the images
 let reset_button = document.querySelector(".reset_button")
 reset_button.addEventListener('click', () => {
     newCaptcha.randomize(20)
-});
+})
