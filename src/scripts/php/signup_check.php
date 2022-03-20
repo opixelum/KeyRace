@@ -10,6 +10,41 @@
     $keyboard_layout  = $_POST["keyboard-layout"];
 
 
+    // **************************** C O O K I E S ****************************
+
+    // Set temporary cookies to prevent credentials rewriting
+
+    if (isset($_POST["username"]))
+    {
+        setcookie(
+            "username",           // Name
+            $username,            // Value
+            time() + 600,         // Expiration date
+            "/KeyRace/signup.php" // Path
+        );
+    }
+
+    if (isset($_POST["email"]))
+    {
+        setcookie(
+            "email",              // Name
+            $email,               // Value
+            time() + 600,         // Expiration date
+            "/KeyRace/signup.php" // Path
+        );
+    }
+
+    if (isset($_POST["keyboard-layout"]))
+    {
+        setcookie(
+            "keyboard_layout",    // Name
+            $keyboard_layout,     // Value
+            time() + 600,         // Expiration date
+            "/KeyRace/signup.php" // Path
+        );
+    }
+
+
     // *************** F I E L D S   V E R I F I C A T I O N S ****************
 
     // If an error is caught, redirect to signup page with the error message 
@@ -110,6 +145,11 @@
     // If query was successful
     if ($result)
     {
+        // Delete temporary cookies
+        setcookie("username", '', 0, "/KeyRace/signup.php");
+        setcookie("email", '', 0, "/KeyRace/signup.php");
+        setcookie("keyboard_layout", '', 0, "/KeyRace/signup.php");
+
         // Send confirmation email
         include("./send_email.php");
 

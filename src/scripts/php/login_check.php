@@ -1,6 +1,12 @@
 <?php 
     session_start();
 
+    // Set cookie to prevent email rewriting
+    if(isset($_POST["email"]))
+    {
+        setcookie("email", $_POST["email"], time() + 600, "/KeyRace/login.php");
+    }
+
     // If user forgot to fill the password or the email / username
     if(empty($_POST["email"]) || empty($_POST["password"]))
     {
@@ -36,6 +42,7 @@
     }
 
     // If credentilals match
+
     // Prepare query to check if user has confirmed his email 
     $query = "SELECT * FROM USER WHERE email = :email AND role != 0;";
     $prepared_query = $db->prepare($query);
@@ -54,6 +61,10 @@
     }
 
     // If user has confirmed his email
+
+    // Delete temporary cookie
+    setcookie("email", '', 0, "/KeyRace/login.php");
+    
     $_SESSION["email"] = $_POST["email"];
     header("location: ../../../index.php");
     exit;
