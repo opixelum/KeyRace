@@ -29,7 +29,7 @@
 
 
         // Recipients
-        $phpmailer->setFrom('109dc5acb1-72b062@inbox.mailtrap.io');
+        $phpmailer->setFrom('keyrace.contact@gmail.com');
         $phpmailer->addAddress($email);
 
 
