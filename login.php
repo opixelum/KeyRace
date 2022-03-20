@@ -13,37 +13,37 @@
         </header>
 
         <main class="col ms-2 rounded rgb-shadow">
-          <form method="POST" action="./src/scripts/php/login_check.php">
+          <form action="./src/scripts/php/login_check.php" method="POST">
             <label for="email">Email</label><br>
             <input
-              type="email"
-              value="<?php
-                  echo isset($_COOKIE["email"]) ? $_COOKIE["email"] : '';
-              ?>" 
               id="email-inpt"
               name="email"
               placeholder="john.doe@email.com"
               required
+              type="email"
+              value="<?php
+                  echo isset($_COOKIE["email"]) ? $_COOKIE["email"] : '';
+              ?>" 
             ><br><br>
 
             <label for="password">Password</label><br>
             <input
-              type="password"
               id="password-inpt"
               name="password"
               placeholder="••••••••••••••••"
               required
+              type="password"
             ><br><br>
 
             <input
-              type="checkbox"
               id="stay-connected-chckbx"
               name="stay-connected"
+              type="checkbox"
               value="stay-connected"
             >
             <label for="stay-connected">Stay connected</label><br><br>
 
-            <input type="submit" placeholder="submit">
+            <input placeholder="submit" type="submit">
           </form>
 
           <?php include("src/includes/captcha.php");?>
