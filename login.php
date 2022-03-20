@@ -15,20 +15,23 @@
         <main class="col ms-2 rounded rgb-shadow">
           <form method="POST" action="./src/scripts/php/login_check.php">
             <label for="email">Email</label><br>
-<<<<<<< HEAD
-            <input type="email" value="<?php echo isset($_COOKIE["email"]) ? $_COOKIE["email"] : '';?>" 
-            id="email-inpt" name="email" required><br><br>
+            <input
+              type="email"
+              value="<?php echo isset($_COOKIE["email"]) ? $_COOKIE["email"] : '';?>" 
+              id="email-inpt"
+              name="email"
+              placeholder="john.doe@email.com"
+              required
+            ><br><br>
 
             <label for="password">Password</label><br>
-            <input type="password" id="password-inpt" name="password" required><br><br>
-=======
-            <input type="text" id="email-inpt" name="email"
-            placeholder="john.doe@email.com"><br><br>
-
-            <label for="password">Password</label><br>
-            <input type="password" id="password-inpt" name="password"
-            placeholder="••••••••••••••••"><br><br>
->>>>>>> main
+            <input
+              type="password"
+              id="password-inpt"
+              name="password"
+              placeholder="••••••••••••••••"
+              required
+            ><br><br>
 
             <input type="checkbox" id="stay-connected-chckbx"
             name="stay-connected" value="stay-connected">
