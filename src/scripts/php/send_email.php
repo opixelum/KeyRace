@@ -6,49 +6,43 @@
     use PHPMailer\PHPMailer\Exception;
 
     // Load Composer's autoloader
-    require 'vendor/autoload.php';
+    require "../../../vendor/autoload.php";
 
     // Create an instance; passing `true` enables exceptions
-    $mail = new PHPMailer(true);
+    $phpmailer = new PHPMailer();
 
     try
     {
-        // Enable verbose debug output
-        $mail->SMTPDebug = SMTP::DEBUG_SERVER;   
-
         // Send using SMTP
-        $mail->isSMTP();
+        $phpmailer->isSMTP();
 
         // Set the SMTP server to send through
-        $mail->Host = 'smtp.mailtrap.io';
+        $phpmailer->Host = 'smtp.mailtrap.io';
         
         // Enable SMTP authentication
-        $mail->SMTPAuth = true;
-
-        // SMTP credentials
-        $mail->Username = 'f118b92fb4780b';
-        $mail->Password = '4543328055deb5';
-
-        // Enable implicit TLS encryption
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+        $phpmailer->SMTPAuth = true;
 
         // TCP port to connect to;
-        $mail->Port = 2525;
+        $phpmailer->Port = 2525;
+
+        // SMTP credentials
+        $phpmailer->Username = 'f118b92fb4780b';
+        $phpmailer->Password = '4543328055deb5';
+
 
         // Recipients
-        $mail->setFrom('109dc5acb1-72b062@inbox.mailtrap.io');
-        $mail->addAddress($email);
+        $phpmailer->setFrom('109dc5acb1-72b062@inbox.mailtrap.io');
+        $phpmailer->addAddress($email);
 
         // Content
-        $mail->Subject = 'Confirmation email for KeyRace';
-        $mail->Body = "Please click on the following link in order to confirm your email:";
-        $mail->Body .= "http://localhost/KeyRace/src/scripts/php/confirm_email.php?ckey=$ckey";
+        $phpmailer->Subject = 'Confirmation email for KeyRace';
+        $phpmailer->Body = "Please click on the following link in order to confirm your email:";
+        $phpmailer->Body .= "http://localhost/KeyRace/src/scripts/php/confirm_email.php?ckey=$ckey";
 
-        $mail->send();
-        echo 'Message has been sent';
+        $phpmailer->send();
     }
     catch (Exception $e)
     {
-        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        header("location: ../../../signup.php?type=alert&message=An error occured. Please try again.");
     }
 ?>

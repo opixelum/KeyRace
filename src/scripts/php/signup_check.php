@@ -110,7 +110,9 @@
     // If query was successful
     if ($result)
     {
+        // Send confirmation email
         include("./send_email.php");
+
         header("location: ../../../login.php?type=success&message=Accout created successfully. Confirm your email address before logging in.");
         exit();
     }
