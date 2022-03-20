@@ -25,8 +25,7 @@
               <a href="./src/scripts/php/logout.php" class="w-100 mb-3 text-center">Log out</a>
             ';
       } else {
-          unset($_COOKIE["isLoggedIn"]);
-          setcookie("isLoggedIn", '', 0, '/');
+          isset($_COOKIE["isLoggedIn"]) && setcookie("isLoggedIn", '', 0, '/');
 
           echo '
               <div class="d-flex flex-column justify-content-between">
