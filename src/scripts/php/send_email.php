@@ -37,19 +37,29 @@
         $phpmailer->isHTML(true);
         $phpmailer->Subject = "Confirmation email for KeyRace";
 
-        $url = "http://localhost/KeyRace/src/scripts/php/confirm_email.php?ckey=$ckey";
+        $url = "http://localhost/KeyRace";
+        $url .= "/src/scripts/php/confirm_email.php?ckey=$ckey";
 
         // HTML message body
-        $phpmailer->Body = "<a href='$url'>Click here</a> to confirm your email.";
+        $phpmailer->Body =
+        "
+            <a href='$url'>Click here</a> to confirm your email.
+        ";
 
         // Plain text body for non-HTML client
-        $phpmailer->AltBody = "Click the following link to confirm your email: $url";
+        $phpmailer->AltBody =
+        "
+            Go to following link to confirm your email: $url.
+        ";
 
 
+        // Send confirmation email
         $phpmailer->send();
     }
-    catch (Exception $e)
+    catch (Exception $error)
     {
-        header("location: ../../../signup.php?type=alert&message=An error occured. Please try again.");
+        echo $error;
+        $message = "An error occured. Please try again.";
+        header("location: ../../../signup.php?type=alert&message=$message");
     }
 ?>
