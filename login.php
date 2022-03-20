@@ -17,7 +17,9 @@
             <label for="email">Email</label><br>
             <input
               type="email"
-              value="<?php echo isset($_COOKIE["email"]) ? $_COOKIE["email"] : '';?>" 
+              value="<?php
+                  echo isset($_COOKIE["email"]) ? $_COOKIE["email"] : '';
+              ?>" 
               id="email-inpt"
               name="email"
               placeholder="john.doe@email.com"
@@ -33,8 +35,12 @@
               required
             ><br><br>
 
-            <input type="checkbox" id="stay-connected-chckbx"
-            name="stay-connected" value="stay-connected">
+            <input
+              type="checkbox"
+              id="stay-connected-chckbx"
+              name="stay-connected"
+              value="stay-connected"
+            >
             <label for="stay-connected">Stay connected</label><br><br>
 
             <input type="submit" placeholder="submit">
