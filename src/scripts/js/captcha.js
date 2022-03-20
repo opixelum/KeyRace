@@ -24,7 +24,7 @@ class captcha {
             }
         }
         this.indexes.push(this.count-1)
-        this.randomize(20)
+        this.randomize(9)
     }
 
     randomize(iterationCount) { // Move a random block (x iterationCount)
