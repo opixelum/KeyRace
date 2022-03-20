@@ -14,18 +14,22 @@
         // Send using SMTP
         $phpmailer->isSMTP();
 
-        // Set the SMTP server to send through
-        $phpmailer->Host = 'smtp.gmail.com';
+        $phpmailer->Mailer = "smtp";
+        $phpmailer->SMTPDebug = 1;
         
         // Enable SMTP authentication
         $phpmailer->SMTPAuth = true;
 
+        $mail->SMTPSecure = "tls";
+
         // TCP port to connect to;
-        $phpmailer->Port = 465;
+        $phpmailer->Port = 587;
+
+        $phpmailer->Host = "smtp.gmail.com";
 
         // SMTP credentials
-        $phpmailer->Username = 'Key Race';
-        $phpmailer->Password = ',N9!hQWx3X%79dc';
+        $phpmailer->Username = '???';
+        $phpmailer->Password = '???';
 
 
         // Recipients
