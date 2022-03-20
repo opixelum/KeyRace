@@ -1,8 +1,6 @@
 <?php
     // Import PHPMailer classes into the global namespace
-    // These must be at the top of your script, not inside a function
     use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
 
     // Load Composer's autoloader
@@ -34,10 +32,19 @@
         $phpmailer->setFrom('109dc5acb1-72b062@inbox.mailtrap.io');
         $phpmailer->addAddress($email);
 
+
         // Content
-        $phpmailer->Subject = 'Confirmation email for KeyRace';
-        $phpmailer->Body = "Please click on the following link in order to confirm your email:";
-        $phpmailer->Body .= "http://localhost/KeyRace/src/scripts/php/confirm_email.php?ckey=$ckey";
+        $phpmailer->isHTML(true);
+        $phpmailer->Subject = "Confirmation email for KeyRace";
+
+        $url = "http://localhost/KeyRace/src/scripts/php/confirm_email.php?ckey=$ckey";
+
+        // HTML message body
+        $phpmailer->Body = "<a href='$url'>Click here</a> to confirm your email.";
+
+        // Plain text body for non-HTML client
+        $phpmailer->AltBody = "Click the following link to confirm your email: $url";
+
 
         $phpmailer->send();
     }
