@@ -16,22 +16,22 @@
           <form method="POST" action="./src/scripts/php/signup_check.php">
             <label for="username">Username</label><br>
             <input type="text" value="<?php echo isset($_COOKIE['username_cookie']) ? $_COOKIE['username_cookie'] : '';?>" 
-            id="username-inpt" name="username" placeholder="JDoe"><br><br>
+            id="username-inpt" name="username" placeholder="JDoe" required><br><br>
 
             <label for="email">Email</label><br>
             <input type="email" value="<?php echo isset($_COOKIE['email_cookie']) ? $_COOKIE['email_cookie'] : '';?>" 
-            id="email-inpt" name="email" placeholder="john.doe@email.com"><br><br>
+            id="email-inpt" name="email" placeholder="john.doe@email.com" required><br><br>
 
             <label for="password">Password</label><br>
             <input type="password" id="password-inpt" name="password"
-            placeholder="••••••••••••••••"><br><br>
+            placeholder="••••••••••••••••" required><br><br>
 
             <label for="confirm-password">Confirm password</label><br>
             <input type="password" id="confirm-password-inpt"
-            name="confirm-password" placeholder="••••••••••••••••"><br><br>
+            name="confirm-password" placeholder="••••••••••••••••" required><br><br>
 
             <label for="keyboard-layout">Keyboard layout</label><br>
-            <select name="keyboard-layout" id="keyboard-layout-drpdwn">
+            <select name="keyboard-layout" id="keyboard-layout-drpdwn" required>
               <option value="">--- Choose a layout ---</option>
               <option value="1">QWERTY</option>
               <option value="2">AZERTY</option>
