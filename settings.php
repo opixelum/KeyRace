@@ -24,7 +24,6 @@
       </div>
     </div>
 
-    <script src="./src/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="./src/scripts/js/settings.js"></script>
     <script src="./src/scripts/js/main.js"></script>
   </body>
