@@ -41,12 +41,14 @@
             <input type="submit" placeholder="submit">
           </form>
 
+          <?php include("src/includes/captcha.php");?>
+
           <?php include("src/includes/message.php");?>
         </main>
       </div>
     </div>
 
-    <script src="./src/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="./src/scripts/js/main.js"></script>
+    <script src="./src/scripts/js/captcha.js"></script>
   </body>
 </html>
