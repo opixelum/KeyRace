@@ -11,14 +11,34 @@
 
     // Set temporary cookies to prevent credentials rewriting
 
-    if(isset($_POST["username"]))
+    if (isset($_POST["username"]))
     {
-        setcookie("username", $_POST["username"], time() + 600, "/KeyRace/signup.php");
+        setcookie(
+            "username",           // Name
+            $username,            // Value
+            time() + 600,         // Expiration date
+            "/KeyRace/signup.php" // Path
+        );
     }
 
-    if(isset($_POST["email"]))
+    if (isset($_POST["email"]))
     {
-        setcookie("email", $_POST["email"], time() + 600, "/KeyRace/signup.php");
+        setcookie(
+            "email",              // Name
+            $email,               // Value
+            time() + 600,         // Expiration date
+            "/KeyRace/signup.php" // Path
+        );
+    }
+
+    if (isset($_POST["keyboard-layout"]))
+    {
+        setcookie(
+            "keyboard_layout",    // Name
+            $keyboard_layout,     // Value
+            time() + 600,         // Expiration date
+            "/KeyRace/signup.php" // Path
+        );
     }
 
 
@@ -112,8 +132,9 @@
     if ($result)
     {
         // Delete temporary cookies
-        setcookie("username", '', 0);
-        setcookie("email", '', 0);
+        setcookie("username", '');
+        setcookie("email", '');
+        setcookie("keyboard_layout", '');
 
         header("location: ../../../login.php?type=success&message=Accout created. Verify your email address before login in.");
         exit();
