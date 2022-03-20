@@ -34,15 +34,15 @@
             <select name="keyboard-layout" id="keyboard-layout-drpdwn" required>
               <option value=''>--- Choose a layout ---</option>
               <option value='1'
-                <?php echo $_COOKIE["keyboard_layout"] == 1 ? "selected" : '' ?>
+                <?php echo isset($_COOKIE["keyboard_layout"]) && $_COOKIE["keyboard_layout"] == 1 ? "selected" : '' ?>
               >QWERTY</option>
 
               <option value='2'
-                <?php echo $_COOKIE["keyboard_layout"] == 2 ? "selected" : '' ?>
+                <?php echo isset($_COOKIE["keyboard_layout"]) && $_COOKIE["keyboard_layout"] == 2 ? "selected" : '' ?>
               >AZERTY</option>
 
               <option value='3'
-                <?php echo $_COOKIE["keyboard_layout"] == 3 ? "selected" : '' ?>
+                <?php echo isset($_COOKIE["keyboard_layout"]) && $_COOKIE["keyboard_layout"] == 3 ? "selected" : '' ?>
               >DVORAK</option>
             </select><br><br>
 
