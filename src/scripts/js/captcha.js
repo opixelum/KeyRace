@@ -24,6 +24,7 @@ class captcha {
             }
         }
         this.indexes.push(this.count-1)
+        // Randomize the blocs 9 times (So the captcha is easy, the player will have to move between 1 and 9 blocks.)
         this.randomize(9)
     }
 
@@ -85,10 +86,10 @@ class captcha {
 }
 
 
-let newCaptcha = new captcha //For create a new captcha
+let newCaptcha = new captcha //For create a new captcha and lauch the script with constructor()
 
 // Re-mix the images
 let reset_button = document.querySelector(".reset_button")
 reset_button.addEventListener('click', () => {
-    newCaptcha.randomize(9)
+    location.reload();
 })
