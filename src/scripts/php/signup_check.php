@@ -90,7 +90,7 @@
     include("../../includes/salt.php");
 
     // Generate confirmation key for email confirmation
-    $ckey = md5(time() . $email);
+    $ckey = md5($email);
 
     // Prepare query to insert into the USER table in the database
     $query = "INSERT INTO USER (username, email, password, keyboard, ckey) VALUES (:username, :email, :password, :keyboard, :ckey);";
