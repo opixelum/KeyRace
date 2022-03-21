@@ -1,70 +1,53 @@
 <?php
     // Import PHPMailer classes into the global namespace
     use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\SMTP;
-    use PHPMailer\PHPMailer\Exception;
 
     // Load Composer's autoloader
     require "../../../vendor/autoload.php";
 
-    // Create an instance; passing `true` enables exceptions
-    $phpmailer = new PHPMailer();
+    $mail = new PHPMailer(); // create a new object
 
-    try
+    // SMTP server configuration
+    $mail->isSMTP();
+    $mail->SMTPDebug = 1;
+    $mail->SMTPAuth = true;
+    $mail->SMTPSecure = 'ssl';
+    $mail->Host = "smtp.gmail.com";
+    $mail->Port = 465;
+
+    // KeyRace's Google account credentials
+    $mail->Username = "contact.keyrace@gmail.com";
+    $mail->Password = "zA[pjx1ycvlfnoeznd(pr8edH";
+
+    // Recipients
+    $mail->setFrom("contact.keyrace@gmail.com");
+    $mail->addAddress($email);
+
+    // Content
+    $mail->isHTML(true);
+    $mail->Subject = "Confirmation email for KeyRace";
+    $url = "http://localhost/KeyRace";
+    $url .= "/src/scripts/php/confirm_email.php?ckey=$ckey";
+    $mail->Body =
+    "
+        <a href='$url'>Click here</a> to confirm your email.
+    ";
+    // Plain text body for non-HTML client
+    $mail->AltBody =
+    "
+        Go to following link to confirm your email: $url.
+    ";
+
+
+    // Send confirmation email
+    if(!$mail->send())
     {
-        // Send using SMTP
-        $phpmailer->SMTPDebug = SMTP::DEBUG_SERVER;
-        $phpmailer->isSMTP();
-        
-        // Enable SMTP authentication
-        $phpmailer->SMTPAuth = true;
-
-        // TLS encryption
-        $phpmailer->SMTPSecure = "tls";
-
-        // TCP port to connect to
-        $phpmailer->Port = 587;
-
-        // SMTP host
-        $phpmailer->Host = "smtp.gmail.com";
-
-        // SMTP credentials
-        $phpmailer->Username = 'keyrace.contact@gmail.com';
-        $phpmailer->Password = ',N9!hQWx3X%79dc';
-
-
-        // Recipients
-        $phpmailer->setFrom('keyrace.contact@gmail.com');
-        $phpmailer->addAddress($email);
-
-
-        // Content
-        $phpmailer->isHTML(true);
-        $phpmailer->Subject = "Confirmation email for KeyRace";
-
-        $url = "http://localhost/KeyRace";
-        $url .= "/src/scripts/php/confirm_email.php?ckey=$ckey";
-
-        // HTML message body
-        $phpmailer->Body =
-        "
-            <a href='$url'>Click here</a> to confirm your email.
-        ";
-
-        // Plain text body for non-HTML client
-        $phpmailer->AltBody =
-        "
-            Go to following link to confirm your email: $url.
-        ";
-
-
-        // Send confirmation email
-        $phpmailer->send();
-    }
-    catch (Exception $error)
-    {
-        echo $error;
-        $message = "An error occured. Please try again.";
+        $message = "Confirmation email couldn't be sent. Please try again later.";
         header("location: ../../../signup.php?type=alert&message=$message");
+        exit();
     }
+
+    $message = "Accout created successfully.Confirm your email address before logging in.";
+    header("location: ../../../login.php?type=success&message=$message");
+    exit();
 ?>
