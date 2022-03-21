@@ -19,6 +19,7 @@
             <label class="form-check-label" for="theme-switch">
               Dark / Light mode
             </label>
+            <?php include("src/includes/users.php");?>
           </form>
         </main>
       </div>
