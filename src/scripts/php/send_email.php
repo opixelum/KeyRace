@@ -1,6 +1,7 @@
 <?php
     // Import PHPMailer classes into the global namespace
     use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
 
     // Load Composer's autoloader
@@ -12,19 +13,16 @@
     try
     {
         // Send using SMTP
+        $phpmailer->SMTPDebug = SMTP::DEBUG_SERVER;
         $phpmailer->isSMTP();
-
-        $phpmailer->Mailer = "smtp";
-        
-        $phpmailer->SMTPDebug = 1;
         
         // Enable SMTP authentication
         $phpmailer->SMTPAuth = true;
 
-        // TLS
-        $mail->SMTPSecure = "tls";
+        // TLS encryption
+        $phpmailer->SMTPSecure = "tls";
 
-        // TCP port to connect to;
+        // TCP port to connect to
         $phpmailer->Port = 587;
 
         // SMTP host
