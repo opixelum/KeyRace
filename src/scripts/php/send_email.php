@@ -15,21 +15,24 @@
         $phpmailer->isSMTP();
 
         $phpmailer->Mailer = "smtp";
+        
         $phpmailer->SMTPDebug = 1;
         
         // Enable SMTP authentication
         $phpmailer->SMTPAuth = true;
 
+        // TLS
         $mail->SMTPSecure = "tls";
 
         // TCP port to connect to;
         $phpmailer->Port = 587;
 
+        // SMTP host
         $phpmailer->Host = "smtp.gmail.com";
 
         // SMTP credentials
-        $phpmailer->Username = '???';
-        $phpmailer->Password = '???';
+        $phpmailer->Username = 'keyrace.contact@gmail.com';
+        $phpmailer->Password = ',N9!hQWx3X%79dc';
 
 
         // Recipients
