@@ -16,11 +16,11 @@
     $mail->Port = 465;
 
     // KeyRace's Google account credentials
-    $mail->Username = "contact.keyrace@gmail.com";
-    $mail->Password = "zA[pjx1ycvlfnoeznd(pr8edH";
+    $mail->Username = "noreply.keyrace@gmail.com";
+    $mail->Password = "1|_aXutestrctrtgnfgbcmxuE";
 
     // Recipients
-    $mail->setFrom("contact.keyrace@gmail.com");
+    $mail->setFrom("noreply.keyrace@gmail.com");
     $mail->addAddress($email);
 
     // Content
@@ -38,8 +38,8 @@
         Go to following link to confirm your email: $url.
     ";
 
-
     // Send confirmation email
+    // If email couldn't be sent
     if(!$mail->send())
     {
         $message = "Confirmation email couldn't be sent. Please try again later.";
@@ -47,7 +47,9 @@
         exit();
     }
 
-    $message = "Accout created successfully.Confirm your email address before logging in.";
+    // If email has been sent
+    $message = "Almost done! Confirm your email before logging in ";
+    $message .= "(if you don't see it in your inbox, check your spams).";
     header("location: ../../../login.php?type=success&message=$message");
     exit();
 ?>
