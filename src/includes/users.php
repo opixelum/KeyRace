@@ -19,9 +19,9 @@
                 echo '<td>' . $user['username'] . '</td>';
                 echo '<td>' . $user['email'] . '</td>';
                 echo '<td>';
-                echo '<a class="btn btn-primary btn-sm me-2" href="read.php?id=' . $user['user_id'] . '">Consulter</a>';
-                echo '<a class="btn btn-success btn-sm me-2" href="update.php?id=' . $user['user_id'] . '">Modifier</a>';
-                echo '<a class="btn btn-danger btn-sm me-2" href="delete.php?id=' . $user['user_id'] . '">Supprimer</a>';
+                echo '<a class="btn btn-primary btn-sm me-2" href="read.php?id=' . $user['user_id'] . '">See</a>';
+                echo '<a class="btn btn-success btn-sm me-2" href="update.php?id=' . $user['user_id'] . '">Modify</a>';
+                echo '<a class="btn btn-danger btn-sm me-2" href="delete.php?id=' . $user['user_id'] . '">Delete</a>';
                 echo '</td>';
                 echo '</tr>';
             }
