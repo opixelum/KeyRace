@@ -6,7 +6,7 @@
         $results = $req->fetchAll(PDO::FETCH_ASSOC);
     ?>
 
-    <table class="table table-striped table-bordered table-hover">
+    <table class="table table-striped table-bordered dark-theme">
         <tr>
             <th>Username</th>
             <th>Email</th>
