@@ -2,7 +2,7 @@
 <html lang="en">
   <?php
       $title = "Home | KeyRace";
-      include("./src/includes/head.php");
+      include("src/includes/head.php");
   ?>
 
   <body class="dark-theme">

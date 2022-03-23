@@ -26,7 +26,7 @@ function getCookie(key) {
 }
 
 if (getCookie("isLoggedIn")) {
-    // If user isn't logged in
+    // If user is logged in
 
     // Profile button
     const profileBtn = document.querySelector("#profile-btn")
@@ -37,7 +37,7 @@ if (getCookie("isLoggedIn")) {
     // Campaign button
     const campaignBtn = document.querySelector("#campaign-btn")
     campaignBtn.addEventListener("click", () => {
-        window.location.href = "./campaign.php"
+        window.location.href = "./campaign/index.php"
     })
 
     // Multiplayer button
@@ -58,7 +58,7 @@ if (getCookie("isLoggedIn")) {
         window.location.href = "./customization.php"
     })
 } else {
-    // If user is logged in
+    // If user isn't logged in
 
     // Sign in button
     const signUpBtn = document.querySelector("#sign-up-btn")
