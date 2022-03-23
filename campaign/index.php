@@ -17,6 +17,6 @@
       </div>
     </div>
 
-    <script src="src/scripts/js/main.js"></script>
+    <script src="../src/scripts/js/main.js"></script>
   </body>
 </html>

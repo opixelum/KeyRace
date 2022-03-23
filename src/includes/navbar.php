@@ -3,7 +3,7 @@
 <div class="d-flex flex-column h-100 justify-content-between">
   <div class="d-flex flex-wrap justify-content-center">
     <a class="my-4" href="./index.php">
-      <img alt="KeyRace logo" width="100px" src="./src/images/logo.png">
+      <img alt="KeyRace logo" width="100px" src="http://localhost/KeyRace/src/images/logo.png">
     </a>
     <input
       class="search border-0 m-2 px-3 py-2 w-100 rounded-pill"
