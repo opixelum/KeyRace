@@ -168,6 +168,10 @@ a {
     border: 1px solid #000;
 }
 
+.captcha_block img {
+    width: 100%;
+}
+
 /*reset container*/
 #reset_container {
     display: flex;
