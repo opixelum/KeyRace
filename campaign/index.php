@@ -15,7 +15,7 @@
         <main class="col d-flex justify-content-center align-items-center flex-wrap h-100 ms-2 rounded rgb-shadow">
           <h1 class="text-center w-100">Campaign</h1>
           <h3 class="text-center w-100">
-            Prouve that you're the fastest racer in KeyVille!
+            Prouve that you're the fastest racer in KeyTown!
           </h3>
           <div class="btn-group-vertical w-25">
             <button type="button" class="btn">Quest 1</button>
