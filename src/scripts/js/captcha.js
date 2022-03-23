@@ -1,5 +1,3 @@
-let solved = false;
-
 class captcha {
     cols=3 // How many colomns
     rows=3 // How many rows
@@ -7,12 +5,10 @@ class captcha {
     blocks // The html elements with className="captcha_block"
     emptyBlockCoords=[2,2] // The coordinates of the empty block
     indexes=[] // Keeps track of the order of the blocks
-    solved
 
     constructor() {
         this.count = this.cols * this.rows
         this.blocks = document.getElementsByClassName("captcha_block") // Grab the blocks
-        solved = false;
         this.init()
     }
 
@@ -74,7 +70,7 @@ class captcha {
     onClickOnBlock(blockIdx) { // Try move block and check if captcha was solved
         if (this.moveBlock(blockIdx)) {
             if (this.checkCaptchaSolved()) {
-                solved = true;
+                document.cookie += captchaSolved = true; expires = time() + 1800
             }
         }
     }
