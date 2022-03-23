@@ -32,5 +32,6 @@
     </div>
 
     <script src="../src/scripts/js/main.js"></script>
+    <script src="../src/scripts/js/campaign_index.js"></script>
   </body>
 </html>
