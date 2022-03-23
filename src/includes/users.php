@@ -1,6 +1,6 @@
 <div class="container">
     <?php 
-        include('src\scripts\php\db_connect.php'); 
+        include('src\scripts\php\db_connect.php');
         $q = 'SELECT user_id, username, email FROM USER';
         $req = $db->query($q);
         $results = $req->fetchAll(PDO::FETCH_ASSOC);
