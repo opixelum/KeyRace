@@ -2,7 +2,7 @@
 
 <div class="d-flex flex-column h-100 justify-content-between">
   <div class="d-flex flex-wrap justify-content-center">
-    <a class="my-4" href="./index.php">
+    <a class="my-4" href="http://localhost/KeyRace/index.php">
       <img alt="KeyRace logo" width="100px" src="http://localhost/KeyRace/src/images/logo.png">
     </a>
     <input
@@ -63,5 +63,5 @@
     <br><br>
     <small class="w-100 mb-3 text-center">© KeyRace 2022</small>
   </div>
-  <script src="./src/scripts/js/navbar.js"></script>
+  <script src="http://localhost/KeyRace/src/scripts/js/navbar.js"></script>
 </div>
