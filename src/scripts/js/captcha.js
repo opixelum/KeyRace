@@ -70,7 +70,7 @@ class captcha {
     onClickOnBlock(blockIdx) { // Try move block and check if captcha was solved
         if (this.moveBlock(blockIdx)) {
             if (this.checkCaptchaSolved()) {
-                document.cookie += "captchaSolved=true;expires=time()+1800"
+                document.cookie = "captchaSolved=true;expires=time()+1800"
             }
         }
     }

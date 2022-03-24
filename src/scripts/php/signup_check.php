@@ -131,8 +131,7 @@
     }
 
     // Get solved captcha
-    $captcha = '<script src="src\scripts\js\captcha.js" type="text/javascript">document.write(solved);</script>';
-    if ($captcha == false)
+    if (!$_COOKIE['captchaSolved'])
     {
         $message = "Please confirm the captcha";
         header($signup_path . "alert&message=$message");
