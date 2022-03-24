@@ -134,7 +134,7 @@
     if (!$_COOKIE['captchaSolved'])
     {
         $message = "Please confirm the captcha";
-        header($signup_path . "alert&message=$message");
+        header($signup_path . "danger&message=$message");
         exit();
     }
 
@@ -184,6 +184,6 @@
     }
 
     // If query failed
-    header($signup_path . "alert&message=An error occured. Please try again.");
+    header($signup_path . "danger&message=An error occured. Please try again.");
     exit();
 ?>
