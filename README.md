@@ -13,84 +13,84 @@ globally understand the project and its code base.
 
 <br>
 
-### **index.html**
+### **index.php**
 
 KeyRace description, search bar, sign in, log in & leaderboard.
 
 <br>
 
 
-### **connect.html**
+### **signup.php / login.php**
 
-Sign in / log in (dynamic page).
+Sign up / log in (dynamics pages).
 
 <br>
 
 
-### **leaderboard.html**
+### **leaderboard.php**
 
 List of all users ordered either by number of wins or by WPM.
 
 <br>
 
 
-### **profile.html**
+### **profile.php**
 
 Stats, car with detailed traits, achievements & friends (dynamic).
 
 <br>
 
 
-### **campaign.html**
+### **campaign.php**
 
 8 quests from the easiest to the hardest.
 
 <br>
 
 
-### **multiplayer.html**
+### **multiplayer.php**
 
 Race & chat.
 
 <br>
 
 
-### **training.html**
+### **training.php**
 
 Infinite word list for training typing.
 
 <br>
 
 
-### **customization.html**
+### **customization.php**
 
 Custom interface, car & avatar (dynamic page)
 
 <br>
 
 
-### **settings.html**
+### **settings.php**
 
 Edit account & website preferences.
 
 <br>
 
 
-### **admin.html**
+### **admin.php**
 
 Database & website monitoring page for administrators.
 
 <br>
 
 
-### **search.html**
+### **search.php**
 
 List search results.
 
 <br>
 
 
-### **support.html**
+### **support.php**
 
 Contact form for reaching KeyRace teams.
 
@@ -112,7 +112,7 @@ Manages transitions for dynamic content & pages.
 
 ### **navbar.js**
 
-HTML component for the navbar.
+php component for the navbar.
 
 <br>
 
@@ -143,6 +143,13 @@ Manages chat.
 
 Custom avatar by selecting traits.
 
+<br>
+
+
+### **settings.js**
+
+Choose colors of customization and dark/light mode.
+
 <br><br>
 
 
@@ -152,7 +159,7 @@ Custom avatar by selecting traits.
 
 <br>
 
-### **signin-check.php**
+### **signup-check.php**
 
 Checks if sign in form is applicable.
 

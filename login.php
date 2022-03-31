@@ -11,40 +11,53 @@
         <header class="col-2 p-0 me-2 rounded rgb-shadow">
           <?php include("src/includes/navbar.php");?>
         </header>
-
+        
         <main class="col ms-2 rounded rgb-shadow d-flex justify-content-center align-items-center">
-          <form class="d-flex justify-content-center flex-wrap">
-            <label  class="w-100 text-center" for="email-or-username">Email or username</label><br>
-            <input type="text" id="email-or-username-inpt"
-            name="email-or-username"><br><br>
+          <form class="d-flex justify-content-center flex-wrap" action="./src/scripts/php/login_check.php" method="POST">
+            <label class="w-100 text-center" for="email">Email</label><br>
+            <input
+              id="email-inpt"
+              name="email"
+              placeholder="john.doe@email.com"
+              required
+              type="email"
+              value="<?php
+                  // Set cookie value to input field
+                  echo isset($_COOKIE["email"]) ? $_COOKIE["email"] : '';
+              ?>" 
+            ><br><br>
 
-            <label  class="w-100 text-center" for="password">Password</label><br>
-            <input type="password" id="password-inpt" name="password"><br><br>
-
+            <label class="w-100 text-center" for="password">Password</label><br>
+            <input
+              id="password-inpt"
+              name="password"
+              placeholder="••••••••••••••••"
+              required
+              type="password"
+            ><br><br>
             <div class="w-100 d-flex justify-content-center"> 
-              <input type="checkbox" id="stay-connected-chckbx"
-              name="stay-connected" value="stay-connected" >
-              <label  for="stay-connected">Stay connected</label><br><br>
+              <input
+              id="stay-connected-chckbx"
+              name="stay-connected"
+              type="checkbox"
+              value="stay-connected"
+              >
+              
             </div>
+            
+            <label for="stay-connected">Stay connected</label><br><br>
 
-            <input class="w-100" type="submit" value="Submit">
-         
+            <input placeholder="submit" type="submit">
           </form>
 
-          <?php
-              if(isset($_GET["message"]) && !empty($_GET["message"]))
-              {
-                  echo 
-                    "<div class='alert alert-" . htmlspecialchars($_GET["type"]) . 
-                    "' role='alert'>" . htmlspecialchars($_GET["message"]) .
-                    "</div>";
-              }
-          ?>
+          <?php include("src/includes/captcha.php");?>
+
+          <?php include("src/includes/message.php");?>
         </main>
       </div>
     </div>
 
-    <script src="./src/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="./src/scripts/js/main.js"></script>
+    <script src="./src/scripts/js/captcha.js"></script>
   </body>
 </html>

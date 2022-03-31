@@ -1,10 +1,55 @@
 <?php 
+    // Connect to database
+    include("./db_connect.php");
+
+    // Save long string for shortening lines
+    $signup_path = "location: ../../../signup.php?type=";
+    $login_path  = "location: ../../../login.php?type=";
+
     // Store user credentials in variables
     $username         = $_POST["username"];
     $email            = $_POST["email"];
     $password         = $_POST["password"];
     $confirm_password = $_POST["confirm-password"];
     $keyboard_layout  = $_POST["keyboard-layout"];
+
+
+    // **************************** C O O K I E S *****************************
+
+    // Set temporary cookies to prevent credentials rewriting
+
+    if (isset($_POST["username"]))
+    {
+        setcookie
+        (
+            "username",           // Name
+            $username,            // Value
+            time() + 600,         // Expiration date
+            "/KeyRace/signup.php" // Path
+        );
+    }
+
+    if (isset($_POST["email"]))
+    {
+        setcookie
+        (
+            "email",              // Name
+            $email,               // Value
+            time() + 600,         // Expiration date
+            "/KeyRace/signup.php" // Path
+        );
+    }
+
+    if (isset($_POST["keyboard-layout"]))
+    {
+        setcookie
+        (
+            "keyboard_layout",    // Name
+            $keyboard_layout,     // Value
+            time() + 600,         // Expiration date
+            "/KeyRace/signup.php" // Path
+        );
+    }
 
 
     // *************** F I E L D S   V E R I F I C A T I O N S ****************
@@ -15,35 +60,50 @@
     if (empty($username) || empty($email) || empty($password) ||
     empty($confirm_password) || empty($keyboard_layout))
     {
-        header("location: ../../../signup.php?type=warning&message=Please fill all fields.");
+        header($signup_path . "warning&message=Please fill all fields.");
         exit();
     }
 
-    // If username not enough long
+    // If username not long enough 
     if (strlen($username) < 3)
     {
-        header("location: ../../../signup.php?type=warning&message=Username must be more than 3 characters long.");
+        $message = "Username must be more than 3 characters long.";
+        header($signup_path . "warning&message=$message");
         exit();
     }
 
     // If username is too long
     if (strlen($username) > 45)
     {
-        header("location: ../../../signup.php?type=warning&message=Username must be less than 45 characters long.");
+        $message = "Username must be less than 45 characters long.";
+        header($signup_path . "warning&message=$message");
         exit();
     }
 
     // If email is too long
     if (strlen($email) > 255)
     {
-        header("location: ../../../signup.php?type=warning&message=Email must be less than 255 characters long.");
+        $message = "Email must be less than 255 characters long.";
+        header($signup_path . "warning&message=$message");
         exit();
     }
 
     // If email has wrong format
     if (!filter_var($email, FILTER_VALIDATE_EMAIL))
     {
-        header("location: ../../../signup.php?type=warning&message=Email has wrong format.");
+        header($signup_path . "warning&message=Email has wrong format.");
+        exit();
+    }
+
+    // If email is already registered
+    $query = "SELECT * FROM USER WHERE email=:email;";
+    $prepared_query = $db->prepare($query);
+    $prepared_query->execute(["email" => $email]);
+    $result = $prepared_query->fetchAll();
+
+    if ($result)
+    {
+        header($signup_path . "warning&message=Email is already used.");
         exit();
     }
 
@@ -57,14 +117,24 @@
     // If password doesn't meet requirements
     if (!($uppercase && $lowercase && $number && $symbols && $length))
     {
-        header("location: ../../../signup.php?type=warning&message=Password doesn't meet requirements.");
+        $message = "Password doesn't meet requirements.";
+        header($signup_path . "warning&message=$message");
         exit();
     }
 
     // If confirm_password is different than password
     if ($confirm_password != $password)
     {
-        header("location: ../../../signup.php?type=warning&message=Confirm password is different.");
+        $message = "Confirm password is different.";
+        header($signup_path . "warning&message=$message");
+        exit();
+    }
+
+    // Get solved captcha
+    if (!$_COOKIE['captchaSolved'])
+    {
+        $message = "Please confirm the captcha";
+        header($signup_path . "danger&message=$message");
         exit();
     }
 
@@ -72,37 +142,48 @@
     // ********************* A D D   U S E R   T O   D B **********************
     
     // Encrypt password
-    $salt = "5gd87sf^h6?jytr98b!'d4qsvzy;e1sfdf3gh'4zet9qsdt16f'4ar9jbhl67ivl";
-    $encrypted_password = hash("sha512", $salt . $password);
+    include("../../includes/salt.php");
 
-
-    // Connect to database
-    include("./db_connect.php");
-
+    // Generate confirmation key for email confirmation
+    $ckey = md5($email);
 
     // Prepare query to insert into the USER table in the database
-    $query = "INSERT INTO USER (username, email, password, keyboard) VALUES (:username, :email, :password, :keyboard);";
+    $query = 
+    "
+        INSERT INTO USER (username, email, password, keyboard, ckey) 
+        VALUES (:username, :email, :password, :keyboard, :ckey);
+    ";
     $prepared_query = $db->prepare($query);
 
     // Execute query with user credentials
     $result = $prepared_query->execute
     ([
         "username" => $username, 
-        "email" => $email,
+        "email"    => $email,
         "password" => $encrypted_password,
-        "keyboard" => $keyboard_layout
+        "keyboard" => $keyboard_layout,
+        "ckey"     => $ckey
     ]);
 
 
     // If query was successful
     if ($result)
     {
-        header("location: ../../../login.php?type=success&message=Accout created. Verify your email address before login in.");
+        // Delete temporary cookies
+        setcookie("username", '', 0, "/KeyRace/signup.php");
+        setcookie("email", '', 0, "/KeyRace/signup.php");
+        setcookie("keyboard_layout", '', 0, "/KeyRace/signup.php");
+
+        // Send confirmation email
+        include("./send_email.php");
+
+        $message = "Accout created successfully.";
+        $message .= "Confirm your email address before logging in.";
+        header($login_path . "success&message=$message");
         exit();
     }
 
     // If query failed
-    header("location: ../../../signup.php?type=alert&message=An error occured. Please try again.");
+    header($signup_path . "danger&message=An error occured. Please try again.");
     exit();
-
 ?>
