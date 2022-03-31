@@ -18,14 +18,14 @@
             Prove that you're the fastest racer in KeyTown!
           </h3>
           <div class="btn-group-vertical w-25">
-            <button type="button" class="btn">Quest 1</button>
-            <button type="button" class="btn disabled">Quest 2</button>
-            <button type="button" class="btn disabled">Quest 3</button>
-            <button type="button" class="btn disabled">Quest 4</button>
-            <button type="button" class="btn disabled">Quest 5</button>
-            <button type="button" class="btn disabled">Quest 6</button>
-            <button type="button" class="btn disabled">Quest 7</button>
-            <button type="button" class="btn disabled">Quest 8</button>
+            <button id="quest1-btn" type="button" class="btn">Quest 1</button>
+            <button id="quest2-btn" type="button" class="btn disabled">Quest 2</button>
+            <button id="quest3-btn" type="button" class="btn disabled">Quest 3</button>
+            <button id="quest4-btn" type="button" class="btn disabled">Quest 4</button>
+            <button id="quest5-btn" type="button" class="btn disabled">Quest 5</button>
+            <button id="quest6-btn" type="button" class="btn disabled">Quest 6</button>
+            <button id="quest7-btn" type="button" class="btn disabled">Quest 7</button>
+            <button id="quest8-btn" type="button" class="btn disabled">Quest 8</button>
           </div>
         </main>
       </div>
