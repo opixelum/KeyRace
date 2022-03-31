@@ -11,10 +11,10 @@
         <header class="col-2 p-0 me-2 rounded rgb-shadow">
           <?php include("src/includes/navbar.php");?>
         </header>
-
-        <main class="col ms-2 rounded rgb-shadow">
-          <form action="./src/scripts/php/login_check.php" method="POST">
-            <label for="email">Email</label><br>
+        
+        <main class="col ms-2 rounded rgb-shadow d-flex justify-content-center align-items-center">
+          <form class="d-flex justify-content-center flex-wrap" action="./src/scripts/php/login_check.php" method="POST">
+            <label class="w-100 text-center" for="email">Email</label><br>
             <input
               id="email-inpt"
               name="email"
@@ -27,7 +27,7 @@
               ?>" 
             ><br><br>
 
-            <label for="password">Password</label><br>
+            <label class="w-100 text-center" for="password">Password</label><br>
             <input
               id="password-inpt"
               name="password"
@@ -35,13 +35,16 @@
               required
               type="password"
             ><br><br>
-
-            <input
+            <div class="w-100 d-flex justify-content-center"> 
+              <input
               id="stay-connected-chckbx"
               name="stay-connected"
               type="checkbox"
               value="stay-connected"
-            >
+              >
+              
+            </div>
+            
             <label for="stay-connected">Stay connected</label><br><br>
 
             <input placeholder="submit" type="submit">
