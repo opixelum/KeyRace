@@ -9,24 +9,22 @@
 
     <table class="table table-striped table-bordered dark-theme">
         <tr>
-            <!-- <?php echo "<th>" . $user['username'] . "</th>"; ?> -->
+            <?php 
+                foreach ($results as $key => $user) {
+                    echo "<th>" . $user['username'] . "</th>"; 
+                }
+            ?>
         </tr>
 
         <?php
             foreach ($results as $key => $user) {
                 echo '<tr><td>user_id</td><td>' . $user['user_id'] . '</td></tr>';
                 echo '<tr><td>email</td><td>' . $user['email'] . '</td></tr>';
-                echo '<tr><td>password</td><td>' . $user['password'] . '</td></tr>';
+                echo '<tr><td>password</td><td> °°°°°° </td></tr>';
                 echo '<tr><td>keyboard</td><td>' . $user['keyboard'] . '</td></tr>';
                 echo '<tr><td>role</td><td>' . $user['role'] . '</td></tr>';
                 echo '<tr><td>kc</td><td>' . $user['kc'] . '</td></tr>';
                 echo '<tr><td>gc</td><td>' . $user['gc'] . '</td></tr>';
-                echo '<tr><td>average-wpm</td><td>' . $user['average_wpm'] . '</td></tr>';
-                echo '<tr><td>highest_wpm</td><td>' . $user['highest_wpm'] . '</td></tr>';
-                echo '<tr><td>game_played</td><td>' . $user['game_played'] . '</td></tr>';
-                echo '<tr><td>time_played</td><td>' . $user['time_played'] . '</td></tr>';
-                echo '<tr><td>quest_level</td><td>' . $user['quest_level'] . '</td></tr>';
-                echo '<tr><td>achievements</td><td>' . $user['achievements'] . '</td></tr>';
                 echo '<tr><td>avatar</td><td>' . $user['avatar'] . '</td></tr>';
                 echo '<tr><td>banner</td><td>' . $user['banner'] . '</td></tr>';
                 echo '<tr><td>car</td><td>' . $user['car'] . '</td></tr>';
