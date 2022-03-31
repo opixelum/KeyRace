@@ -11,7 +11,7 @@
         <header class="col-2 p-0 me-2 rounded rgb-shadow">
           <?php include("src/includes/navbar.php");?>
         </header>
-
+      
         <main class="col ms-2 d-flex justify-content-center align-items-center rounded rgb-shadow">
           <form class="d-flex justify-content-center flex-wrap w-25" method="POST" action="./src/scripts/php/signup_check.php">
             <label class="w-100 text-center" for="username">Username</label><br>

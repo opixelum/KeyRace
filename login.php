@@ -13,19 +13,22 @@
         </header>
 
         <main class="col ms-2 rounded rgb-shadow d-flex justify-content-center align-items-center">
-          <form >
-            <label for="email-or-username">Email or username</label><br>
+          <form class="d-flex justify-content-center flex-wrap">
+            <label  class="w-100 text-center" for="email-or-username">Email or username</label><br>
             <input type="text" id="email-or-username-inpt"
             name="email-or-username"><br><br>
 
-            <label for="password">Password</label><br>
+            <label  class="w-100 text-center" for="password">Password</label><br>
             <input type="password" id="password-inpt" name="password"><br><br>
 
-            <input type="checkbox" id="stay-connected-chckbx"
-            name="stay-connected" value="stay-connected">
-            <label for="stay-connected">Stay connected</label><br><br>
+            <div class="w-100 d-flex justify-content-center"> 
+              <input type="checkbox" id="stay-connected-chckbx"
+              name="stay-connected" value="stay-connected" >
+              <label  for="stay-connected">Stay connected</label><br><br>
+            </div>
 
-            <input type="submit" placeholder="submit">
+            <input class="w-100" type="submit" value="Submit">
+         
           </form>
 
           <?php
