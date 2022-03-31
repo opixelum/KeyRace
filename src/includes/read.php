@@ -1,15 +1,15 @@
 <div class="container">
     <?php 
         include('C:\MAMP\htdocs\KeyRace\src\scripts\php\db_connect.php');
-        $q = 'SELECT user_id, username, email, password, keyboard, role, kc, gc, average_wpm, highest_wpm, game_played, 
-        time_played, quest_level, achievements, avatar, banner, car FROM USER';
+        $q = "SELECT user_id, username, email, password, keyboard, role, kc, gc, average_wpm, highest_wpm, game_played, 
+        time_played, quest_level, achievements, avatar, banner, car FROM USER WHERE user_id = $_GET[id]";
         $req = $db->query($q);
         $results = $req->fetchAll(PDO::FETCH_ASSOC);
     ?>
 
     <table class="table table-striped table-bordered dark-theme">
         <tr>
-            USER
+            <!-- <?php echo "<th>" . $user['username'] . "</th>"; ?> -->
         </tr>
 
         <?php
