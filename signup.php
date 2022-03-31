@@ -12,13 +12,14 @@
           <?php include("src/includes/navbar.php");?>
         </header>
         
-
         <main class="col ms-2 d-flex justify-content-center align-items-center rounded rgb-shadow"> 
-          <form class="container d-flex justify-content-center flex-wrap w-75" method="POST" action="./src/scripts/php/signup_check.php">
-            <div style="border:1px solid blue" class="row row-cols-2">
+          <form class="container d-flex justify-content-center flex-wrap w-75 h-75" method="POST" action="./src/scripts/php/signup_check.php">
+          <h1>Sign up</h1>
+            <div style="border:1px solid blue" class="row row-cols-2 w-100">
               <div style="border:1px solid red" class="col">
                 <label class="w-100 text-center" for="username">Username</label><br>
                 <input
+                class="w-100 h-25"
                 type="text"
                 value="<?php 
                   // Set cookie value to input field
@@ -34,23 +35,25 @@
               <div style="border:1px solid red" class="col">
                 <label class="w-100 text-center" for="email">Email</label><br>
                 <input
-                type="email"
-                value="<?php
+                  class="w-100 h-25"
+                  type="email"
+                  value="<?php
                     // Set cookie value to input field
                     echo isset($_COOKIE["email"]) ? $_COOKIE["email"] : '';
-                ?>" 
-                id="email-inpt"
-                name="email"
-                placeholder="john.doe@email.com"
-                required
-                ><br><br>
+                  ?>" 
+                  id="email-inpt"
+                  name="email"
+                  placeholder="john.doe@email.com"
+                  required
+                >
               </div>
             </div>
             
-            <div style="border:1px solid blue" class="row row-cols-2">
+            <div style="border:1px solid blue" class="row row-cols-2 w-100">
               <div style="border:1px solid red" class="col">
                 <label class="w-100 text-center" for="password">Password</label><br>
                 <input
+                class="w-100 h-25"
                 type="password"
                 id="password-inpt"
                 name="password"
@@ -62,6 +65,7 @@
               <div style="border:1px solid red" class="col">
                 <label class="w-100 text-center" for="confirm-password">Confirm password</label><br>
                 <input
+                class="w-100 h-25"
                 type="password"
                 id="confirm-password-inpt"
                 name="confirm-password"
@@ -71,10 +75,11 @@
               </div>
             </div>
 
-            <div style="border:1px solid blue" class="row row-cols-2">
+            <div style="border:1px solid blue" class="row row-cols-2 w-100 h-25 ">
               <div class="col" style="border:1px solid red">
                 <label class="w-100 text-center" for="keyboard-layout">Keyboard layout</label><br>
                 <select
+                  class="w-100"
                   name="keyboard-layout"
                   id="keyboard-layout-drpdwn"
                   required
@@ -105,21 +110,17 @@
                   >DVORAK</option>                  
                 </select>
               </div>
-              <div class="col"> <label class="w-100 text-center" for="password">Password</label><br>
-                <input
-                type="password"
-                id="password-inpt"
-                name="password"
-                placeholder="••••••••••••••••"
-                required
-                ><br><br></div>
+              <div class="col w-50"> 
+                <label class="w-100 text-center" for="captcha">Captcha</label><br>
+                <?php include("src/includes/captcha.php");?>
+                <br><br>
+              </div>
             </div>
 
             <input class="w-100" type="submit" placeholder="submit">
           
           </form>
 
-          <?php include("src/includes/captcha.php");?>
 
           <?php include("src/includes/message.php");?>
         </main>
