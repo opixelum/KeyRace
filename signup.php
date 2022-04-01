@@ -110,17 +110,15 @@
                   >DVORAK</option>                  
                 </select>
               </div>
+
               <div class="d-flex flex-column justify-content-evenly col"> 
                 <label class="w-100 text-center" for="captcha">Captcha</label>
                 <?php include("src/includes/captcha.php");?>
-                
               </div>
             </div>
 
             <input class="btn w-25" type="submit" value="Submit">
-          
           </form>
-
 
           <?php include("src/includes/message.php");?>
         </main>
