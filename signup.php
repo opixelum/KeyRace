@@ -16,8 +16,8 @@
           <form class="container d-flex justify-content-center flex-wrap w-75 h-75" method="POST" action="./src/scripts/php/signup_check.php">
           <h1>Sign up</h1>
             <div style="border:1px solid blue" class="row row-cols-2 w-100">
-              <div style="border:1px solid red" class="d-flex flex-column justify-content-space-between col">
-                <label class="w-100 text-center" for="username">Username</label><br>
+              <div style="border:1px solid red" class="d-flex flex-column justify-content-evenly col">
+                <label class="w-100 text-center" for="username">Username</label>
                 <input
                 class="w-100 h-25 input-field border-0 rounded"
                 type="text"
@@ -29,11 +29,11 @@
                 name="username"
                 placeholder="JDoe"
                 required
-                ><br><br>
+                >
               </div>
 
-              <div style="border:1px solid red" class="d-flex flex-column justify-content-space-between col">
-                <label class="w-100 text-center" for="email">Email</label><br>
+              <div style="border:1px solid red" class="d-flex flex-column justify-content-evenly col">
+                <label class="w-100 text-center" for="email">Email</label>
                 <input
                   class="w-100 h-25 input-field border-0 rounded"
                   type="email"
@@ -50,8 +50,8 @@
             </div>
             
             <div style="border:1px solid blue" class="row row-cols-2 w-100">
-              <div style="border:1px solid red" class="d-flex flex-column justify-content-space-between col">
-                <label class="w-100 text-center" for="password">Password</label><br>
+              <div style="border:1px solid red" class="d-flex flex-column justify-content-evenly col">
+                <label class="w-100 text-center" for="password">Password</label>
                 <input
                 class="w-100 h-25 input-field border-0 rounded"
                 type="password"
@@ -59,11 +59,11 @@
                 name="password"
                 placeholder="••••••••••••••••"
                 required
-                ><br><br>
+                >
               </div>
 
-              <div style="border:1px solid red" class="d-flex flex-column justify-content-space-between col">
-                <label class="w-100 text-center" for="confirm-password">Confirm password</label><br>
+              <div style="border:1px solid red" class="d-flex flex-column justify-content-evenly col">
+                <label class="w-100 text-center" for="confirm-password">Confirm password</label>
                 <input
                 class="w-100 h-25 input-field border-0 rounded"
                 type="password"
@@ -71,15 +71,15 @@
                 name="confirm-password"
                 placeholder="••••••••••••••••"
                 required
-                ><br><br>             
+                >             
               </div>
             </div>
 
             <div style="border:1px solid blue" class="row row-cols-2 w-100 h-25 ">
-              <div class="d-flex flex-column justify-content-space-between col" style="border:1px solid red">
-                <label class="w-100 text-center" for="keyboard-layout">Keyboard layout</label><br>
+              <div class="d-flex flex-column justify-content-evenly col" style="border:1px solid red">
+                <label class="w-100 text-center" for="keyboard-layout">Keyboard layout</label>
                 <select
-                  class="w-100"
+                  class="input-field border-0 rounded w-100"
                   name="keyboard-layout"
                   id="keyboard-layout-drpdwn"
                   required
@@ -110,10 +110,10 @@
                   >DVORAK</option>                  
                 </select>
               </div>
-              <div class="d-flex flex-column justify-content-space-between col"> 
-                <label class="w-100 text-center" for="captcha">Captcha</label><br>
+              <div class="d-flex flex-column justify-content-evenly col"> 
+                <label class="w-100 text-center" for="captcha">Captcha</label>
                 <?php include("src/includes/captcha.php");?>
-                <br><br>
+                
               </div>
             </div>
 
