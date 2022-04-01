@@ -4,7 +4,7 @@ const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 const typingDiv = document.querySelector("#typing-field")
 
 // Text to type
-const text = "curious political grain grandmother pot nice coordinated rambunctious nosy stain vanish scatter real past cave teaching island writer tempt sleepy woman unarmed warlike correct phobic crib fact grumpy rare snobbish"
+const text = "curious political grain grandmother pot nice coordinated rambunctious nosy stain vanish scatter real past cave teaching island writer tempt sleepy woman unarmed warlike correct phobic"
 
 // Split the whole text by each character
 // Then create a span for each of those
