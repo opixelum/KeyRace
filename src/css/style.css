@@ -170,7 +170,6 @@ a {
     height:33.4%;
     cursor: pointer;
     transition:left 0.4s, top 0.4s;
-    border: 1px solid #000;
 }
 
 .captcha_block img {
