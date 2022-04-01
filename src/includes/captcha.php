@@ -12,3 +12,4 @@
     
   <div class="btn" id="reset-btn">Reset</div>
 </div>    
+<script src="./src/scripts/js/captcha.js"></script>

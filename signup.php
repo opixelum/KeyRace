@@ -128,6 +128,5 @@
     </div>
 
     <script src="./src/scripts/js/main.js"></script>
-    <script src="./src/scripts/js/captcha.js"></script>
   </body>
 </html>

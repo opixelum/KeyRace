@@ -35,29 +35,25 @@
               required
               type="password"
             ><br><br>
-            <div class="w-100 d-flex justify-content-center"> 
-              <input
-              id="stay-connected-chckbx"
-              name="stay-connected"
-              type="checkbox"
-              value="stay-connected"
-              >
-              
-            </div>
-            
+
+            <input
+            id="stay-connected-chckbx"
+            name="stay-connected"
+            type="checkbox"
+            value="stay-connected"
+            >
             <label for="stay-connected">Stay connected</label><br><br>
 
             <input placeholder="submit" type="submit">
           </form>
 
-          <?php include("src/includes/captcha.php");?>
 
+          <?php include("src/includes/captcha.php");?>
           <?php include("src/includes/message.php");?>
         </main>
       </div>
     </div>
 
     <script src="./src/scripts/js/main.js"></script>
-    <script src="./src/scripts/js/captcha.js"></script>
   </body>
 </html>
