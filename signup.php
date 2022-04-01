@@ -19,7 +19,7 @@
               <div style="border:1px solid red" class="col">
                 <label class="w-100 text-center" for="username">Username</label><br>
                 <input
-                class="w-100 h-25"
+                class="w-100 h-25 input-field border-0 rounded"
                 type="text"
                 value="<?php 
                   // Set cookie value to input field
@@ -35,7 +35,7 @@
               <div style="border:1px solid red" class="col">
                 <label class="w-100 text-center" for="email">Email</label><br>
                 <input
-                  class="w-100 h-25"
+                  class="w-100 h-25 input-field border-0 rounded"
                   type="email"
                   value="<?php
                     // Set cookie value to input field
@@ -53,7 +53,7 @@
               <div style="border:1px solid red" class="col">
                 <label class="w-100 text-center" for="password">Password</label><br>
                 <input
-                class="w-100 h-25"
+                class="w-100 h-25 input-field border-0 rounded"
                 type="password"
                 id="password-inpt"
                 name="password"
@@ -65,7 +65,7 @@
               <div style="border:1px solid red" class="col">
                 <label class="w-100 text-center" for="confirm-password">Confirm password</label><br>
                 <input
-                class="w-100 h-25"
+                class="w-100 h-25 input-field border-0 rounded"
                 type="password"
                 id="confirm-password-inpt"
                 name="confirm-password"

@@ -10,5 +10,5 @@
     <div class="captcha_block"><img src="./src/images/captcha/captcha8.png"></div>
   </div>
     
-  <button id="reset-btn">Reset</button>
+  <button class="btn" id="reset-btn">Reset</button>
 </div>    

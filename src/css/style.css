@@ -89,6 +89,11 @@ header, main{
     background-color: var(--containersBg);
 }
 
+.input-field {
+    background-color: #888;
+    color: var(--buttonFontColor);
+}
+
 
 /******************************** N A V B A R ********************************/
 
