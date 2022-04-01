@@ -16,10 +16,10 @@
           <form class="container d-flex justify-content-center flex-wrap w-75 h-75" method="POST" action="./src/scripts/php/signup_check.php">
           <h1>Sign up</h1>
             <div class="row row-cols-2 w-100">
-              <div class="d-flex flex-column justify-content-evenly col">
+              <div class="col d-flex flex-column justify-content-evenly align-items-center">
                 <label class="w-100 text-center" for="username">Username</label>
                 <input
-                class="w-100 h-25 input-field border-0 rounded"
+                class="w-75 h-25 input-field border-0 px-3 py-2 rounded"
                 type="text"
                 value="<?php 
                   // Set cookie value to input field
@@ -32,10 +32,10 @@
                 >
               </div>
 
-              <div class="d-flex flex-column justify-content-evenly col">
+              <div class="col d-flex flex-column justify-content-evenly align-items-center">
                 <label class="w-100 text-center" for="email">Email</label>
                 <input
-                  class="w-100 h-25 input-field border-0 rounded"
+                  class="w-75 h-25 input-field border-0 px-3 py-2 rounded"
                   type="email"
                   value="<?php
                     // Set cookie value to input field
@@ -50,10 +50,10 @@
             </div>
             
             <div class="row row-cols-2 w-100">
-              <div class="d-flex flex-column justify-content-evenly col">
+              <div class="col d-flex flex-column justify-content-evenly align-items-center">
                 <label class="w-100 text-center" for="password">Password</label>
                 <input
-                class="w-100 h-25 input-field border-0 rounded"
+                class="w-75 h-25 input-field border-0 px-3 py-2 rounded"
                 type="password"
                 id="password-inpt"
                 name="password"
@@ -62,10 +62,10 @@
                 >
               </div>
 
-              <div class="d-flex flex-column justify-content-evenly col">
+              <div class="col d-flex flex-column justify-content-evenly align-items-center">
                 <label class="w-100 text-center" for="confirm-password">Confirm password</label>
                 <input
-                class="w-100 h-25 input-field border-0 rounded"
+                class="w-75 h-25 input-field border-0 px-3 py-2 rounded"
                 type="password"
                 id="confirm-password-inpt"
                 name="confirm-password"
@@ -76,10 +76,10 @@
             </div>
 
             <div class="row row-cols-2 w-100 h-25 ">
-              <div class="d-flex flex-column justify-content-center col">
+              <div class="col d-flex flex-column justify-content-center align-items-center">
                 <label class="w-100 text-center mb-3" for="keyboard-layout">Keyboard layout</label>
                 <select
-                  class="input-field border-0 rounded w-100"
+                  class="input-field border-0 rounded w-75"
                   name="keyboard-layout"
                   id="keyboard-layout-drpdwn"
                   required
