@@ -8,6 +8,6 @@ if (backBtn) {
 const saveBtn = document.querySelector(`#save-btn`)
 if (saveBtn) {
     saveBtn.addEventListener('click', () => {
-        window.location.href = `http://localhost/KeyRace/src/scripts/php/modify.php`
+        window.location.href = `http://localhost/KeyRace/src/scripts/php/update.php`
     })
 }
