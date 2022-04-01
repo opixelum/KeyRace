@@ -6,7 +6,7 @@
       <img alt="KeyRace logo" width="100px" src="./src/images/logo.png">
     </a>
     <input
-      class="search border-0 m-2 px-3 py-2 w-100 rounded-pill"
+      class="input-field border-0 m-2 px-3 py-2 w-100 rounded-pill"
       type="search"
       id="search-field"
       name="search-field"

@@ -93,20 +93,14 @@ header, main{
     background-color: #888;
     color: var(--buttonFontColor);
 }
+.input-field::placeholder {
+    color: var(--containersBg);
+}
 
 
 /******************************** N A V B A R ********************************/
 
 /*------------------------------- H E A D E R -------------------------------*/
-
-.search {
-    background-color: #888;
-    color: var(--buttonFontColor);
-    font-size: 1.2em;
-}
-.search::placeholder {
-    color: var(--containersBg);
-}
 
 input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
