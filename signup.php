@@ -117,7 +117,7 @@
               </div>
             </div>
 
-            <input class="w-100" type="submit" placeholder="submit">
+            <input class="btn w-25" type="submit" value="Submit">
           
           </form>
 
