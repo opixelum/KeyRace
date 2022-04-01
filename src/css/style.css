@@ -90,13 +90,19 @@ header, main{
 }
 
 
+/************************** I N P U T   F I E L D S **************************/
+
+.input-field {
+    background-color: #888;
+    color: var(--buttonFontColor);
+}
+
+
 /******************************** N A V B A R ********************************/
 
 /*------------------------------- H E A D E R -------------------------------*/
 
 .search {
-    background-color: #888;
-    color: var(--buttonFontColor);
     font-size: 1.2em;
 }
 .search::placeholder {
@@ -193,4 +199,15 @@ a {
 .reset_button:hover {
     opacity: 0.8;
     font-size: 3.5vh;
+}
+
+
+/*-------------------------- T Y P I N G   G A M E --------------------------*/
+
+.done {
+    color: green;
+}
+
+.wrong {
+    color: red;
 }

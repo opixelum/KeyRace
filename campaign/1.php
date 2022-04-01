@@ -12,13 +12,16 @@
           <?php include("../src/includes/navbar.php"); ?>
         </header>
 
-        <main class="col h-100 ms-2 rounded rgb-shadow">
-          <div class="container-fluid h-100 p-3"">
+        <main class="col d-flex justify-content-center align-items-center flex-wrap h-100 ms-2 rounded rgb-shadow">
+            <h1 class="text-center w-100">Quest 1</h1>
+            <div id="stats"></div>
+            <div class="fs-3 m-5 px-2 rounded input-field" id="typing-field"></div>
           </div>
         </main>
       </div>
     </div>
 
     <script src="../src/scripts/js/main.js"></script>
+    <script src="../src/scripts/js/typing.js"></script>
   </body>
 </html>
