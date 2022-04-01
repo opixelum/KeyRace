@@ -161,3 +161,7 @@ a {
     cursor: pointer;
     transition:left 0.4s, top 0.4s;
 }
+
+.block img {
+    border: 1px solid var(--fontColor);
+}
