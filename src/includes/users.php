@@ -21,8 +21,7 @@
                 echo '<td>' . $user['email'] . '</td>';
                 echo '<td>' . $user['role'] . '</td>';
                 echo '<td class="text-nowrap">';
-                echo '<a class="btn btn-primary btn-sm me-2 col-6" 
-                href="http://localhost/KeyRace/src/includes/read.php?id=' . $user['user_id'] . '">Edit</a>';
+                echo '<a class="btn btn-primary btn-sm me-2 col-6" href="read.php?id=' . $user['user_id'] . '">Edit</a>';
                 echo '<a class="btn btn-danger btn-sm me-2 col-6" href="delete.php?id=' . $user['user_id'] . '">Delete</a>';
                 echo '</td>';
                 echo '</tr>';

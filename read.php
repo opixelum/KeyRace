@@ -1,4 +1,19 @@
-<div class="container">
+<!DOCTYPE html>
+<html lang="en">
+  <?php
+      $title = "Settings | KeyRace";
+      include("./src/includes/head.php");
+  ?>
+
+  <body class="dark-theme">
+    <div class="container-fluid vh-100 g-0">
+      <div class="row h-100 p-3 g-0">
+        <header class="col-2 p-0 me-2 rounded rgb-shadow">
+          <?php include("./src/includes/navbar.php");?>
+        </header>
+
+        <main class="col ms-2 rounded rgb-shadow">
+        <div class="container">
     <?php 
         include('C:\MAMP\htdocs\KeyRace\src\scripts\php\db_connect.php');
         $q = "SELECT user_id, username, email, password, keyboard, role, kc, gc, avatar, banner, car FROM USER WHERE user_id = $_GET[id]";
@@ -31,3 +46,11 @@
         ?>
     </table>
 </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="./src/scripts/js/settings.js"></script>
+    <script src="./src/scripts/js/main.js"></script>
+  </body>
+</html>
