@@ -19,10 +19,9 @@
                 echo '<td>' . $user['username'] . '</td>';
                 echo '<td>' . $user['email'] . '</td>';
                 echo '<td class="text-nowrap">';
-                echo '<a class="btn btn-primary btn-sm me-2 col-4" 
-                href="http://localhost/KeyRace/src/includes/read.php?id=' . $user['user_id'] . '">See</a>';
-                echo '<a class="btn btn-success btn-sm me-2 col-4" href="update.php?id=' . $user['user_id'] . '">Modify</a>';
-                echo '<a class="btn btn-danger btn-sm me-2 col-4" href="delete.php?id=' . $user['user_id'] . '">Delete</a>';
+                echo '<a class="btn btn-primary btn-sm me-2 col-6" 
+                href="http://localhost/KeyRace/src/includes/read.php?id=' . $user['user_id'] . '">Edit</a>';
+                echo '<a class="btn btn-danger btn-sm me-2 col-6" href="delete.php?id=' . $user['user_id'] . '">Delete</a>';
                 echo '</td>';
                 echo '</tr>';
             }
