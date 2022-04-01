@@ -15,7 +15,7 @@
         <main class="col d-flex justify-content-center align-items-center flex-wrap h-100 ms-2 rounded rgb-shadow">
             <h1 class="text-center w-100">Quest 1</h1>
             <div id="stats"></div>
-            <div class="fs-3 m-5 px-2 rounded input-field" id="typing-field"></div>
+            <div class="fs-3 m-5 px-2 input-field rounded text-break" id="typing-field"></div>
           </div>
         </main>
       </div>

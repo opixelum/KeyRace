@@ -4,8 +4,8 @@ const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 const typingDiv = document.querySelector("#typing-field")
 
 // Text to type
-const text = "curious political grain grandmother pot nice coordinated rambunctious nosy stain vanish scatter real past cave teaching island writer tempt sleepy woman unarmed warlike correct phobic"
-
+const text = "curious_political_grain_grandmother_pot_nice_coordinated_rambunctious_nosy_stain_vanish_scatter_real_past_cave_teaching_island_writer_tempt_sleepy_woman_unarmed_warlike_correct_phobic"
+console.log(text.split(''))
 // Split the whole text by each character
 // Then create a span for each of those
 const characters = text.split('').map((char) => {
@@ -29,12 +29,10 @@ let endTime = null
 // Listen to player's keyboard
 const keyListener = document.addEventListener("keydown", ({key}) => {
     // Start stopwatch
-    if (!startTime) {
-        startTime = new Date()
-    }
-    
+    if (!startTime) startTime = new Date()
+
     // Key check
-    if (key === cursorCharacter.innerText) {
+    if (key === cursorCharacter.innerText || key === ' ' && cursorCharacter.innerText === '_') {
         // If right key was typed
         cursorCharacter.classList.remove("cursor")
         cursorCharacter.classList.add("done")
