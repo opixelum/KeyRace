@@ -15,8 +15,8 @@
         <main class="col ms-2 d-flex justify-content-center align-items-center rounded rgb-shadow"> 
           <form class="container d-flex justify-content-center flex-wrap w-75 h-75" method="POST" action="./src/scripts/php/signup_check.php">
           <h1>Sign up</h1>
-            <div style="border:1px solid blue" class="row row-cols-2 w-100">
-              <div style="border:1px solid red" class="d-flex flex-column justify-content-evenly col">
+            <div class="row row-cols-2 w-100">
+              <div class="d-flex flex-column justify-content-evenly col">
                 <label class="w-100 text-center" for="username">Username</label>
                 <input
                 class="w-100 h-25 input-field border-0 rounded"
@@ -32,7 +32,7 @@
                 >
               </div>
 
-              <div style="border:1px solid red" class="d-flex flex-column justify-content-evenly col">
+              <div class="d-flex flex-column justify-content-evenly col">
                 <label class="w-100 text-center" for="email">Email</label>
                 <input
                   class="w-100 h-25 input-field border-0 rounded"
@@ -49,8 +49,8 @@
               </div>
             </div>
             
-            <div style="border:1px solid blue" class="row row-cols-2 w-100">
-              <div style="border:1px solid red" class="d-flex flex-column justify-content-evenly col">
+            <div class="row row-cols-2 w-100">
+              <div class="d-flex flex-column justify-content-evenly col">
                 <label class="w-100 text-center" for="password">Password</label>
                 <input
                 class="w-100 h-25 input-field border-0 rounded"
@@ -62,7 +62,7 @@
                 >
               </div>
 
-              <div style="border:1px solid red" class="d-flex flex-column justify-content-evenly col">
+              <div class="d-flex flex-column justify-content-evenly col">
                 <label class="w-100 text-center" for="confirm-password">Confirm password</label>
                 <input
                 class="w-100 h-25 input-field border-0 rounded"
@@ -75,9 +75,9 @@
               </div>
             </div>
 
-            <div style="border:1px solid blue" class="row row-cols-2 w-100 h-25 ">
-              <div class="d-flex flex-column justify-content-evenly col" style="border:1px solid red">
-                <label class="w-100 text-center" for="keyboard-layout">Keyboard layout</label>
+            <div class="row row-cols-2 w-100 h-25 ">
+              <div class="d-flex flex-column justify-content-center col">
+                <label class="w-100 text-center mb-3" for="keyboard-layout">Keyboard layout</label>
                 <select
                   class="input-field border-0 rounded w-100"
                   name="keyboard-layout"

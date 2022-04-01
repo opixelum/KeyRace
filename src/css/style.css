@@ -147,19 +147,15 @@ a {
     width: 50%;
 }
 
-
 /*------------------------------ C A P T C H A ------------------------------*/
 
 #captcha {
     position: relative;
     width: 35%;
-    height: 100%;
 }
 
 .block {
     position:absolute;
-    left:0;
-    top:0;
     width:33.3%;
     height:33.3%;
     cursor: pointer;
