@@ -1,6 +1,8 @@
 <?php 
     session_start();
 
+    $type =  "login";
+
     // Save long string for shortening lines
     $login_path = "location: ../../../login.php?type=";
 
@@ -46,6 +48,8 @@
     // If credentials don't match
     if (!$result)
     {
+        $status = "no match";
+        include("../../includes/logs.php");
         header($login_path . "danger&message=Wrong email or password.");
         exit;
     }
@@ -65,6 +69,8 @@
     // If user hasn't confirmed his email
     if (!$result)
     {
+        $status = "email not confirmed";
+        include("../../includes/logs.php");
         header($login_path . "danger&message=Please confirm your email.");
         exit;
     }
@@ -73,8 +79,9 @@
 
     // Delete temporary cookie
     setcookie("email", '', 0, "/KeyRace/login.php");
-    
     $_SESSION["email"] = $_POST["email"];
+    $status = "success";
+    include("../../includes/logs.php");
     header("location: ../../../index.php");
     exit;
 ?>
