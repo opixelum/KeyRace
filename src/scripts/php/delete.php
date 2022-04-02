@@ -1,17 +1,10 @@
 <?php
     
-    if ($choice)
-    {
-        include('http://localhost/KeyRace/src/scripts/php/db_connect.php');
-        $q = "DELETE FROM USER WHERE user_id = $_GET[id]";
-        $req = $db->query($q);
-        $results = $req->fetchAll(PDO::FETCH_ASSOC);
+    include('http://localhost/KeyRace/src/scripts/php/db_connect.php');
+    $q = "DELETE FROM USER WHERE user_id = $_GET[id]";
+    $req = $db->query($q);
+    $results = $req->fetchAll(PDO::FETCH_ASSOC);
 
-        header("location:../../../settings.php");
-    }
-    else
-    {
-        header("location:../../../settings.php");
-    }
+    header("location:../../../settings.php");
     
 ?>
