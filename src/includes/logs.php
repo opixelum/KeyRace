@@ -8,7 +8,7 @@
 
         case "page":
             $file = fopen("/home/opixelum/Code/KeyRace/logs/page_visits.csv", "a");
-            $line = $_POST["email"] . ',' . date("Y-m-d H:i:s") . ',' . $page . "\n";
+            $line = isset($_SESSION["email"]) ? $_SESSION["email"] : "guest" . ',' . date("Y-m-d H:i:s") . ',' . $page ."\n";
             fwrite($file, $line);
     }
 ?>

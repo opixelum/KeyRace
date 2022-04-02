@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php 
+    session_start();
+    $type = "page";
+    include("./src/includes/logs.php");
+?>
 
 <div class="d-flex flex-column h-100 justify-content-between">
   <div class="d-flex flex-wrap justify-content-center">
