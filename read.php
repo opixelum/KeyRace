@@ -23,19 +23,19 @@
 
             <table class="table table-bordered">
               <?php
-                  foreach ($results as $key => $user) {
-                      echo '<tr><td>user_id</td><td>' . $user['user_id'] . '</td></tr>';
-                      echo '<tr><td>username</td><td>' . $user['username'] . '</td></tr>';
-                      echo '<tr><td>email</td><td>' . $user['email'] . '</td></tr>';
-                      echo '<tr><td>password</td><td> °°°°°° </td></tr>';
-                      echo '<tr><td>keyboard</td><td>' . $user['keyboard'] . '</td></tr>';
-                      echo '<tr><td>role</td><td>' . $user['role'] . '</td></tr>';
-                      echo '<tr><td>kc</td><td>' . $user['kc'] . '</td></tr>';
-                      echo '<tr><td>gc</td><td>' . $user['gc'] . '</td></tr>';
-                      echo '<tr><td>avatar</td><td>' . $user['avatar'] . '</td></tr>';
-                      echo '<tr><td>banner</td><td>' . $user['banner'] . '</td></tr>';
-                      echo '<tr><td>car</td><td>' . $user['car'] . '</td></tr>';
-                  }
+                  
+                  echo '<tr><td>user_id</td><td><input type="text" value="' . $results[0]['user_id'] . '"></td></tr>';
+                  echo '<tr><td>username</td><td><input type="text" value="' . $results[0]['username'] . '"></td></tr>';
+                  echo '<tr><td>email</td><td><input type="text" value="' . $results[0]['email'] . '"></td></tr>';
+                  echo '<tr><td>password</td><td> °°°°°° </td></tr>';
+                  echo '<tr><td>keyboard</td><td><input type="text" value="' . $results[0]['keyboard'] . '"></td></tr>';
+                  echo '<tr><td>role</td><td><input type="text" value="' . $results[0]['role'] . '"></td></tr>';
+                  echo '<tr><td>kc</td><td><input type="text" value="' . $results[0]['kc'] . '"></td></tr>';
+                  echo '<tr><td>gc</td><td><input type="text" value="' . $results[0]['gc'] . '"></td></tr>';
+                  echo '<tr><td>avatar</td><td><input type="text" value="' . $results[0]['avatar'] . '"></td></tr>';
+                  echo '<tr><td>banner</td><td><input type="text" value="' . $results[0]['banner'] . '"></td></tr>';
+                  echo '<tr><td>car</td><td><input type="text" value="' . $results[0]['car'] . '"></td></tr>';
+                  
               ?>
             </table>
 
