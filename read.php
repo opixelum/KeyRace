@@ -24,14 +24,14 @@
               <table class="table table-bordered">
                 <?php
                     
-                    echo '<tr><td>user_id</td><td><input name="user_id" type="text" value="' . $results[0]['user_id'] . '"></td></tr>';
+                    echo '<tr><td>user_id</td><td><input name="user_id" type="number" value="' . $results[0]['user_id'] . '"></td></tr>';
                     echo '<tr><td>username</td><td><input name="username" type="text" value="' . $results[0]['username'] . '"></td></tr>';
                     echo '<tr><td>email</td><td><input name="email" type="text" value="' . $results[0]['email'] . '"></td></tr>';
                     echo '<tr><td>password</td><td> °°°°°° </td></tr>';
-                    echo '<tr><td>keyboard</td><td><input name="keyboard" type="text" value="' . $results[0]['keyboard'] . '"></td></tr>';
-                    echo '<tr><td>role</td><td><input name="role" type="text" value="' . $results[0]['role'] . '"></td></tr>';
-                    echo '<tr><td>kc</td><td><input name="kc" type="text" value="' . $results[0]['kc'] . '"></td></tr>';
-                    echo '<tr><td>gc</td><td><input name="gc" type="text" value="' . $results[0]['gc'] . '"></td></tr>';
+                    echo '<tr><td>keyboard</td><td><input name="keyboard" type="number" value="' . $results[0]['keyboard'] . '"></td></tr>';
+                    echo '<tr><td>role</td><td><input name="role" type="number" value="' . $results[0]['role'] . '"></td></tr>';
+                    echo '<tr><td>kc</td><td><input name="kc" type="number" value="' . $results[0]['kc'] . '"></td></tr>';
+                    echo '<tr><td>gc</td><td><input name="gc" type="number" value="' . $results[0]['gc'] . '"></td></tr>';
                     echo '<tr><td>avatar</td><td><input name="avatar" type="text" value="' . $results[0]['avatar'] . '"></td></tr>';
                     echo '<tr><td>banner</td><td><input name="banner" type="text" value="' . $results[0]['banner'] . '"></td></tr>';
                     echo '<tr><td>car</td><td><input name="car" type="text" value="' . $results[0]['car'] . '"></td></tr>';
