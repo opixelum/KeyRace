@@ -1,7 +1,7 @@
 <?php
     include("db_connect.php");
 
-    $query = "UPDATE USER SET user_id=:user_id, username=:username, email=:email, keyboard=:keyboard, role=:role, kc=:kc, gc=:gc, avatar=:avatar, banner=:banner, car=:car WHERE user_id = $_POST[user_id]";
+    $query = "UPDATE USER SET user_id=:user_id, username=:username, email=:email, keyboard=:keyboard, role=:role, kc=:kc, gc=:gc, avatar=:avatar, banner=:banner, car=:car WHERE user_id = " . htmlspecialchars($_GET['id']);
     $prepared_query = $db->prepare($query);
     $prepared_query->execute(["user_id" => $_POST['user_id'],
                             "username" => $_POST['username'],

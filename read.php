@@ -20,7 +20,7 @@
                 $req = $db->query($q);
                 $results = $req->fetchAll(PDO::FETCH_ASSOC);
             ?>
-            <form method="post" action="./src/scripts/php/update.php">
+            <form method="post" action="./src/scripts/php/update.php?id='<?php echo $results[0]['user_id'] ?>'">
               <table class="table table-bordered">
                 <?php
                     
