@@ -15,27 +15,27 @@
         header($read_path . "user_id needs to be a number.");
         exit;
     }
-    if (!filter_var($_POST['email']), FILTER_VALIDATE_EMAIL)))
+    if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
     {
         header($read_path . "email needs to be an email.");
         exit;
     }
-    if(!preg_match("@[0-9]@", $_POST['keyboard']))
+    if (!preg_match("@[0-9]@", $_POST['keyboard']))
     {
         header($read_path . "keyboard layout needs to be a number.");
         exit;
     }
-    if(!preg_match("@[0-9]@", $_POST['role']))
+    if (!preg_match("@[0-9]@", $_POST['role']))
     {
         header($read_path . "role needs to be a number.");
         exit;
     }
-    if(!preg_match("@[0-9]@", $_POST['kc']))
+    if (!preg_match("@[0-9]@", $_POST['kc']))
     {
         header($read_path . "kc needs to be a number.");
         exit;
     }
-    if(!preg_match("@[0-9]@", $_POST['gc']))
+    if (!preg_match("@[0-9]@", $_POST['gc']))
     {
         header($read_path . "gc needs to be a number.");
         exit;
