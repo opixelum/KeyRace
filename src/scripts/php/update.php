@@ -10,54 +10,34 @@
     $results = $req->fetchAll(PDO::FETCH_ASSOC);
 
 
-    if($_POST['user_id'] !== $results[0]['user_id'])
+    if (!preg_match("@[0-9]@", $_POST['user_id']))
     {
         header($read_path . "user_id needs to be a number.");
         exit;
     }
-    if($_POST['username'] !== $results[0]['username'])
+    if (!filter_var($_POST['email']), FILTER_VALIDATE_EMAIL)))
     {
-        header($read_path . "username needs to be a string.");
+        header($read_path . "email needs to be an email.");
         exit;
     }
-    if($_POST['email'] !== $results[0]['email'])
-    {
-        header($read_path . "email needs to be a string.");
-        exit;
-    }
-    if($_POST['keyboard'] !== $results[0]['keyboard'])
+    if(!preg_match("@[0-9]@", $_POST['keyboard']))
     {
         header($read_path . "keyboard layout needs to be a number.");
         exit;
     }
-    if($_POST['role'] !== $results[0]['role'])
+    if(!preg_match("@[0-9]@", $_POST['role']))
     {
         header($read_path . "role needs to be a number.");
         exit;
     }
-    if($_POST['kc'] !== $results[0]['kc'])
+    if(!preg_match("@[0-9]@", $_POST['kc']))
     {
         header($read_path . "kc needs to be a number.");
         exit;
     }
-    if($_POST['gc'] !== $results[0]['gc'])
+    if(!preg_match("@[0-9]@", $_POST['gc']))
     {
         header($read_path . "gc needs to be a number.");
-        exit;
-    }
-    if($_POST['avatar'] !== $results[0]['avatar'])
-    {
-        header($read_path . "avatar needs to be a string.");
-        exit;
-    }
-    if($_POST['banner'] !== $results[0]['banner'])
-    {
-        header($read_path . "banner needs to be a string.");
-        exit;
-    }
-    if($_POST['car'] !== $results[0]['car'])
-    {
-        header($read_path . "car needs to be a string.");
         exit;
     }
 
