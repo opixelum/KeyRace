@@ -198,3 +198,10 @@ a {
     opacity: 0.8;
     font-size: 3.5vh;
 }
+
+/* Array */
+
+tr, td, th{
+    color: var(--fontColor);
+    border-color: var(--fontColor);
+}
