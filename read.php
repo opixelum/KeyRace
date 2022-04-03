@@ -42,6 +42,7 @@
               <button id="back-btn" type="button" class="btn">Back</button>
               <input type="submit" class="btn" value="Save">
             </form>
+            <?php include("./src/includes/message.php"); ?>
           </div>
         </main>
       </div>
