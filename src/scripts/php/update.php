@@ -1,59 +1,66 @@
 <?php
+
+    include("db_connect.php");
+
     // Save long string for shortening lines
     $login_path = "location: ../../../read.php?type=";
 
-    if($_POST['user_id'] !== $_POST['user_id'])
+    $q = "SELECT * FROM USER WHERE user_id = $_GET[id]";
+    $req = $db->query($q);
+    $results = $req->fetchAll(PDO::FETCH_ASSOC);
+
+
+    if($_POST['user_id'] !== $results[0]['user_id'])
     {
         header($login_path . "danger&message=user_id needs to be a number.");
         exit;
     }
-    if($_POST['username'] !== $_POST['username'])
+    if($_POST['username'] !== $results[0]['username'])
     {
         header($login_path . "danger&message=username needs to be a string.");
         exit;
     }
-    if($_POST['email'] !== $_POST['email'])
+    if($_POST['email'] !== $results[0]['email'])
     {
         header($login_path . "danger&message=email needs to be a string.");
         exit;
     }
-    if($_POST['keyboard'] !== $_POST['keyboard'])
+    if($_POST['keyboard'] !== $results[0]['keyboard'])
     {
         header($login_path . "danger&message=keyboard layout needs to be a number.");
         exit;
     }
-    if($_POST['role'] !== $_POST['role'])
+    if($_POST['role'] !== $results[0]['role'])
     {
         header($login_path . "danger&message=role needs to be a number.");
         exit;
     }
-    if($_POST['kc'] !== $_POST['kc'])
+    if($_POST['kc'] !== $results[0]['kc'])
     {
         header($login_path . "danger&message=kc needs to be a number.");
         exit;
     }
-    if($_POST['gc'] !== $_POST['gc'])
+    if($_POST['gc'] !== $results[0]['gc'])
     {
         header($login_path . "danger&message=gc needs to be a number.");
         exit;
     }
-    if($_POST['avatar'] !== $_POST['avatar'])
+    if($_POST['avatar'] !== $results[0]['avatar'])
     {
         header($login_path . "danger&message=avatar needs to be a string.");
         exit;
     }
-    if($_POST['banner'] !== $_POST['banner'])
+    if($_POST['banner'] !== $results[0]['banner'])
     {
         header($login_path . "danger&message=banner needs to be a string.");
         exit;
     }
-    if($_POST['car'] !== $_POST['car'])
+    if($_POST['car'] !== $results[0]['car'])
     {
         header($login_path . "danger&message=car needs to be a string.");
         exit;
     }
 
-    include("db_connect.php");
     $query = "UPDATE USER SET user_id=:user_id, username=:username, email=:email, keyboard=:keyboard, role=:role, kc=:kc, gc=:gc, avatar=:avatar, banner=:banner, car=:car WHERE user_id = " . htmlspecialchars($_GET['id']);
     $prepared_query = $db->prepare($query);
     $prepared_query->execute(["user_id" => $_POST['user_id'],
