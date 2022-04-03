@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <?php
+      $page = "read";
       $title = "Settings | KeyRace";
       include("./src/includes/head.php");
   ?>
