@@ -42,7 +42,7 @@
     }
 
     // Update the user informations
-    $query = "UPDATE USER SET user_id=:user_id, username=:username, email=:email, keyboard=:keyboard, role=:role, kc=:kc, gc=:gc, avatar=:avatar, banner=:banner, car=:car WHERE user_id = " . htmlspecialchars($_GET['id']);
+    $query = "UPDATE USER SET user_id=:user_id, username=:username, email=:email, keyboard=:keyboard, role=:role, kc=:kc, gc=:gc, avatar=:avatar, banner=:banner, car=:car WHERE user_id=$_GET[id]";
     $prepared_query = $db->prepare($query);
     $prepared_query->execute(["user_id" => $_POST['user_id'],
                             "username" => $_POST['username'],
@@ -58,6 +58,6 @@
 
     $_SESSION['email'] = $_POST['email'];
 
-    header("location:../../../settings.php?idd=" . $_SESSION['email']);
+    header("location:../../../settings.php?id=" . $_SESSION['email']);
     exit;
 ?>

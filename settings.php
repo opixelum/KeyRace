@@ -25,7 +25,7 @@
               echo $_SESSION["email"];
               if (isset($_SESSION["email"]))
               {
-                  include('src\scripts\php\db_connect.php');
+                  include('src/scripts/php/db_connect.php');
 
                   $query = "SELECT role FROM USER WHERE email = :email";
                   $prepared_query = $db->prepare($query);
@@ -39,7 +39,7 @@
 
                   if ($result[0]['role'] == 3)
                   {
-                      include('src\includes\users.php');
+                      include('src/includes/users.php');
                   }
               }
             ?>
