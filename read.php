@@ -5,6 +5,30 @@
       $title = "Settings | KeyRace";
       include("./src/includes/head.php");
   ?>
+  <?php
+      if (isset($_SESSION["email"]))
+      {
+          include('src\scripts\php\db_connect.php');
+
+          $query = "SELECT role FROM USER WHERE email = :email";
+          $prepared_query = $db->prepare($query);
+      
+          $prepared_query->execute(["email" => $_SESSION["email"]]);
+      
+          $result = $prepared_query->fetchAll();
+
+          if ($result[0]['role'] != 3)
+          {
+            header("location:settings.php");
+            exit;
+          }
+      }
+      else
+      {
+        header("location:settings.php");
+        exit;
+      }
+  ?>
 
   <body class="dark-theme">
     <div class="container-fluid vh-100 g-0">
