@@ -21,6 +21,8 @@
               Dark / Light mode
             </label>
             <?php
+
+              echo $_SESSION["email"];
               if (isset($_SESSION["email"]))
               {
                   include('src\scripts\php\db_connect.php');
@@ -31,6 +33,9 @@
                   $prepared_query->execute(["email" => $_SESSION["email"]]);
               
                   $result = $prepared_query->fetchAll();
+
+                  echo $result[0]['role'];
+                  var_dump($result);
 
                   if ($result[0]['role'] == 3)
                   {

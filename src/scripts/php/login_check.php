@@ -87,7 +87,8 @@
 
     // Delete temporary cookie
     setcookie("email", '', 0, "/KeyRace/login.php");
-    $_SESSION["email"] = $_POST["email"];
+
+    $_SESSION['email'] = $_POST['email'];
     $status = "success";
     include("../../includes/logs.php");
     header("location: ../../../index.php");

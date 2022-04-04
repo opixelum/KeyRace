@@ -56,7 +56,8 @@
                             "car" => $_POST['car']]);
     $result = $prepared_query->fetchAll();
 
-    $_SESSION["email"] = $_POST['email'];
+    $_SESSION['email'] = $_POST['email'];
 
-    header("location:../../../settings.php");
+    header("location:../../../settings.php?idd=" . $_SESSION['email']);
+    exit;
 ?>
