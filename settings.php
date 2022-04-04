@@ -23,7 +23,19 @@
             <?php
               if (isset($_SESSION["email"]))
               {
-                include("src/includes/users.php");
+                  include('src\scripts\php\db_connect.php');
+
+                  $query = "SELECT role FROM USER WHERE email = :email";
+                  $prepared_query = $db->prepare($query);
+              
+                  $prepared_query->execute(["email" => $_SESSION["email"]]);
+              
+                  $result = $prepared_query->fetchAll();
+
+                  if ($result[0]['role'] == 3)
+                  {
+                      include('src\includes\users.php');
+                  }
               }
             ?>
           </form>
