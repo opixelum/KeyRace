@@ -54,6 +54,14 @@
         exit;
     }
 
+    // Get solved captcha
+    if (!$_COOKIE['captchaSolved'])
+    {
+        $message = "Please confirm the captcha";
+        header($login_path . "danger&message=$message");
+        exit();
+    }
+
     // If credentilals match
 
     // Prepare query to check if user has confirmed his email 
