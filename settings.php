@@ -22,7 +22,6 @@
             </label>
             <?php
 
-              echo $_SESSION["email"];
               if (isset($_SESSION["email"]))
               {
                   include('src/scripts/php/db_connect.php');
