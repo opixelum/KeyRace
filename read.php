@@ -1,28 +1,3 @@
-<?php
-      if (isset($_SESSION["email"]))
-      {
-          include('src\scripts\php\db_connect.php');
-
-          $query = "SELECT role FROM USER WHERE email = :email";
-          $prepared_query = $db->prepare($query);
-      
-          $prepared_query->execute(["email" => $_SESSION["email"]]);
-      
-          $result = $prepared_query->fetchAll();
-
-          if ($result[0]['role'] != 3)
-          {
-            header("location:settings.php");
-            exit;
-          }
-      }
-      else
-      {
-        header("location:index.php");
-        exit;
-      }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <?php
@@ -37,6 +12,31 @@
         <header class="col-2 p-0 me-2 rounded rgb-shadow">
           <?php include("./src/includes/navbar.php");?>
         </header>
+
+        <?php
+            if (isset($_SESSION["email"]))
+            {
+                include('src\scripts\php\db_connect.php');
+
+                $query = "SELECT role FROM USER WHERE email = :email";
+                $prepared_query = $db->prepare($query);
+            
+                $prepared_query->execute(["email" => $_SESSION["email"]]);
+            
+                $result = $prepared_query->fetchAll();
+
+                if ($result[0]['role'] != 3)
+                {
+                  header("location:settings.php");
+                  exit;
+                }
+            }
+            else
+            {
+              header("location:settings.php");
+              exit;
+            }
+        ?>
 
         <main class="col ms-2 rounded rgb-shadow">
           <div class="container">
