@@ -164,3 +164,10 @@ a {
 .block img {
     border: 1px solid var(--fontColor);
 }
+
+/* Array */
+
+tr, td, th{
+    color: var(--fontColor);
+    border-color: var(--fontColor);
+}

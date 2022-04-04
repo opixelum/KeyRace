@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php 
+    session_start();
+    $type = "page";
+    include("./src/includes/logs.php");
+?>
 
 <div class="d-flex flex-column h-100 justify-content-between">
   <div class="d-flex flex-wrap justify-content-center">
@@ -61,7 +65,7 @@
   <div class="footer d-flex w-100 flex-wrap justify-content-center">
     <a href="./support.php">Support</a>
     <br><br>
-    <small class="w-100 mb-3 text-center">© KeyRace 2022</small>
+    <small class="w-100 mb-3 text-center">© KeyRace <?php echo date("Y"); ?></small>
   </div>
   <script src="./src/scripts/js/navbar.js"></script>
 </div>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <?php
+      $page = "settings";
       $title = "Settings | KeyRace";
       include("./src/includes/head.php");
   ?>
@@ -18,7 +19,8 @@
             id="theme-switch">
             <label class="form-check-label" for="theme-switch">
               Dark / Light mode
-            </laber>
+            </label>
+            <?php include("src/includes/users.php");?>
           </form>
         </main>
       </div>
