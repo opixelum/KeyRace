@@ -2,7 +2,7 @@
 
     include("db_connect.php");
 
-    // Save long string for shortening lines
+    // Save the path
     $read_path = "location: ../../../read.php?id=$_GET[id]&type=danger&message=";
 
     $q = "SELECT * FROM USER WHERE user_id = $_GET[id]";
@@ -41,6 +41,7 @@
         exit;
     }
 
+    // Update the user informations
     $query = "UPDATE USER SET user_id=:user_id, username=:username, email=:email, keyboard=:keyboard, role=:role, kc=:kc, gc=:gc, avatar=:avatar, banner=:banner, car=:car WHERE user_id = " . htmlspecialchars($_GET['id']);
     $prepared_query = $db->prepare($query);
     $prepared_query->execute(["user_id" => $_POST['user_id'],
