@@ -151,13 +151,12 @@ a {
 
 #captcha {
     position: relative;
-    width: 35%;
+    width: 150px;
 }
 
 .block {
-    position:absolute;
-    width:33.3%;
-    height:33.3%;
+    position: absolute;
+    width: 33.3%;
     cursor: pointer;
     transition:left 0.4s, top 0.4s;
 }
