@@ -2,13 +2,13 @@ class captcha {
     cols=3 // How many colomns
     rows=3 // How many rows
     count // cols*rows
-    blocks // The html elements with className="captcha_block"
+    blocks // The html elements with className="block"
     emptyBlockCoords=[2,2] // The coordinates of the empty block
     indexes=[] // Keeps track of the order of the blocks
 
     constructor() {
         this.count = this.cols * this.rows
-        this.blocks = document.getElementsByClassName("captcha_block") // Grab the blocks
+        this.blocks = document.getElementsByClassName("block") // Grab the blocks
         this.init()
     }
 
@@ -86,10 +86,10 @@ class captcha {
 }
 
 
-let newCaptcha = new captcha //For create a new captcha and lauch the script with constructor()
+let newCaptcha = new captcha // For create a new captcha and lauch the script with constructor()
 
 // Re-mix the images
-let reset_button = document.querySelector(".reset_button")
-reset_button.addEventListener('click', () => {
+let resetBtn = document.querySelector("#reset-btn")
+resetBtn.addEventListener('click', () => {
     location.reload();
 })

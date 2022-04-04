@@ -12,90 +12,114 @@
         <header class="col-2 p-0 me-2 rounded rgb-shadow">
           <?php include("src/includes/navbar.php");?>
         </header>
-
-        <main class="col ms-2 d-flex justify-content-center align-items-center rounded rgb-shadow">
-          <form class="d-flex justify-content-center flex-wrap w-25" method="POST" action="./src/scripts/php/signup_check.php">
-            <label class="w-100 text-center" for="username">Username</label><br>
-            <input
-              type="text"
-              value="<?php 
+        
+        <main class="col ms-2 d-flex justify-content-center align-items-center rounded rgb-shadow"> 
+          <form class="container d-flex justify-content-center flex-wrap w-75 h-75" method="POST" action="./src/scripts/php/signup_check.php">
+          <h1>Sign up</h1>
+            <div class="row row-cols-2 w-100">
+              <div class="col d-flex flex-column justify-content-evenly align-items-center">
+                <label class="w-100 text-center" for="username">Username</label>
+                <input
+                class="w-75 h-25 input-field border-0 px-3 py-2 rounded"
+                type="text"
+                value="<?php 
                   // Set cookie value to input field
                   echo isset($_COOKIE["username"]) ? $_COOKIE["username"] : '';
-              ?>" 
-              id="username-inpt"
-              name="username"
-              placeholder="JDoe"
-              required
-            ><br><br>
+                ?>" 
+                id="username-inpt"
+                name="username"
+                placeholder="JDoe"
+                required
+                >
+              </div>
 
-            <label class="w-100 text-center" for="email">Email</label><br>
-            <input
-              type="email"
-              value="<?php
-                  // Set cookie value to input field
-                  echo isset($_COOKIE["email"]) ? $_COOKIE["email"] : '';
-              ?>" 
-              id="email-inpt"
-              name="email"
-              placeholder="john.doe@email.com"
-              required
-            ><br><br>
+              <div class="col d-flex flex-column justify-content-evenly align-items-center">
+                <label class="w-100 text-center" for="email">Email</label>
+                <input
+                  class="w-75 h-25 input-field border-0 px-3 py-2 rounded"
+                  type="email"
+                  value="<?php
+                    // Set cookie value to input field
+                    echo isset($_COOKIE["email"]) ? $_COOKIE["email"] : '';
+                  ?>" 
+                  id="email-inpt"
+                  name="email"
+                  placeholder="john.doe@email.com"
+                  required
+                >
+              </div>
+            </div>
+            
+            <div class="row row-cols-2 w-100">
+              <div class="col d-flex flex-column justify-content-evenly align-items-center">
+                <label class="w-100 text-center" for="password">Password</label>
+                <input
+                class="w-75 h-25 input-field border-0 px-3 py-2 rounded"
+                type="password"
+                id="password-inpt"
+                name="password"
+                placeholder="••••••••••••••••"
+                required
+                >
+              </div>
 
-            <label class="w-100 text-center" for="password">Password</label><br>
-            <input
-              type="password"
-              id="password-inpt"
-              name="password"
-              placeholder="••••••••••••••••"
-              required
-            ><br><br>
+              <div class="col d-flex flex-column justify-content-evenly align-items-center">
+                <label class="w-100 text-center" for="confirm-password">Confirm password</label>
+                <input
+                class="w-75 h-25 input-field border-0 px-3 py-2 rounded"
+                type="password"
+                id="confirm-password-inpt"
+                name="confirm-password"
+                placeholder="••••••••••••••••"
+                required
+                >             
+              </div>
+            </div>
 
-            <label class="w-100 text-center" for="confirm-password">Confirm password</label><br>
-            <input
-              type="password"
-              id="confirm-password-inpt"
-              name="confirm-password"
-              placeholder="••••••••••••••••"
-              required
-            ><br><br>
+            <div class="row row-cols-2 w-100 h-25 ">
+              <div class="col d-flex flex-column justify-content-center align-items-center">
+                <label class="w-100 text-center mb-3" for="keyboard-layout">Keyboard layout</label>
+                <select
+                  class="input-field border-0 rounded w-75"
+                  name="keyboard-layout"
+                  id="keyboard-layout-drpdwn"
+                  required
+                >
+                  <option value=''>--- Choose a layout ---</option>
+                  <option value='1'
+                    <?php // Select saved keyboard layout from cookie
+                        echo
+                            isset($_COOKIE["keyboard_layout"]) &&
+                            $_COOKIE["keyboard_layout"] == 1 ? "selected" : '';
+                    ?>
+                  >QWERTY</option>
 
-            <label class="w-100 text-center" for="keyboard-layout">Keyboard layout</label><br>
-            <select
-              name="keyboard-layout"
-              id="keyboard-layout-drpdwn"
-              required
-            >
-              <option value=''>--- Choose a layout ---</option>
-              <option value='1'
-                <?php // Select saved keyboard layout from cookie
-                    echo
-                        isset($_COOKIE["keyboard_layout"]) &&
-                        $_COOKIE["keyboard_layout"] == 1 ? "selected" : '';
-                ?>
-              >QWERTY</option>
+                  <option value='2'
+                    <?php // Select saved keyboard layout from cookie
+                        echo
+                            isset($_COOKIE["keyboard_layout"]) &&
+                            $_COOKIE["keyboard_layout"] == 2 ? "selected" : '';
+                    ?>
+                  >AZERTY</option>
 
-              <option value='2'
-                <?php // Select saved keyboard layout from cookie
-                    echo
-                        isset($_COOKIE["keyboard_layout"]) &&
-                        $_COOKIE["keyboard_layout"] == 2 ? "selected" : '';
-                ?>
-              >AZERTY</option>
+                  <option value='3'
+                    <?php // Select saved keyboard layout from cookie
+                        echo
+                            isset($_COOKIE["keyboard_layout"]) &&
+                            $_COOKIE["keyboard_layout"] == 3 ? "selected" : '';
+                    ?>
+                  >DVORAK</option>                  
+                </select>
+              </div>
 
-              <option value='3'
-                <?php // Select saved keyboard layout from cookie
-                    echo
-                        isset($_COOKIE["keyboard_layout"]) &&
-                        $_COOKIE["keyboard_layout"] == 3 ? "selected" : '';
-                ?>
-              >DVORAK</option>
-              
-            </select><br><br>
+              <div class="d-flex flex-column justify-content-evenly col"> 
+                <label class="w-100 text-center" for="captcha">Captcha</label>
+                <?php include("src/includes/captcha.php");?>
+              </div>
+            </div>
 
-            <input class="w-100" type="submit" placeholder="submit">
+            <input class="btn w-25" type="submit" value="Submit">
           </form>
-
-          <?php include("src/includes/captcha.php");?>
 
           <?php include("src/includes/message.php");?>
         </main>
@@ -103,6 +127,5 @@
     </div>
 
     <script src="./src/scripts/js/main.js"></script>
-    <script src="./src/scripts/js/captcha.js"></script>
   </body>
 </html>
