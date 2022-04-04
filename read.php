@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <?php
-      $page = "read";
-      $title = "Settings | KeyRace";
-      include("./src/includes/head.php");
-  ?>
-  <?php
+<?php
       if (isset($_SESSION["email"]))
       {
           include('src\scripts\php\db_connect.php');
@@ -25,9 +18,17 @@
       }
       else
       {
-        header("location:settings.php");
+        header("location:index.php");
         exit;
       }
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+  <?php
+      $page = "read";
+      $title = "Settings | KeyRace";
+      include("./src/includes/head.php");
   ?>
 
   <body class="dark-theme">
