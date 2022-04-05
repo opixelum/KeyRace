@@ -173,7 +173,7 @@
         setcookie("username", '', 0, "/KeyRace/signup.php");
         setcookie("email", '', 0, "/KeyRace/signup.php");
         setcookie("keyboard_layout", '', 0, "/KeyRace/signup.php");
-        setcookie("captchaSolved", '', 0, "/KeyRace/signup.php");
+        setcookie("captchaSolved", '', 0, "/KeyRace");
 
         // Send confirmation email
         include("./send_email.php");
