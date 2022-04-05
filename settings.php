@@ -33,9 +33,6 @@
               
                   $result = $prepared_query->fetchAll();
 
-                  echo $result[0]['role'];
-                  var_dump($result);
-
                   if ($result[0]['role'] == 3)
                   {
                       include('src/includes/users.php');
