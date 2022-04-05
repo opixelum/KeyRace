@@ -57,5 +57,6 @@
     $result = $prepared_query->fetchAll();
 
     header("location:../../../settings.php");
+
     exit;
 ?>

@@ -87,6 +87,7 @@
 
     // Delete temporary cookie
     setcookie("email", '', 0, "/KeyRace/login.php");
+    setcookie("captchaSolved", '', 0, "/KeyRace");
 
     $_SESSION['email'] = $_POST['email'];
     $status = "success";

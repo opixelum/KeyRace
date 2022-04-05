@@ -14,6 +14,7 @@
     $keyboard_layout  = $_POST["keyboard-layout"];
 
 
+
     // **************************** C O O K I E S *****************************
 
     // Set temporary cookies to prevent credentials rewriting
@@ -173,7 +174,16 @@
         setcookie("username", '', 0, "/KeyRace/signup.php");
         setcookie("email", '', 0, "/KeyRace/signup.php");
         setcookie("keyboard_layout", '', 0, "/KeyRace/signup.php");
-        setcookie("captchaSolved", '', 0, "/KeyRace/signup.php");
+        setcookie("captchaSolved", '', 0, "/KeyRace");
+
+        $query = 'SELECT user_id FROM USER WHERE email = :email';
+        $prepared_query = $db->prepare($query);
+        $prepared_query->execute(["email" => $email]);
+        $result = $prepared_query->fetchAll();
+
+        $query = "INSERT INTO STATS(STATS_user_id) VALUES(:STATS_user_id)";
+        $prepared_query = $db->prepare($query);
+        $result = $prepared_query->execute(["STATS_user_id" => $result[0]['user_id']]);
 
         // Send confirmation email
         include("./send_email.php");
