@@ -16,7 +16,7 @@
         <main class="col h-100 ms-2 rounded rgb-shadow">
             <?php 
                 include('src/scripts/php/db_connect.php');
-                $q = 'SELECT user_id, username FROM USER';
+                $q = 'SELECT username, highest_wpm FROM USER, STATS WHERE user_id = STATS_user_id ORDER BY highest_wpm ASC';
                 $req = $db->query($q);
                 $results = $req->fetchAll(PDO::FETCH_ASSOC);
             ?>
