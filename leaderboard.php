@@ -26,7 +26,7 @@
                 <th>Rank</th>
                 <?php $rank = 1; ?>
                 <th>Username</th>
-                <th>Stats</th>
+                <th>WPM Record</th>
                 <th>Profile</th>
             </tr>
 
