@@ -16,7 +16,7 @@
         <main class="col h-100 ms-2 rounded rgb-shadow">
             <?php 
                 include('src/scripts/php/db_connect.php');
-                $q = 'SELECT highest_wpm FROM STATS WHERE ';
+                $q = 'SELECT user_id, username FROM USER';
                 $req = $db->query($q);
                 $results = $req->fetchAll(PDO::FETCH_ASSOC);
             ?>
@@ -24,6 +24,7 @@
             <table class="table table-bordered">
             <tr>
                 <th>Rank</th>
+                <?php $rank = 1; ?>
                 <th>Username</th>
                 <th>Stats</th>
                 <th>Profile</th>
@@ -32,11 +33,11 @@
             <?php
                 foreach ($results as $key => $stats) {
                     echo '<tr>';
-                    echo '<td>' . $user['username'] . '</td>';
-                    echo '<td>' . $user['username'] . '</td>';
-                    echo '<td>' . $stats['highest_wpm'] . '</td>';
+                    echo '<td>' . $rank++ . '</td>';
+                    echo '<td>' . $stats['username'] . '</td>';
+                    
                     echo '<td class="text-nowrap">';
-                    echo '<a class="btn btn-primary btn-sm me-2 col-6" href="profile.php?id=' . $user['user_id'] . '">Edit</a>';
+                    echo '<a class="btn btn-primary btn-sm me-2 col-6" href="profile.php?id=' . $stats['user_id'] . '">Profile</a>';
                     echo '</td>';
                     echo '</tr>';
                 }
