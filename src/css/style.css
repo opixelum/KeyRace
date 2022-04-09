@@ -204,6 +204,10 @@ a {
 
 /*-------------------------- T Y P I N G   G A M E --------------------------*/
 
+.cursor {
+    background-color: var(--fontColor);
+}
+
 .done {
     color: green;
 }
