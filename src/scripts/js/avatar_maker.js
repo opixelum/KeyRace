@@ -53,9 +53,10 @@ if (defaultBtn) {
         <option value="white">White</option>
         <option value="special">Special</option>
         `
-    })
-    helmetDropdown.addEventListener('click', () => {
-        helmetChoice("default", helmetDropdown.value)
+
+        helmetDropdown.addEventListener('click', () => {
+            helmetChoice("default", helmetDropdown.value)
+        })
     })
 }
 
@@ -69,10 +70,12 @@ if (duckBtn) {
         <option value="yellow">Yellow</option>
         <option value="special">Special</option>
         `
+
+        helmetDropdown.addEventListener('click', () => {
+            helmetChoice("duck", helmetDropdown.value)
+        })
     })
-    helmetDropdown.addEventListener('click', () => {
-        helmetChoice("duck", helmetDropdown.value)
-    })
+    
 }
 
 const crossBtn = document.querySelector('#helmet-cross-btn')
@@ -84,10 +87,12 @@ if (crossBtn) {
         <option value="white">White</option>
         <option value="orange">Orange</option>
         `
+
+        helmetDropdown.addEventListener('click', () => {
+            helmetChoice("cross", helmetDropdown.value)
+        })
     })
-    helmetDropdown.addEventListener('click', () => {
-        helmetChoice("cross", helmetDropdown.value)
-    })
+    
 }
 
 const sportBtn = document.querySelector('#helmet-sport-btn')
@@ -104,10 +109,12 @@ if (sportBtn) {
         <option value="mugello">Mugello</option>
         <option value="soleluna">Soleluna</option>
         `
+
+        helmetDropdown.addEventListener('click', () => {
+            helmetChoice("sport", helmetDropdown.value)
+        })
     })
-    helmetDropdown.addEventListener('click', () => {
-        helmetChoice("sport", helmetDropdown.value)
-    })
+    
 }
 
 const raceBtn = document.querySelector('#helmet-race-btn')
@@ -122,10 +129,12 @@ if (raceBtn) {
         <option value="futuro">Futuro</option>
         <option value="speciale">Speciale</option>
         `
+
+        helmetDropdown.addEventListener('click', () => {
+            helmetChoice("race", helmetDropdown.value)
+        })
     })
-    helmetDropdown.addEventListener('click', () => {
-        helmetChoice("race", helmetDropdown.value)
-    })
+   
 }
 
 let helmet = new Image()
