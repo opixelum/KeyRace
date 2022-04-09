@@ -72,37 +72,39 @@ if (raceBtn) {
     })
 }
 
+window.onload = function(){
+    helmetChoice('sport', 'black')
+    vestChoice('cross', 'fox', 'pink')
+}
 
-
+let helmet = new Image()
 // Helmet choice
 function helmetChoice(type, color) {
-    const helmetDropdown = document.querySelector(`#helmet-dropdown-${type}`)
+    const helmetDropdown = document.querySelector(`#helmet-dropdown`)
     helmetDropdown.addEventListener("change", function() {
         const helmetName = `helmet_${type}_helmet_${color}` + ".png"
-        helmet.src = `images/avatar/helmet/${type}/` + helmetName
+        helmet.src = `../../images/avatar/helmet/${type}/` + helmetName
     })
 
-    const helmet = new Image()
     const helmetName = `helmet_${type}_helmet_${color}` + ".png"
-    helmet.src = `images/avatar/helmet/${type}/` + helmetName
+    helmet.src = `../../images/avatar/helmet/${type}/` + helmetName
 
     helmet.onload = function() {
         buildAvatar()
     }
 }
 
-
+let vest = new Image()
 // Vest choice
 function vestChoice(type, brand, color) {
-    const vestDropdown = document.querySelector(`#vest-dropdown-${type}`)
+    const vestDropdown = document.querySelector(`#vest-dropdown`)
     vestDropdown.addEventListener("change", function() {
         const vestName = `body_${type}_${brand}_${color}` + ".png"
-        vest.src = `images/avatar/vest/${type}/${brand}/` + vestName
+        vest.src = `../../images/avatar/vest/${type}/${brand}/` + vestName
     })
 
-    const vest = new Image()
     const vestName = `body_${type}_${brand}_${color}` + ".png"
-    vest.src = `images/avatar/vest/${type}/${brand}/` + vestName
+    vest.src = `../../images/avatar/vest/${type}/${brand}/` + vestName
 
     vest.onload = function() {
         buildAvatar()
