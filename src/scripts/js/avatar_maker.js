@@ -14,6 +14,65 @@ if (helmetbtn) {
     })
 }
 
+const visorBtn = document.querySelector('#visor-btn')
+if (visorBtn) {
+    visorBtn.addEventListener('click', () => {
+        const subSelection = document.querySelector('#sub-selection')
+        subSelection.innerHTML = `
+            <div class="w-100 justify-content-evenly d-flex">
+            <button id="default-btn" class="btn col-2">Default</button>
+            <button id="cross-btn" class="btn col-2">Cross</button>
+            <button id="sport-btn" class="btn col-2">Sport</button>
+            <button id="race-btn" class="btn col-2">Race</button>
+            </div>
+        `
+    })
+}
+
+const vestBtn = document.querySelector('#vest-btn')
+if (vestBtn) {
+    vestBtn.addEventListener('click', () => {
+        const subSelection = document.querySelector('#sub-selection')
+        subSelection.innerHTML = `
+            <div class="w-100 justify-content-evenly d-flex">
+            <button id="default-btn" class="btn col-2">Road</button>
+            <button id="cross-btn" class="btn col-2">Vintage</button>
+            <button id="sport-btn" class="btn col-2">Cross</button>
+            <button id="race-btn" class="btn col-2">Race</button>
+            </div>
+        `
+    })
+}
+
+const defaultBtn = document.querySelector('#default-btn')
+if (defaultBtn) {
+    defaultBtn.addEventListener('click', () => {
+        
+    })
+}
+
+const crossBtn = document.querySelector('#cross-btn')
+if (crossBtn) {
+    crossBtn.addEventListener('click', () => {
+        
+    })
+}
+
+const sportBtn = document.querySelector('#sport-btn')
+if (sportBtn) {
+    sportBtn.addEventListener('click', () => {
+        
+    })
+}
+
+const raceBtn = document.querySelector('#race-btn')
+if (raceBtn) {
+    raceBtn.addEventListener('click', () => {
+        
+    })
+}
+
+
 window.onload = function() {
     // Helmet
     const helmetDropdown = document.querySelector("#helmet-dropdown")
