@@ -165,17 +165,48 @@
         setcookie("username", '', 0, "/KeyRace/signup.php");
         setcookie("email", '', 0, "/KeyRace/signup.php");
         setcookie("keyboard_layout", '', 0, "/KeyRace/signup.php");
+        setcookie("captchaSolved", '', 0, "/KeyRace");
 
-        // Send confirmation email
-        include("./send_email.php");
+        // Get user id from USER table
+        $query = 'SELECT id FROM USER WHERE email = :email';
+        $prepared_query = $db->prepare($query);
+        $prepared_query->execute(["email" => $email]);
+        $result = $prepared_query->fetchAll();
 
-        $message = "Accout created successfully.";
-        $message .= "Confirm your email address before logging in.";
-        header($login_path . "success&message=$message");
-        exit();
+        // If query was successful
+        if ($result)
+        {
+            // Insert user id into STATS table
+            $query = "INSERT INTO STATS(user_id) VALUES(:id)";
+            $prepared_query = $db->prepare($query);
+            $result = $prepared_query->execute(["id" => $result[0]['id']]);
+
+            // If query was successful
+            if ($result)
+            {
+                // Send confirmation email
+                include("./send_email.php");
+
+                $message = "Accout created successfully.";
+                $message .= "Confirm your email address before logging in.";
+                header($login_path . "success&message=$message");
+                exit();
+            }
+            // If query failed, redirect to signup page with error message
+            else
+            {
+                header($signup_path . "alert&message=An error occured. Please try again.");
+                exit();
+            }
+        }
+        // If query failed, redirect to signup page with error message
+        else
+        {
+            header($signup_path . "alert&message=An error occured. Please try again.");
+            exit();
+        }
     }
-
-    // If query failed
+    // If query failed, redirect to signup page with error message
     header($signup_path . "alert&message=An error occured. Please try again.");
     exit();
 ?>
