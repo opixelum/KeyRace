@@ -37,7 +37,7 @@ if (getCookie("isLoggedIn")) {
     // Campaign button
     const campaignBtn = document.querySelector("#campaign-btn")
     campaignBtn.addEventListener("click", () => {
-        window.location.href = "http://localhost/KeyRace/campaign/index.php"
+        window.location.href = "http://localhost/KeyRace/campaign.php"
     })
 
     // Multiplayer button

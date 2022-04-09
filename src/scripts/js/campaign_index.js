@@ -5,7 +5,7 @@ for (let i = 1; i <= 8; i++) {
     // Add event listener to button & redirect to corresponding quest page
     if (questBtn) {
         questBtn.addEventListener('click', () => {
-            window.location.href = `http://localhost/KeyRace/campaign/${i}.php`
+            window.location.href = `http://localhost/KeyRace/campaign.php?quest=${i}`
         })
     }
 }
