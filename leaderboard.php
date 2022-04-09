@@ -13,10 +13,46 @@
           <?php include("src/includes/navbar.php"); ?>
         </header>
 
-        <main class="col h-100 ms-2 rounded rgb-shadow">
-            <?php 
+        <main class="col h-100 ms-2 rounded d-flex flex-wrap rgb-shadow">
+          <h1 class="mx-auto my-3">Leaderboard</h1>
+          <div class="w-100 justify-content-evenly d-flex">
+            <button class="btn col-2">WPM record</button>
+            <button class="btn col-2">WPM average</button>
+            <button class="btn col-2">Races won</button>
+            <button class="btn col-2">Game played</button>
+            <button class="btn col-2">Game time</button>
+          </div>
+            <?php
+                $orderedBy = 1;
+
                 include('src/scripts/php/db_connect.php');
-                $q = 'SELECT user_id, username, highest_wpm FROM USER, STATS WHERE STATS.STATS_user_id = USER.user_id ORDER BY highest_wpm DESC';
+                switch ($orderedBy) {
+                  case 1 : 
+                      $q = 'SELECT user_id, username, highest_wpm FROM USER, STATS WHERE
+                            STATS.STATS_user_id = USER.user_id ORDER BY highest_wpm DESC';
+                      break;
+
+                  case 2 : 
+                      $q = 'SELECT user_id, username, average_wpm FROM USER, STATS WHERE
+                      STATS.STATS_user_id = USER.user_id ORDER BY average_wpm DESC';
+                      break;
+
+                  case 3 : 
+                    $q = 'SELECT user_id, username, races_won FROM USER, STATS WHERE
+                    STATS.STATS_user_id = USER.user_id ORDER BY races_won DESC';
+                    break;
+
+                  case 4 : 
+                    $q = 'SELECT user_id, username, game_played FROM USER, STATS WHERE
+                    STATS.STATS_user_id = USER.user_id ORDER BY game_played DESC';
+                    break;
+
+                  case 5 : 
+                    $q = 'SELECT user_id, username, time_played FROM USER, STATS WHERE
+                    STATS.STATS_user_id = USER.user_id ORDER BY time_played DESC';
+                    break;
+                }
+                
                 $req = $db->query($q);
                 $results = $req->fetchAll(PDO::FETCH_ASSOC);
             ?>
