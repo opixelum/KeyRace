@@ -16,11 +16,11 @@
         <main class="col h-100 ms-2 rounded d-flex flex-wrap rgb-shadow">
           <h1 class="mx-auto my-3">Leaderboard</h1>
           <div class="w-100 justify-content-evenly d-flex">
-            <button class="btn col-2">WPM record</button>
-            <button class="btn col-2">WPM average</button>
-            <button class="btn col-2">Races won</button>
-            <button class="btn col-2">Game played</button>
-            <button class="btn col-2">Game time</button>
+            <button id="record-btn" class="btn col-2">WPM record</button>
+            <button id="average-btn" class="btn col-2">WPM average</button>
+            <button id="won-btn" class="btn col-2">Races won</button>
+            <button id="game-btn" class="btn col-2">Game played</button>
+            <button id="time-btn" class="btn col-2">Game time</button>
           </div>
             <?php
                 $orderedBy = 1;
@@ -85,5 +85,6 @@
     </div>
 
     <script src="src/scripts/js/main.js"></script>
+    <script src="src/scripts/js/leaderboard.js"></script>
   </body>
 </html>
