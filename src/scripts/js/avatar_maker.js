@@ -145,12 +145,12 @@ function buildAvatar() {
     context.fillStyle = bgColor
     context.fill()
 
-    context.drawImage(vest, 0, 0)
-    context.drawImage(helmet, 0, 0)
-    context.drawImage(visor, 0, 0)
+    context.drawImage(vest, -110, -110)
+    context.drawImage(helmet, -110, -110)
+    context.drawImage(visor, -110, -110)
 }
 
 
 helmetChoice("sport", "black")
-vestChoice("cross", "fox", "pink")
+vestChoice("cross", "fox", "black")
 visorChoice("sport", "cyan")
