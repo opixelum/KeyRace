@@ -53,7 +53,7 @@
     // If credentilals match
 
     // Prepare query to check if user has confirmed his email 
-    $query = "SELECT * FROM USER WHERE email=:email AND role!=0;";
+    $query = "SELECT id FROM USER WHERE email=:email AND role!=0;";
     $prepared_query = $db->prepare($query);
 
     // Execute query with user credentials
@@ -73,7 +73,8 @@
 
     // Delete temporary cookie
     setcookie("email", '', 0, "/KeyRace/login.php");
-    
+
+    $_SESSION["id"] = $result[0]["id"];
     $_SESSION["email"] = $_POST["email"];
     header("location: ../../../index.php");
     exit;

@@ -1,19 +1,21 @@
 <?php
-if (isset($_SESSION["id"]))
-{
-  include('src/scripts/php/db_connect.php');
+  session_start();
 
-  $query = "SELECT quest FROM STATS WHERE user_id=:id";
-  $prepared_query = $db->prepare($query);
-  $prepared_query->execute(["id" => $_SESSION["id"]]);
+  if (isset($_SESSION["id"]))
+  {
+    include('src/scripts/php/db_connect.php');
 
-  $result = $prepared_query->fetchAll();
-}
-else
-{
-  header("location: index.php");
-  exit();
-}
+    $query = "SELECT quest FROM STATS WHERE user_id=:id";
+    $prepared_query = $db->prepare($query);
+    $prepared_query->execute(["id" => $_SESSION["id"]]);
+
+    $result = $prepared_query->fetchAll();
+  }
+  else
+  {
+    header("location: index.php");
+    exit();
+  }
 ?>
 
 <!DOCTYPE html>

@@ -1,5 +1,3 @@
-<?php session_start(); ?>
-
 <div class="d-flex flex-column h-100 justify-content-between">
   <div class="d-flex flex-wrap justify-content-center">
     <a class="my-4" href="http://localhost/KeyRace/index.php">
