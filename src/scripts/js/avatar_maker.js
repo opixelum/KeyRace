@@ -74,40 +74,40 @@ if (raceBtn) {
 
 
 
-    // Helmet choice
-    function helmetChoice(type, color) {
-        const helmetDropdown = document.querySelector(`#helmet-dropdown-${type}`)
-        helmetDropdown.addEventListener("change", function() {
-            const helmetName = `helmet_${type}_helmet_${color}` + ".png"
-            helmet.src = `images/avatar/helmet/${type}` + helmetName
-        })
-
-        const helmet = new Image()
+// Helmet choice
+function helmetChoice(type, color) {
+    const helmetDropdown = document.querySelector(`#helmet-dropdown-${type}`)
+    helmetDropdown.addEventListener("change", function() {
         const helmetName = `helmet_${type}_helmet_${color}` + ".png"
-        helmet.src = `images/avatar/helmet/${type}` + helmetName
+        helmet.src = `images/avatar/helmet/${type}/` + helmetName
+    })
 
-        helmet.onload = function() {
-            buildAvatar()
-        }
+    const helmet = new Image()
+    const helmetName = `helmet_${type}_helmet_${color}` + ".png"
+    helmet.src = `images/avatar/helmet/${type}/` + helmetName
+
+    helmet.onload = function() {
+        buildAvatar()
     }
-    
+}
 
-    // Vest
-    const vestDropdown = document.querySelector("#vest-dropdown")
+
+// Vest choice
+function vestChoice(type, brand, color) {
+    const vestDropdown = document.querySelector(`#vest-dropdown-${type}`)
     vestDropdown.addEventListener("change", function() {
-        const vestNum = vestDropdown.value
-        const vestName = "vest" + vestNum + ".png"
-        vest.src = "assets/vests/" + vestName 
+        const vestName = `body_${type}_${brand}_${color}` + ".png"
+        vest.src = `images/avatar/vest/${type}/${brand}/` + vestName
     })
 
     const vest = new Image()
-    const vestNum = vestDropdown.value
-    const vestName = "vest" + vestNum + ".png"
-    vest.src = "assets/vests/" + vestName
+    const vestName = `body_${type}_${brand}_${color}` + ".png"
+    vest.src = `images/avatar/vest/${type}/${brand}/` + vestName
 
     vest.onload = function() {
         buildAvatar()
     }
+}
 
 
     // Background color
