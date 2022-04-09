@@ -1,69 +1,34 @@
 const recordBtn = document.querySelector('#record-btn')
 if (recordBtn) {
     recordBtn.addEventListener('click', () => {
-        const request = new XMLHttpRequest()
-        request.open("POST", "leaderboard.php")
-        request.onreadystatechange = function() {
-        if(request.readyState === XMLHttpRequest.DONE) {
-            const orderedBy = 6
-        }
-    }
-    request.send()
+        window.location.href = 'leaderboard.php?orderedBy=1'
     })
 }
 
 const averageBtn = document.querySelector('#average-btn')
 if (averageBtn) {
     averageBtn.addEventListener('click', () => {
-        const request = new XMLHttpRequest()
-        request.open("POST", "leaderboard.php")
-        request.onreadystatechange = function() {
-        if(request.readyState === XMLHttpRequest.DONE) {
-            const orderedBy = 2
-        }
-    }
-    request.send()
+        window.location.href = 'leaderboard.php?orderedBy=2'
     })
 }
 
 const wonBtn = document.querySelector('#won-btn')
 if (wonBtn) {
     wonBtn.addEventListener('click', () => {
-        const request = new XMLHttpRequest()
-        request.open("POST", "leaderboard.php")
-        request.onreadystatechange = function() {
-        if(request.readyState === XMLHttpRequest.DONE) {
-            const orderedBy = 3
-        }
-    }
-    request.send()
+        window.location.href = 'leaderboard.php?orderedBy=3'
     })
 }
 
 const gameBtn = document.querySelector('#game-btn')
 if (gameBtn) {
     gameBtn.addEventListener('click', () => {
-        const request = new XMLHttpRequest()
-        request.open("POST", "leaderboard.php")
-        request.onreadystatechange = function() {
-        if(request.readyState === XMLHttpRequest.DONE) {
-            const orderedBy = 4
-        }
-    }
-    request.send()
+        window.location.href = 'leaderboard.php?orderedBy=4'
     })
 }
 
 const timeBtn = document.querySelector('#time-btn')
 if (timeBtn) {
     timeBtn.addEventListener('click', () => {
-        const request = new XMLHttpRequest()
-        request.open("POST", "leaderboard.php")
-        request.onreadystatechange = function() {
-        if(request.readyState === XMLHttpRequest.DONE) {
-            const orderedBy = 5
-        }
-    }
-    request.send()
+        window.location.href = 'leaderboard.php?orderedBy=5'
     })
 }

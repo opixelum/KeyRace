@@ -23,10 +23,8 @@
             <button id="time-btn" class="btn col-2">Game time</button>
           </div>
             <?php
-                $orderedBy = 1;
-
                 include('src/scripts/php/db_connect.php');
-                switch ($orderedBy) {
+                switch ($_GET['orderedBy']) {
                   case 1 : 
                       $q = 'SELECT user_id, username, highest_wpm FROM USER, STATS WHERE
                             STATS.STATS_user_id = USER.user_id ORDER BY highest_wpm DESC';
@@ -52,9 +50,12 @@
                     STATS.STATS_user_id = USER.user_id ORDER BY time_played DESC';
                     break;
 
-                    case 6 : 
-                      header('location:login.php');
+                  default:
+                    $q = 'SELECT user_id, username, highest_wpm FROM USER, STATS WHERE
+                    STATS.STATS_user_id = USER.user_id ORDER BY highest_wpm DESC';
+                    break;
                 }
+                
                 
                 $req = $db->query($q);
                 $results = $req->fetchAll(PDO::FETCH_ASSOC);
