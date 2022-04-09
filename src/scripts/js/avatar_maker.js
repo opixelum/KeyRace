@@ -28,7 +28,7 @@ window.onload = function() {
     const vest = new Image()
     const vestNum = vestDropdown.value
     const vestName = "vest" + vestNum + ".png"
-    vest.src = "assets/vests/" + vestName 
+    vest.src = "assets/vests/" + vestName
 
     vest.onload = function() {
         buildAvatar()
