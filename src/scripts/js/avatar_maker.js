@@ -72,11 +72,6 @@ if (raceBtn) {
     })
 }
 
-window.onload = function(){
-    helmetChoice('sport', 'black')
-    vestChoice('cross', 'fox', 'pink')
-}
-
 let helmet = new Image()
 // Helmet choice
 function helmetChoice(type, color) {
@@ -111,6 +106,23 @@ function vestChoice(type, brand, color) {
     }
 }
 
+let visor = new Image()
+// visor choice
+function visorChoice(type, color) {
+    const visorDropdown = document.querySelector(`#visor-dropdown`)
+    visorDropdown.addEventListener("change", function() {
+        const visorName = `visor_${type}_visor_${color}` + ".png"
+        visor.src = `../../images/avatar/visor/${type}/` + visorName
+    })
+
+    const visorName = `visor_${type}_visor_${color}` + ".png"
+    visor.src = `../../images/avatar/visor/${type}/` + visorName
+
+    visor.onload = function() {
+        buildAvatar()
+    }
+}
+
 // Background color
 const bgColorDropdown = document.querySelector("#bg-color-dropdown")
 let bgColor = "white"
@@ -135,4 +147,9 @@ function buildAvatar() {
 
     context.drawImage(vest, 0, 0)
     context.drawImage(helmet, 0, 0)
+}
+
+window.onload = function(){
+    helmetChoice('sport', 'black')
+    vestChoice('cross', 'fox', 'pink')
 }
