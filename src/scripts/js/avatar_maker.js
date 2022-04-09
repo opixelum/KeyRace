@@ -1,4 +1,5 @@
 const helmetbtn = document.querySelector('#helmet-btn')
+const helmetDropdown = document.querySelector('#helmet-dropdown')
 if (helmetbtn) {
     helmetbtn.addEventListener('click', () => {
         const subSelection = document.querySelector('#sub-selection')
@@ -47,19 +48,20 @@ if (vestBtn) {
 const defaultBtn = document.querySelector('#helmet-default-btn')
 if (defaultBtn) {
     defaultBtn.addEventListener('click', () => {
-        const helmetDropdown = document.querySelector('#helmet-dropdown')
         helmetDropdown.innerHTML = `
         <option value="black">Black</option>
         <option value="white">White</option>
         <option value="special">Special</option>
         `
     })
+    helmetDropdown.addEventListener('change', () => {
+        helmetChoice("default", helmetDropdown.value)
+    })
 }
 
 const duckBtn = document.querySelector('#helmet-duck-btn')
 if (duckBtn) {
     duckBtn.addEventListener('click', () => {
-        const helmetDropdown = document.querySelector('#helmet-dropdown')
         helmetDropdown.innerHTML = `
         <option value="black">Black</option>
         <option value="red">Red</option>
@@ -68,12 +70,14 @@ if (duckBtn) {
         <option value="special">Special</option>
         `
     })
+    helmetDropdown.addEventListener('change', () => {
+        helmetChoice("duck", helmetDropdown.value)
+    })
 }
 
 const crossBtn = document.querySelector('#helmet-cross-btn')
 if (crossBtn) {
     crossBtn.addEventListener('click', () => {
-        const helmetDropdown = document.querySelector('#helmet-dropdown')
         helmetDropdown.innerHTML = `
         <option value="black">Black</option>
         <option value="blue">Blue</option>
@@ -81,12 +85,14 @@ if (crossBtn) {
         <option value="orange">Orange</option>
         `
     })
+    helmetDropdown.addEventListener('change', () => {
+        helmetChoice("cross", helmetDropdown.value)
+    })
 }
 
 const sportBtn = document.querySelector('#helmet-sport-btn')
 if (sportBtn) {
     sportBtn.addEventListener('click', () => {
-        const helmetDropdown = document.querySelector('#helmet-dropdown')
         helmetDropdown.innerHTML = `
         <option value="black">Black</option>
         <option value="blue">Blue</option>
@@ -99,12 +105,14 @@ if (sportBtn) {
         <option value="soleluna">Soleluna</option>
         `
     })
+    helmetDropdown.addEventListener('change', () => {
+        helmetChoice("sport", helmetDropdown.value)
+    })
 }
 
 const raceBtn = document.querySelector('#helmet-race-btn')
 if (raceBtn) {
     raceBtn.addEventListener('click', () => {
-        const helmetDropdown = document.querySelector('#helmet-dropdown')
         helmetDropdown.innerHTML = `
         <option value="black">Black</option>
         <option value="LS">LS</option>
@@ -114,6 +122,9 @@ if (raceBtn) {
         <option value="futuro">Futuro</option>
         <option value="speciale">Speciale</option>
         `
+    })
+    helmetDropdown.addEventListener('change', () => {
+        helmetChoice("race", helmetDropdown.value)
     })
 }
 
@@ -194,8 +205,3 @@ function buildAvatar() {
     context.drawImage(helmet, -110, -110)
     context.drawImage(visor, -110, -110)
 }
-
-
-helmetChoice("sport", "black")
-vestChoice("cross", "fox", "black")
-visorChoice("sport", "cyan")
