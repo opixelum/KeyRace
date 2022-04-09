@@ -36,7 +36,7 @@
               echo
               "
                 </div>
-                <script src='src/scripts/js/campaign_index.js'></script>
+                <script src='src/scripts/js/campaign_menu.js'></script>
               ";
             }
             // If quest parameter in url, display corresponding quest
