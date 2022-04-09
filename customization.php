@@ -21,7 +21,15 @@
                 <button id="vest-btn" class="btn col-2">Vest</button>
                 <button id="background-btn" class="btn col-2">Background</button>
             </div>
-            <div id="sub-selection" class="w-100 justify-content-evenly d-flex"></div>
+            <div id="sub-selection" class="w-100 justify-content-evenly d-flex">
+                <div class="w-100 justify-content-evenly d-flex">
+                <button id="default-btn" class="btn col-2">Default</button>
+                <button id="duck-btn" class="btn col-2">Duck</button>
+                <button id="cross-btn" class="btn col-2">Cross</button>
+                <button id="sport-btn" class="btn col-2">Sport</button>
+                <button id="race-btn" class="btn col-2">Race</button>
+                </div>
+            </div>
             <!-- Avatar frame -->
             <canvas id="avatar"></canvas>
         </main>
