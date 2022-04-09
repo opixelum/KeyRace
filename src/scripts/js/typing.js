@@ -66,14 +66,21 @@ const keyListener = document.addEventListener("keydown", ({key}) => {
         // Get the number of word in the text
         const numberOfWords = text.split('_').length
 
-        // Compute words Per Seconds
-        const wps = numberOfWords / seconds
+        // Compute words per minute
+        let wpm = numberOfWords / seconds * 100.0
 
-        // Compute Words Per Minute
-        const wpm = wps * 100.0
+        // Round wpm to 2 decimal places
+        wpm = Math.round(wpm * 100) / 100
 
+        // Compute accuracy
+        const correct = characters.filter(character => !character.classList.contains("wrong")).length
+        let accuracy = correct / characters.length * 100.0
+
+        // Round accuracy to 2 decimal places
+        accuracy = Math.round(accuracy * 100) / 100
+        
         // Display stats
-        document.querySelector("#stats").innerText = `WPM: ${wpm}`
+        document.querySelector("#stats").innerText = `WPM: ${wpm} | Accuracy: ${accuracy}%`
 
         // Prevent next lines to be executed when game is done
         document.removeEventListener("keydown", keyListener)
