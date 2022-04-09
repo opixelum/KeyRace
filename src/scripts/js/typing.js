@@ -32,10 +32,21 @@ const keyListener = document.addEventListener("keydown", ({key}) => {
     if (!startTime) startTime = new Date()
 
     // Key check
-    if (key === cursorCharacter.innerText || key === ' ' && cursorCharacter.innerText === '_') {
+    if (key === "Escape") {
+        // If player presses escape, restart the game
+        cursorCharacter.classList.remove("cursor")
+        while (!characters[0].classList.contains("cursor")) {
+            if (cursorCharacter.classList.contains("correct")) {
+            cursorCharacter.classList.remove("correct")
+            cursorCharacter.classList.remove("wrong")
+            cursorCharacter = characters[--cursorIndex]
+        }
+        cursorCharacter.classList.add("cursor")
+        return
+    } else if (key === cursorCharacter.innerText || key === ' ' && cursorCharacter.innerText === '_') {
         // If right key was typed
         cursorCharacter.classList.remove("cursor")
-        cursorCharacter.classList.add("done")
+        cursorCharacter.classList.add("correct")
         cursorCharacter = characters[++cursorIndex]
     } else if (letters.includes(key)) {
         // If wrong key (excluding non-letter keys) was typed
@@ -53,7 +64,7 @@ const keyListener = document.addEventListener("keydown", ({key}) => {
         const seconds = delta / 1000
 
         // Get the number of word in the text
-        const numberOfWords = text.split(' ').length
+        const numberOfWords = text.split('_').length
 
         // Compute words Per Seconds
         const wps = numberOfWords / seconds
