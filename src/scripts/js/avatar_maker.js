@@ -111,11 +111,11 @@ let visor = new Image()
 function visorChoice(type, color) {
     const visorDropdown = document.querySelector(`#visor-dropdown`)
     visorDropdown.addEventListener("change", function() {
-        const visorName = `visor_${type}_visor_${color}` + ".png"
+        const visorName = `helmet_${type}_visor_${color}` + ".png"
         visor.src = `./src/images/avatar/visor/${type}/` + visorName
     })
 
-    const visorName = `visor_${type}_visor_${color}` + ".png"
+    const visorName = `helmet_${type}_visor_${color}` + ".png"
     visor.src = `./src/images/avatar/visor/${type}/` + visorName
 
     visor.onload = function() {
@@ -147,8 +147,10 @@ function buildAvatar() {
 
     context.drawImage(vest, 0, 0)
     context.drawImage(helmet, 0, 0)
+    context.drawImage(visor, 0, 0)
 }
 
 
 helmetChoice("sport", "black")
 vestChoice("cross", "fox", "pink")
+visorChoice("sport", "cyan")
