@@ -1,3 +1,26 @@
+<?php
+if (isset($_SESSION["email"]))
+{
+    include('src/scripts/php/db_connect.php');
+
+    $query = "SELECT role FROM USER WHERE email = :email";
+    $prepared_query = $db->prepare($query);
+
+    $prepared_query->execute(["email" => $_SESSION["email"]]);
+
+    $result = $prepared_query->fetchAll();
+
+    if ($result[0]['role'] != 0)
+    {
+        include('src/includes/users.php');
+    }
+}
+else
+{
+    header('location:index.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <?php
