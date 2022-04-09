@@ -5,9 +5,8 @@ if (recordBtn) {
         request.open("POST", "leaderboard.php")
         request.onreadystatechange = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
-            const res = request.responseText
-            const div = document.getElementById("content")
-            div.innerHTML += '<h1>' + res + '</h1>'
+            const orderedBy = 6
+            $_POST['orderedBy'] = orderedBy
         }
     }
     request.send()
@@ -21,9 +20,7 @@ if (averageBtn) {
         request.open("POST", "leaderboard.php")
         request.onreadystatechange = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
-            const res = request.responseText
-            const div = document.getElementById("content")
-            div.innerHTML += '<h1>' + res + '</h1>'
+            const orderedBy = 1
         }
     }
     request.send()
@@ -37,9 +34,7 @@ if (wonBtn) {
         request.open("POST", "leaderboard.php")
         request.onreadystatechange = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
-            const res = request.responseText
-            const div = document.getElementById("content")
-            div.innerHTML += '<h1>' + res + '</h1>'
+            const orderedBy = 1
         }
     }
     request.send()
@@ -53,9 +48,7 @@ if (gameBtn) {
         request.open("POST", "leaderboard.php")
         request.onreadystatechange = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
-            const res = request.responseText
-            const div = document.getElementById("content")
-            div.innerHTML += '<h1>' + res + '</h1>'
+            const orderedBy = 1
         }
     }
     request.send()
@@ -69,9 +62,7 @@ if (timeBtn) {
         request.open("POST", "leaderboard.php")
         request.onreadystatechange = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
-            const res = request.responseText
-            const div = document.getElementById("content")
-            div.innerHTML += '<h1>' + res + '</h1>'
+            const orderedBy = 1
         }
     }
     request.send()

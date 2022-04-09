@@ -51,6 +51,9 @@
                     $q = 'SELECT user_id, username, time_played FROM USER, STATS WHERE
                     STATS.STATS_user_id = USER.user_id ORDER BY time_played DESC';
                     break;
+
+                    case 6 : 
+                      header('location:login.php');
                 }
                 
                 $req = $db->query($q);
