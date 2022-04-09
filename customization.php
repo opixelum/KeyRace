@@ -42,20 +42,17 @@
             </div>
             <div id="sub-selection" class="w-100 justify-content-evenly d-flex">
                 <div class="w-100 justify-content-evenly d-flex">
-                <button id="default-btn" class="btn col-2">Default</button>
-                <button id="duck-btn" class="btn col-2">Duck</button>
-                <button id="cross-btn" class="btn col-2">Cross</button>
-                <button id="sport-btn" class="btn col-2">Sport</button>
-                <button id="race-btn" class="btn col-2">Race</button>
+                <button id="helmet-default-btn" class="btn col-2">Default</button>
+                <button id="helmet-duck-btn" class="btn col-2">Duck</button>
+                <button id="helmet-cross-btn" class="btn col-2">Cross</button>
+                <button id="helmet-sport-btn" class="btn col-2">Sport</button>
+                <button id="helmet-race-btn" class="btn col-2">Race</button>
                 </div>
             </div>
 
             <!-- Helmet dropdown menu -->
             <label for="helmet">Choose a helmet:</label>
-            <select name="helmet" id="helmet-dropdown">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            </select>
+            <select name="helmet" id="helmet-dropdown"></select>
 
             <br>
 
