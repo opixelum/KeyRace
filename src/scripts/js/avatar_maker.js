@@ -1,3 +1,19 @@
+const helmetbtn = document.querySelector('#helmet-btn')
+if (helmetbtn) {
+    helmetbtn.addEventListener('click', () => {
+        const subSelection = document.querySelector('#sub-selection')
+        subSelection.innerHTML = `
+            <div class="w-100 justify-content-evenly d-flex">
+            <button id="default-btn" class="btn col-2">Default</button>
+            <button id="duck-btn" class="btn col-2">Duck</button>
+            <button id="cross-btn" class="btn col-2">Cross</button>
+            <button id="sport-btn" class="btn col-2">Sport</button>
+            <button id="race-btn" class="btn col-2">Race</button>
+            </div>
+        `
+    })
+}
+
 window.onload = function() {
     // Helmet
     const helmetDropdown = document.querySelector("#helmet-dropdown")
