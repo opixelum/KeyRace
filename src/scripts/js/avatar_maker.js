@@ -54,7 +54,7 @@ if (defaultBtn) {
         <option value="special">Special</option>
         `
     })
-    helmetDropdown.addEventListener('change', () => {
+    helmetDropdown.addEventListener('click', () => {
         helmetChoice("default", helmetDropdown.value)
     })
 }
@@ -70,7 +70,7 @@ if (duckBtn) {
         <option value="special">Special</option>
         `
     })
-    helmetDropdown.addEventListener('change', () => {
+    helmetDropdown.addEventListener('click', () => {
         helmetChoice("duck", helmetDropdown.value)
     })
 }
@@ -85,7 +85,7 @@ if (crossBtn) {
         <option value="orange">Orange</option>
         `
     })
-    helmetDropdown.addEventListener('change', () => {
+    helmetDropdown.addEventListener('click', () => {
         helmetChoice("cross", helmetDropdown.value)
     })
 }
@@ -105,7 +105,7 @@ if (sportBtn) {
         <option value="soleluna">Soleluna</option>
         `
     })
-    helmetDropdown.addEventListener('change', () => {
+    helmetDropdown.addEventListener('click', () => {
         helmetChoice("sport", helmetDropdown.value)
     })
 }
@@ -123,7 +123,7 @@ if (raceBtn) {
         <option value="speciale">Speciale</option>
         `
     })
-    helmetDropdown.addEventListener('change', () => {
+    helmetDropdown.addEventListener('click', () => {
         helmetChoice("race", helmetDropdown.value)
     })
 }
