@@ -78,11 +78,11 @@ function helmetChoice(type, color) {
     const helmetDropdown = document.querySelector(`#helmet-dropdown`)
     helmetDropdown.addEventListener("change", function() {
         const helmetName = `helmet_${type}_helmet_${color}` + ".png"
-        helmet.src = `../../images/avatar/helmet/${type}/` + helmetName
+        helmet.src = `./src/images/avatar/helmet/${type}/` + helmetName
     })
 
     const helmetName = `helmet_${type}_helmet_${color}` + ".png"
-    helmet.src = `../../images/avatar/helmet/${type}/` + helmetName
+    helmet.src = `./src/images/avatar/helmet/${type}/` + helmetName
 
     helmet.onload = function() {
         buildAvatar()
@@ -95,11 +95,11 @@ function vestChoice(type, brand, color) {
     const vestDropdown = document.querySelector(`#vest-dropdown`)
     vestDropdown.addEventListener("change", function() {
         const vestName = `body_${type}_${brand}_${color}` + ".png"
-        vest.src = `../../images/avatar/vest/${type}/${brand}/` + vestName
+        vest.src = `./src/images/avatar/vest/${type}/${brand}/` + vestName
     })
 
     const vestName = `body_${type}_${brand}_${color}` + ".png"
-    vest.src = `../../images/avatar/vest/${type}/${brand}/` + vestName
+    vest.src = `./src/images/avatar/vest/${type}/${brand}/` + vestName
 
     vest.onload = function() {
         buildAvatar()
@@ -112,11 +112,11 @@ function visorChoice(type, color) {
     const visorDropdown = document.querySelector(`#visor-dropdown`)
     visorDropdown.addEventListener("change", function() {
         const visorName = `visor_${type}_visor_${color}` + ".png"
-        visor.src = `../../images/avatar/visor/${type}/` + visorName
+        visor.src = `./src/images/avatar/visor/${type}/` + visorName
     })
 
     const visorName = `visor_${type}_visor_${color}` + ".png"
-    visor.src = `../../images/avatar/visor/${type}/` + visorName
+    visor.src = `./src/images/avatar/visor/${type}/` + visorName
 
     visor.onload = function() {
         buildAvatar()
@@ -149,7 +149,6 @@ function buildAvatar() {
     context.drawImage(helmet, 0, 0)
 }
 
-window.onload = function(){
-    helmetChoice('sport', 'black')
-    vestChoice('cross', 'fox', 'pink')
-}
+
+helmetChoice("sport", "black")
+vestChoice("cross", "fox", "pink")
