@@ -48,7 +48,7 @@ const keyListener = document.addEventListener("keydown", ({key}) => {
         cursorCharacter.classList.remove("cursor")
         cursorCharacter.classList.add("correct")
         cursorCharacter = characters[++cursorIndex]
-    } else if (letters.includes(key)) {
+    } else if (letters.includes(key) || key === ' ') {
         // If wrong key (excluding non-letter keys) was typed
         cursorCharacter.classList.add("wrong")
     }

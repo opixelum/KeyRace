@@ -15,7 +15,7 @@
         <main class="col d-flex justify-content-center align-items-start flex-wrap h-100 ms-2 rounded rgb-shadow">
           <?php
             // If no quest parameter in url, display campaign menu
-            if (!isset($_GET["quest"]) || $_GET["quest"] == 0)
+            if (!isset($_GET["quest"]) || $_GET["quest"] < 1 || $_GET["quest"] > 8)
             {
               echo 
               "
@@ -44,7 +44,7 @@
             {
               echo
               "
-                <h1 class='text-center w-100 my-3'>Quest 1</h1>
+                <h1 class='text-center w-100 my-3'>Quest $_GET[quest]</h1>
                 <div id='stats'></div>
                 <div class='fs-3 m-5 px-2 input-field rounded text-break' id='typing-field'></div>
                 <script src='src/scripts/js/typing.js'></script>
