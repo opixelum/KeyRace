@@ -109,30 +109,28 @@ function vestChoice(type, brand, color) {
     }
 }
 
+// Background color
+const bgColorDropdown = document.querySelector("#bg-color-dropdown")
+let bgColor = "white"
 
-    // Background color
-    const bgColorDropdown = document.querySelector("#bg-color-dropdown")
-    let bgColor = "white"
+bgColorDropdown.addEventListener("change", function() {
+    bgColor = bgColorDropdown.value
+    buildAvatar()
+})
 
-    bgColorDropdown.addEventListener("change", function() {
-        bgColor = bgColorDropdown.value
-        buildAvatar()
-    })
+// Add all assets to the avatar
+function buildAvatar() {
+    const avatar = document.querySelector("#avatar")
+    const context = avatar.getContext("2d")
+    avatar.width = 300
+    avatar.height = 300
 
-    // Add all assets to the avatar
-    function buildAvatar() {
-        const avatar = document.querySelector("#avatar")
-        const context = avatar.getContext("2d")
-        avatar.width = 300
-        avatar.height = 300
+    // Draw rectangle as background
+    context.beginPath()
+    context.rect(0, 0, 300, 300)
+    context.fillStyle = bgColor
+    context.fill()
 
-        // Draw rectangle as background
-        context.beginPath()
-        context.rect(0, 0, 300, 300)
-        context.fillStyle = bgColor
-        context.fill()
-
-        context.drawImage(vest, 0, 0)
-        context.drawImage(helmet, 0, 0)
-    }
-
+    context.drawImage(vest, 0, 0)
+    context.drawImage(helmet, 0, 0)
+}
