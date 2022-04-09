@@ -42,6 +42,7 @@ const keyListener = document.addEventListener("keydown", ({key}) => {
         cursorIndex = 0
         cursorCharacter = characters[cursorIndex]
         cursorCharacter.classList.add("cursor")
+        startTime = new Date()
     } else if (key === cursorCharacter.innerText || key === ' ' && cursorCharacter.innerText === '_') {
         // If right key was typed
         cursorCharacter.classList.remove("cursor")
@@ -69,7 +70,7 @@ const keyListener = document.addEventListener("keydown", ({key}) => {
         const wps = numberOfWords / seconds
 
         // Compute Words Per Minute
-        const wpm = wps * 60.0
+        const wpm = wps * 100.0
 
         // Display stats
         document.querySelector("#stats").innerText = `WPM: ${wpm}`
