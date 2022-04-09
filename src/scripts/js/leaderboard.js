@@ -6,7 +6,6 @@ if (recordBtn) {
         request.onreadystatechange = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
             const orderedBy = 6
-            $_POST['orderedBy'] = orderedBy
         }
     }
     request.send()
@@ -20,7 +19,7 @@ if (averageBtn) {
         request.open("POST", "leaderboard.php")
         request.onreadystatechange = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
-            const orderedBy = 1
+            const orderedBy = 2
         }
     }
     request.send()
@@ -34,7 +33,7 @@ if (wonBtn) {
         request.open("POST", "leaderboard.php")
         request.onreadystatechange = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
-            const orderedBy = 1
+            const orderedBy = 3
         }
     }
     request.send()
@@ -48,7 +47,7 @@ if (gameBtn) {
         request.open("POST", "leaderboard.php")
         request.onreadystatechange = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
-            const orderedBy = 1
+            const orderedBy = 4
         }
     }
     request.send()
@@ -62,7 +61,7 @@ if (timeBtn) {
         request.open("POST", "leaderboard.php")
         request.onreadystatechange = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
-            const orderedBy = 1
+            const orderedBy = 5
         }
     }
     request.send()
