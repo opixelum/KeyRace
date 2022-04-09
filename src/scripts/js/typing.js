@@ -5,7 +5,7 @@ const typingDiv = document.querySelector("#typing-field")
 
 // Text to type
 const text = "curious_political_grain_grandmother_pot_nice_coordinated_rambunctious_nosy_stain_vanish_scatter_real_past_cave_teaching_island_writer_tempt_sleepy_woman_unarmed_warlike_correct_phobic"
-console.log(text.split(''))
+
 // Split the whole text by each character
 // Then create a span for each of those
 const characters = text.split('').map((char) => {
@@ -35,14 +35,13 @@ const keyListener = document.addEventListener("keydown", ({key}) => {
     if (key === "Escape") {
         // If player presses escape, restart the game
         cursorCharacter.classList.remove("cursor")
-        while (!characters[0].classList.contains("cursor")) {
-            if (cursorCharacter.classList.contains("correct")) {
-            cursorCharacter.classList.remove("correct")
-            cursorCharacter.classList.remove("wrong")
-            cursorCharacter = characters[--cursorIndex]
+        for (let character of characters) {
+            character.classList.remove("correct")
+            character.classList.remove("wrong")
         }
+        cursorIndex = 0
+        cursorCharacter = characters[cursorIndex]
         cursorCharacter.classList.add("cursor")
-        return
     } else if (key === cursorCharacter.innerText || key === ' ' && cursorCharacter.innerText === '_') {
         // If right key was typed
         cursorCharacter.classList.remove("cursor")
