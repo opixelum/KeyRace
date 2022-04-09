@@ -13,10 +13,71 @@
           <?php include("src/includes/navbar.php"); ?>
         </header>
 
-        <main class="col h-100 ms-2 rounded rgb-shadow">
-            <?php 
+        <main class="col h-100 ms-2 rounded d-flex flex-wrap rgb-shadow">
+          <h1 class="mx-auto my-3">Leaderboard</h1>
+          <div class="w-100 justify-content-evenly d-flex">
+            <button id="record-btn" class="btn col-2">WPM record</button>
+            <button id="average-btn" class="btn col-2">WPM average</button>
+            <button id="won-btn" class="btn col-2">Races won</button>
+            <button id="game-btn" class="btn col-2">Games played</button>
+            <button id="time-btn" class="btn col-2">Game time</button>
+          </div>
+            <?php
                 include('src/scripts/php/db_connect.php');
-                $q = 'SELECT user_id, username, highest_wpm FROM USER, STATS WHERE STATS.STATS_user_id = USER.user_id ORDER BY highest_wpm DESC';
+
+                if (isset($_GET['orderedBy'])) {
+                  switch ($_GET['orderedBy']) {
+                    case 1 : 
+                        $q = 'SELECT user_id, username, highest_wpm FROM USER, STATS WHERE
+                              STATS.STATS_user_id = USER.user_id ORDER BY highest_wpm DESC';
+                        $leaderboardTab = 'highest_wpm';
+                        $leaderboardTabName = 'WPM record';
+                        break;
+  
+                    case 2 : 
+                        $q = 'SELECT user_id, username, average_wpm FROM USER, STATS WHERE
+                              STATS.STATS_user_id = USER.user_id ORDER BY average_wpm DESC';
+                        $leaderboardTab = 'average_wpm';
+                        $leaderboardTabName = 'WPM average';
+                        break;
+  
+                    case 3 : 
+                      $q = 'SELECT user_id, username, races_won FROM USER, STATS WHERE
+                            STATS.STATS_user_id = USER.user_id ORDER BY races_won DESC';
+                      $leaderboardTab = 'races_won';
+                      $leaderboardTabName = 'Races won';
+                      break;
+  
+                    case 4 : 
+                      $q = 'SELECT user_id, username, game_played FROM USER, STATS WHERE
+                            STATS.STATS_user_id = USER.user_id ORDER BY game_played DESC';
+                      $leaderboardTab = 'game_played';
+                      $leaderboardTabName = 'Games played';
+                      break;
+  
+                    case 5 : 
+                      $q = 'SELECT user_id, username, time_played FROM USER, STATS WHERE
+                            STATS.STATS_user_id = USER.user_id ORDER BY time_played DESC';
+                      $leaderboardTab = 'time_played';
+                      $leaderboardTabName = 'Time played';
+                      break;
+  
+                    default:
+                      $q = 'SELECT user_id, username, highest_wpm FROM USER, STATS WHERE
+                            STATS.STATS_user_id = USER.user_id ORDER BY highest_wpm DESC';
+                      $leaderboardTab = 'highest_wpm';
+                      $leaderboardTabName = 'WPM record';
+                      break;
+                  }
+                }
+                else
+                {
+                  $q = 'SELECT user_id, username, highest_wpm FROM USER, STATS WHERE
+                        STATS.STATS_user_id = USER.user_id ORDER BY highest_wpm DESC';
+                  $leaderboardTab = 'highest_wpm';
+                  $leaderboardTabName = 'WPM record';
+                }
+
                 $req = $db->query($q);
                 $results = $req->fetchAll(PDO::FETCH_ASSOC);
             ?>
@@ -26,7 +87,7 @@
                 <th>Rank</th>
                 <?php $rank = 1; ?>
                 <th>Username</th>
-                <th>WPM Record</th>
+                <?php echo "<th>$leaderboardTabName</th>";?>
                 <th>Profile</th>
             </tr>
 
@@ -35,7 +96,7 @@
                     echo '<tr>';
                     echo '<td>' . $rank++ . '</td>';
                     echo '<td>' . $stats['username'] . '</td>';
-                    echo '<td>' . $stats['highest_wpm'] . '</td>';
+                    echo '<td>' . $stats["$leaderboardTab"] . '</td>';
                     echo '<td class="text-nowrap">';
                     echo '<a class="btn btn-primary btn-sm me-2 col-6" href="profile.php?id=' . $stats['user_id'] . '">Profile</a>';
                     echo '</td>';
@@ -49,5 +110,6 @@
     </div>
 
     <script src="src/scripts/js/main.js"></script>
+    <script src="src/scripts/js/leaderboard.js"></script>
   </body>
 </html>
