@@ -73,24 +73,24 @@ if (raceBtn) {
 }
 
 
-window.onload = function() {
-    // Helmet
-    const helmetDropdown = document.querySelector("#helmet-dropdown")
-    helmetDropdown.addEventListener("change", function() {
-        const helmetNum = helmetDropdown.value
-        const helmetName = "helmet" + helmetNum + ".png"
-        helmet.src = "assets/helmets/" + helmetName
-    })
 
-    const helmet = new Image()
-    const helmetNum = helmetDropdown.value
-    const helmetName = "helmet" + helmetNum + ".png"
-    helmet.src = "assets/helmets/" + helmetName
+    // Helmet choice
+    function helmetChoice(type, color) {
+        const helmetDropdown = document.querySelector(`#helmet-dropdown-${type}`)
+        helmetDropdown.addEventListener("change", function() {
+            const helmetName = `helmet_${type}_helmet_${color}` + ".png"
+            helmet.src = `images/avatar/helmet/${type}` + helmetName
+        })
 
-    helmet.onload = function() {
-        buildAvatar()
+        const helmet = new Image()
+        const helmetName = `helmet_${type}_helmet_${color}` + ".png"
+        helmet.src = `images/avatar/helmet/${type}` + helmetName
+
+        helmet.onload = function() {
+            buildAvatar()
+        }
     }
-
+    
 
     // Vest
     const vestDropdown = document.querySelector("#vest-dropdown")
@@ -135,4 +135,4 @@ window.onload = function() {
         context.drawImage(vest, 0, 0)
         context.drawImage(helmet, 0, 0)
     }
-}
+
