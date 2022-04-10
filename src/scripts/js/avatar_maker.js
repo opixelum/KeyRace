@@ -1,4 +1,4 @@
-// Choose a sub_selection (Helmet, Vest or Visor)
+// Choose between Helmet, Vest, Visor or Background
 const helmetbtn = document.querySelector('#helmet-btn')
 if (helmetbtn) {
     helmetbtn.addEventListener('click', () => {
@@ -84,8 +84,9 @@ if (backgroundBtn) {
 
 const helmetDropdown = document.querySelector('#helmet-dropdown')
 const vestDropdown = document.querySelector('#vest-dropdown')
+const visorDropdown = document.querySelector('#visor-dropdown')
 
-// Choose the category if the selection is helmet
+// Choose the sub_selection if the selection is helmet
 const helmetDefaultBtn = document.querySelector('#helmet-default-btn')
 if (helmetDefaultBtn) {
     helmetDefaultBtn.addEventListener('click', () => {
@@ -179,7 +180,7 @@ if (helmetRaceBtn) {
 }
 
 
-// Choose the category if the selection is vest
+// Choose the sub_selection if the selection is vest
 const vestRoadBtn = document.querySelector('#vest-road-btn')
 if (vestRoadBtn) {
     vestRoadBtn.addEventListener('click', () => {
