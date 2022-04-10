@@ -56,7 +56,7 @@ const keyListener = document.addEventListener("keydown", ({key}) => {
         cursorCharacter.classList.add("wrong")
     }
 
-    // Compute all stats
+    // Compute all stats & check if objective is completed
     if (cursorIndex >= characters.length) {
         endTime = new Date()
 
@@ -64,7 +64,7 @@ const keyListener = document.addEventListener("keydown", ({key}) => {
         const delta = endTime - startTime
 
         // Convert time from miliseconds (default) to seconds
-        const seconds = delta / 1000
+        const seconds = Math.round(delta / 1000 * 100) / 100
 
         // Get the number of word in the text
         const numberOfWords = text.split('_').length
@@ -77,16 +77,61 @@ const keyListener = document.addEventListener("keydown", ({key}) => {
 
         // Compute accuracy
         const correct = characters.filter(character => !character.classList.contains("wrong")).length
+        const errors = characters.length - correct
         let accuracy = correct / characters.length * 100.0
 
         // Round accuracy to 2 decimal places
         accuracy = Math.round(accuracy * 100) / 100
         
         // Display stats
-        document.querySelector("#stats").innerText = `WPM: ${wpm} | Accuracy: ${accuracy}%`
+        document.querySelector("#stats").innerText = `WPM: ${wpm} | Accuracy: ${accuracy}% | Time: ${seconds}s | Errors: ${errors}`
 
         // Prevent next lines to be executed when game is done
         document.removeEventListener("keydown", keyListener)
+
+        // Check if objective is completed
+        switch (quest) {
+            case "1":
+                // Type faster than 30 wpm
+                if (wpm > 30) console.log("Objective 1 completed")
+                break
+            
+            case "2":
+                // Do less than 10 errors
+                if (errors < 10) console.log("Objective 2 completed")
+                break
+            
+            case "3":
+                // Type faster than 50 wpm
+                if (wpm > 50) console.log("Objective 3 completed")
+                break
+
+            case "4":
+                // Be at least 80% accurate
+                if (accuracy > 80) console.log("Objective 4 completed")
+                break
+            
+            case "5":
+                // Do less than 5 errors under 45 seconds
+                if (errors < 5 && seconds < 45) console.log("Objective 5 completed")
+                break
+
+            case "6":
+                // Type faster than 70 wpm
+                if (wpm > 70) console.log("Objective 6 completed")
+                break
+            
+            case "7":
+                // Type faster than 80 wpm & be at least 95% accurate
+                if (wpm > 80 && accuracy > 95) console.log("Objective 7 completed")
+                break
+            
+            case "8":
+                // Type faster than 100 wpm & be at least 95% accurate
+                if (wpm > 100 && accuracy > 95) console.log("Objective 8 completed")
+                break
+        }
+
         return
     }
 
