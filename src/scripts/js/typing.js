@@ -1,3 +1,6 @@
+const quest = window.location.search.substring(1).split("=")[1]
+console.log(quest)
+
 // Used for excluding non-letter keys
 const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
