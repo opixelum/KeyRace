@@ -1,5 +1,5 @@
+// Choose a sub_selection (Helmet, Vest or Visor)
 const helmetbtn = document.querySelector('#helmet-btn')
-const helmetDropdown = document.querySelector('#helmet-dropdown')
 if (helmetbtn) {
     helmetbtn.addEventListener('click', () => {
         const subSelection = document.querySelector('#sub-selection')
@@ -11,6 +11,11 @@ if (helmetbtn) {
             <button id="helmet-sport-btn" class="btn col-2">Sport</button>
             <button id="helmet-race-btn" class="btn col-2">Race</button>
             </div>
+        `
+        const dropdownMenu = document.querySelector('#dropdown-menu')
+        dropdownMenu.innerHTML = `
+        <label for="helmet">Choose a helmet:</label>
+        <select name="helmet" id="helmet-dropdown"></select>
         `
     })
 }
@@ -27,6 +32,11 @@ if (visorBtn) {
             <button id="visor-race-btn" class="btn col-2">Race</button>
             </div>
         `
+        const dropdownMenu = document.querySelector('#dropdown-menu')
+        dropdownMenu.innerHTML = `
+        <label for="visor">Choose a visor:</label>
+        <select name="visor" id="visor-dropdown"></select>
+        `
     })
 }
 
@@ -36,18 +46,49 @@ if (vestBtn) {
         const subSelection = document.querySelector('#sub-selection')
         subSelection.innerHTML = `
             <div class="w-100 justify-content-evenly d-flex">
-            <button id="vest-default-btn" class="btn col-2">Road</button>
+            <button id="vest-road-btn" class="btn col-2">Road</button>
             <button id="vest-cross-btn" class="btn col-2">Vintage</button>
             <button id="vest-sport-btn" class="btn col-2">Cross</button>
             <button id="vest-race-btn" class="btn col-2">Race</button>
             </div>
         `
+        const dropdownMenu = document.querySelector('#dropdown-menu')
+        dropdownMenu.innerHTML = `
+        <label for="vest">Choose a vest:</label>
+        <select name="vest" id="vest-dropdown"></select>
+        `
     })
 }
 
-const defaultBtn = document.querySelector('#helmet-default-btn')
-if (defaultBtn) {
-    defaultBtn.addEventListener('click', () => {
+const backgroundBtn = document.querySelector('#background-btn')
+if (backgroundBtn) {
+    backgroundBtn.addEventListener('click', () => {
+        const dropdownMenu = document.querySelector('#dropdown-menu')
+        dropdownMenu.innerHTML = `
+            <label for="bg-color">Choose a background color:</label>
+            <select name="bg-color" id="bg-color-dropdown">
+                <option value="rgb(255,255,255)">White</option>
+                <option value="rgb(255,0,0)">Red</option>
+                <option value="rgb(255,150,0)">Orange</option>
+                <option value="rgb(255,255,0)">Yellow</option>
+                <option value="rgb(0,255,0)">Green</option>
+                <option value="rgb(0,255,255)">Cyan</option>
+                <option value="rgb(0,0,255)">Blue</option>
+                <option value="rgb(150,0,255)">Purple</option>
+                <option value="rgb(255,0,255)">Pink</option>
+                <option value="rgb(0,0,0)">Black</option>
+            </select>
+        `
+    })
+}
+
+const helmetDropdown = document.querySelector('#helmet-dropdown')
+const vestDropdown = document.querySelector('#vest-dropdown')
+
+// Choose the category if the selection is helmet
+const helmetDefaultBtn = document.querySelector('#helmet-default-btn')
+if (helmetDefaultBtn) {
+    helmetDefaultBtn.addEventListener('click', () => {
         helmetDropdown.innerHTML = `
         <option value="black">Black</option>
         <option value="white">White</option>
@@ -60,9 +101,9 @@ if (defaultBtn) {
     })
 }
 
-const duckBtn = document.querySelector('#helmet-duck-btn')
-if (duckBtn) {
-    duckBtn.addEventListener('click', () => {
+const helmetDuckBtn = document.querySelector('#helmet-duck-btn')
+if (helmetDuckBtn) {
+    helmetDuckBtn.addEventListener('click', () => {
         helmetDropdown.innerHTML = `
         <option value="black">Black</option>
         <option value="red">Red</option>
@@ -78,9 +119,9 @@ if (duckBtn) {
     
 }
 
-const crossBtn = document.querySelector('#helmet-cross-btn')
-if (crossBtn) {
-    crossBtn.addEventListener('click', () => {
+const helmetCrossBtn = document.querySelector('#helmet-cross-btn')
+if (helmetCrossBtn) {
+    helmetCrossBtn.addEventListener('click', () => {
         helmetDropdown.innerHTML = `
         <option value="black">Black</option>
         <option value="blue">Blue</option>
@@ -95,9 +136,9 @@ if (crossBtn) {
     
 }
 
-const sportBtn = document.querySelector('#helmet-sport-btn')
-if (sportBtn) {
-    sportBtn.addEventListener('click', () => {
+const helmetSportBtn = document.querySelector('#helmet-sport-btn')
+if (helmetSportBtn) {
+    helmetSportBtn.addEventListener('click', () => {
         helmetDropdown.innerHTML = `
         <option value="black">Black</option>
         <option value="blue">Blue</option>
@@ -117,9 +158,9 @@ if (sportBtn) {
     
 }
 
-const raceBtn = document.querySelector('#helmet-race-btn')
-if (raceBtn) {
-    raceBtn.addEventListener('click', () => {
+const helmetRaceBtn = document.querySelector('#helmet-race-btn')
+if (helmetRaceBtn) {
+    helmetRaceBtn.addEventListener('click', () => {
         helmetDropdown.innerHTML = `
         <option value="black">Black</option>
         <option value="LS">LS</option>
@@ -136,6 +177,25 @@ if (raceBtn) {
     })
    
 }
+
+
+// Choose the category if the selection is vest
+const vestRoadBtn = document.querySelector('#vest-road-btn')
+if (vestRoadBtn) {
+    vestRoadBtn.addEventListener('click', () => {
+        vestDropdown.innerHTML = `
+        <option value="ix">IX</option>
+        <option value="long">Long</option>
+        `
+
+        vestDropdown.addEventListener('click', () => {
+            vestChoice("road",  "brand", vestDropdown.value)
+        })
+    })
+}
+
+
+// Build the avatar
 
 let helmet = new Image()
 // Helmet choice

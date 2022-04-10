@@ -50,42 +50,9 @@
                 </div>
             </div>
 
-            <!-- Helmet dropdown menu -->
-            <label for="helmet">Choose a helmet:</label>
-            <select name="helmet" id="helmet-dropdown"></select>
-
-            <br>
-
-            <!-- Vest dropdown menu -->
-            <label for="vest">Choose a vest:</label>
-            <select name="vest" id="vest-dropdown">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            </select>
-
-            <!-- visor dropdown menu -->
-            <label for="visor">Choose a visor:</label>
-            <select name="visor" id="visor-dropdown">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            </select>
-
-            <br>
-
-            <!-- Background color dropdown menu -->
-            <label for="bg-color">Choose a background color:</label>
-            <select name="bg-color" id="bg-color-dropdown">
-            <option value="rgb(255,255,255)">White</option>
-            <option value="rgb(255,0,0)">Red</option>
-            <option value="rgb(255,150,0)">Orange</option>
-            <option value="rgb(255,255,0)">Yellow</option>
-            <option value="rgb(0,255,0)">Green</option>
-            <option value="rgb(0,255,255)">Cyan</option>
-            <option value="rgb(0,0,255)">Blue</option>
-            <option value="rgb(150,0,255)">Purple</option>
-            <option value="rgb(255,0,255)">Pink</option>
-            <option value="rgb(0,0,0)">Black</option>
-            </select>
+            <!-- Dropdown menu -->
+            <div id="dropdown-menu"></div>
+            
             <!-- Avatar frame -->
             <canvas id="avatar"></canvas>
         </main>
