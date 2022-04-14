@@ -21,13 +21,14 @@
             <button id="interface-btn" class="btn col-2">Interface</button>
             <button id="shop-btn" class="btn col-2">Shop</button>
           </div>
-          <div id="avatar-menu" class="w-100 justify-content-evenly d-flex">
+          <div id="customization-menu" class="w-100 justify-content-evenly d-flex">
           </div>
         </main>
       </div>
     </div>
 
     <script src="src/scripts/js/main.js"></script>
+    <script src="src/scripts/js/customization.js"></script>
     <script src="src/scripts/js/avatar_maker.js"></script>
   </body>
 </html>

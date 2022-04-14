@@ -1,12 +1,12 @@
 const avatarBtn = document.querySelector('#avatar-btn')
 if (avatarBtn) {
     avatarBtn.addEventListener('click', () => {
-        const avatarMenu = document.querySelector('#avatar-menu')
+        const avatarMenu = document.querySelector('#customization-menu')
         avatarMenu.innerHTML = `
-        <button id="car-btn" class="btn col-2">Helmet</button>
-        <button id="avatar-btn" class="btn col-2">Visor</button>
-        <button id="interface-btn" class="btn col-2">Vest</button>
-        <button id="shop-btn" class="btn col-2">Background</button>
+        <button id="helmet-btn" class="btn col-2">Helmet</button>
+        <button id="visor-btn" class="btn col-2">Visor</button>
+        <button id="vest-btn" class="btn col-2">Vest</button>
+        <button id="background-btn" class="btn col-2">Background</button>
         `
         
     })
