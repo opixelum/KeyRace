@@ -181,3 +181,13 @@ tr, td, th{
     overflow-y: auto;
     overflow-x: hidden;
 }
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background: #888; 
+    border-radius: 10px;
+}
