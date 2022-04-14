@@ -171,3 +171,8 @@ tr, td, th{
     color: var(--fontColor);
     border-color: var(--fontColor);
 }
+
+/* Customization */
+#assets-selection img {
+    height: fit-content;
+}
