@@ -70,7 +70,61 @@ function displayAvatarMaker() {
     if (visorBtn) {
         visorBtn.addEventListener('click', () => {
             assetsSelection.innerHTML = `
-            
+                <div id="default-visor" class="row">
+                    <p class="w-100 m-0 bg-dark">Default</p>
+                    <img class="w-25" src="src/images/avatar/visor/default/helmet_default_visor_black.png">
+                    <img class="w-25" src="src/images/avatar/visor/default/helmet_default_visor_blue.png">
+                    <img class="w-25" src="src/images/avatar/visor/default/helmet_default_visor_cyan.png">
+                    <img class="w-25" src="src/images/avatar/visor/default/helmet_default_visor_green.png">
+                    <img class="w-25" src="src/images/avatar/visor/default/helmet_default_visor_orange.png">
+                    <img class="w-25" src="src/images/avatar/visor/default/helmet_default_visor_pink.png">
+                    <img class="w-25" src="src/images/avatar/visor/default/helmet_default_visor_purple.png">
+                    <img class="w-25" src="src/images/avatar/visor/default/helmet_default_visor_red.png">
+                    <img class="w-25" src="src/images/avatar/visor/default/helmet_default_visor_white.png">
+                    <img class="w-25" src="src/images/avatar/visor/default/helmet_default_visor_yellow.png">
+                </div>
+                <hr>
+                <div id="cross-visor" class="row">
+                    <p class="w-100 m-0 bg-dark">Cross</p>
+                    <img class="w-25" src="src/images/avatar/visor/cross/helmet_cross_visor_black.png">
+                    <img class="w-25" src="src/images/avatar/visor/cross/helmet_cross_visor_blue.png">
+                    <img class="w-25" src="src/images/avatar/visor/cross/helmet_cross_visor_cyan.png">
+                    <img class="w-25" src="src/images/avatar/visor/cross/helmet_cross_visor_green.png">
+                    <img class="w-25" src="src/images/avatar/visor/cross/helmet_cross_visor_orange.png">
+                    <img class="w-25" src="src/images/avatar/visor/cross/helmet_cross_visor_pink.png">
+                    <img class="w-25" src="src/images/avatar/visor/cross/helmet_cross_visor_purple.png">
+                    <img class="w-25" src="src/images/avatar/visor/cross/helmet_cross_visor_red.png">
+                    <img class="w-25" src="src/images/avatar/visor/cross/helmet_cross_visor_white.png">
+                    <img class="w-25" src="src/images/avatar/visor/cross/helmet_cross_visor_yellow.png">
+                </div>
+                <hr>
+                <div id="sport-visor" class="row">
+                    <p class="w-100 m-0 bg-dark">Sport</p>
+                    <img class="w-25" src="src/images/avatar/visor/sport/helmet_sport_visor_black.png">
+                    <img class="w-25" src="src/images/avatar/visor/sport/helmet_sport_visor_blue.png">
+                    <img class="w-25" src="src/images/avatar/visor/sport/helmet_sport_visor_cyan.png">
+                    <img class="w-25" src="src/images/avatar/visor/sport/helmet_sport_visor_green.png">
+                    <img class="w-25" src="src/images/avatar/visor/sport/helmet_sport_visor_orange.png">
+                    <img class="w-25" src="src/images/avatar/visor/sport/helmet_sport_visor_pink.png">
+                    <img class="w-25" src="src/images/avatar/visor/sport/helmet_sport_visor_purple.png">
+                    <img class="w-25" src="src/images/avatar/visor/sport/helmet_sport_visor_red.png">
+                    <img class="w-25" src="src/images/avatar/visor/sport/helmet_sport_visor_white.png">
+                    <img class="w-25" src="src/images/avatar/visor/sport/helmet_sport_visor_yellow.png">
+                </div>
+                <hr>
+                <div id="race-visor" class="row">
+                    <p class="w-100 m-0 bg-dark">Race</p>
+                    <img class="w-25" src="src/images/avatar/visor/race/helmet_race_visor_black.png">
+                    <img class="w-25" src="src/images/avatar/visor/race/helmet_race_visor_blue.png">
+                    <img class="w-25" src="src/images/avatar/visor/race/helmet_race_visor_cyan.png">
+                    <img class="w-25" src="src/images/avatar/visor/race/helmet_race_visor_green.png">
+                    <img class="w-25" src="src/images/avatar/visor/race/helmet_race_visor_orange.png">
+                    <img class="w-25" src="src/images/avatar/visor/race/helmet_race_visor_pink.png">
+                    <img class="w-25" src="src/images/avatar/visor/race/helmet_race_visor_purple.png">
+                    <img class="w-25" src="src/images/avatar/visor/race/helmet_race_visor_red.png">
+                    <img class="w-25" src="src/images/avatar/visor/race/helmet_race_visor_white.png">
+                    <img class="w-25" src="src/images/avatar/visor/race/helmet_race_visor_yellow.png">
+                </div>
             `
         })
     }
