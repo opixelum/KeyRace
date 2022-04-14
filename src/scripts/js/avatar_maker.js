@@ -7,7 +7,7 @@ function displayAvatarMaker() {
         <button id="visor-btn" class="btn col-3">Visor</button>
         <button id="vest-btn" class="btn col-3">Vest</button>
         <button id="background-btn" class="btn col-3">Background</button>
-        <div id="assets-selection" class="container d-flex flex-wrap border align-items-start h-75"></div>
+        <div id="assets-selection" class="container d-flex flex-wrap border rounded-3 align-items-start h-75"></div>
     `
 
     const assetsSelection = document.querySelector('#assets-selection')
@@ -17,14 +17,15 @@ function displayAvatarMaker() {
         helmetBtn.addEventListener('click', () => {
             assetsSelection.innerHTML = `
                 <div id="cross-helmet" class="row">
-                    <p class="w-100 m-0">Cross</p>
+                    <p class="w-100 m-0 bg-dark">Cross</p>
                     <img class="w-25" src="src/images/avatar/helmet/cross/helmet_cross_helmet_black.png">
                     <img class="w-25" src="src/images/avatar/helmet/cross/helmet_cross_helmet_blue.png">
                     <img class="w-25" src="src/images/avatar/helmet/cross/helmet_cross_helmet_white.png">
                     <img class="w-25" src="src/images/avatar/helmet/cross/helmet_cross_helmet_orange.png">
                 </div>
+                <hr>
                 <div id="sport-helmet" class="row">
-                    <p class="w-100 m-0">Sport</p>
+                    <p class="w-100 m-0 bg-dark">Sport</p>
                     <img class="w-25" src="src/images/avatar/helmet/sport/helmet_sport_helmet_black.png">
                     <img class="w-25" src="src/images/avatar/helmet/sport/helmet_sport_helmet_blue.png">
                     <img class="w-25" src="src/images/avatar/helmet/sport/helmet_sport_helmet_white.png">
@@ -35,8 +36,9 @@ function displayAvatarMaker() {
                     <img class="w-25" src="src/images/avatar/helmet/sport/helmet_sport_helmet_soleluna.png">
                     <img class="w-25" src="src/images/avatar/helmet/sport/helmet_sport_helmet_test.png">
                 </div>
+                <hr>
                 <div id="race-helmet" class="row">
-                    <p class="w-100 m-0">Race</p>
+                    <p class="w-100 m-0 bg-dark">Race</p>
                     <img class="w-25" src="src/images/avatar/helmet/race/helmet_race_helmet_black.png">
                     <img class="w-25" src="src/images/avatar/helmet/race/helmet_race_helmet_futuro.png">
                     <img class="w-25" src="src/images/avatar/helmet/race/helmet_race_helmet_LS.png">
@@ -44,14 +46,16 @@ function displayAvatarMaker() {
                     <img class="w-25" src="src/images/avatar/helmet/race/helmet_race_helmet_WC.png">
                     <img class="w-25" src="src/images/avatar/helmet/race/helmet_race_helmet_WT.png">
                 </div>
+                <hr>
                 <div id="default-helmet" class="row">
-                    <p class="w-100 m-0">Default</p>
+                    <p class="w-100 m-0 bg-dark">Default</p>
                     <img class="w-25" src="src/images/avatar/helmet/default/helmet_default_helmet_black.png">
                     <img class="w-25" src="src/images/avatar/helmet/default/helmet_default_helmet_white.png">
                     <img class="w-25" src="src/images/avatar/helmet/default/helmet_default_helmet_special.png">
                 </div>
+                <hr>
                 <div id="duck-helmet" class="row">
-                <p class="w-100 m-0">Duck</p>
+                <p class="w-100 m-0 bg-dark">Duck</p>
                 <img class="w-25" src="src/images/avatar/helmet/duck/helmet_duck_helmet_black.png">
                 <img class="w-25" src="src/images/avatar/helmet/duck/helmet_duck_helmet_white.png">
                 <img class="w-25" src="src/images/avatar/helmet/duck/helmet_duck_helmet_red.png">
