@@ -29,6 +29,15 @@ cursorCharacter.classList.add("cursor")
 let startTime = null
 let endTime = null
 
+// Stats elements
+const timeSpan = document.querySelector("#time")
+const wpmSpan = document.querySelector("#wpm")
+const accuracySpan = document.querySelector("#accuracy")
+const errorsSpan = document.querySelector("#errors")
+
+let errors = 0
+errorsSpan.innerText = `Errors: 0`
+
 // Listen to player's keyboard
 const keyListener = document.addEventListener("keydown", ({key}) => {
     // Start stopwatch
@@ -46,14 +55,20 @@ const keyListener = document.addEventListener("keydown", ({key}) => {
         cursorCharacter = characters[cursorIndex]
         cursorCharacter.classList.add("cursor")
         startTime = new Date()
+        errors = 0
+        errorsSpan.innerText = `Errors: 0`
+
     } else if (key === cursorCharacter.innerText || key === ' ' && cursorCharacter.innerText === '_') {
         // If right key was typed
         cursorCharacter.classList.remove("cursor")
         cursorCharacter.classList.add("correct")
         cursorCharacter = characters[++cursorIndex]
+
     } else if (letters.includes(key) || key === ' ') {
         // If wrong key (excluding non-letter keys) was typed
         cursorCharacter.classList.add("wrong")
+        errors++
+        errorsSpan.innerText = `Errors: ${errors}`
     }
 
     // Compute all stats & check if objective is completed
@@ -77,7 +92,6 @@ const keyListener = document.addEventListener("keydown", ({key}) => {
 
         // Compute accuracy
         const correct = characters.filter(character => !character.classList.contains("wrong")).length
-        const errors = characters.length - correct
         let accuracy = correct / characters.length * 100.0
 
         // Round accuracy to 2 decimal places

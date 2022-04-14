@@ -37,6 +37,11 @@
     }
 ?>
 </h3>
-<div id="stats"></div>
 <div class="fs-3 m-5 px-2 input-field rounded text-break" id="typing-field"></div>
+<div id="stats">
+  <span id="time"><b>Time</b>: --- s</span>
+  <span id="wpm"><b>WPM</b>: ---</span>
+  <span id="accuracy"><b>Accuracy</b>: --- %</span>
+  <span id="errors"><b>Errors</b>: ---</span>
+</div>
 <script src="src/scripts/js/typing.js"></script>
