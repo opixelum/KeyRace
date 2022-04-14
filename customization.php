@@ -13,6 +13,7 @@
           <?php include("src/includes/navbar.php"); ?>
         </header>
 
+        <!-- Menu -->
         <main class="col h-100 ms-2 rounded d-flex flex-wrap rgb-shadow">
           <h1 class="mx-auto my-3">Customization</h1>
           <div class="w-100 justify-content-evenly d-flex">
@@ -21,14 +22,15 @@
             <button id="interface-btn" class="btn col-2">Interface</button>
             <button id="shop-btn" class="btn col-2">Shop</button>
           </div>
-          <div id="customization-menu" class="w-100 justify-content-evenly d-flex">
-          </div>
+
+          <!-- Customization -->
+          <div id="customization-menu" class="w-100 justify-content-evenly d-flex"></div>
         </main>
       </div>
     </div>
 
     <script src="src/scripts/js/main.js"></script>
-    <script src="src/scripts/js/customization.js"></script>
     <script src="src/scripts/js/avatar_maker.js"></script>
+    <script src="src/scripts/js/customization.js"></script>
   </body>
 </html>
