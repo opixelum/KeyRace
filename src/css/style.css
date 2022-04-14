@@ -176,3 +176,8 @@ tr, td, th{
 #assets-selection img {
     height: fit-content;
 }
+
+#assets-selection {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
