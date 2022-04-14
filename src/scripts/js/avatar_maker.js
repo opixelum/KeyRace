@@ -16,6 +16,22 @@ function displayAvatarMaker() {
     if (helmetBtn) {
         helmetBtn.addEventListener('click', () => {
             assetsSelection.innerHTML = `
+                <div id="default-helmet" class="row">
+                    <p class="w-100 m-0 bg-dark">Default</p>
+                    <img class="w-25" src="src/images/avatar/helmet/default/helmet_default_helmet_black.png">
+                    <img class="w-25" src="src/images/avatar/helmet/default/helmet_default_helmet_white.png">
+                    <img class="w-25" src="src/images/avatar/helmet/default/helmet_default_helmet_special.png">
+                </div>
+                <hr>
+                <div id="duck-helmet" class="row">
+                    <p class="w-100 m-0 bg-dark">Duck</p>
+                    <img class="w-25" src="src/images/avatar/helmet/duck/helmet_duck_helmet_black.png">
+                    <img class="w-25" src="src/images/avatar/helmet/duck/helmet_duck_helmet_white.png">
+                    <img class="w-25" src="src/images/avatar/helmet/duck/helmet_duck_helmet_red.png">
+                    <img class="w-25" src="src/images/avatar/helmet/duck/helmet_duck_helmet_yellow.png">
+                    <img class="w-25" src="src/images/avatar/helmet/duck/helmet_duck_helmet_special.png">
+                </div>
+                <hr>
                 <div id="cross-helmet" class="row">
                     <p class="w-100 m-0 bg-dark">Cross</p>
                     <img class="w-25" src="src/images/avatar/helmet/cross/helmet_cross_helmet_black.png">
@@ -46,22 +62,6 @@ function displayAvatarMaker() {
                     <img class="w-25" src="src/images/avatar/helmet/race/helmet_race_helmet_WC.png">
                     <img class="w-25" src="src/images/avatar/helmet/race/helmet_race_helmet_WT.png">
                 </div>
-                <hr>
-                <div id="default-helmet" class="row">
-                    <p class="w-100 m-0 bg-dark">Default</p>
-                    <img class="w-25" src="src/images/avatar/helmet/default/helmet_default_helmet_black.png">
-                    <img class="w-25" src="src/images/avatar/helmet/default/helmet_default_helmet_white.png">
-                    <img class="w-25" src="src/images/avatar/helmet/default/helmet_default_helmet_special.png">
-                </div>
-                <hr>
-                <div id="duck-helmet" class="row">
-                <p class="w-100 m-0 bg-dark">Duck</p>
-                <img class="w-25" src="src/images/avatar/helmet/duck/helmet_duck_helmet_black.png">
-                <img class="w-25" src="src/images/avatar/helmet/duck/helmet_duck_helmet_white.png">
-                <img class="w-25" src="src/images/avatar/helmet/duck/helmet_duck_helmet_red.png">
-                <img class="w-25" src="src/images/avatar/helmet/duck/helmet_duck_helmet_yellow.png">
-                <img class="w-25" src="src/images/avatar/helmet/duck/helmet_duck_helmet_special.png">
-            </div>
             `
         })
     }
@@ -79,7 +79,30 @@ function displayAvatarMaker() {
     if (vestBtn) {
         vestBtn.addEventListener('click', () => {
             assetsSelection.innerHTML = `
-            
+                <div id="vintage-vest" class="row">
+                    <p class="w-100 m-0 bg-dark">Vintage</p>
+                    <img class="w-25" src="src/images/avatar/vest/vintage/alp/body_vintage_alp_black.png">
+                    <img class="w-25" src="src/images/avatar/vest/vintage/har/body_vintage_har_grey.png">
+                    <img class="w-25" src="src/images/avatar/vest/vintage/ix/body_vintage_ix_marron.png">
+                </div>
+                <hr>
+                <div id="cross-vest" class="row">
+                    <p class="w-100 m-0 bg-dark">Cross</p>
+                    <img class="w-25" src="src/images/avatar/vest/cross/alp/body_cross_alp_black.png">
+                    <img class="w-25" src="src/images/avatar/vest/cross/fox/body_cross_fox_black.png">
+                </div>
+                <hr>
+                <div id="road-vest" class="row">
+                    <p class="w-100 m-0 bg-dark">Road</p>
+                    <img class="w-25" src="src/images/avatar/vest/road/ix/body_road_ix_black.png">
+                    <img class="w-25" src="src/images/avatar/vest/road/long/body_road_long_black.png">
+                </div>
+                <hr>
+                <div id="race-vest" class="row">
+                    <p class="w-100 m-0 bg-dark">Race</p>
+                    <img class="w-25" src="src/images/avatar/vest/race/dns/body_race_dns_black.png">
+                    <img class="w-25" src="src/images/avatar/vest/race/fur/body_race_fur_black.png">
+                </div>
             `
         })
     }
