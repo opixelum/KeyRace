@@ -6,7 +6,7 @@ const nextBtn = document.querySelector("#next-btn")
 const questSuccess = () => {
     const questStatusDiv = document.querySelector("#quest-status")
     const questStatusMessage = document.createElement("h3")
-    const questStautsMessageText = document.createTextNode("Quest completed!")
+    const questStautsMessageText = document.createTextNode("🎉 Quest completed! 🎉")
     questStatusMessage.appendChild(questStautsMessageText)
     questStatusDiv.appendChild(questStatusMessage)
     nextBtn.classList.remove("disabled")    
@@ -15,7 +15,7 @@ const questSuccess = () => {
 const questFailed = () => {
     const questStatusDiv = document.querySelector("#quest-status")
     const questStatusMessage = document.createElement("h3")
-    const questStautsMessageText = document.createTextNode("Quest failed...")
+    const questStautsMessageText = document.createTextNode("❌ Quest failed... ❌")
     questStatusMessage.appendChild(questStautsMessageText)
     questStatusDiv.appendChild(questStatusMessage)
 }

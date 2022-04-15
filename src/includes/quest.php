@@ -55,7 +55,7 @@
       <p class="ms-5" id="errors">Errors: ---</p>
     </div>
   </div>
-  <div class="fs-3 p-3 mb-5 input-field rounded text-break" id="typing-field"></div>
+  <div class="fs-3 p-3 input-field rounded text-break" id="typing-field"></div>
 </div>
 
 <div id="quest-status"></div>
