@@ -37,11 +37,21 @@
     }
 ?>
 </h3>
-<div class="fs-3 m-5 px-2 input-field rounded text-break" id="typing-field"></div>
-<div id="stats">
-  <span id="time"><b>Time</b>: --- s</span>
-  <span id="wpm"><b>WPM</b>: ---</span>
-  <span id="accuracy"><b>Accuracy</b>: --- %</span>
-  <span id="errors"><b>Errors</b>: ---</span>
+<div class="container w-100 px-5">
+  <div class="row d-flex justify-content-between w-100">
+    <div class="col-3 ps-5">
+      <p class="ms-5" id="time">Time: --- s</p>
+    </div>
+    <div class="col-3 ps-5">
+      <p class="ms-5" id="wpm">WPM: ---</p>
+    </div>
+    <div class="col-3 ps-5">
+      <p class="ms-5" id="accuracy">Accuracy: --- %</p>
+    </div>
+    <div class="col-3 ps-5">
+      <p class="ms-5" id="errors">Errors: ---</p>
+    </div>
+  </div>
+  <div class="fs-3 px-2 input-field rounded text-break" id="typing-field"></div>
 </div>
 <script src="src/scripts/js/typing.js"></script>

@@ -1,5 +1,4 @@
 const quest = window.location.search.substring(1).split("=")[1]
-console.log(quest)
 
 // Used for excluding non-letter keys
 const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -85,10 +84,10 @@ const keyListener = document.addEventListener("keydown", ({key}) => {
         const numberOfWords = text.split('_').length
 
         // Compute words per minute
-        let wpm = numberOfWords / seconds * 100.0
+        const wpm = numberOfWords / seconds * 100.0
 
         // Round wpm to 2 decimal places
-        wpm = Math.round(wpm * 100) / 100
+        const roundedWpm = Math.round(wpm * 100) / 100
 
         // Compute accuracy
         const accuracy = 100 * text.length / (text.length + errors)
@@ -97,7 +96,10 @@ const keyListener = document.addEventListener("keydown", ({key}) => {
         const roundedAccuracy = Math.round(accuracy * 100) / 100
         
         // Display stats
-        document.querySelector("#stats").innerText = `WPM: ${wpm} | Accuracy: ${roundedAccuracy}% | Time: ${seconds}s | Errors: ${errors}`
+        const timeStat = document.querySelector("#time").innerText = `Time: ${seconds}s`
+        const wpmStat = document.querySelector("#wpm").innerText = `WPM: ${roundedWpm}`
+        const accuracyStat = document.querySelector("#accuracy").innerText = `Accuracy: ${roundedAccuracy}%`
+        const errorsStat = document.querySelector("#errors").innerText = `Errors: ${errors}`
 
         // Prevent next lines to be executed when game is done
         document.removeEventListener("keydown", keyListener)
