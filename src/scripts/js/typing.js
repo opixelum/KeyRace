@@ -91,14 +91,13 @@ const keyListener = document.addEventListener("keydown", ({key}) => {
         wpm = Math.round(wpm * 100) / 100
 
         // Compute accuracy
-        const correct = characters.filter(character => !character.classList.contains("wrong")).length
-        let accuracy = correct / characters.length * 100.0
+        const accuracy = 100 * text.length / (text.length + errors)
 
         // Round accuracy to 2 decimal places
-        accuracy = Math.round(accuracy * 100) / 100
+        const roundedAccuracy = Math.round(accuracy * 100) / 100
         
         // Display stats
-        document.querySelector("#stats").innerText = `WPM: ${wpm} | Accuracy: ${accuracy}% | Time: ${seconds}s | Errors: ${errors}`
+        document.querySelector("#stats").innerText = `WPM: ${wpm} | Accuracy: ${roundedAccuracy}% | Time: ${seconds}s | Errors: ${errors}`
 
         // Prevent next lines to be executed when game is done
         document.removeEventListener("keydown", keyListener)
