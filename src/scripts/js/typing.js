@@ -1,12 +1,15 @@
 // Get quest number from url
 const quest = window.location.search.substring(1).split("=")[1]
 
+const nextBtn = document.querySelector("#next-btn")
+
 const questSuccess = () => {
     const questStatusDiv = document.querySelector("#quest-status")
     const questStatusMessage = document.createElement("h3")
     const questStautsMessageText = document.createTextNode("Quest completed!")
     questStatusMessage.appendChild(questStautsMessageText)
     questStatusDiv.appendChild(questStatusMessage)
+    nextBtn.classList.remove("disabled")    
 }
 
 const questFailed = () => {
@@ -185,4 +188,12 @@ if (backBtn) {
     backBtn.addEventListener("click", () => {
         window.location.href = "http://localhost/KeyRace/campaign.php"
     })
+}
+
+if (quest !== '8') {
+    if (nextBtn) {
+        nextBtn.addEventListener("click", () => {
+            window.location.href = `http://localhost/KeyRace/campaign.php?quest=${parseInt(quest) + 1}`
+        })
+    }
 }
