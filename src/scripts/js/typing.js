@@ -158,7 +158,7 @@ const keyListener = document.addEventListener("keydown", ({key}) => {
 
 const backBtn = document.querySelector("#back-btn")
 if (backBtn) {
-    addEventListener("click", () => {
+    backBtn.addEventListener("click", () => {
         window.location.href = "http://localhost/KeyRace/campaign.php"
     })
 }
