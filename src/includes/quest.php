@@ -1,42 +1,45 @@
-<h1 class="text-center w-100 my-3">Quest <?php echo $quest; ?></h1>
-<h3 class="text-center w-100 my-3">
-<?php
-    switch ($quest)
-    {
-        case 1:
-            echo "Type faster than 30 wpm.";
-            break;
-        
-        case 2:
-            echo "Do less than 10 errors.";
-            break;
-        
-        case 3:
-            echo "Type faster than 50 wpm.";
-            break;
+<div>
+  <h1 class="text-center w-100 mb-5">Quest <?php echo $quest; ?></h1>
+  <h3 class="text-center w-100 pt-5 mb-0">
+    <?php
+        switch ($quest)
+        {
+            case 1:
+                echo "Type faster than 30 wpm.";
+                break;
+            
+            case 2:
+                echo "Do less than 10 errors.";
+                break;
+            
+            case 3:
+                echo "Type faster than 50 wpm.";
+                break;
 
-        case 4:
-            echo "Be at least 80% accurate.";
-            break;
+            case 4:
+                echo "Be at least 80% accurate.";
+                break;
 
-        case 5:
-            echo "Do less than 5 errors under 45 seconds.";
-            break;
+            case 5:
+                echo "Do less than 5 errors under 45 seconds.";
+                break;
 
-        case 6:
-            echo "Type faster than 70 wpm.";
-            break;
-        
-        case 7:
-            echo "Type faster than 80 wpm & be at least 95% accurate.";
-            break;
-        
-        case 8:
-            echo "Type faster than 100 wpm & be at least 95% accurate.";
-            break;
-    }
-?>
-</h3>
+            case 6:
+                echo "Type faster than 70 wpm.";
+                break;
+            
+            case 7:
+                echo "Type faster than 80 wpm & be at least 95% accurate.";
+                break;
+            
+            case 8:
+                echo "Type faster than 100 wpm & be at least 95% accurate.";
+                break;
+        }
+    ?>
+  </h3>
+</div>
+
 <div class="container w-100">
   <div class="row d-flex justify-content-between w-100">
     <div class="col-3 ps-5">
@@ -52,10 +55,12 @@
       <p class="ms-5" id="errors">Errors: ---</p>
     </div>
   </div>
-  <div class="fs-3 px-2 input-field rounded text-break" id="typing-field"></div>
+  <div class="fs-3 p-3 mb-5 input-field rounded text-break" id="typing-field"></div>
 </div>
 
-<div class="d-flex justify-content-between w-100">
+<div id="quest-status"></div>
+
+<div id="quest-footer-btn" class="d-flex justify-content-between w-100">
   <button class="btn" id="back-btn">Back to menu</button>
   <button class="btn disabled" id="next-btn">Next quest</button>
 </div>

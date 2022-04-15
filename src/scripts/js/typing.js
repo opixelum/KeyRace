@@ -1,4 +1,21 @@
+// Get quest number from url
 const quest = window.location.search.substring(1).split("=")[1]
+
+const questSuccess = () => {
+    const questStatusDiv = document.querySelector("#quest-status")
+    const questStatusMessage = document.createElement("h3")
+    const questStautsMessageText = document.createTextNode("Quest completed!")
+    questStatusMessage.appendChild(questStautsMessageText)
+    questStatusDiv.appendChild(questStatusMessage)
+}
+
+const questFailed = () => {
+    const questStatusDiv = document.querySelector("#quest-status")
+    const questStatusMessage = document.createElement("h3")
+    const questStautsMessageText = document.createTextNode("Quest failed...")
+    questStatusMessage.appendChild(questStautsMessageText)
+    questStatusDiv.appendChild(questStatusMessage)
+}
 
 // Used for excluding non-letter keys
 const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -108,45 +125,52 @@ const keyListener = document.addEventListener("keydown", ({key}) => {
         switch (quest) {
             case "1":
                 // Type faster than 30 wpm
-                if (wpm > 30) console.log("Objective 1 completed")
+                if (wpm > 30) questSuccess()
+                else questFailed()
                 break
             
             case "2":
                 // Do less than 10 errors
-                if (errors < 10) console.log("Objective 2 completed")
+                if (errors < 10) questSuccess()
+                else questFailed()
                 break
             
             case "3":
                 // Type faster than 50 wpm
-                if (wpm > 50) console.log("Objective 3 completed")
+                if (wpm > 50) questSuccess()
+                else questFailed()
                 break
 
             case "4":
                 // Be at least 80% accurate
-                if (accuracy > 80) console.log("Objective 4 completed")
+                if (accuracy > 80) questSuccess()
+                else questFailed()
                 break
             
             case "5":
                 // Do less than 5 errors under 45 seconds
-                if (errors < 5 && seconds < 45) console.log("Objective 5 completed")
+                if (errors < 5 && seconds < 45) questSuccess()
+                else questFailed()
                 break
 
             case "6":
                 // Type faster than 70 wpm
-                if (wpm > 70) console.log("Objective 6 completed")
+                if (wpm > 70) questSuccess()
+                else questFailed()
                 break
             
             case "7":
                 // Type faster than 80 wpm & be at least 95% accurate
-                if (wpm > 80 && accuracy > 95) console.log("Objective 7 completed")
+                if (wpm > 80 && accuracy > 95) questSuccess()
+                else questFailed()
                 break
             
             case "8":
                 // Type faster than 100 wpm & be at least 95% accurate
-                if (wpm > 100 && accuracy > 95) console.log("Objective 8 completed")
+                if (wpm > 100 && accuracy > 95) questSuccess()
+                else questFailed()
                 break
         }
-
         return
     }
 

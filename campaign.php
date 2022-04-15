@@ -32,7 +32,7 @@ include("src/includes/head.php");
         <?php include("src/includes/navbar.php"); ?>
       </header>
 
-      <main class="col d-flex justify-content-center align-items-start flex-wrap h-100 ms-2 rounded rgb-shadow px-5">
+      <main class="col d-flex flex-column justify-content-between align-items-center flex-wrap h-100 ms-2 rounded rgb-shadow p-5">
         <?php
         // If no quest parameter in url or user's max quest is lower, display campaign menu
         if (!isset($_GET["quest"]) || $_GET["quest"] < 1 || $_GET["quest"] > 8 || $result[0]["quest"] + 1 < $_GET["quest"])
