@@ -37,7 +37,7 @@
     }
 ?>
 </h3>
-<div class="container w-100 px-5">
+<div class="container w-100">
   <div class="row d-flex justify-content-between w-100">
     <div class="col-3 ps-5">
       <p class="ms-5" id="time">Time: --- s</p>
@@ -53,5 +53,10 @@
     </div>
   </div>
   <div class="fs-3 px-2 input-field rounded text-break" id="typing-field"></div>
+</div>
+
+<div class="d-flex justify-content-between w-100">
+  <button class="btn" id="back-btn">Back to menu</button>
+  <button class="btn disabled" id="next-btn">Next quest</button>
 </div>
 <script src="src/scripts/js/typing.js"></script>

@@ -155,3 +155,10 @@ const keyListener = document.addEventListener("keydown", ({key}) => {
     // game is done.
     cursorCharacter.classList.add("cursor")
 })
+
+const backBtn = document.querySelector("#back-btn")
+if (backBtn) {
+    addEventListener("click", () => {
+        window.location.href = "http://localhost/KeyRace/campaign.php"
+    })
+}
