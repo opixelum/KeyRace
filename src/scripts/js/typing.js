@@ -76,7 +76,6 @@ const typingDiv = document.querySelector("#typing-field")
 // Text to type
 const text =
   "curious_political_grain_grandmother_pot_nice_coordinated_rambunctious_nosy_stain_vanish_scatter_real_past_cave_teaching_island_writer_tempt_sleepy_woman_unarmed_warlike_correct_phobic"
-console.log(text.length)
 
 // Split the whole text by each character
 // Then create a span for each of those
@@ -125,7 +124,7 @@ const keyListener = document.addEventListener("keydown", ({ key }) => {
     cursorCharacter = characters[cursorIndex]
     cursorCharacter.classList.add("cursor")
 
-    startTime = new Date()
+    startTime = null
 
     errors = 0
     errorsSpan.innerText = `Errors: 0`
