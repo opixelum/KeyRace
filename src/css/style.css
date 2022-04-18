@@ -195,32 +195,60 @@ tr, td, th{
 /* Background Selection */
 #red-div {
     background-color: #c00;
+    width: 50px;
+    height: 50px;
 }
 
 #green-div {
     background-color: #0c0;
+    width: 50px;
+    height: 50px;
 }
 
 #blue-div {
     background-color: #00c;
+    width: 50px;
+    height: 50px;
 }
 
 #cyan-div {
     background-color: #0cc;
+    width: 50px;
+    height: 50px;
 }
 
 #orange-div {
     background-color: rgb(255, 100, 0);
+    width: 50px;
+    height: 50px;
 }
 
 #pink-div {
     background-color: rgb(255, 0, 255);
+    width: 50px;
+    height: 50px;
 }
 
 #purple-div {
     background-color: rgb(100, 0, 255);
+    width: 50px;
+    height: 50px;
 }
 
 #yellow-div {
     background-color: #cc0;
+    width: 50px;
+    height: 50px;
+}
+
+#black-div {
+    background-color: #000;
+    width: 50px;
+    height: 50px;
+}
+
+#white-div {
+    background-color: #fff;
+    width: 50px;
+    height: 50px;
 }
