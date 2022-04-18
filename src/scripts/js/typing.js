@@ -68,6 +68,15 @@ const questFailed = () => {
   displayRestartBtn()
 }
 
+const moveBotCar = () => {
+  // Make bot car move
+  const moving = setInterval(() => {
+    if (botCarDistance < 100)
+      botCar.style.marginLeft = `${(botCarDistance += 100 / text.length)}%`
+    else clearInterval(moving)
+  }, 245) // 0.245 seconds per character, or 45 seconds for the whole text
+}
+
 // Used for excluding non-letter keys
 const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
@@ -109,7 +118,10 @@ errorsSpan.innerText = `Errors: 0`
 // Listen to player's keyboard
 const keyListener = document.addEventListener("keydown", ({ key }) => {
   // Start stopwatch
-  if (!startTime) startTime = new Date()
+  if (!startTime) {
+    startTime = new Date()
+    moveBotCar()
+  }
 
   // Key check
   if (key === "Escape") {
@@ -197,7 +209,7 @@ const keyListener = document.addEventListener("keydown", ({ key }) => {
     switch (quest) {
       case "1":
         // Type faster than 30 wpm
-        if (wpm > 30) questSuccess()
+        if (seconds < 45) questSuccess()
         else questFailed()
         break
 

@@ -4,7 +4,7 @@
     <?php
     switch ($quest) {
       case 1:
-        echo "Type faster than 30 wpm.";
+        echo "Complete race under 45 seconds.";
         break;
 
       case 2:
