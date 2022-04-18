@@ -2,13 +2,29 @@
 const quest = window.location.search.substring(1).split("=")[1]
 
 const nextBtn = document.querySelector("#next-btn")
+const questFooterButtons = document.querySelector("#quest-footer-btns")
+
+const displayRestartBtn = () => {
+    const restartBtn = document.createElement("button")
+    restartBtn.classList.add("btn")
+    restartBtn.addEventListener("click", () => {
+        window.location.href = `./campaign.php?quest=${quest}`
+    })
+    const restartBtnText = document.createTextNode("Restart")
+    restartBtn.appendChild(restartBtnText)
+    questFooterButtons.insertBefore(restartBtn, nextBtn)
+}
 
 const questSuccess = () => {
+    // Display message
     const questStatusDiv = document.querySelector("#quest-status")
     const questStatusMessage = document.createElement("h3")
     const questStautsMessageText = document.createTextNode("🎉 Quest completed! 🎉")
     questStatusMessage.appendChild(questStautsMessageText)
     questStatusDiv.appendChild(questStatusMessage)
+
+    displayRestartBtn()
+
     nextBtn.classList.remove("disabled")    
 }
 

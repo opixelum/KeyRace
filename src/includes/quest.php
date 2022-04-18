@@ -60,7 +60,7 @@
 
 <div id="quest-status"></div>
 
-<div id="quest-footer-btn" class="d-flex justify-content-between w-100">
+<div id="quest-footer-btns" class="d-flex justify-content-between w-100">
   <button class="btn" id="back-btn">Back to menu</button>
   <button class="btn disabled" id="next-btn">Next quest</button>
 </div>
