@@ -191,3 +191,36 @@ tr, td, th{
     background: #888; 
     border-radius: 10px;
 }
+
+/* Background Selection */
+#red-div {
+    background-color: #c00;
+}
+
+#green-div {
+    background-color: #0c0;
+}
+
+#blue-div {
+    background-color: #00c;
+}
+
+#cyan-div {
+    background-color: #0cc;
+}
+
+#orange-div {
+    background-color: rgb(255, 100, 0);
+}
+
+#pink-div {
+    background-color: rgb(255, 0, 255);
+}
+
+#purple-div {
+    background-color: rgb(100, 0, 255);
+}
+
+#yellow-div {
+    background-color: #cc0;
+}
