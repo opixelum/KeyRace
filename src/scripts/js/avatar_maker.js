@@ -165,18 +165,18 @@ function displayAvatarMaker() {
     if (backgroundBtn) {
         backgroundBtn.addEventListener('click', () => {
             assetsSelection.innerHTML = `
-                <div class="w-100" id="classic-backgrounds" class="row">
+                <div class="w-100 d-flex" id="classic-backgrounds" class="row">
                     <p class="w-100 m-0 bg-dark">Classic backgrounds</p>
-                    <div class="m-0" id="black-div"><p></p></div>
+                    <div id="black-div"><p></p></div>
                     <div id="white-div"><p></p></div>
                 </div>
-                <div class="w-100" id="primary-backgrounds" class="row">
+                <div class="w-100 d-flex" id="primary-backgrounds" class="row">
                     <p class="w-100 m-0 bg-dark">Primary backgrounds</p>
                     <div id="red-div"><p></p></div>
                     <div id="green-div"><p></p></div>
                     <div id="blue-div"><p></p></div>
                 </div>
-                <div class="w-100" id="mix-backgrounds" class="row">
+                <div class="w-100 d-flex" id="mix-backgrounds" class="row">
                     <p class="w-100 m-0 bg-dark">Mix backgrounds</p>
                     <div id="cyan-div"><p></p></div>
                     <div id="orange-div"><p></p></div>
