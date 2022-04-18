@@ -1,8 +1,13 @@
 // Get quest number from url
 const quest = window.location.search.substring(1).split("=")[1]
 
-const nextBtn = document.querySelector("#next-btn")
+// Cars
+const userCar = document.querySelector("#user-car")
+let userCarDistance = 0
+
+// Footer buttons
 const questFooterButtons = document.querySelector("#quest-footer-btns")
+const nextBtn = document.querySelector("#next-btn")
 
 const displayRestartBtn = () => {
     const restartBtn = document.createElement("button")
@@ -63,6 +68,7 @@ const typingDiv = document.querySelector("#typing-field")
 
 // Text to type
 const text = "curious_political_grain_grandmother_pot_nice_coordinated_rambunctious_nosy_stain_vanish_scatter_real_past_cave_teaching_island_writer_tempt_sleepy_woman_unarmed_warlike_correct_phobic"
+console.log(text.length)
 
 // Split the whole text by each character
 // Then create a span for each of those
@@ -111,6 +117,8 @@ const keyListener = document.addEventListener("keydown", ({key}) => {
         cursorCharacter.classList.add("cursor")
         startTime = new Date()
         errors = 0
+        userCarDistance = 0
+        userCar.style.marginLeft = userCarDistance
         errorsSpan.innerText = `Errors: 0`
 
     } else if (key === cursorCharacter.innerText || key === ' ' && cursorCharacter.innerText === '_') {
@@ -118,6 +126,8 @@ const keyListener = document.addEventListener("keydown", ({key}) => {
         cursorCharacter.classList.remove("cursor")
         cursorCharacter.classList.add("correct")
         cursorCharacter = characters[++cursorIndex]
+        // Make the car moving
+        userCar.style.marginLeft = `${userCarDistance += 100 / text.length}%` 
 
     } else if (letters.includes(key) || key === ' ') {
         // If wrong key (excluding non-letter keys) was typed
