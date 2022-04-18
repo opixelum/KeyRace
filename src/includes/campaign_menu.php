@@ -5,11 +5,19 @@
 <div class='btn-group-vertical w-25'>
 
 <?php
+    // Get user's max quest
+    $query = "SELECT quest FROM STATS WHERE user_id=:id";
+    $prepared_query = $db->prepare($query);
+    $prepared_query->execute(["id" => $_SESSION["id"]]);
+    $result = $prepared_query->fetchAll();
+    $quest = $result[0]["quest"];
+
     // Buttons for each quest
     for ($i = 1; $i <= 8; $i++)
     {
-        // TODO: Put ternary for "disabled" class
-        echo "<button id='quest${i}-btn' type='button' class='btn'>Quest ${i}</button>";
+        echo "<button id='quest${i}-btn' type='button' class='btn ";
+        echo ($i > $quest + 1 ? " disabled" : '');
+        echo "'>Quest ${i}</button>";
     }
 
     echo
