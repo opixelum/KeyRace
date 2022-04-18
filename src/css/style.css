@@ -195,60 +195,70 @@ tr, td, th{
 /* Background Selection */
 #red-div {
     background-color: #c00;
-    width: 50px;
-    height: 50px;
+    width: 10vh;
+    height: 10vh;
+    margin: 2vh;
 }
 
 #green-div {
     background-color: #0c0;
-    width: 50px;
-    height: 50px;
+    width: 10vh;
+    height: 10vh;
+    margin: 2vh;
 }
 
 #blue-div {
     background-color: #00c;
-    width: 50px;
-    height: 50px;
+    width: 10vh;
+    height: 10vh;
+    margin: 2vh;
 }
 
 #cyan-div {
     background-color: #0cc;
-    width: 50px;
-    height: 50px;
+    width: 10vh;
+    height: 10vh;
+    margin: 2vh;
 }
 
 #orange-div {
     background-color: rgb(255, 100, 0);
-    width: 50px;
-    height: 50px;
+    width: 10vh;
+    height: 10vh;
+    margin: 2vh;
 }
 
 #pink-div {
     background-color: rgb(255, 0, 255);
-    width: 50px;
-    height: 50px;
+    width: 10vh;
+    height: 10vh;
+    margin: 2vh;
 }
 
 #purple-div {
     background-color: rgb(100, 0, 255);
-    width: 50px;
-    height: 50px;
+    width: 10vh;
+    height: 10vh;
+    margin: 2vh;
 }
 
 #yellow-div {
     background-color: #cc0;
-    width: 50px;
-    height: 50px;
+    width: 10vh;
+    height: 10vh;
+    margin: 2vh;
 }
 
 #black-div {
     background-color: #000;
-    width: 50px;
-    height: 50px;
+    width: 10vh;
+    height: 10vh;
+    margin: 2vh;
 }
 
 #white-div {
     background-color: #fff;
-    width: 50px;
-    height: 50px;
+    width: 10vh;
+    height: 10vh;
+    margin: 2vh;
 }
