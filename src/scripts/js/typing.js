@@ -34,6 +34,8 @@ const questFailed = () => {
     const questStautsMessageText = document.createTextNode("❌ Quest failed... ❌")
     questStatusMessage.appendChild(questStautsMessageText)
     questStatusDiv.appendChild(questStatusMessage)
+
+    displayRestartBtn()
 }
 
 // Used for excluding non-letter keys
