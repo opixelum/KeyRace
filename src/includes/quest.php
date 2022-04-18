@@ -41,11 +41,23 @@
 </div>
 
 <div id="race" class="border-start border-end w-75">
-  <div id="track" class="w-100">
-    <img alt="Bot car" id="bot-car" src="src/images/cars/benz.png" width="100px" style="transform:translate(-99px)">
+  <div class="w-100">
+    <img
+      alt="Bot car"
+      id="bot-car"
+      src="src/images/cars/benz.png"
+      width="100px"
+      style="transform:translate(-99px)"
+    >
   </div>
-  <div id="track" class="w-100">
-    <img alt="User car" id="user-car" src="src/images/cars/tank.png" width="100px" style="transform:translate(-99px)">
+  <div class="w-100">
+    <img
+      alt="User car"
+      id="user-car"
+      src="src/images/cars/tank.png"
+      width="100px"
+      style="transform:translate(-99px)"
+    >
   </div>
 </div>
 
