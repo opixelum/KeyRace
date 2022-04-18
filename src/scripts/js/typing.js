@@ -16,6 +16,23 @@ const displayRestartBtn = () => {
 }
 
 const questSuccess = () => {
+    // Edit quest value in database
+    const xhr = new XMLHttpRequest()
+    xhr.open("POST", "src/scripts/php/update_quest.php", true)
+
+    // Call on request state change
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            const response = xhr.responseText
+            if (response != 1) alert("error")
+        }
+    }
+    // Content type
+    xhr.setRequestHeader("Content-type", "application/json")
+
+    // Send request
+    xhr.send(JSON.stringify({quest: quest}))
+
     // Display message
     const questStatusDiv = document.querySelector("#quest-status")
     const questStatusMessage = document.createElement("h3")
@@ -29,6 +46,7 @@ const questSuccess = () => {
 }
 
 const questFailed = () => {
+    // Display message
     const questStatusDiv = document.querySelector("#quest-status")
     const questStatusMessage = document.createElement("h3")
     const questStautsMessageText = document.createTextNode("❌ Quest failed... ❌")
