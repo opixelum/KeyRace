@@ -23,6 +23,13 @@ const displayRestartBtn = () => {
   questFooterButtons.insertBefore(restartBtn, nextBtn)
 }
 
+const setQuestStatus = (status) => {
+  const questStatus = document.querySelector("#quest-status")
+  questStatus.innerText = status
+  questStatus.classList.remove("opacity-0")
+  displayRestartBtn()
+}
+
 const questSuccess = () => {
   // Edit quest value in database
   const xhr = new XMLHttpRequest()
@@ -42,23 +49,12 @@ const questSuccess = () => {
   xhr.send(JSON.stringify({ quest: quest }))
 
   // Display message
-  const questStatus = document.querySelector("#quest-status")
-  questStatus.innerText = "🎉 Quest completed! 🎉"
-  questStatus.classList.remove("opacity-0")
-
-  displayRestartBtn()
+  setQuestStatus("🎉 Quest completed! 🎉")
 
   nextBtn.classList.remove("disabled")
 }
 
-const questFailed = () => {
-  // Display message
-  const questStatus = document.querySelector("#quest-status")
-  questStatus.innerText = "❌ Quest failed... ❌"
-  questStatus.classList.remove("opacity-0")
-
-  displayRestartBtn()
-}
+const questFailed = () => setQuestStatus("❌ Quest failed... ❌")
 
 let moving // Interval for bot car
 const moveBotCar = () => {
