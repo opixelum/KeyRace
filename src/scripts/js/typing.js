@@ -68,9 +68,10 @@ const questFailed = () => {
   displayRestartBtn()
 }
 
+let moving // Interval for bot car
 const moveBotCar = () => {
   // Make bot car move
-  const moving = setInterval(() => {
+  moving = setInterval(() => {
     if (botCarDistance < 100)
       botCar.style.marginLeft = `${(botCarDistance += 100 / text.length)}%`
     else clearInterval(moving)
@@ -146,6 +147,7 @@ const keyListener = document.addEventListener("keydown", ({ key }) => {
 
     botCarDistance = 0
     botCar.style.marginLeft = botCarDistance
+    clearInterval(moving)
   } else if (
     key === cursorCharacter.innerText ||
     (key === " " && cursorCharacter.innerText === "_")
