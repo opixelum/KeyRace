@@ -106,7 +106,6 @@ errorsSpan.innerText = `Errors: 0`
 
 // Listen to player's keyboard
 const keyListener = document.addEventListener("keydown", ({ key }) => {
-
   // Key check
   if (key === "Escape") {
     // If player presses escape, restart the game
