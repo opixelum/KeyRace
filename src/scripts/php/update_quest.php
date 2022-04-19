@@ -30,4 +30,3 @@
 
     // Respond to request with success
     echo 1;
-?>

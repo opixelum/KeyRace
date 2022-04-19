@@ -2,39 +2,39 @@
   <h1 class="text-center w-100 mb-5">Quest <?php echo $quest; ?></h1>
   <h3 class="text-center w-100 pt-5 mb-0">
     <?php
-    switch ($quest) {
-      case 1:
-        echo "Complete race under 80 seconds.";
-        break;
+      switch ($quest) {
+        case 1:
+          echo "Complete race under 80 seconds.";
+          break;
 
-      case 2:
-        echo "Type faster than 40 wpm";
-        break;
+        case 2:
+          echo "Type faster than 40 wpm";
+          break;
 
-      case 3:
-        echo "Complete race under 50 seconds.";
-        break;
+        case 3:
+          echo "Complete race under 50 seconds.";
+          break;
 
-      case 4:
-        echo "Type faster than 55 wpm";
-        break;
+        case 4:
+          echo "Type faster than 55 wpm";
+          break;
 
-      case 5:
-        echo "Complete race under 40 seconds.";
-        break;
+        case 5:
+          echo "Complete race under 40 seconds.";
+          break;
 
-      case 6:
-        echo "Type faster than 70 wpm.";
-        break;
+        case 6:
+          echo "Type faster than 70 wpm.";
+          break;
 
-      case 7:
-        echo "Complete race under 30 seconds.";
-        break;
+        case 7:
+          echo "Complete race under 30 seconds.";
+          break;
 
-      case 8:
-        echo "Type faster than 100 wpm.";
-        break;
-    }
+        case 8:
+          echo "Type faster than 100 wpm.";
+          break;
+      }
     ?>
   </h3>
 </div>
