@@ -1,5 +1,53 @@
+// Text to type
+const text =
+  "curious_political_grain_grandmother_pot_nice_coordinated_rambunctious_nosy_stain_vanish_scatter_real_past_cave_teaching_island_writer_tempt_sleepy_woman_unarmed_warlike_correct_phobic"
+
 // Get quest number from url
 const quest = window.location.search.substring(1).split("=")[1]
+
+// Set bot speed depending on quest number
+let botInterval
+switch (quest) {
+  case "1":
+    // 30 wpm or 80 seconds
+    botInterval = 80 / text.length * 1000
+    break
+
+  case "2":
+    // 40 wpm or 60 seconds
+    botInterval = 60 / text.length * 1000
+    break
+
+  case "3":
+    // 50 wpm or 50 seconds
+    botInterval = 50 / text.length * 1000
+    break
+
+  case "4":
+    // 55 wpm or 45 seconds
+    botInterval = 45 / text.length * 1000
+    break
+
+  case "5":
+    // 60 wpm or 40 seconds
+    botInterval = 40 / text.length * 1000
+    break
+
+  case "6":
+    // 70 wpm or 35 seconds
+    botInterval = 35 / text.length * 1000
+    break
+
+  case "7":
+    // 80 wpm or 30 seconds
+    botInterval = 30 / text.length * 1000
+    break
+
+  case "8":
+    // 100 wpm or 25 seconds
+    botInterval = 25 / text.length * 1000
+    break
+}
 
 // Cars
 const userCar = document.querySelector("#user-car")
@@ -63,17 +111,13 @@ const moveBotCar = () => {
     if (botCarDistance < 100)
       botCar.style.marginLeft = `${(botCarDistance += 100 / text.length)}%`
     else clearInterval(moving)
-  }, 245) // 0.245 seconds per character, or 45 seconds for the whole text
+  }, botInterval) // 0.245 seconds per character, or 45 seconds for the whole text
 }
 
 // Used for excluding non-letter keys
 const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 const typingDiv = document.querySelector("#typing-field")
-
-// Text to type
-const text =
-  "curious_political_grain_grandmother_pot_nice_coordinated_rambunctious_nosy_stain_vanish_scatter_real_past_cave_teaching_island_writer_tempt_sleepy_woman_unarmed_warlike_correct_phobic"
 
 // Split the whole text by each character
 // Then create a span for each of those
@@ -138,6 +182,7 @@ const keyListener = document.addEventListener("keydown", ({ key }) => {
     cursorCharacter.classList.remove("cursor")
     cursorCharacter.classList.add("correct")
     cursorCharacter = characters[++cursorIndex]
+
     // Make the car moving
     userCar.style.marginLeft = `${(userCarDistance += 100 / text.length)}%`
 
@@ -207,50 +252,50 @@ const keyListener = document.addEventListener("keydown", ({ key }) => {
     // Check if objective is completed
     switch (quest) {
       case "1":
-        // Type faster than 30 wpm
-        if (seconds < 45) questSuccess()
+        // 30 wpm or 80 seconds
+        if (seconds < 80) questSuccess()
         else questFailed()
         break
 
       case "2":
-        // Do less than 10 errors
-        if (errors < 10) questSuccess()
+        // 40 wpm or 60 seconds
+        if (wpm > 40) questSuccess()
         else questFailed()
         break
 
       case "3":
-        // Type faster than 50 wpm
-        if (wpm > 50) questSuccess()
+        // 50 wpm or 50 seconds
+        if (seconds < 50) questSuccess()
         else questFailed()
         break
 
       case "4":
-        // Be at least 80% accurate
-        if (accuracy > 80) questSuccess()
+        // 55 wpm or 45 seconds
+        if (wpm > 55) questSuccess()
         else questFailed()
         break
 
       case "5":
-        // Do less than 5 errors under 45 seconds
-        if (errors < 5 && seconds < 45) questSuccess()
+        // 60 wpm or 40 seconds
+        if (seconds < 40) questSuccess()
         else questFailed()
         break
 
       case "6":
-        // Type faster than 70 wpm
+        // 70 wpm or 35 seconds
         if (wpm > 70) questSuccess()
         else questFailed()
         break
 
       case "7":
-        // Type faster than 80 wpm & be at least 95% accurate
-        if (wpm > 80 && accuracy > 95) questSuccess()
+        // 80 wpm or 30 seconds
+        if (seconds < 30) questSuccess()
         else questFailed()
         break
 
       case "8":
-        // Type faster than 100 wpm & be at least 95% accurate
-        if (wpm > 100 && accuracy > 95) questSuccess()
+        // 100 wpm or 25 seconds
+        if (wpm > 100) questSuccess()
         else questFailed()
         break
     }

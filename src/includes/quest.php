@@ -4,23 +4,23 @@
     <?php
     switch ($quest) {
       case 1:
-        echo "Complete race under 45 seconds.";
+        echo "Complete race under 80 seconds.";
         break;
 
       case 2:
-        echo "Do less than 10 errors.";
+        echo "Type faster than 40 wpm";
         break;
 
       case 3:
-        echo "Type faster than 50 wpm.";
+        echo "Complete race under 50 seconds.";
         break;
 
       case 4:
-        echo "Be at least 80% accurate.";
+        echo "Type faster than 55 wpm";
         break;
 
       case 5:
-        echo "Do less than 5 errors under 45 seconds.";
+        echo "Complete race under 40 seconds.";
         break;
 
       case 6:
@@ -28,11 +28,11 @@
         break;
 
       case 7:
-        echo "Type faster than 80 wpm & be at least 95% accurate.";
+        echo "Complete race under 30 seconds.";
         break;
 
       case 8:
-        echo "Type faster than 100 wpm & be at least 95% accurate.";
+        echo "Type faster than 100 wpm.";
         break;
     }
     ?>
