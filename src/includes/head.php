@@ -5,7 +5,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./src/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./src/css/style.css">
+  <link rel="stylesheet" href="http://localhost/KeyRace/src/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://localhost/KeyRace/src/css/style.css">
   <title><?php echo $title ?></title>
 </head>

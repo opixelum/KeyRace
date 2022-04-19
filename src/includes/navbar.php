@@ -3,11 +3,10 @@
     $type = "page";
     include("./src/includes/logs.php");
 ?>
-
 <div class="d-flex flex-column h-100 justify-content-between">
   <div class="d-flex flex-wrap justify-content-center">
-    <a class="my-4" href="./index.php">
-      <img alt="KeyRace logo" width="100px" src="./src/images/logo.png">
+    <a class="my-4" href="http://localhost/KeyRace/index.php">
+      <img alt="KeyRace logo" width="100px" src="http://localhost/KeyRace/src/images/logo.png">
     </a>
     <input
       class="input-field border-0 m-2 px-3 py-2 w-100 rounded-pill"
@@ -67,5 +66,5 @@
     <br><br>
     <small class="w-100 mb-3 text-center">© KeyRace <?php echo date("Y"); ?></small>
   </div>
-  <script src="./src/scripts/js/navbar.js"></script>
+  <script src="http://localhost/KeyRace/src/scripts/js/navbar.js"></script>
 </div>

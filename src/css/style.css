@@ -89,9 +89,27 @@ header, main{
     background-color: var(--containersBg);
 }
 
+<<<<<<< HEAD
 .input-field {
     background-color: #888;
     color: var(--buttonFontColor);
+=======
+
+/************************** I N P U T   F I E L D S **************************/
+
+.input-field {
+    background-color: #888;
+    color: var(--buttonFontColor);
+}
+
+
+/******************************** N A V B A R ********************************/
+
+/*------------------------------- H E A D E R -------------------------------*/
+
+.search {
+    font-size: 1.2em;
+>>>>>>> 43-add-campaign
 }
 .input-field::placeholder {
     color: var(--containersBg);
@@ -170,4 +188,19 @@ a {
 tr, td, th{
     color: var(--fontColor);
     border-color: var(--fontColor);
+}
+
+
+/*-------------------------- T Y P I N G   G A M E --------------------------*/
+
+.cursor {
+    background-color: var(--fontColor);
+}
+
+.correct {
+    color: green;
+}
+
+.wrong {
+    color: red;
 }

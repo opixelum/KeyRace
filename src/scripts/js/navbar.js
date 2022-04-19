@@ -26,61 +26,61 @@ function getCookie(key) {
 }
 
 if (getCookie("isLoggedIn")) {
-    // If user isn't logged in
+    // If user is logged in
 
     // Profile button
     const profileBtn = document.querySelector("#profile-btn")
     profileBtn.addEventListener("click", () => {
-        window.location.href = "./profile.php"
+        window.location.href = "http://localhost/KeyRace/profile.php"
     })
 
     // Campaign button
     const campaignBtn = document.querySelector("#campaign-btn")
     campaignBtn.addEventListener("click", () => {
-        window.location.href = "./campaign.php"
+        window.location.href = "http://localhost/KeyRace/campaign.php"
     })
 
     // Multiplayer button
     const multiplayerBtn= document.querySelector("#multiplayer-btn")
     multiplayerBtn.addEventListener("click", () => {
-        window.location.href = "./multiplayer.php"
+        window.location.href = "http://localhost/KeyRace/multiplayer.php"
     })
 
     // Training button
     const trainingBtn = document.querySelector("#training-btn")
     trainingBtn.addEventListener("click", () => {
-        window.location.href = "./training.php"
+        window.location.href = "http://localhost/KeyRace/training.php"
     })
 
     // Customization button
     const customizationBtn = document.querySelector("#customization-btn")
     customizationBtn.addEventListener("click", () => {
-        window.location.href = "./customization.php"
+        window.location.href = "http://localhost/KeyRace/customization.php"
     })
 } else {
-    // If user is logged in
+    // If user isn't logged in
 
     // Sign in button
     const signUpBtn = document.querySelector("#sign-up-btn")
     signUpBtn.addEventListener("click", () => {
-        window.location.href = "./signup.php"
+        window.location.href = "http://localhost/KeyRace/signup.php"
     })
 
     // Log in button
     const logInBtn = document.querySelector("#log-in-btn")
     logInBtn.addEventListener("click", () => {
-        window.location.href = "./login.php"
+        window.location.href = "http://localhost/KeyRace/login.php"
     })
 }
 
 // Leaderboard button
 const leaderboardBtn = document.querySelector("#leaderboard-btn")
 leaderboardBtn.addEventListener("click", () => {
-    window.location.href = "./leaderboard.php"
+    window.location.href = "http://localhost/KeyRace/leaderboard.php"
 })
 
 // Settings button
 const settingsBtn = document.querySelector("#settings-btn")
 settingsBtn.addEventListener("click", () => {
-    window.location.href = "./settings.php"
+    window.location.href = "http://localhost/KeyRace/settings.php"
 })
