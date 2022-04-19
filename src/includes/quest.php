@@ -78,7 +78,7 @@
   <div class="fs-3 p-3 input-field rounded text-break" id="typing-field"></div>
 </div>
 
-<div id="quest-status"></div>
+<h3 id="quest-status" class="opacity-0">Race not done</h3>
 
 <div id="quest-footer-btns" class="d-flex justify-content-between w-100">
   <button class="btn" id="back-btn">Back to menu</button>

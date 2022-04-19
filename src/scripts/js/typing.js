@@ -42,13 +42,9 @@ const questSuccess = () => {
   xhr.send(JSON.stringify({ quest: quest }))
 
   // Display message
-  const questStatusDiv = document.querySelector("#quest-status")
-  const questStatusMessage = document.createElement("h3")
-  const questStautsMessageText = document.createTextNode(
-    "🎉 Quest completed! 🎉"
-  )
-  questStatusMessage.appendChild(questStautsMessageText)
-  questStatusDiv.appendChild(questStatusMessage)
+  const questStatus = document.querySelector("#quest-status")
+  questStatus.innerText = "🎉 Quest completed! 🎉"
+  questStatus.classList.remove("opacity-0")
 
   displayRestartBtn()
 
@@ -57,13 +53,9 @@ const questSuccess = () => {
 
 const questFailed = () => {
   // Display message
-  const questStatusDiv = document.querySelector("#quest-status")
-  const questStatusMessage = document.createElement("h3")
-  const questStautsMessageText = document.createTextNode(
-    "❌ Quest failed... ❌"
-  )
-  questStatusMessage.appendChild(questStautsMessageText)
-  questStatusDiv.appendChild(questStatusMessage)
+  const questStatus = document.querySelector("#quest-status")
+  questStatus.innerText = "❌ Quest failed... ❌"
+  questStatus.classList.remove("opacity-0")
 
   displayRestartBtn()
 }
