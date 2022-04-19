@@ -49,6 +49,7 @@
       style="transform:translate(-99px)"
     >
   </div>
+  <hr>
   <div class="w-100">
     <img
       alt="User car"
