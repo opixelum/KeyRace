@@ -118,11 +118,6 @@ errorsSpan.innerText = `Errors: 0`
 
 // Listen to player's keyboard
 const keyListener = document.addEventListener("keydown", ({ key }) => {
-  // Start stopwatch
-  if (!startTime) {
-    startTime = new Date()
-    moveBotCar()
-  }
 
   // Key check
   if (key === "Escape") {
@@ -158,16 +153,31 @@ const keyListener = document.addEventListener("keydown", ({ key }) => {
     cursorCharacter = characters[++cursorIndex]
     // Make the car moving
     userCar.style.marginLeft = `${(userCarDistance += 100 / text.length)}%`
+
+    // Start stopwatch
+    if (!startTime) {
+      startTime = new Date()
+      moveBotCar()
+    }
   } else if (letters.includes(key) || key === " ") {
     // If wrong key (excluding non-letter keys) was typed
     cursorCharacter.classList.add("wrong")
     errors++
     errorsSpan.innerText = `Errors: ${errors}`
+
+    // Start stopwatch
+    if (!startTime) {
+      startTime = new Date()
+      moveBotCar()
+    }
   }
 
   // Compute all stats & check if objective is completed
   if (cursorIndex >= characters.length) {
     endTime = new Date()
+
+    // Stop bot car
+    clearInterval(moving)
 
     // Get elapsed time
     const delta = endTime - startTime
