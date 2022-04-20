@@ -180,6 +180,15 @@ tr, td, th{
 }
 
 
+/*------------------------------ P R O F I L E ------------------------------*/
+
+.profile-avatar {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    bottom: 50%
+}
+
 /*-------------------------- T Y P I N G   G A M E --------------------------*/
 
 .cursor {

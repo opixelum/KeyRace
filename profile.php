@@ -25,7 +25,10 @@ if (!isset($_SESSION["id"]))
         </header>
 
         <main class="col h-100 ms-2 rounded rgb-shadow">
-            <img alt="Banner" class="w-100 h-25" src="./src/images/banner.png">
+          <div class="d-flex flex-wrap justify-content-center h-25 w-100">
+            <img alt="Banner" class="w-100 h-100" src="./src/images/banner.png">
+            <img alt="Banner" class="profile-avatar rounded-circle" src="./src/images/avatar.png">
+          </div>
         </main>
       </div>
     </div>
