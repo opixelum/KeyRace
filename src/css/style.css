@@ -193,6 +193,10 @@ tr, td, th{
     height: 250px;
 }
 
+.achievement {
+    height: 100px;
+}
+
 /*-------------------------- T Y P I N G   G A M E --------------------------*/
 
 .cursor {

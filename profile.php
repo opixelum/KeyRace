@@ -36,22 +36,22 @@ if (!isset($_SESSION["id"]))
           <!-- Stats -->
           <div class="row my-4">
             <div class="col-5 d-flex justify-content-around">
-              <p>Highest WPM: 106.5</p>
-              <p>Average WPM: 83</p>
+              <p class="fs-4">Highest WPM: 106.5</p>
+              <p class="fs-4">Average WPM: 83</p>
             </div>
             <div class="col-2">
               <!-- Spacing column -->
             </div>
             <div class="col-5 d-flex justify-content-around">
-              <p>Rank: 2</p>
-              <p>Time played: 19h30min</p>
+              <p class="fs-4">Rank: 2</p>
+              <p class="fs-4">Time played: 19h30min</p>
             </div>
           </div>
 
           <!-- Username & friends list button --> 
           <div class="row">
             <div class="col d-flex flex-wrap justify-content-center">
-              <h3 class="m-3 text-center w-100">Opixelum</h3>
+              <h2 class="mb-3 text-center w-100">Opixelum</h3>
               <button class="btn">Friends list</button>
             </div>
           </div>
@@ -61,64 +61,64 @@ if (!isset($_SESSION["id"]))
             <div class="border-end h-100 col-6 d-flex flex-wrap justify-content-center align-items-center">
               <h3 class="w-100 text-center">Car</h3>
               <img alt="Car" class="profile-car" src="./src/images/cars/lambo.png">
-              <p class="m-0 w-100 text-center">Model: Lamborghini</p>
-              <p class="m-0 w-100 text-center">Color: Yellow</p>
+              <p class="m-0 fs-5 w-100 text-center">Model: Lamborghini</p>
+              <p class="m-0 fs-5 w-100 text-center">Color: Yellow</p>
             </div>
 
             <!-- Achievements -->
             <div class="border-start h-100 container col-6 d-flex flex-wrap justify-content-center">
               <h3 class="w-100 text-center">Achievements</h3>
 
-              <div class="row w-75 h-25">
-                <div class="col-4 d-flex justify-content-center h-100">
-                  <a title="Complete quest 1" class="h-100">
-                    <img alt="Achievement" class="h-100" src="./src/images/achievement.png">
+              <div class="row w-75">
+                <div class="col-4 d-flex justify-content-center">
+                  <a title="Complete quest 1">
+                    <img alt="Achievement 1" class="achievement" src="./src/images/achievement.png">
                   </a>
                 </div>
-                <div class="col-4 d-flex justify-content-center h-100">
-                  <a title="Complete quest 2" class="h-100">
-                    <img alt="Achievement" class="h-100" src="./src/images/achievement.png">
+                <div class="col-4 d-flex justify-content-center">
+                  <a title="Complete quest 2">
+                    <img alt="Achievement 2" class="achievement" src="./src/images/achievement.png">
                   </a>
                 </div>
-                <div class="col-4 d-flex justify-content-center h-100">
-                  <a title="Complete quest 3" class="h-100">
-                    <img alt="Achievement" class="h-100" src="./src/images/achievement.png">
-                  </a>
-                </div>
-              </div>
-
-              <div class="row w-75 h-25">
-                <div class="col-4 d-flex justify-content-center h-100">
-                  <a title="Complete quest 4" class="h-100">
-                    <img alt="Achievement" class="h-100" src="./src/images/achievement.png">
-                  </a>
-                </div>
-                <div class="col-4 d-flex justify-content-center h-100">
-                  <a title="Complete quest 5" class="h-100">
-                    <img alt="Achievement" class="h-100" src="./src/images/achievement.png">
-                  </a>
-                </div>
-                <div class="col-4 d-flex justify-content-center h-100">
-                  <a title="Complete quest 6" class="h-100">
-                    <img alt="Achievement" class="h-100" src="./src/images/achievement.png">
+                <div class="col-4 d-flex justify-content-center">
+                  <a title="Complete quest 3">
+                    <img alt="Achievement 3" class="achievement" src="./src/images/achievement.png">
                   </a>
                 </div>
               </div>
 
-              <div class="row w-75 h-25">
+              <div class="row w-75">
+                <div class="col-4 d-flex justify-content-center">
+                  <a title="Complete quest 4">
+                    <img alt="Achievement 4" class="achievement" src="./src/images/achievement.png">
+                  </a>
+                </div>
                 <div class="col-4 d-flex justify-content-center h-100">
-                  <a title="Complete quest 7" class="h-100">
-                    <img alt="Achievement" class="h-100" src="./src/images/achievement.png">
+                  <a title="Complete quest 5">
+                    <img alt="Achievement 5" class="achievement" src="./src/images/achievement.png">
+                  </a>
+                </div>
+                <div class="col-4 d-flex justify-content-center h-100">
+                  <a title="Complete quest 6">
+                    <img alt="Achievement 6" class="achievement" src="./src/images/achievement.png">
+                  </a>
+                </div>
+              </div>
+
+              <div class="row w-75">
+                <div class="col-4 d-flex justify-content-center">
+                  <a title="Complete quest 7">
+                    <img alt="Achievement 7" class="achievement" src="./src/images/achievement.png">
                   </a>
                 </div>
                 <div class="col-4 d-flex justify-content-center h-100">
                   <a title="Complete quest 8" class="h-100">
-                    <img alt="Achievement" class="h-100 opacity-25" src="./src/images/achievement.png">
+                    <img alt="Achievement 8" class="achievement" src="./src/images/achievement.png">
                   </a>
                 </div>
                 <div class="col-4 d-flex justify-content-center h-100">
                   <a title="Type faster than 150 wpm" class="h-100">
-                    <img alt="Achievement" class="h-100 opacity-25" src="./src/images/achievement.png">
+                    <img alt="Achievement 9" class="achievement opacity-25" src="./src/images/achievement.png">
                   </a>
                 </div>
               </div>
