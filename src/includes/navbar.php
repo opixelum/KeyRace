@@ -1,5 +1,4 @@
 <?php 
-    session_start();
     $type = "page";
     include("./src/includes/logs.php");
 ?>
