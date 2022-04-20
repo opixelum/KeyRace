@@ -58,16 +58,49 @@ if (!isset($_SESSION["id"]))
 
           <div class="row my-3 h-50">
           <!-- Car -->
-            <div class="border-end col-6 d-flex flex-wrap justify-content-center align-items-center">
+            <div class="border-end h-100 col-6 d-flex flex-wrap justify-content-center align-items-center">
               <h3 class="w-100 text-center">Car</h3>
               <img alt="Car" class="profile-car" src="./src/images/cars/lambo.png">
-              <p class="w-100 text-center">Model: Lamborghini</p>
-              <p class="w-100 text-center">Color: Yellow</p>
+              <p class="m-0 w-100 text-center">Model: Lamborghini</p>
+              <p class="m-0 w-100 text-center">Color: Yellow</p>
             </div>
 
             <!-- Achievements -->
-            <div class="border-start col-6 d-flex flex-wrap justify-content-center">
-              <h3>Achievements</h3>
+            <div class="border-start h-100 container col-6 d-flex flex-wrap justify-content-center">
+              <h3 class="w-100 text-center">Achievements</h3>
+              <div class="row w-75 h-25">
+                <div class="col-4 d-flex justify-content-center h-100">
+                  <img alt="Achievement" class="h-100" src="./src/images/achievement.png">
+                </div>
+                <div class="col-4 d-flex justify-content-center h-100">
+                  <img alt="Achievement" class="h-100" src="./src/images/achievement.png">
+                </div>
+                <div class="col-4 d-flex justify-content-center h-100">
+                  <img alt="Achievement" class="h-100" src="./src/images/achievement.png">
+                </div>
+              </div>
+              <div class="row w-75 h-25">
+                <div class="col-4 d-flex justify-content-center h-100">
+                  <img alt="Achievement" class="h-100" src="./src/images/achievement.png">
+                </div>
+                <div class="col-4 d-flex justify-content-center h-100">
+                  <img alt="Achievement" class="h-100" src="./src/images/achievement.png">
+                </div>
+                <div class="col-4 d-flex justify-content-center h-100">
+                  <img alt="Achievement" class="h-100" src="./src/images/achievement.png">
+                </div>
+              </div>
+              <div class="row w-75 h-25">
+                <div class="col-4 d-flex justify-content-center h-100">
+                  <img alt="Achievement" class="h-100" src="./src/images/achievement.png">
+                </div>
+                <div class="col-4 d-flex justify-content-center h-100">
+                  <img alt="Achievement" class="h-100" src="./src/images/achievement.png">
+                </div>
+                <div class="col-4 d-flex justify-content-center h-100">
+                  <img alt="Achievement" class="h-100" src="./src/images/achievement.png">
+                </div>
+              </div>
             </div>
           </div>
         </main>
