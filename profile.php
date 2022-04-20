@@ -36,15 +36,15 @@ if (!isset($_SESSION["id"]))
           <!-- Stats -->
           <div class="row my-4">
             <div class="col-5 d-flex justify-content-around">
-              <h5>Highest WPM: 106.5</h5>
-              <h5>Average WPM: 83</h5>
+              <p>Highest WPM: 106.5</p>
+              <p>Average WPM: 83</p>
             </div>
             <div class="col-2">
               <!-- Spacing column -->
             </div>
             <div class="col-5 d-flex justify-content-around">
-              <h5>Rank: 2</h5>
-              <h5>Time played: 19h30min</h5>
+              <p>Rank: 2</p>
+              <p>Time played: 19h30min</p>
             </div>
           </div>
 
@@ -53,6 +53,21 @@ if (!isset($_SESSION["id"]))
             <div class="col d-flex flex-wrap justify-content-center">
               <h3 class="m-3 text-center w-100">Opixelum</h3>
               <button class="btn">Friends list</button>
+            </div>
+          </div>
+
+          <div class="row my-3 h-50">
+          <!-- Car -->
+            <div class="border-end col-6 d-flex flex-wrap justify-content-center align-items-center">
+              <h3 class="w-100 text-center">Car</h3>
+              <img alt="Car" class="profile-car" src="./src/images/cars/lambo.png">
+              <p class="w-100 text-center">Model: Lamborghini</p>
+              <p class="w-100 text-center">Color: Yellow</p>
+            </div>
+
+            <!-- Achievements -->
+            <div class="border-start col-6 d-flex flex-wrap justify-content-center">
+              <h3>Achievements</h3>
             </div>
           </div>
         </main>

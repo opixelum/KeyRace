@@ -189,6 +189,10 @@ tr, td, th{
     bottom: 50%
 }
 
+.profile-car {
+    height: 300px;
+}
+
 /*-------------------------- T Y P I N G   G A M E --------------------------*/
 
 .cursor {
