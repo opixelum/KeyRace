@@ -25,6 +25,7 @@ if (!isset($_SESSION["id"]))
         </header>
 
         <main class="col h-100 ms-2 rounded rgb-shadow">
+            <img alt="Banner" class="w-100 h-25" src="./src/images/banner.png">
         </main>
       </div>
     </div>
