@@ -21,6 +21,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
+$page = "campaign";
 $title = "Campaign | KeyRace";
 include("src/includes/head.php");
 ?>
