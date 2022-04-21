@@ -91,71 +91,75 @@ $time_played = $result[0]["time_played"];
 
           <div class="row my-3 h-50">
           <!-- Car -->
-            <div class="border-end h-100 col-6 d-flex flex-wrap justify-content-center align-items-center">
+            <div class="border-end h-100 col-6 d-flex flex-wrap justify-content-center">
               <h3 class="w-100 text-center">Car</h3>
-              <img alt="Car" class="profile-car" src="./src/images/cars/lambo.png">
-              <p class="m-0 fs-5 w-100 text-center">Model: Lamborghini</p>
-              <p class="m-0 fs-5 w-100 text-center">Color: Yellow</p>
+              <div class="d-flex justify-content-center flex-wrap">
+                <img alt="Car" class="h-25" src="./src/images/cars/lambo.png">
+                <p class="m-0 fs-5 w-100 text-center">Model: Lamborghini</p>
+                <p class="m-0 fs-5 w-100 text-center">Color: Yellow</p>
+              </div>
             </div>
 
             <!-- Achievements -->
-            <div class="border-start h-100 container col-6 d-flex flex-wrap justify-content-center">
+            <div class="border-start h-100 col-6 d-flex flex-wrap justify-content-center">
               <h3 class="w-100 text-center">Achievements</h3>
+              <div class="container h-75">
 
-              <div class="row w-75">
-                <div class="col-4 d-flex justify-content-center">
-                  <a title="Complete quest 1">
-                    <img alt="Achievement 1" class="achievement" src="./src/images/achievement.png">
-                  </a>
+                <div class="row w-100">
+                  <div class="col-4 d-flex justify-content-center">
+                    <a title="Complete quest 1">
+                      <img alt="Achievement 1" class="achievement" src="./src/images/achievement.png">
+                    </a>
+                  </div>
+                  <div class="col-4 d-flex justify-content-center">
+                    <a title="Complete quest 2">
+                      <img alt="Achievement 2" class="achievement" src="./src/images/achievement.png">
+                    </a>
+                  </div>
+                  <div class="col-4 d-flex justify-content-center">
+                    <a title="Complete quest 3">
+                      <img alt="Achievement 3" class="achievement" src="./src/images/achievement.png">
+                    </a>
+                  </div>
                 </div>
-                <div class="col-4 d-flex justify-content-center">
-                  <a title="Complete quest 2">
-                    <img alt="Achievement 2" class="achievement" src="./src/images/achievement.png">
-                  </a>
+
+                <div class="row w-100">
+                  <div class="col-4 d-flex justify-content-center">
+                    <a title="Complete quest 4">
+                      <img alt="Achievement 4" class="achievement" src="./src/images/achievement.png">
+                    </a>
+                  </div>
+                  <div class="col-4 d-flex justify-content-center h-100">
+                    <a title="Complete quest 5">
+                      <img alt="Achievement 5" class="achievement" src="./src/images/achievement.png">
+                    </a>
+                  </div>
+                  <div class="col-4 d-flex justify-content-center h-100">
+                    <a title="Complete quest 6">
+                      <img alt="Achievement 6" class="achievement" src="./src/images/achievement.png">
+                    </a>
+                  </div>
                 </div>
-                <div class="col-4 d-flex justify-content-center">
-                  <a title="Complete quest 3">
-                    <img alt="Achievement 3" class="achievement" src="./src/images/achievement.png">
-                  </a>
+
+                <div class="row w-100">
+                  <div class="col-4 d-flex justify-content-center">
+                    <a title="Complete quest 7">
+                      <img alt="Achievement 7" class="achievement" src="./src/images/achievement.png">
+                    </a>
+                  </div>
+                  <div class="col-4 d-flex justify-content-center h-100">
+                    <a title="Complete quest 8" class="h-100">
+                      <img alt="Achievement 8" class="achievement" src="./src/images/achievement.png">
+                    </a>
+                  </div>
+                  <div class="col-4 d-flex justify-content-center h-100">
+                    <a title="Type faster than 150 wpm" class="h-100">
+                      <img alt="Achievement 9" class="achievement opacity-25" src="./src/images/achievement.png">
+                    </a>
+                  </div>
                 </div>
+
               </div>
-
-              <div class="row w-75">
-                <div class="col-4 d-flex justify-content-center">
-                  <a title="Complete quest 4">
-                    <img alt="Achievement 4" class="achievement" src="./src/images/achievement.png">
-                  </a>
-                </div>
-                <div class="col-4 d-flex justify-content-center h-100">
-                  <a title="Complete quest 5">
-                    <img alt="Achievement 5" class="achievement" src="./src/images/achievement.png">
-                  </a>
-                </div>
-                <div class="col-4 d-flex justify-content-center h-100">
-                  <a title="Complete quest 6">
-                    <img alt="Achievement 6" class="achievement" src="./src/images/achievement.png">
-                  </a>
-                </div>
-              </div>
-
-              <div class="row w-75">
-                <div class="col-4 d-flex justify-content-center">
-                  <a title="Complete quest 7">
-                    <img alt="Achievement 7" class="achievement" src="./src/images/achievement.png">
-                  </a>
-                </div>
-                <div class="col-4 d-flex justify-content-center h-100">
-                  <a title="Complete quest 8" class="h-100">
-                    <img alt="Achievement 8" class="achievement" src="./src/images/achievement.png">
-                  </a>
-                </div>
-                <div class="col-4 d-flex justify-content-center h-100">
-                  <a title="Type faster than 150 wpm" class="h-100">
-                    <img alt="Achievement 9" class="achievement opacity-25" src="./src/images/achievement.png">
-                  </a>
-                </div>
-              </div>
-
             </div>
           </div>
         </main>
