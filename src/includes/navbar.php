@@ -26,7 +26,7 @@
           echo
           "
               <div class='d-flex flex-column justify-content-between'>
-                <button id='profile-btn' $class>Profile</button>
+                <a href='profile.php?id=$_SESSION[id]' id='profile-btn' $class>Profile</a>
                 <button id='campaign-btn' $class>Campaign</button>
                 <button id='multiplayer-btn' $class>Multiplayer</button>
                 <button id='training-btn' $class>Training</button>

@@ -28,12 +28,6 @@ function getCookie(key) {
 if (getCookie("isLoggedIn")) {
     // If user is logged in
 
-    // Profile button
-    const profileBtn = document.querySelector("#profile-btn")
-    profileBtn.addEventListener("click", () => {
-        window.location.href = "http://localhost/KeyRace/profile.php"
-    })
-
     // Campaign button
     const campaignBtn = document.querySelector("#campaign-btn")
     campaignBtn.addEventListener("click", () => {

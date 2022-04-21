@@ -7,6 +7,41 @@ if (!isset($_SESSION["id"]))
   header("location: index.php");
   exit();
 }
+
+// Connect to database
+include("src/scripts/php/db_connect.php");
+
+// Request user's stats
+$query = "SELECT * FROM STATS WHERE user_id=:id;";
+$prepared_query = $db->prepare($query);
+$prepared_query->execute(["id" => $_GET["id"]]);
+$result = $prepared_query->fetchAll();
+
+if (!$result)
+{
+    header("location: profile.php?type=danger&message=We couldn't load profile data due to an error. Please try later or contact support.");
+    exit;
+}
+
+$average_wpm = $result[0]["average_wpm"];
+$highest_wpm = $result[0]["highest_wpm"];
+$time_played = $result[0]["time_played"];
+
+// Request user's 
+$query = "SELECT * FROM STATS WHERE user_id=:id;";
+$prepared_query = $db->prepare($query);
+$prepared_query->execute(["id" => $_SESSION["id"]]);
+$result = $prepared_query->fetchAll();
+
+if (!$result)
+{
+    header("location: ." . "danger&message=We couldn't load profile data due to an error. Please try later or contact support.");
+    exit;
+}
+
+$average_wpm = $result[0]["average_wpm"];
+$highest_wpm = $result[0]["highest_wpm"];
+$time_played = $result[0]["time_played"];
 ?>
 
 <!DOCTYPE html>
@@ -36,15 +71,15 @@ if (!isset($_SESSION["id"]))
           <!-- Stats -->
           <div class="row my-4">
             <div class="col-5 d-flex justify-content-around">
-              <p class="fs-4">Highest WPM: 106.5</p>
-              <p class="fs-4">Average WPM: 83</p>
+              <p class="fs-4">Average WPM: <? echo $average_wpm ?></p>
+              <p class="fs-4">Highest WPM: <? echo $highest_wpm?></p>
             </div>
             <div class="col-2">
               <!-- Spacing column -->
             </div>
             <div class="col-5 d-flex justify-content-around">
               <p class="fs-4">Rank: 2</p>
-              <p class="fs-4">Time played: 19h30min</p>
+              <p class="fs-4">Time played: <? echo $time_played ?></p>
             </div>
           </div>
 
