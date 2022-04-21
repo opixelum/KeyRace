@@ -94,7 +94,7 @@
           <div class="row">
             <div class="col d-flex flex-wrap justify-content-center">
               <h2 class="mb-3 text-center w-100"><?php echo $username ?></h3>
-              <button class="btn">Friends list</button>
+              <a class="btn d-flex justify-content-center align-items-center" href="friends.php">Friends list</a>
             </div>
           </div>
 
