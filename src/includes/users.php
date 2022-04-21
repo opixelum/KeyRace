@@ -21,7 +21,7 @@
                 echo '<td>' . $user['email'] . '</td>';
                 echo '<td>' . $user['role'] . '</td>';
                 echo '<td class="text-nowrap">';
-                echo '<a class="btn btn-primary btn-sm me-2 col-6" href="read.php?id=' . $user['id'] . '">Edit</a>';
+                echo '<a class="btn btn-primary btn-sm me-2 col-6" href="edit.php?id=' . $user['id'] . '">Edit</a>';
                 echo '<a id="delete-Btn" class="btn btn-danger btn-sm me-2 col-6" href="./src/scripts/php/delete.php?id=' . $user['id'] . '">Delete</a>';
                 echo '</td>';
                 echo '</tr>';
