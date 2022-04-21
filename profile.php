@@ -86,8 +86,8 @@
               <!-- Spacing column -->
             </div>
             <div class="col-5 d-flex justify-content-around">
-              <p class="fs-4">Races won: <?php echo $races_won ?></p>
               <p class="fs-4">Races ran: <?php echo $races_ran ?></p>
+              <p class="fs-4">Races won: <?php echo $races_won ?></p>
             </div>
           </div>
 
