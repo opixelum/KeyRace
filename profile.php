@@ -39,7 +39,8 @@
 
   $average_wpm = $result[0]["average_wpm"];
   $highest_wpm = $result[0]["highest_wpm"];
-  $time_played = $result[0]["time_played"];
+  $races_won = $result[0]["races_won"];
+  $races_ran = $result[0]["races_ran"];
   $achievements = $result[0]["achievements"];
 ?>
 
@@ -85,8 +86,8 @@
               <!-- Spacing column -->
             </div>
             <div class="col-5 d-flex justify-content-around">
-              <p class="fs-4">Rank: 2</p>
-              <p class="fs-4">Time played: <?php echo $time_played ?></p>
+              <p class="fs-4">Races won: <?php echo $races_won ?></p>
+              <p class="fs-4">Races ran: <?php echo $races_ran ?></p>
             </div>
           </div>
 

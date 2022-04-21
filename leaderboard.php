@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <?php
+      session_start();
       $page = "leaderboard";
       $title = "Leaderboard | KeyRace";
       include("./src/includes/head.php");
@@ -18,8 +19,8 @@
           <div class="w-100 justify-content-evenly d-flex">
             <button id="record-btn" class="btn col-2">WPM record</button>
             <button id="average-btn" class="btn col-2">WPM average</button>
-            <button id="won-btn" class="btn col-2">Races won</button>
-            <button id="game-btn" class="btn col-2">Games played</button>
+            <button id="races-won-btn" class="btn col-2">Races won</button>
+            <button id="races-ran-btn" class="btn col-2">Races ran</button>
             <button id="time-btn" class="btn col-2">Game time</button>
           </div>
             <?php
@@ -28,43 +29,43 @@
                 if (isset($_GET['orderedBy'])) {
                   switch ($_GET['orderedBy']) {
                     case 1 : 
-                        $q = 'SELECT user_id, username, highest_wpm FROM USER, STATS WHERE
-                              STATS.STATS_user_id = USER.user_id ORDER BY highest_wpm DESC';
+                        $q = 'SELECT id, username, highest_wpm FROM USER, STATS WHERE
+                              STATS.user_id = USER.id ORDER BY highest_wpm DESC';
                         $leaderboardTab = 'highest_wpm';
                         $leaderboardTabName = 'WPM record';
                         break;
   
                     case 2 : 
-                        $q = 'SELECT user_id, username, average_wpm FROM USER, STATS WHERE
-                              STATS.STATS_user_id = USER.user_id ORDER BY average_wpm DESC';
+                        $q = 'SELECT id, username, average_wpm FROM USER, STATS WHERE
+                              STATS.user_id = USER.id ORDER BY average_wpm DESC';
                         $leaderboardTab = 'average_wpm';
                         $leaderboardTabName = 'WPM average';
                         break;
   
                     case 3 : 
-                      $q = 'SELECT user_id, username, races_won FROM USER, STATS WHERE
-                            STATS.STATS_user_id = USER.user_id ORDER BY races_won DESC';
+                      $q = 'SELECT id, username, races_won FROM USER, STATS WHERE
+                            STATS.user_id = USER.id ORDER BY races_won DESC';
                       $leaderboardTab = 'races_won';
                       $leaderboardTabName = 'Races won';
                       break;
   
                     case 4 : 
-                      $q = 'SELECT user_id, username, game_played FROM USER, STATS WHERE
-                            STATS.STATS_user_id = USER.user_id ORDER BY game_played DESC';
-                      $leaderboardTab = 'game_played';
-                      $leaderboardTabName = 'Games played';
+                      $q = 'SELECT id, username, races_ran FROM USER, STATS WHERE
+                            STATS.user_id = USER.id ORDER BY races_ran DESC';
+                      $leaderboardTab = 'races_ran';
+                      $leaderboardTabName = 'Races ran';
                       break;
   
                     case 5 : 
-                      $q = 'SELECT user_id, username, time_played FROM USER, STATS WHERE
-                            STATS.STATS_user_id = USER.user_id ORDER BY time_played DESC';
+                      $q = 'SELECT id, username, time_played FROM USER, STATS WHERE
+                            STATS.user_id = USER.id ORDER BY time_played DESC';
                       $leaderboardTab = 'time_played';
                       $leaderboardTabName = 'Time played';
                       break;
   
                     default:
-                      $q = 'SELECT user_id, username, highest_wpm FROM USER, STATS WHERE
-                            STATS.STATS_user_id = USER.user_id ORDER BY highest_wpm DESC';
+                      $q = 'SELECT id, username, highest_wpm FROM USER, STATS WHERE
+                            STATS.user_id = USER.id ORDER BY highest_wpm DESC';
                       $leaderboardTab = 'highest_wpm';
                       $leaderboardTabName = 'WPM record';
                       break;
@@ -72,8 +73,8 @@
                 }
                 else
                 {
-                  $q = 'SELECT user_id, username, highest_wpm FROM USER, STATS WHERE
-                        STATS.STATS_user_id = USER.user_id ORDER BY highest_wpm DESC';
+                  $q = 'SELECT id, username, highest_wpm FROM USER, STATS WHERE
+                        STATS.user_id = USER.id ORDER BY highest_wpm DESC';
                   $leaderboardTab = 'highest_wpm';
                   $leaderboardTabName = 'WPM record';
                 }
@@ -98,7 +99,7 @@
                     echo '<td>' . $stats['username'] . '</td>';
                     echo '<td>' . $stats["$leaderboardTab"] . '</td>';
                     echo '<td class="text-nowrap">';
-                    echo '<a class="btn btn-primary btn-sm me-2 col-6" href="profile.php?id=' . $stats['user_id'] . '">Profile</a>';
+                    echo '<a class="btn btn-primary btn-sm me-2 col-6" href="profile.php?id=' . $stats['id'] . '">Profile</a>';
                     echo '</td>';
                     echo '</tr>';
                 }
