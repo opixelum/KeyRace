@@ -18,7 +18,7 @@
 
   <?php
       // Class for buttons
-      $class = "class='btn m-2'";
+      $class = "class='btn d-flex justify-content-center align-items-center m-2'";
 
       if (isset($_SESSION["email"]))
       {
@@ -26,13 +26,13 @@
           echo
           "
               <div class='d-flex flex-column justify-content-between'>
-                <a href='profile.php?id=$_SESSION[id]' id='profile-btn' $class>Profile</a>
-                <a href='campaign.php' id='campaign-btn' $class>Campaign</a>
-                <a href='#' id='multiplayer-btn' $class>Multiplayer</a>
-                <a href='#' id='training-btn' $class>Training</a>
-                <a href='leaderboard.php' id='leaderboard-btn' $class>Leaderboard</a>
-                <a href='#' id='customization-btn' $class>Customization</a>
-                <a href='settings.php' id='settings-btn' $class>Settings</a>
+                <a href='profile.php?id=$_SESSION[id]' $class>Profile</a>
+                <a href='campaign.php' $class>Campaign</a>
+                <a href='#' $class>Multiplayer</a>
+                <a href='#' $class>Training</a>
+                <a href='leaderboard.php' $class>Leaderboard</a>
+                <a href='#' $class>Customization</a>
+                <a href='settings.php' $class>Settings</a>
               </div>
               <a
                 href='./src/scripts/php/logout.php'
