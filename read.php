@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <?php
+      session_start();
       $page = "read";
       $title = "Settings | KeyRace";
       include("./src/includes/head.php");
@@ -42,15 +43,15 @@
           <div class="container">
             <?php 
                 include('src/scripts/php/db_connect.php');
-                $q = "SELECT user_id, username, email, password, keyboard, role, kc, gc, avatar, banner, car FROM USER WHERE user_id = $_GET[id]";
+                $q = "SELECT id, username, email, password, keyboard, role, kc, gc, avatar, banner, car FROM USER WHERE id = $_GET[id]";
                 $req = $db->query($q);
                 $results = $req->fetchAll(PDO::FETCH_ASSOC);
             ?>
-            <form method="post" action="./src/scripts/php/update.php?id='<?php echo $results[0]['user_id'] ?>'">
+            <form method="post" action="./src/scripts/php/update.php?id='<?php echo $results[0]['id'] ?>'">
               <table class="table table-bordered">
                 <?php
                     
-                    echo '<tr><td>user_id</td><td><input name="user_id" type="number" value="' . $results[0]['user_id'] . '"></td></tr>';
+                    echo '<tr><td>id</td><td><input name="id" type="number" value="' . $results[0]['id'] . '"></td></tr>';
                     echo '<tr><td>username</td><td><input name="username" type="text" value="' . $results[0]['username'] . '"></td></tr>';
                     echo '<tr><td>email</td><td><input name="email" type="text" value="' . $results[0]['email'] . '"></td></tr>';
                     echo '<tr><td>password</td><td> °°°°°° </td></tr>';
