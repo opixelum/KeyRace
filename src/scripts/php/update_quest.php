@@ -5,7 +5,7 @@
     include("./db_connect.php");
 
     // Get user's last completed quest
-    $query = "SELECT quest FROM STATS WHERE user_id=:id;";
+    $query = "SELECT quest, achievements FROM STATS WHERE user_id=:id;";
     $prepared_query = $db->prepare($query);
     $prepared_query->execute(["id" => $_SESSION["id"]]);
     $result = $prepared_query->fetchAll();
@@ -13,6 +13,7 @@
     if (!$result) echo 0;
 
     $last_quest = $result[0]["quest"];
+    $achievements = $result[0]["achievements"];
 
     // Read POST data
     $data = json_decode(file_get_contents("php://input"));
@@ -21,9 +22,15 @@
     // Add quest to database if it is not already completed
     if ($last_quest < $post_quest)
     {
-        $query = "UPDATE STATS SET quest=:quest WHERE user_id=:id;";
+        $new_achievements = $achievements . $post_quest;
+        $query = "UPDATE STATS SET quest=:quest, achievements=:achievements WHERE user_id=:id;";
         $prepared_query = $db->prepare($query);
-        $result = $prepared_query->execute(["quest" => $post_quest, "id" => $_SESSION["id"]]);
+        $result = $prepared_query->execute
+        ([
+            "quest" => $post_quest, 
+            "achievements" => $new_achievements,
+            "id" => $_SESSION["id"]
+        ]);
         // If an error occured, respond to request with error
         if (!$result) echo 0;
     }
