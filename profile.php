@@ -11,6 +11,20 @@ if (!isset($_SESSION["id"]))
 // Connect to database
 include("src/scripts/php/db_connect.php");
 
+// Request username 
+$query = "SELECT username FROM USER WHERE id=:id;";
+$prepared_query = $db->prepare($query);
+$prepared_query->execute(["id" => $_GET["id"]]);
+$result = $prepared_query->fetchAll();
+
+if (!$result)
+{
+    header("location: index.php?type=danger&message=We couldn't load user's name due to an unexpected error. Please try later or contact support.");
+    exit;
+}
+
+$username = $result[0]["username"];
+
 // Request user's stats
 $query = "SELECT * FROM STATS WHERE user_id=:id;";
 $prepared_query = $db->prepare($query);
@@ -19,23 +33,7 @@ $result = $prepared_query->fetchAll();
 
 if (!$result)
 {
-    header("location: profile.php?type=danger&message=We couldn't load profile data due to an error. Please try later or contact support.");
-    exit;
-}
-
-$average_wpm = $result[0]["average_wpm"];
-$highest_wpm = $result[0]["highest_wpm"];
-$time_played = $result[0]["time_played"];
-
-// Request user's 
-$query = "SELECT * FROM STATS WHERE user_id=:id;";
-$prepared_query = $db->prepare($query);
-$prepared_query->execute(["id" => $_SESSION["id"]]);
-$result = $prepared_query->fetchAll();
-
-if (!$result)
-{
-    header("location: ." . "danger&message=We couldn't load profile data due to an error. Please try later or contact support.");
+    header("location: index.php?type=danger&message=We couldn't load user's stats due to an unexpected error. Please try later or contact support.");
     exit;
 }
 
@@ -71,22 +69,22 @@ $time_played = $result[0]["time_played"];
           <!-- Stats -->
           <div class="row my-4">
             <div class="col-5 d-flex justify-content-around">
-              <p class="fs-4">Average WPM: <? echo $average_wpm ?></p>
-              <p class="fs-4">Highest WPM: <? echo $highest_wpm?></p>
+              <p class="fs-4">Average WPM: <?php echo $average_wpm ?></p>
+              <p class="fs-4">Highest WPM: <?php echo $highest_wpm?></p>
             </div>
             <div class="col-2">
               <!-- Spacing column -->
             </div>
             <div class="col-5 d-flex justify-content-around">
               <p class="fs-4">Rank: 2</p>
-              <p class="fs-4">Time played: <? echo $time_played ?></p>
+              <p class="fs-4">Time played: <?php echo $time_played ?></p>
             </div>
           </div>
 
           <!-- Username & friends list button --> 
           <div class="row">
             <div class="col d-flex flex-wrap justify-content-center">
-              <h2 class="mb-3 text-center w-100">Opixelum</h3>
+              <h2 class="mb-3 text-center w-100"><?php echo $username ?></h3>
               <button class="btn">Friends list</button>
             </div>
           </div>
