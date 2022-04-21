@@ -1,46 +1,46 @@
 <?php
-session_start();
+  session_start();
 
-// If user is not logged in, redirect to index
-if (!isset($_SESSION["id"]))
-{
-  header("location: index.php");
-  exit();
-}
+  // If user is not logged in, redirect to index
+  if (!isset($_SESSION["id"]))
+  {
+    header("location: index.php");
+    exit();
+  }
 
-// Connect to database
-include("src/scripts/php/db_connect.php");
+  // Connect to database
+  include("src/scripts/php/db_connect.php");
 
-// Request username 
-$query = "SELECT username FROM USER WHERE id=:id;";
-$prepared_query = $db->prepare($query);
-$prepared_query->execute(["id" => $_GET["id"]]);
-$result = $prepared_query->fetchAll();
+  // Request username 
+  $query = "SELECT username FROM USER WHERE id=:id;";
+  $prepared_query = $db->prepare($query);
+  $prepared_query->execute(["id" => $_GET["id"]]);
+  $result = $prepared_query->fetchAll();
 
-if (!$result)
-{
-    header("location: index.php?type=danger&message=We couldn't load user's name due to an unexpected error. Please try later or contact support.");
-    exit;
-}
+  if (!$result)
+  {
+      header("location: index.php?type=danger&message=We couldn't load user's name due to an unexpected error. Please try later or contact support.");
+      exit;
+  }
 
-$username = $result[0]["username"];
+  $username = $result[0]["username"];
 
-// Request user's stats
-$query = "SELECT * FROM STATS WHERE user_id=:id;";
-$prepared_query = $db->prepare($query);
-$prepared_query->execute(["id" => $_GET["id"]]);
-$result = $prepared_query->fetchAll();
+  // Request user's stats
+  $query = "SELECT * FROM STATS WHERE user_id=:id;";
+  $prepared_query = $db->prepare($query);
+  $prepared_query->execute(["id" => $_GET["id"]]);
+  $result = $prepared_query->fetchAll();
 
-if (!$result)
-{
-    header("location: index.php?type=danger&message=We couldn't load user's stats due to an unexpected error. Please try later or contact support.");
-    exit;
-}
+  if (!$result)
+  {
+      header("location: index.php?type=danger&message=We couldn't load user's stats due to an unexpected error. Please try later or contact support.");
+      exit;
+  }
 
-$average_wpm = $result[0]["average_wpm"];
-$highest_wpm = $result[0]["highest_wpm"];
-$time_played = $result[0]["time_played"];
-$achievements = $result[0]["achievements"];
+  $average_wpm = $result[0]["average_wpm"];
+  $highest_wpm = $result[0]["highest_wpm"];
+  $time_played = $result[0]["time_played"];
+  $achievements = $result[0]["achievements"];
 ?>
 
 <!DOCTYPE html>
@@ -62,8 +62,16 @@ $achievements = $result[0]["achievements"];
           <!-- Profile assets -->
           <div class="row h-25">
             <div class="col d-flex flex-wrap justify-content-center h-100 w-100">
-              <img alt="Banner" class="w-100 h-100" src="./src/images/banner.png">
-              <img alt="Banner" class="profile-avatar rounded-circle" src="./src/images/avatar.png">
+              <img
+                alt="Banner"
+                class="w-100 h-100"
+                src=<?php echo "./src/images/banners/$username.png" ?>
+              >
+              <img
+                alt="Profile picture"
+                class="profile-avatar rounded-circle"
+                src=<?php echo "./src/images/avatars/$username.png" ?>
+              >
             </div>
           </div>
 
