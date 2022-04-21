@@ -40,6 +40,7 @@ if (!$result)
 $average_wpm = $result[0]["average_wpm"];
 $highest_wpm = $result[0]["highest_wpm"];
 $time_played = $result[0]["time_played"];
+$achievements = $result[0]["achievements"];
 ?>
 
 <!DOCTYPE html>
@@ -105,59 +106,55 @@ $time_played = $result[0]["time_played"];
               <h3 class="w-100 text-center">Achievements</h3>
               <div class="container h-75">
 
-                <div class="row w-100">
-                  <div class="col-4 d-flex justify-content-center">
-                    <a title="Complete quest 1">
-                      <img alt="Achievement 1" class="achievement" src="./src/images/achievement.png">
-                    </a>
-                  </div>
-                  <div class="col-4 d-flex justify-content-center">
-                    <a title="Complete quest 2">
-                      <img alt="Achievement 2" class="achievement" src="./src/images/achievement.png">
-                    </a>
-                  </div>
-                  <div class="col-4 d-flex justify-content-center">
-                    <a title="Complete quest 3">
-                      <img alt="Achievement 3" class="achievement" src="./src/images/achievement.png">
-                    </a>
-                  </div>
-                </div>
-
-                <div class="row w-100">
-                  <div class="col-4 d-flex justify-content-center">
-                    <a title="Complete quest 4">
-                      <img alt="Achievement 4" class="achievement" src="./src/images/achievement.png">
-                    </a>
-                  </div>
-                  <div class="col-4 d-flex justify-content-center h-100">
-                    <a title="Complete quest 5">
-                      <img alt="Achievement 5" class="achievement" src="./src/images/achievement.png">
-                    </a>
-                  </div>
-                  <div class="col-4 d-flex justify-content-center h-100">
-                    <a title="Complete quest 6">
-                      <img alt="Achievement 6" class="achievement" src="./src/images/achievement.png">
-                    </a>
-                  </div>
-                </div>
-
-                <div class="row w-100">
-                  <div class="col-4 d-flex justify-content-center">
-                    <a title="Complete quest 7">
-                      <img alt="Achievement 7" class="achievement" src="./src/images/achievement.png">
-                    </a>
-                  </div>
-                  <div class="col-4 d-flex justify-content-center h-100">
-                    <a title="Complete quest 8" class="h-100">
-                      <img alt="Achievement 8" class="achievement" src="./src/images/achievement.png">
-                    </a>
-                  </div>
-                  <div class="col-4 d-flex justify-content-center h-100">
-                    <a title="Type faster than 150 wpm" class="h-100">
-                      <img alt="Achievement 9" class="achievement opacity-25" src="./src/images/achievement.png">
-                    </a>
-                  </div>
-                </div>
+                <?php
+                  for ($i = 0; $i < 3; $i++)
+                  {
+                    echo "<div class='row w-100'>";
+                    for ($j = 1; $j <= 3; $j++)
+                    {
+                      // Since there's only 8 achievements, the 9th one has a different logic
+                      if ($i === 2 && $j === 3)
+                      {
+                        echo 
+                        "
+                          <div class='col-4 d-flex justify-content-center'>
+                            <abbr title='Type faster than 150 wpm'>
+                              <img
+                                alt='Achievement 9'
+                                class='achievement
+                        ";
+                        echo str_contains($achievements, 9) ? "'" : "opacity-25'";
+                        echo
+                        "
+                                src='./src/images/achievement.png'
+                              >
+                            </abbr>
+                          </div>
+                        ";
+                      }
+                      else
+                      {
+                        echo 
+                        "
+                          <div class='col-4 d-flex justify-content-center'>
+                            <abbr title='Complete quest " . 3 * $i + $j . "'>
+                              <img
+                                alt='Achievement " . 3 * $i + $j . "'
+                                class='achievement
+                        ";
+                        echo str_contains($achievements, 3 * $i + $j) ? "'" : "opacity-25'";
+                        echo
+                        "
+                                src='./src/images/achievement.png'
+                              >
+                            </abbr>
+                          </div>
+                        ";
+                      }
+                    }
+                    echo "</div>";
+                  }
+                ?>
 
               </div>
             </div>
