@@ -3,7 +3,7 @@
     include("db_connect.php");
 
     // Save the path
-    $read_path = "location: ../../../read.php?id=$_GET[id]&type=danger&message=";
+    $read_path = "location: ../../../edit.php?id=$_GET[id]&type=danger&message=";
 
     $q = "SELECT * FROM USER WHERE id = $_GET[id]";
     $req = $db->query($q);
