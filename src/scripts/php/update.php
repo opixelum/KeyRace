@@ -5,7 +5,7 @@
     // Save the path
     $read_path = "location: ../../../read.php?id=$_GET[id]&type=danger&message=";
 
-    $q = "SELECT * FROM USER WHERE user_id = $_GET[id]";
+    $q = "SELECT * FROM USER WHERE id = $_GET[id]";
     $req = $db->query($q);
     $results = $req->fetchAll(PDO::FETCH_ASSOC);
 
@@ -42,9 +42,9 @@
     }
 
     // Update the user informations
-    $query = "UPDATE USER SET user_id=:user_id, username=:username, email=:email, keyboard=:keyboard, role=:role, kc=:kc, gc=:gc, avatar=:avatar, banner=:banner, car=:car WHERE user_id=$_GET[id]";
+    $query = "UPDATE USER SET id=:id, username=:username, email=:email, keyboard=:keyboard, role=:role, kc=:kc, gc=:gc, avatar=:avatar, banner=:banner, car=:car WHERE id=$_GET[id]";
     $prepared_query = $db->prepare($query);
-    $prepared_query->execute(["user_id" => $_POST['user_id'],
+    $prepared_query->execute(["id" => $_POST['user_id'],
                             "username" => $_POST['username'],
                             "email" => $_POST['email'],
                             "keyboard" => $_POST['keyboard'],
