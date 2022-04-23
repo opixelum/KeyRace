@@ -8,6 +8,7 @@ function displayAvatarMaker() {
         <button id="vest-btn" class="btn col-3">Vest</button>
         <button id="background-btn" class="btn col-3">Background</button>
         <div id="assets-selection" class="container d-flex flex-wrap border rounded-3 align-items-start h-75"></div>
+        <canvas id="avatar"></canvas>
     `
 
     const assetsSelection = document.querySelector('#assets-selection')
@@ -187,4 +188,19 @@ function displayAvatarMaker() {
             `
         })
     }
+
+    const avatar = document.querySelector("#avatar")
+    const context = avatar.getContext("2d")
+    avatar.width = 300
+    avatar.height = 300
+
+    // Draw rectangle as background
+    context.beginPath()
+    context.rect(0, 0, 300, 300)
+    context.fillStyle = black
+    context.fill()
+
+    context.drawImage(vest, -110, -110)
+    context.drawImage(helmet, -110, -110)
+    context.drawImage(visor, -110, -110)
 }
