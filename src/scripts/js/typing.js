@@ -184,7 +184,7 @@ const keyListener = document.addEventListener("keydown", ({ key }) => {
     cursorCharacter = characters[++cursorIndex]
 
     // Make the car moving
-    userCar.style.marginLeft = `${(userCarDistance += 100 / text.length)}%`
+    userCar.style.marginLeft = `${(userCarDistance = wpm)}%`
 
     // Start stopwatch
     if (!startTime) {
