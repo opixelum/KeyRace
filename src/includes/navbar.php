@@ -7,14 +7,16 @@
     <a class="my-4" href="http://localhost/KeyRace/index.php">
       <img alt="KeyRace logo" width="100px" src="http://localhost/KeyRace/src/images/logo.png">
     </a>
-    <input
-      class="input-field border-0 m-2 px-3 py-2 w-100 rounded-pill"
-      type="search"
-      id="search-field"
-      name="search-field"
-      placeholder="Search player"
-    >
-    <div id="results"></div>
+    <div class="position-relative w-100">
+      <input
+        class="input-field border-0 m-2 px-3 py-2 w-100 rounded-pill"
+        type="search"
+        id="search-field"
+        name="search-field"
+        placeholder="Search player"
+      >
+      <div id="results" class="position-absolute top-100 w-100"></div>
+    </div>
   </div>
 
   <?php
