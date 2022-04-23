@@ -180,6 +180,23 @@ tr, td, th{
 }
 
 
+/*------------------------------ P R O F I L E ------------------------------*/
+
+.profile-avatar {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    bottom: 50%
+}
+
+.profile-car {
+    height: 250px;
+}
+
+.achievement {
+    height: 100px;
+}
+
 /*-------------------------- T Y P I N G   G A M E --------------------------*/
 
 .cursor {

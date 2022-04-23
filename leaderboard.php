@@ -19,8 +19,8 @@
           <div class="w-100 justify-content-evenly d-flex">
             <button id="record-btn" class="btn col-2">WPM record</button>
             <button id="average-btn" class="btn col-2">WPM average</button>
-            <button id="won-btn" class="btn col-2">Races won</button>
-            <button id="game-btn" class="btn col-2">Games played</button>
+            <button id="races-won-btn" class="btn col-2">Races won</button>
+            <button id="races-ran-btn" class="btn col-2">Races ran</button>
             <button id="time-btn" class="btn col-2">Game time</button>
           </div>
             <?php
@@ -50,10 +50,10 @@
                       break;
   
                     case 4 : 
-                      $q = 'SELECT id, username, game_played FROM USER, STATS WHERE
-                            STATS.user_id = USER.id ORDER BY game_played DESC';
-                      $leaderboardTab = 'game_played';
-                      $leaderboardTabName = 'Games played';
+                      $q = 'SELECT id, username, races_ran FROM USER, STATS WHERE
+                            STATS.user_id = USER.id ORDER BY races_ran DESC';
+                      $leaderboardTab = 'races_ran';
+                      $leaderboardTabName = 'Races ran';
                       break;
   
                     case 5 : 

@@ -18,7 +18,7 @@
 
   <?php
       // Class for buttons
-      $class = "class='btn m-2'";
+      $class = "class='btn d-flex justify-content-center align-items-center m-2'";
 
       if (isset($_SESSION["email"]))
       {
@@ -26,13 +26,13 @@
           echo
           "
               <div class='d-flex flex-column justify-content-between'>
-                <button id='profile-btn' $class>Profile</button>
-                <button id='campaign-btn' $class>Campaign</button>
-                <button id='multiplayer-btn' $class>Multiplayer</button>
-                <button id='training-btn' $class>Training</button>
-                <button id='leaderboard-btn' $class>Leaderboard</button>
-                <button id='customization-btn' $class>Customization</button>
-                <button id='settings-btn' $class>Settings</button>
+                <a href='profile.php?id=$_SESSION[id]' $class>Profile</a>
+                <a href='campaign.php' $class>Campaign</a>
+                <a href='#' $class>Multiplayer</a>
+                <a href='#' $class>Training</a>
+                <a href='leaderboard.php' $class>Leaderboard</a>
+                <a href='#' $class>Customization</a>
+                <a href='settings.php' $class>Settings</a>
               </div>
               <a
                 href='./src/scripts/php/logout.php'
@@ -51,10 +51,10 @@
           echo
           "
               <div class='d-flex flex-column justify-content-between'>
-                <button id='sign-up-btn' $class>Sign up</button>
-                <button id='log-in-btn' $class>Log in</button>
-                <button id='leaderboard-btn' $class>Leaderboard</button>
-                <button id='settings-btn' $class>Settings</button>
+                <a href='signup.php' id='sign-up-btn' $class>Sign up</a>
+                <a href='login.php' id='log-in-btn' $class>Log in</a>
+                <a href='leaderboard.php' id='leaderboard-btn' $class>Leaderboard</a>
+                <a href='settings.php' id='settings-btn' $class>Settings</a>
               </div>
           ";
       }
@@ -65,5 +65,4 @@
     <br><br>
     <small class="w-100 mb-3 text-center">© KeyRace <?php echo date("Y"); ?></small>
   </div>
-  <script src="http://localhost/KeyRace/src/scripts/js/navbar.js"></script>
 </div>
