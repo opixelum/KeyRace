@@ -30,7 +30,8 @@
     </div>
 
     <script src="src/scripts/js/main.js"></script>
-    <script src="src/scripts/js/avatar_maker.js"></script>
     <script src="src/scripts/js/customization.js"></script>
+    <script src="src/scripts/js/avatar_display.js"></script>
+    <script src="src/scripts/js/avatar_maker.js"></script>
   </body>
 </html>
