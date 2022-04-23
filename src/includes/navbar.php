@@ -14,6 +14,7 @@
       name="search-field"
       placeholder="Search player"
     >
+    <div id="results"></div>
   </div>
 
   <?php
@@ -66,3 +67,5 @@
     <small class="w-100 mb-3 text-center">© KeyRace <?php echo date("Y"); ?></small>
   </div>
 </div>
+
+<script src="src/scripts/js/navbar.js"></script>
