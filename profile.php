@@ -51,7 +51,7 @@
 
   if (!$result)
   {
-      header("location: index.php?type=danger&message=We couldn't load user's stats due to an unexpected error. Please try later or contact support.");
+      header("location: index.php?type=danger&message=We couldn't load user's car due to an unexpected error. Please try later or contact support.");
       exit;
   }
 
