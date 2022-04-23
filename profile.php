@@ -171,7 +171,7 @@
                         echo str_contains($achievements, strval(3 * $i + $j)) ? "'" : "opacity-25'";
                         echo
                         "
-                                src='./src/images/achievement.png'
+                                src='src/images/achievement.png'
                               >
                             </abbr>
                           </div>
