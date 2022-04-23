@@ -14,6 +14,8 @@ function displayAvatarMaker() {
     const assetsSelection = document.querySelector('#assets-selection')
 
     let helmet = new Image()
+    helmet.src = "./src/images/avatar/helmet/sport/helmet_sport_helmet_black.png"
+    buildAvatar()
     const helmetBtn = document.querySelector('#helmet-btn')
     if (helmetBtn) {
         helmetBtn.addEventListener('click', () => {
@@ -202,7 +204,7 @@ function buildAvatar() {
     // Draw rectangle as background
     context.beginPath()
     context.rect(0, 0, 300, 300)
-    context.fillStyle = bgColor
+    context.fillStyle = 'blue'
     context.fill()
 
     context.drawImage(vest, -110, -110)
