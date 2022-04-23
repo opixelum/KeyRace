@@ -8,13 +8,17 @@
     exit();
   }
 
+  // If id not provided in URL, get it from session
+  if (!isset($_GET["id"])) $id = $_SESSION["id"];
+  else $id = $_GET["id"];
+
   // Connect to database
   include("src/scripts/php/db_connect.php");
 
   // Request username 
   $query = "SELECT username FROM USER WHERE id=:id;";
   $prepared_query = $db->prepare($query);
-  $prepared_query->execute(["id" => $_GET["id"]]);
+  $prepared_query->execute(["id" => $id]);
   $result = $prepared_query->fetchAll();
 
   if (!$result)
@@ -28,7 +32,7 @@
   // Request user's stats
   $query = "SELECT * FROM STATS WHERE user_id=:id;";
   $prepared_query = $db->prepare($query);
-  $prepared_query->execute(["id" => $_GET["id"]]);
+  $prepared_query->execute(["id" => $id]);
   $result = $prepared_query->fetchAll();
 
   if (!$result)
@@ -46,7 +50,7 @@
   // Request user's car
   $query = "SELECT car FROM ASSETS WHERE user_id=:id;";
   $prepared_query = $db->prepare($query);
-  $prepared_query->execute(["id" => $_GET["id"]]);
+  $prepared_query->execute(["id" => $id]);
   $result = $prepared_query->fetchAll();
 
   if (!$result)
