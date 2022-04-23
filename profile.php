@@ -163,12 +163,12 @@
                         echo 
                         "
                           <div class='col-4 d-flex justify-content-center'>
-                            <abbr title='Complete quest " . 3 * $i + $j . "'>
+                            <abbr title='Complete quest " . strval(3 * $i + $j) . "'>
                               <img
-                                alt='Achievement " . 3 * $i + $j . "'
+                                alt='Achievement " . strval(3 * $i + $j) . "'
                                 class='achievement
                         ";
-                        echo str_contains($achievements, 3 * $i + $j) ? "'" : "opacity-25'";
+                        echo str_contains($achievements, strval(3 * $i + $j)) ? "'" : "opacity-25'";
                         echo
                         "
                                 src='./src/images/achievement.png'
