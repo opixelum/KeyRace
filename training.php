@@ -41,7 +41,7 @@
                     <img
                     alt="User car"
                     id="user-car"
-                    src="src/images/cars/tank.png"
+                    src="src/images/cars/f1.png"
                     width="100px"
                     style="transform:translate(-99px)"
                     >

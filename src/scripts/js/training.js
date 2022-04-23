@@ -2,107 +2,9 @@
 const text =
   "curious_political_grain_grandmother_pot_nice_coordinated_rambunctious_nosy_stain_vanish_scatter_real_past_cave_teaching_island_writer_tempt_sleepy_woman_unarmed_warlike_correct_phobic"
 
-// Get quest number from url
-const quest = window.location.search.substring(1).split("=")[1]
-
-// Set bot speed depending on quest number
-let botInterval
-switch (quest) {
-  case "1":
-    // 30 wpm or 80 seconds
-    botInterval = 80 / text.length * 1000
-    break
-
-  case "2":
-    // 40 wpm or 60 seconds
-    botInterval = 60 / text.length * 1000
-    break
-
-  case "3":
-    // 50 wpm or 50 seconds
-    botInterval = 50 / text.length * 1000
-    break
-
-  case "4":
-    // 55 wpm or 45 seconds
-    botInterval = 45 / text.length * 1000
-    break
-
-  case "5":
-    // 60 wpm or 40 seconds
-    botInterval = 40 / text.length * 1000
-    break
-
-  case "6":
-    // 70 wpm or 35 seconds
-    botInterval = 35 / text.length * 1000
-    break
-
-  case "7":
-    // 80 wpm or 30 seconds
-    botInterval = 30 / text.length * 1000
-    break
-
-  case "8":
-    // 100 wpm or 25 seconds
-    botInterval = 25 / text.length * 1000
-    break
-}
-
 // Cars
 const userCar = document.querySelector("#user-car")
 let userCarDistance = 0
-
-const botCar = document.querySelector("#bot-car")
-let botCarDistance = 0
-
-// Footer buttons
-const questFooterButtons = document.querySelector("#quest-footer-btns")
-const nextBtn = document.querySelector("#next-btn")
-
-const displayRestartBtn = () => {
-  const restartBtn = document.createElement("button")
-  restartBtn.classList.add("btn")
-  restartBtn.addEventListener("click", () => {
-    window.location.href = `./campaign.php?quest=${quest}`
-  })
-  const restartBtnText = document.createTextNode("Restart")
-  restartBtn.appendChild(restartBtnText)
-  questFooterButtons.insertBefore(restartBtn, nextBtn)
-}
-
-const setQuestStatus = (status) => {
-  const questStatus = document.querySelector("#quest-status")
-  questStatus.innerText = status
-  questStatus.classList.remove("opacity-0")
-  displayRestartBtn()
-}
-
-const questSuccess = () => {
-  // Edit quest value in database
-  const xhr = new XMLHttpRequest()
-  xhr.open("POST", "src/scripts/php/update_quest.php", true)
-
-  // Call on request state change
-  xhr.onreadystatechange = () => {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      const response = xhr.responseText
-      if (response != 1) alert("error")
-    }
-  }
-  // Content type
-  xhr.setRequestHeader("Content-type", "application/json")
-
-  // Send request
-  xhr.send(JSON.stringify({ quest: quest }))
-
-  // Display message
-  setQuestStatus("🎉 Quest completed! 🎉")
-
-  nextBtn.classList.remove("disabled")
-}
-
-const questFailed = () => setQuestStatus("❌ Quest failed... ❌")
 
 let moving // Interval for bot car
 const moveBotCar = () => {
@@ -151,7 +53,7 @@ errorsSpan.innerText = `Errors: 0`
 // Listen to player's keyboard
 const keyListener = document.addEventListener("keydown", ({ key }) => {
   // Key check
-  if (key === "Escape") {
+  if (key === "Escape" || cursorIndex >= characters.length) {
     // If player presses escape, restart the game
     cursorCharacter.classList.remove("cursor")
     for (let character of characters) {
@@ -248,57 +150,7 @@ const keyListener = document.addEventListener("keydown", ({ key }) => {
 
     // Prevent next lines to be executed when game is done
     document.removeEventListener("keydown", keyListener)
-
-    // Check if objective is completed
-    switch (quest) {
-      case "1":
-        // 30 wpm or 80 seconds
-        if (seconds < 80) questSuccess()
-        else questFailed()
-        break
-
-      case "2":
-        // 40 wpm or 60 seconds
-        if (wpm > 40) questSuccess()
-        else questFailed()
-        break
-
-      case "3":
-        // 50 wpm or 50 seconds
-        if (seconds < 50) questSuccess()
-        else questFailed()
-        break
-
-      case "4":
-        // 55 wpm or 45 seconds
-        if (wpm > 55) questSuccess()
-        else questFailed()
-        break
-
-      case "5":
-        // 60 wpm or 40 seconds
-        if (seconds < 40) questSuccess()
-        else questFailed()
-        break
-
-      case "6":
-        // 70 wpm or 35 seconds
-        if (wpm > 70) questSuccess()
-        else questFailed()
-        break
-
-      case "7":
-        // 80 wpm or 30 seconds
-        if (seconds < 30) questSuccess()
-        else questFailed()
-        break
-
-      case "8":
-        // 100 wpm or 25 seconds
-        if (wpm > 100) questSuccess()
-        else questFailed()
-        break
-    }
+    
     return
   }
 
@@ -307,20 +159,3 @@ const keyListener = document.addEventListener("keydown", ({ key }) => {
   // game is done.
   cursorCharacter.classList.add("cursor")
 })
-
-const backBtn = document.querySelector("#back-btn")
-if (backBtn) {
-  backBtn.addEventListener("click", () => {
-    window.location.href = "http://localhost/KeyRace/campaign.php"
-  })
-}
-
-if (quest !== "8") {
-  if (nextBtn) {
-    nextBtn.addEventListener("click", () => {
-      window.location.href = `http://localhost/KeyRace/campaign.php?quest=${
-        parseInt(quest) + 1
-      }`
-    })
-  }
-}
