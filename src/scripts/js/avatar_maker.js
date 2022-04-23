@@ -13,6 +13,7 @@ function displayAvatarMaker() {
 
     const assetsSelection = document.querySelector('#assets-selection')
 
+    let helmet = new Image()
     const helmetBtn = document.querySelector('#helmet-btn')
     if (helmetBtn) {
         helmetBtn.addEventListener('click', () => {
@@ -67,6 +68,7 @@ function displayAvatarMaker() {
         })
     }
 
+    let visor = new Image()
     const visorBtn = document.querySelector('#visor-btn')
     if (visorBtn) {
         visorBtn.addEventListener('click', () => {
@@ -130,6 +132,7 @@ function displayAvatarMaker() {
         })
     }
 
+    let vest = new Image()
     const vestBtn = document.querySelector('#vest-btn')
     if (vestBtn) {
         vestBtn.addEventListener('click', () => {
@@ -188,7 +191,9 @@ function displayAvatarMaker() {
             `
         })
     }
+}
 
+function buildAvatar() {
     const avatar = document.querySelector("#avatar")
     const context = avatar.getContext("2d")
     avatar.width = 300
@@ -197,7 +202,7 @@ function displayAvatarMaker() {
     // Draw rectangle as background
     context.beginPath()
     context.rect(0, 0, 300, 300)
-    context.fillStyle = black
+    context.fillStyle = bgColor
     context.fill()
 
     context.drawImage(vest, -110, -110)
