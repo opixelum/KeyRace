@@ -3,11 +3,11 @@
 $players = simplexml_load_file("players.xml")
 or die("Error: Cannot create object");
 
-// Get the q parameter from URL
-$q = $_GET["q"];
+// Get the query parameter from URL
+$query = $_GET["q"];
 
 // Once user enters at least one character, search for the player
-if (strlen($q) > 0)
+if (strlen($query) > 0)
 {
   $results = "";
 
@@ -19,7 +19,7 @@ if (strlen($q) > 0)
     $username = $players->player[$i]["username"];
 
     // Display the 5 first players that match the search
-    if (str_starts_with($id, $q) || str_starts_with($username, $q))
+    if (str_starts_with($id, $query) || str_starts_with($username, $query))
     {
       // Add the first or only player to the results
       if ($results == "")
