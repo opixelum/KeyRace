@@ -29,7 +29,7 @@
                 <a href='profile.php?id=$_SESSION[id]' $class>Profile</a>
                 <a href='campaign.php' $class>Campaign</a>
                 <a href='#' $class>Multiplayer</a>
-                <a href='#' $class>Training</a>
+                <a href='training.php' $class>Training</a>
                 <a href='leaderboard.php' $class>Leaderboard</a>
                 <a href='#' $class>Customization</a>
                 <a href='settings.php' $class>Settings</a>
