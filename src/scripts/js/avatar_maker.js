@@ -13,9 +13,7 @@ function displayAvatarMaker() {
 
     const assetsSelection = document.querySelector('#assets-selection')
 
-    let helmet = new Image()
-    helmet.src = "./src/images/avatar/helmet/sport/helmet_sport_helmet_black.png"
-    buildAvatar()
+    var helmet = new Image()
     const helmetBtn = document.querySelector('#helmet-btn')
     if (helmetBtn) {
         helmetBtn.addEventListener('click', () => {
@@ -70,7 +68,7 @@ function displayAvatarMaker() {
         })
     }
 
-    let visor = new Image()
+    var visor = new Image()
     const visorBtn = document.querySelector('#visor-btn')
     if (visorBtn) {
         visorBtn.addEventListener('click', () => {
@@ -134,7 +132,7 @@ function displayAvatarMaker() {
         })
     }
 
-    let vest = new Image()
+    var vest = new Image()
     const vestBtn = document.querySelector('#vest-btn')
     if (vestBtn) {
         vestBtn.addEventListener('click', () => {
@@ -207,7 +205,11 @@ function buildAvatar() {
     context.fillStyle = 'blue'
     context.fill()
 
-    context.drawImage(vest, -110, -110)
-    context.drawImage(helmet, -110, -110)
-    context.drawImage(visor, -110, -110)
+    helmet.src = "./src/images/avatar/helmet/sport/helmet_sport_helmet_black.png"
+    vest.src = "./src/images/avatar/helmet/sport/helmet_sport_helmet_black.png"
+    visor.src = "./src/images/avatar/helmet/sport/helmet_sport_helmet_black.png"
+
+    context.drawImage(vest, 0, 0)
+    context.drawImage(helmet, 0, 0)
+    context.drawImage(visor, 0, 0)
 }
