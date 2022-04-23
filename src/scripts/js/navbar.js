@@ -1,7 +1,7 @@
 const searchField = document.querySelector("#search-field")
 
 // On each keystrok, search for the value of the search field
-searchField.addEventListener("keydown", () => {
+searchField.addEventListener("keyup", () => {
   // User's input
   const query = searchField.value
 
