@@ -151,6 +151,7 @@ const keyListener = document.addEventListener("keydown", ({ key }) => {
     // Prevent next lines to be executed when game is done
     document.removeEventListener("keydown", keyListener)
 
+    // Restart game
     cursorCharacter.classList.remove("cursor")
     for (let character of characters) {
       character.classList.remove("correct")
