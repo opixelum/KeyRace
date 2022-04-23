@@ -20,10 +20,6 @@ window.onload = function() {
         context.fillStyle = 'blue'
         context.fill()
     
-        helmet.src = "./src/images/avatar/helmet/sport/helmet_sport_helmet_black.png"
-        vest.src = "./src/images/avatar/helmet/sport/helmet_sport_helmet_black.png"
-        visor.src = "./src/images/avatar/helmet/sport/helmet_sport_helmet_black.png"
-    
         context.drawImage(vest, 0, 0)
         context.drawImage(helmet, 0, 0)
         context.drawImage(visor, 0, 0)
