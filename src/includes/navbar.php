@@ -12,7 +12,7 @@
       type="search"
       id="search-field"
       name="search-field"
-      placeholder="Search for a player"
+      placeholder="Search player"
     >
   </div>
 
