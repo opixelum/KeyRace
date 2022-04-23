@@ -53,7 +53,7 @@ errorsSpan.innerText = `Errors: 0`
 // Listen to player's keyboard
 const keyListener = document.addEventListener("keydown", ({ key }) => {
   // Key check
-  if (key === "Escape" || cursorIndex >= characters.length) {
+  if (key === "Escape") {
     // If player presses escape, restart the game
     cursorCharacter.classList.remove("cursor")
     for (let character of characters) {
@@ -150,8 +150,29 @@ const keyListener = document.addEventListener("keydown", ({ key }) => {
 
     // Prevent next lines to be executed when game is done
     document.removeEventListener("keydown", keyListener)
-    
-    return
+
+    cursorCharacter.classList.remove("cursor")
+    for (let character of characters) {
+      character.classList.remove("correct")
+      character.classList.remove("wrong")
+    }
+
+    cursorIndex = 0
+    cursorCharacter = characters[cursorIndex]
+    cursorCharacter.classList.add("cursor")
+
+    startTime = null
+
+    errors = 0
+    errorsSpan.innerText = `Errors: 0`
+
+    userCarDistance = 0
+    userCar.style.marginLeft = userCarDistance
+
+    botCarDistance = 0
+    botCar.style.marginLeft = botCarDistance
+    clearInterval(moving)
+
   }
 
   // If right key was typed, move the cursor to the next character
