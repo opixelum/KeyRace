@@ -42,6 +42,20 @@
   $races_won = $result[0]["races_won"];
   $races_ran = $result[0]["races_ran"];
   $achievements = $result[0]["achievements"];
+
+  // Request user's car
+  $query = "SELECT car FROM ASSETS WHERE user_id=:id;";
+  $prepared_query = $db->prepare($query);
+  $prepared_query->execute(["id" => $_GET["id"]]);
+  $result = $prepared_query->fetchAll();
+
+  if (!$result)
+  {
+      header("location: index.php?type=danger&message=We couldn't load user's stats due to an unexpected error. Please try later or contact support.");
+      exit;
+  }
+
+  $car = $result[0]["car"];
 ?>
 
 <!DOCTYPE html>
@@ -104,9 +118,8 @@
             <div class="border-end h-100 col-6 d-flex flex-wrap justify-content-center">
               <h3 class="w-100 text-center">Car</h3>
               <div class="d-flex justify-content-center flex-wrap">
-                <img alt="Car" class="h-25" src="./src/images/cars/lambo.png">
-                <p class="m-0 fs-5 w-100 text-center">Model: Lamborghini</p>
-                <p class="m-0 fs-5 w-100 text-center">Color: Yellow</p>
+                <img alt="Car" class="h-25" <?php echo "src='./src/images/cars/$car.png'" ?>>
+                <p class="m-0 fs-5 w-100 text-center">Model: <?php echo ucfirst($car) ?></p>
               </div>
             </div>
 
