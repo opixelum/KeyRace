@@ -28,7 +28,7 @@
           setcookie("isLoggedIn", true, time() + 365 * 24 * 3600, '/');
           echo
           "
-              <div class='d-flex flex-column justify-content-between'>
+              <div class='d-flex flex-column h-50 justify-content-between'>
                 <a href='profile.php?id=$_SESSION[id]' $class>Profile</a>
                 <a href='campaign.php' $class>Campaign</a>
                 <a href='#' $class>Multiplayer</a>
