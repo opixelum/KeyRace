@@ -188,7 +188,7 @@ tr, td, th{
     -webkit-appearance: none;
 }
 
-#assets-selection img:hover {
+#assets-selection label {
     cursor: pointer;
 }
 
@@ -232,28 +232,28 @@ tr, td, th{
 }
 
 #orange-div {
-    background-color: rgb(255, 100, 0);
+    background-color: #ff6400;
     width: 10vh;
     height: 10vh;
     margin: 2vh;
 }
 
 #pink-div {
-    background-color: rgb(255, 0, 255);
+    background-color: #ff00ff;
     width: 10vh;
     height: 10vh;
     margin: 2vh;
 }
 
 #purple-div {
-    background-color: rgb(100, 0, 255);
+    background-color: #6400ff;
     width: 10vh;
     height: 10vh;
     margin: 2vh;
 }
 
 #yellow-div {
-    background-color: #cc0;
+    background-color: yellow;
     width: 10vh;
     height: 10vh;
     margin: 2vh;
