@@ -7,13 +7,16 @@
     <a class="my-4" href="http://localhost/KeyRace/index.php">
       <img alt="KeyRace logo" width="100px" src="http://localhost/KeyRace/src/images/logo.png">
     </a>
-    <input
-      class="input-field border-0 m-2 px-3 py-2 w-100 rounded-pill"
-      type="search"
-      id="search-field"
-      name="search-field"
-      placeholder="Search for a player"
-    >
+    <div class="d-flex justify-content-center position-relative w-100 mx-2">
+      <input
+        class="input-field border-0 px-3 py-2 w-100 rounded-pill"
+        type="search"
+        id="search-field"
+        name="search-field"
+        placeholder="Search player"
+      >
+      <div id="results" class="position-absolute top-100 w-100 mx-2 px-1 rounded-3"></div>
+    </div>
   </div>
 
   <?php
@@ -66,3 +69,5 @@
     <small class="w-100 mb-3 text-center">© KeyRace <?php echo date("Y"); ?></small>
   </div>
 </div>
+
+<script src="src/scripts/js/navbar.js"></script>
