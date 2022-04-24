@@ -108,6 +108,10 @@ header, main{
     font-size: 1.2em;
 }
 
+#results {
+    background-color: var(--containersBg);
+}
+
 input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
   height: 13px;
