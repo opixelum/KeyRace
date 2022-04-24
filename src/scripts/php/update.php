@@ -10,9 +10,9 @@
     $results = $req->fetchAll(PDO::FETCH_ASSOC);
 
 
-    if (!preg_match("@[0-9]@", $_POST['user_id']))
+    if (!preg_match("@[0-9]@", $_POST['id']))
     {
-        header($read_path . "user_id needs to be a number.");
+        header($read_path . "id needs to be a number.");
         exit;
     }
     if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
@@ -44,7 +44,7 @@
     // Update the user informations
     $query = "UPDATE USER SET id=:id, username=:username, email=:email, keyboard=:keyboard, role=:role, kc=:kc, gc=:gc, avatar=:avatar, banner=:banner, car=:car WHERE id=$_GET[id]";
     $prepared_query = $db->prepare($query);
-    $prepared_query->execute(["id" => $_POST['user_id'],
+    $prepared_query->execute(["id" => $_POST['id'],
                             "username" => $_POST['username'],
                             "email" => $_POST['email'],
                             "keyboard" => $_POST['keyboard'],
