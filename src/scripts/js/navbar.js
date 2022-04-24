@@ -8,7 +8,7 @@ searchField.addEventListener("keyup", () => {
   // Reset results field if user clears the input
   if (query.length == 0) {
     document.querySelector("#results").innerHTML = ""
-    document.querySelector("#results").style.border = "0px"
+    document.querySelector("#results").classList.remove("border")
     return
   }
 
@@ -18,7 +18,7 @@ searchField.addEventListener("keyup", () => {
   xhr.onreadystatechange = () => {
     if (xhr.readyState == 4 && xhr.status == 200) {
       document.querySelector("#results").innerHTML = xhr.responseText
-      document.querySelector("#results").style.border = "1px solid white"
+      document.querySelector("#results").classList.add("border")
     }
   }
   xhr.send()

@@ -23,14 +23,14 @@ if (strlen($query) > 0)
     {
       // Add the first or only player to the results
       if ($results == "")
-        $results = "<a href='profile.php?id=$id'>$username</a>";
+        $results = "<a class='text-white' href='profile.php?id=$id'>$username</a>";
 
       // If there are 5 results, stop concatenation
       // We use `<br>` as a separator
       else if (substr_count($results, "<br>") == 4) break;
 
       // Add the other players
-      else $results .= "<br><a href='profile.php?id=$id'>$username</a>";
+      else $results .= "<br><a class='text-white' href='profile.php?id=$id'>$username</a>";
     }
   }
 }

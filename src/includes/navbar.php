@@ -9,13 +9,13 @@
     </a>
     <div class="position-relative w-100">
       <input
-        class="input-field border-0 m-2 px-3 py-2 w-100 rounded-pill"
+        class="input-field border-0 mx-2 px-3 py-2 w-100 rounded-pill"
         type="search"
         id="search-field"
         name="search-field"
         placeholder="Search player"
       >
-      <div id="results" class="position-absolute top-100 w-100"></div>
+      <div id="results" class="position-absolute top-100 w-100 mx-2 px-1 rounded-3"></div>
     </div>
   </div>
 
