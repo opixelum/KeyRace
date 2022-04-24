@@ -182,6 +182,16 @@ tr, td, th{
     overflow-x: hidden;
 }
 
+#assets-selection input {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+#assets-selection img:hover {
+    cursor: pointer;
+}
+
 /* Scrollbar */
 
 ::-webkit-scrollbar{

@@ -25,18 +25,42 @@ function displayAvatarMaker() {
             assetsSelection.innerHTML = `
                 <div id="default-helmet" class="row">
                     <p class="w-100 m-0 bg-dark">Default</p>
-                    <input type="image" class="w-25" src="src/images/avatar/helmet/default/helmet_default_helmet_black.png">
-                    <input type="image" class="w-25" src="src/images/avatar/helmet/default/helmet_default_helmet_white.png">
-                    <input type="image" class="w-25" src="src/images/avatar/helmet/default/helmet_default_helmet_special.png">
+                    <label class="w-25">
+                      <input type="radio" name="helmet" value="helmet_default_helmet_black">
+                      <img src="src/images/avatar/helmet/default/helmet_default_helmet_black.png" class="w-100">
+                    </label>
+                    <label class="w-25">
+                      <input type="radio" name="helmet" value="helmet_default_helmet_white">
+                      <img src="src/images/avatar/helmet/default/helmet_default_helmet_white.png" class="w-100">
+                    </label>
+                    <label class="w-25">
+                      <input type="radio" name="helmet" value="helmet_default_helmet_special">
+                      <img src="src/images/avatar/helmet/default/helmet_default_helmet_special.png" class="w-100">
+                    </label>
                 </div>
                 <hr>
                 <div id="duck-helmet" class="row">
                     <p class="w-100 m-0 bg-dark">Duck</p>
-                    <input type="image" class="w-25" src="src/images/avatar/helmet/duck/helmet_duck_helmet_black.png">
-                    <input type="image" class="w-25" src="src/images/avatar/helmet/duck/helmet_duck_helmet_white.png">
-                    <input type="image" class="w-25" src="src/images/avatar/helmet/duck/helmet_duck_helmet_red.png">
-                    <input type="image" class="w-25" src="src/images/avatar/helmet/duck/helmet_duck_helmet_yellow.png">
-                    <input type="image" class="w-25" src="src/images/avatar/helmet/duck/helmet_duck_helmet_special.png">
+                    <label class="w-25">
+                      <input type="radio" name="helmet" value="helmet_duck_helmet_black">
+                      <img type="image" src="src/images/avatar/helmet/duck/helmet_duck_helmet_black.png" class="w-100">
+                    </label>
+                    <label class="w-25">
+                      <input type="radio" name="helmet" value="helmet_duck_helmet_white">
+                      <img type="image" src="src/images/avatar/helmet/duck/helmet_duck_helmet_white.png" class="w-100">
+                    </label>
+                    <label class="w-25">
+                      <input type="radio" name="helmet" value="helmet_duck_helmet_red">
+                      <img type="image" src="src/images/avatar/helmet/duck/helmet_duck_helmet_red.png" class="w-100">
+                    </label>
+                    <label class="w-25">
+                      <input type="radio" name="helmet" value="helmet_duck_helmet_yellow">
+                      <img type="image" src="src/images/avatar/helmet/duck/helmet_duck_helmet_yellow.png" class="w-100">
+                    </label>
+                    <label class="w-25">
+                      <input type="radio" name="helmet" value="helmet_duck_helmet_special">
+                      <img type="image" src="src/images/avatar/helmet/duck/helmet_duck_helmet_special.png" class="w-100">
+                    </label>
                 </div>
                 <hr>
                 <div id="cross-helmet" class="row">
