@@ -1,14 +1,18 @@
 const customizationMenu = document.querySelector('#customization-menu')
 
 function displayAvatarMaker() {
-    
-    customizationMenu.innerHTML = `
-        <button id="helmet-btn" class="btn col-3">Helmet</button>
-        <button id="visor-btn" class="btn col-3">Visor</button>
-        <button id="vest-btn" class="btn col-3">Vest</button>
-        <button id="background-btn" class="btn col-3">Background</button>
-        <div id="assets-selection" class="container d-flex flex-wrap border rounded-3 align-items-start h-75"></div>
-        <canvas id="avatarCanvas"></canvas>
+
+    const container = document.querySelector('main .container')
+    container.innerHTML = `
+        <div class="row align-items-center h-100">
+          <div class="col-6 d-flex flex-wrap align-items-start h-100">
+            <button id="helmet-btn" class="btn col-3">Helmet</button>
+            <button id="visor-btn" class="btn col-3">Visor</button>
+            <button id="vest-btn" class="btn col-3">Vest</button>
+            <button id="background-btn" class="btn col-3">Background</button>
+            <div id="assets-selection" class="d-flex flex-wrap border rounded-3 align-items-start h-75"></div>
+          </div>
+          <div class="col-6"><canvas id="avatarCanvas"></canvas></div>
     `
 
     buildAvatar()

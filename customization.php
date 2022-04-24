@@ -24,7 +24,7 @@
           </div>
 
           <!-- Customization -->
-          <div id="customization-menu" class="w-50 h-75 flex-wrap justify-content-evenly d-flex"></div>
+          <div class="container h-75"></div>
         </main>
       </div>
     </div>
