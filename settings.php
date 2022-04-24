@@ -15,17 +15,88 @@
           <?php include("src/includes/navbar.php");?>
         </header>
 
-        <main class="col ms-2 rounded rgb-shadow">
+        <main class="col ms-2 rounded rgb-shadow d-flex justify-content-center align-items-center ">
           <form class="form-check form-switch">
             <input class="form-check-input" type="checkbox" role="switch"
             id="theme-switch">
             <label class="form-check-label" for="theme-switch">
               Dark / Light mode
             </label>
-          </form>
+
 
 
           <!-- Your code here -->
+
+
+          <div class="row row-cols-1 w-100">
+              <div class="col d-flex flex-column justify-content-evenly align-items-center">
+                <label class="w-100 text-center" for="username">Username</label>
+                <input
+                class="w-50 h-75 input-field border-0 px-3 py-2 rounded"
+                type="text"
+                value="<?php 
+                  // Set cookie value to input field
+                  echo isset($_COOKIE["username"]) ? $_COOKIE["username"] : '';
+                ?>" 
+                id="username-inpt"
+                name="username"
+                placeholder="JDoe"
+                required
+                >
+              </div>
+
+              <div class="col d-flex flex-column justify-content-evenly align-items-center">
+                <label class="w-100 text-center" for="email">Email</label>
+                <input
+                  class="w-50 h-75 input-field border-0 px-3 py-2 rounded"
+                  type="email"
+                  value="<?php
+                    // Set cookie value to input field
+                    echo isset($_COOKIE["email"]) ? $_COOKIE["email"] : '';
+                  ?>" 
+                  id="email-inpt"
+                  name="email"
+                  placeholder="john.doe@email.com"
+                  required
+                >
+              </div>
+
+
+              <div class="col d-flex flex-column justify-content-evenly align-items-center">
+                <label class="w-100 text-center" for="password">Password</label>
+                <input
+                class="w-50 h-75 input-field border-0 px-3 py-2 rounded"
+                type="password"
+                id="password-inpt"
+                name="password"
+                placeholder="••••••••••••••••"
+                required
+                >
+              </div>  
+
+
+              <div class="col d-flex flex-column justify-content-evenly align-items-center">
+                <label class="w-100 text-center" for="password">New Password</label>
+                <input
+                class="w-50 h-75 input-field border-0 px-3 py-2 rounded"
+                type="password"
+                id="NewPassword-inpt"
+                name="password"
+                placeholder="••••••••••••••••"
+                required
+                >
+              </div>
+
+              <div class="col d-flex flex-column align-items-center">
+                <input class="" placeholder="submit" type="submit">
+              </div>
+              
+            </form>
+
+
+            
+            
+          
 
 
             <?php
