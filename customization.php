@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <?php
+      session_start();
       $page = "index";
       $title = "Home | KeyRace";
       include("./src/includes/head.php");
