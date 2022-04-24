@@ -11,6 +11,8 @@ function displayAvatarMaker() {
         <canvas id="avatarCanvas"></canvas>
     `
 
+    buildAvatar()
+
     const assetsSelection = document.querySelector('#assets-selection')
     
     const helmetBtn = document.querySelector('#helmet-btn')
@@ -19,49 +21,49 @@ function displayAvatarMaker() {
             assetsSelection.innerHTML = `
                 <div id="default-helmet" class="row">
                     <p class="w-100 m-0 bg-dark">Default</p>
-                    <img class="w-25" src="src/images/avatar/helmet/default/helmet_default_helmet_black.png">
-                    <img class="w-25" src="src/images/avatar/helmet/default/helmet_default_helmet_white.png">
-                    <img class="w-25" src="src/images/avatar/helmet/default/helmet_default_helmet_special.png">
+                    <input type="image" class="w-25" src="src/images/avatar/helmet/default/helmet_default_helmet_black.png">
+                    <input type="image" class="w-25" src="src/images/avatar/helmet/default/helmet_default_helmet_white.png">
+                    <input type="image" class="w-25" src="src/images/avatar/helmet/default/helmet_default_helmet_special.png">
                 </div>
                 <hr>
                 <div id="duck-helmet" class="row">
                     <p class="w-100 m-0 bg-dark">Duck</p>
-                    <img class="w-25" src="src/images/avatar/helmet/duck/helmet_duck_helmet_black.png">
-                    <img class="w-25" src="src/images/avatar/helmet/duck/helmet_duck_helmet_white.png">
-                    <img class="w-25" src="src/images/avatar/helmet/duck/helmet_duck_helmet_red.png">
-                    <img class="w-25" src="src/images/avatar/helmet/duck/helmet_duck_helmet_yellow.png">
-                    <img class="w-25" src="src/images/avatar/helmet/duck/helmet_duck_helmet_special.png">
+                    <input type="image" class="w-25" src="src/images/avatar/helmet/duck/helmet_duck_helmet_black.png">
+                    <input type="image" class="w-25" src="src/images/avatar/helmet/duck/helmet_duck_helmet_white.png">
+                    <input type="image" class="w-25" src="src/images/avatar/helmet/duck/helmet_duck_helmet_red.png">
+                    <input type="image" class="w-25" src="src/images/avatar/helmet/duck/helmet_duck_helmet_yellow.png">
+                    <input type="image" class="w-25" src="src/images/avatar/helmet/duck/helmet_duck_helmet_special.png">
                 </div>
                 <hr>
                 <div id="cross-helmet" class="row">
                     <p class="w-100 m-0 bg-dark">Cross</p>
-                    <img class="w-25" src="src/images/avatar/helmet/cross/helmet_cross_helmet_black.png">
-                    <img class="w-25" src="src/images/avatar/helmet/cross/helmet_cross_helmet_blue.png">
-                    <img class="w-25" src="src/images/avatar/helmet/cross/helmet_cross_helmet_white.png">
-                    <img class="w-25" src="src/images/avatar/helmet/cross/helmet_cross_helmet_orange.png">
+                    <input type="image" class="w-25" src="src/images/avatar/helmet/cross/helmet_cross_helmet_black.png">
+                    <input type="image" class="w-25" src="src/images/avatar/helmet/cross/helmet_cross_helmet_blue.png">
+                    <input type="image" class="w-25" src="src/images/avatar/helmet/cross/helmet_cross_helmet_white.png">
+                    <input type="image" class="w-25" src="src/images/avatar/helmet/cross/helmet_cross_helmet_orange.png">
                 </div>
                 <hr>
                 <div id="sport-helmet" class="row">
                     <p class="w-100 m-0 bg-dark">Sport</p>
-                    <img class="w-25" src="src/images/avatar/helmet/sport/helmet_sport_helmet_black.png">
-                    <img class="w-25" src="src/images/avatar/helmet/sport/helmet_sport_helmet_blue.png">
-                    <img class="w-25" src="src/images/avatar/helmet/sport/helmet_sport_helmet_white.png">
-                    <img class="w-25" src="src/images/avatar/helmet/sport/helmet_sport_helmet_pink.png">
-                    <img class="w-25" src="src/images/avatar/helmet/sport/helmet_sport_helmet_red.png">
-                    <img class="w-25" src="src/images/avatar/helmet/sport/helmet_sport_helmet_dreamtime.png">
-                    <img class="w-25" src="src/images/avatar/helmet/sport/helmet_sport_helmet_mugello.png">
-                    <img class="w-25" src="src/images/avatar/helmet/sport/helmet_sport_helmet_soleluna.png">
-                    <img class="w-25" src="src/images/avatar/helmet/sport/helmet_sport_helmet_test.png">
+                    <input type="image" class="w-25" src="src/images/avatar/helmet/sport/helmet_sport_helmet_black.png">
+                    <input type="image" class="w-25" src="src/images/avatar/helmet/sport/helmet_sport_helmet_blue.png">
+                    <input type="image" class="w-25" src="src/images/avatar/helmet/sport/helmet_sport_helmet_white.png">
+                    <input type="image" class="w-25" src="src/images/avatar/helmet/sport/helmet_sport_helmet_pink.png">
+                    <input type="image" class="w-25" src="src/images/avatar/helmet/sport/helmet_sport_helmet_red.png">
+                    <input type="image" class="w-25" src="src/images/avatar/helmet/sport/helmet_sport_helmet_dreamtime.png">
+                    <input type="image" class="w-25" src="src/images/avatar/helmet/sport/helmet_sport_helmet_mugello.png">
+                    <input type="image" class="w-25" src="src/images/avatar/helmet/sport/helmet_sport_helmet_soleluna.png">
+                    <input type="image" class="w-25" src="src/images/avatar/helmet/sport/helmet_sport_helmet_test.png">
                 </div>
                 <hr>
                 <div id="race-helmet" class="row">
                     <p class="w-100 m-0 bg-dark">Race</p>
-                    <img class="w-25" src="src/images/avatar/helmet/race/helmet_race_helmet_black.png">
-                    <img class="w-25" src="src/images/avatar/helmet/race/helmet_race_helmet_futuro.png">
-                    <img class="w-25" src="src/images/avatar/helmet/race/helmet_race_helmet_LS.png">
-                    <img class="w-25" src="src/images/avatar/helmet/race/helmet_race_helmet_speciale.png">
-                    <img class="w-25" src="src/images/avatar/helmet/race/helmet_race_helmet_WC.png">
-                    <img class="w-25" src="src/images/avatar/helmet/race/helmet_race_helmet_WT.png">
+                    <input type="image" class="w-25" src="src/images/avatar/helmet/race/helmet_race_helmet_black.png">
+                    <input type="image" class="w-25" src="src/images/avatar/helmet/race/helmet_race_helmet_futuro.png">
+                    <input type="image" class="w-25" src="src/images/avatar/helmet/race/helmet_race_helmet_LS.png">
+                    <input type="image" class="w-25" src="src/images/avatar/helmet/race/helmet_race_helmet_speciale.png">
+                    <input type="image" class="w-25" src="src/images/avatar/helmet/race/helmet_race_helmet_WC.png">
+                    <input type="image" class="w-25" src="src/images/avatar/helmet/race/helmet_race_helmet_WT.png">
                 </div>
             `
         })
@@ -73,58 +75,58 @@ function displayAvatarMaker() {
             assetsSelection.innerHTML = `
                 <div id="default-visor" class="row">
                     <p class="w-100 m-0 bg-dark">Default</p>
-                    <img class="w-25" src="src/images/avatar/visor/default/helmet_default_visor_black.png">
-                    <img class="w-25" src="src/images/avatar/visor/default/helmet_default_visor_blue.png">
-                    <img class="w-25" src="src/images/avatar/visor/default/helmet_default_visor_cyan.png">
-                    <img class="w-25" src="src/images/avatar/visor/default/helmet_default_visor_green.png">
-                    <img class="w-25" src="src/images/avatar/visor/default/helmet_default_visor_orange.png">
-                    <img class="w-25" src="src/images/avatar/visor/default/helmet_default_visor_pink.png">
-                    <img class="w-25" src="src/images/avatar/visor/default/helmet_default_visor_purple.png">
-                    <img class="w-25" src="src/images/avatar/visor/default/helmet_default_visor_red.png">
-                    <img class="w-25" src="src/images/avatar/visor/default/helmet_default_visor_white.png">
-                    <img class="w-25" src="src/images/avatar/visor/default/helmet_default_visor_yellow.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/default/helmet_default_visor_black.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/default/helmet_default_visor_blue.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/default/helmet_default_visor_cyan.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/default/helmet_default_visor_green.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/default/helmet_default_visor_orange.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/default/helmet_default_visor_pink.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/default/helmet_default_visor_purple.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/default/helmet_default_visor_red.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/default/helmet_default_visor_white.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/default/helmet_default_visor_yellow.png">
                 </div>
                 <hr>
                 <div id="cross-visor" class="row">
                     <p class="w-100 m-0 bg-dark">Cross</p>
-                    <img class="w-25" src="src/images/avatar/visor/cross/helmet_cross_visor_black.png">
-                    <img class="w-25" src="src/images/avatar/visor/cross/helmet_cross_visor_blue.png">
-                    <img class="w-25" src="src/images/avatar/visor/cross/helmet_cross_visor_cyan.png">
-                    <img class="w-25" src="src/images/avatar/visor/cross/helmet_cross_visor_green.png">
-                    <img class="w-25" src="src/images/avatar/visor/cross/helmet_cross_visor_orange.png">
-                    <img class="w-25" src="src/images/avatar/visor/cross/helmet_cross_visor_pink.png">
-                    <img class="w-25" src="src/images/avatar/visor/cross/helmet_cross_visor_purple.png">
-                    <img class="w-25" src="src/images/avatar/visor/cross/helmet_cross_visor_red.png">
-                    <img class="w-25" src="src/images/avatar/visor/cross/helmet_cross_visor_white.png">
-                    <img class="w-25" src="src/images/avatar/visor/cross/helmet_cross_visor_yellow.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/cross/helmet_cross_visor_black.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/cross/helmet_cross_visor_blue.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/cross/helmet_cross_visor_cyan.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/cross/helmet_cross_visor_green.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/cross/helmet_cross_visor_orange.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/cross/helmet_cross_visor_pink.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/cross/helmet_cross_visor_purple.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/cross/helmet_cross_visor_red.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/cross/helmet_cross_visor_white.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/cross/helmet_cross_visor_yellow.png">
                 </div>
                 <hr>
                 <div id="sport-visor" class="row">
                     <p class="w-100 m-0 bg-dark">Sport</p>
-                    <img class="w-25" src="src/images/avatar/visor/sport/helmet_sport_visor_black.png">
-                    <img class="w-25" src="src/images/avatar/visor/sport/helmet_sport_visor_blue.png">
-                    <img class="w-25" src="src/images/avatar/visor/sport/helmet_sport_visor_cyan.png">
-                    <img class="w-25" src="src/images/avatar/visor/sport/helmet_sport_visor_green.png">
-                    <img class="w-25" src="src/images/avatar/visor/sport/helmet_sport_visor_orange.png">
-                    <img class="w-25" src="src/images/avatar/visor/sport/helmet_sport_visor_pink.png">
-                    <img class="w-25" src="src/images/avatar/visor/sport/helmet_sport_visor_purple.png">
-                    <img class="w-25" src="src/images/avatar/visor/sport/helmet_sport_visor_red.png">
-                    <img class="w-25" src="src/images/avatar/visor/sport/helmet_sport_visor_white.png">
-                    <img class="w-25" src="src/images/avatar/visor/sport/helmet_sport_visor_yellow.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/sport/helmet_sport_visor_black.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/sport/helmet_sport_visor_blue.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/sport/helmet_sport_visor_cyan.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/sport/helmet_sport_visor_green.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/sport/helmet_sport_visor_orange.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/sport/helmet_sport_visor_pink.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/sport/helmet_sport_visor_purple.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/sport/helmet_sport_visor_red.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/sport/helmet_sport_visor_white.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/sport/helmet_sport_visor_yellow.png">
                 </div>
                 <hr>
                 <div id="race-visor" class="row">
                     <p class="w-100 m-0 bg-dark">Race</p>
-                    <img class="w-25" src="src/images/avatar/visor/race/helmet_race_visor_black.png">
-                    <img class="w-25" src="src/images/avatar/visor/race/helmet_race_visor_blue.png">
-                    <img class="w-25" src="src/images/avatar/visor/race/helmet_race_visor_cyan.png">
-                    <img class="w-25" src="src/images/avatar/visor/race/helmet_race_visor_green.png">
-                    <img class="w-25" src="src/images/avatar/visor/race/helmet_race_visor_orange.png">
-                    <img class="w-25" src="src/images/avatar/visor/race/helmet_race_visor_pink.png">
-                    <img class="w-25" src="src/images/avatar/visor/race/helmet_race_visor_purple.png">
-                    <img class="w-25" src="src/images/avatar/visor/race/helmet_race_visor_red.png">
-                    <img class="w-25" src="src/images/avatar/visor/race/helmet_race_visor_white.png">
-                    <img class="w-25" src="src/images/avatar/visor/race/helmet_race_visor_yellow.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/race/helmet_race_visor_black.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/race/helmet_race_visor_blue.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/race/helmet_race_visor_cyan.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/race/helmet_race_visor_green.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/race/helmet_race_visor_orange.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/race/helmet_race_visor_pink.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/race/helmet_race_visor_purple.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/race/helmet_race_visor_red.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/race/helmet_race_visor_white.png">
+                    <input type="image" class="w-25" src="src/images/avatar/visor/race/helmet_race_visor_yellow.png">
                 </div>
             `
         })
@@ -136,27 +138,27 @@ function displayAvatarMaker() {
             assetsSelection.innerHTML = `
                 <div id="vintage-vest" class="row">
                     <p class="w-100 m-0 bg-dark">Vintage</p>
-                    <img class="w-25" src="src/images/avatar/vest/vintage/alp/body_vintage_alp_black.png">
-                    <img class="w-25" src="src/images/avatar/vest/vintage/har/body_vintage_har_grey.png">
-                    <img class="w-25" src="src/images/avatar/vest/vintage/ix/body_vintage_ix_marron.png">
+                    <input type="image" class="w-25" src="src/images/avatar/vest/vintage/alp/body_vintage_alp_black.png">
+                    <input type="image" class="w-25" src="src/images/avatar/vest/vintage/har/body_vintage_har_grey.png">
+                    <input type="image" class="w-25" src="src/images/avatar/vest/vintage/ix/body_vintage_ix_marron.png">
                 </div>
                 <hr>
                 <div id="cross-vest" class="row">
                     <p class="w-100 m-0 bg-dark">Cross</p>
-                    <img class="w-25" src="src/images/avatar/vest/cross/alp/body_cross_alp_black.png">
-                    <img class="w-25" src="src/images/avatar/vest/cross/fox/body_cross_fox_black.png">
+                    <input type="image" class="w-25" src="src/images/avatar/vest/cross/alp/body_cross_alp_black.png">
+                    <input type="image" class="w-25" src="src/images/avatar/vest/cross/fox/body_cross_fox_black.png">
                 </div>
                 <hr>
                 <div id="road-vest" class="row">
                     <p class="w-100 m-0 bg-dark">Road</p>
-                    <img class="w-25" src="src/images/avatar/vest/road/ix/body_road_ix_black.png">
-                    <img class="w-25" src="src/images/avatar/vest/road/long/body_road_long_black.png">
+                    <input type="image" class="w-25" src="src/images/avatar/vest/road/ix/body_road_ix_black.png">
+                    <input type="image" class="w-25" src="src/images/avatar/vest/road/long/body_road_long_black.png">
                 </div>
                 <hr>
                 <div id="race-vest" class="row">
                     <p class="w-100 m-0 bg-dark">Race</p>
-                    <img class="w-25" src="src/images/avatar/vest/race/dns/body_race_dns_black.png">
-                    <img class="w-25" src="src/images/avatar/vest/race/fur/body_race_fur_black.png">
+                    <input type="image" class="w-25" src="src/images/avatar/vest/race/dns/body_race_dns_black.png">
+                    <input type="image" class="w-25" src="src/images/avatar/vest/race/fur/body_race_fur_black.png">
                 </div>
             `
         })
