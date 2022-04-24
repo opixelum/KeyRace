@@ -1,7 +1,7 @@
 <?php
     
     include('db_connect.php');
-    $q = "DELETE FROM USER WHERE user_id = $_GET[id]";
+    $q = "DELETE FROM USER WHERE id = $_GET[id]";
     $req = $db->query($q);
     $results = $req->fetchAll(PDO::FETCH_ASSOC);
 
