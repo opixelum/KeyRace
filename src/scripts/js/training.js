@@ -5,16 +5,7 @@ const text =
 // Cars
 const userCar = document.querySelector("#user-car")
 let userCarDistance = 0
-
-let moving // Interval for bot car
-const moveBotCar = () => {
-  // Make bot car move
-  moving = setInterval(() => {
-    if (botCarDistance < 100)
-      botCar.style.marginLeft = `${(botCarDistance += 100 / text.length)}%`
-    else clearInterval(moving)
-  }, botInterval) // 0.245 seconds per character, or 45 seconds for the whole text
-}
+let moving
 
 // Used for excluding non-letter keys
 const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -73,8 +64,6 @@ const keyListener = document.addEventListener("keydown", ({ key }) => {
     userCarDistance = 0
     userCar.style.marginLeft = userCarDistance
 
-    botCarDistance = 0
-    botCar.style.marginLeft = botCarDistance
     clearInterval(moving)
   } else if (
     key === cursorCharacter.innerText ||
@@ -91,7 +80,6 @@ const keyListener = document.addEventListener("keydown", ({ key }) => {
     // Start stopwatch
     if (!startTime) {
       startTime = new Date()
-      moveBotCar()
     }
   } else if (letters.includes(key) || key === " ") {
     // If wrong key (excluding non-letter keys) was typed
@@ -102,7 +90,6 @@ const keyListener = document.addEventListener("keydown", ({ key }) => {
     // Start stopwatch
     if (!startTime) {
       startTime = new Date()
-      moveBotCar()
     }
   }
 
@@ -110,7 +97,7 @@ const keyListener = document.addEventListener("keydown", ({ key }) => {
   if (cursorIndex >= characters.length) {
     endTime = new Date()
 
-    // Stop bot car
+    // Stop car
     clearInterval(moving)
 
     // Get elapsed time
@@ -148,11 +135,7 @@ const keyListener = document.addEventListener("keydown", ({ key }) => {
       "#errors"
     ).innerText = `Errors: ${errors}`)
 
-    // Prevent next lines to be executed when game is done
-    document.removeEventListener("keydown", keyListener)
-
     // Restart game
-    cursorCharacter.classList.remove("cursor")
     for (let character of characters) {
       character.classList.remove("correct")
       character.classList.remove("wrong")
@@ -170,10 +153,10 @@ const keyListener = document.addEventListener("keydown", ({ key }) => {
     userCarDistance = 0
     userCar.style.marginLeft = userCarDistance
 
-    botCarDistance = 0
-    botCar.style.marginLeft = botCarDistance
     clearInterval(moving)
 
+    // Prevent next lines to be executed when game is done
+    document.removeEventListener("keydown", keyListener)
   }
 
   // If right key was typed, move the cursor to the next character
