@@ -1,9 +1,11 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <?php
       $page = "index";
       $title = "Home | KeyRace";
-      include("./src/includes/head.php");
+      include("src/includes/head.php");
   ?>
 
   <body class="dark-theme">

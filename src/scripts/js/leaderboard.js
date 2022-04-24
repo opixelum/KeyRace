@@ -12,16 +12,16 @@ if (averageBtn) {
     })
 }
 
-const wonBtn = document.querySelector('#won-btn')
-if (wonBtn) {
-    wonBtn.addEventListener('click', () => {
+const racesWonBtn = document.querySelector('#races-won-btn')
+if (racesWonBtn) {
+    racesWonBtn.addEventListener('click', () => {
         window.location.href = 'leaderboard.php?orderedBy=3'
     })
 }
 
-const gameBtn = document.querySelector('#game-btn')
-if (gameBtn) {
-    gameBtn.addEventListener('click', () => {
+const racesRanBtn = document.querySelector('#races-ran-btn')
+if (racesRanBtn) {
+    racesRanBtn.addEventListener('click', () => {
         window.location.href = 'leaderboard.php?orderedBy=4'
     })
 }

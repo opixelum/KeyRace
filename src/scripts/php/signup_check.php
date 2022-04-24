@@ -176,25 +176,46 @@
         setcookie("keyboard_layout", '', 0, "/KeyRace/signup.php");
         setcookie("captchaSolved", '', 0, "/KeyRace");
 
-        $query = 'SELECT user_id FROM USER WHERE email = :email';
+        // Get user id from USER table
+        $query = 'SELECT id FROM USER WHERE email = :email';
         $prepared_query = $db->prepare($query);
         $prepared_query->execute(["email" => $email]);
         $result = $prepared_query->fetchAll();
 
-        $query = "INSERT INTO STATS(STATS_user_id) VALUES(:STATS_user_id)";
-        $prepared_query = $db->prepare($query);
-        $result = $prepared_query->execute(["STATS_user_id" => $result[0]['user_id']]);
+        // If query was successful
+        if ($result)
+        {
+            // Insert user id into STATS table
+            $query = "INSERT INTO STATS(user_id) VALUES(:id)";
+            $prepared_query = $db->prepare($query);
+            $result = $prepared_query->execute(["id" => $result[0]['id']]);
 
-        // Send confirmation email
-        include("./send_email.php");
+            // If query was successful
+            if ($result)
+            {
+                // Send confirmation email
+                include("./send_email.php");
 
-        $message = "Accout created successfully.";
-        $message .= "Confirm your email address before logging in.";
-        header($login_path . "success&message=$message");
-        exit();
+                $message = "Accout created successfully.";
+                $message .= "Confirm your email address before logging in.";
+                header($login_path . "success&message=$message");
+                exit();
+            }
+            // If query failed, redirect to signup page with error message
+            else
+            {
+                header($signup_path . "alert&message=An error occured. Please try again.");
+                exit();
+            }
+        }
+        // If query failed, redirect to signup page with error message
+        else
+        {
+            header($signup_path . "alert&message=An error occured. Please try again.");
+            exit();
+        }
     }
-
-    // If query failed
-    header($signup_path . "danger&message=An error occured. Please try again.");
+    // If query failed, redirect to signup page with error message
+    header($signup_path . "alert&message=An error occured. Please try again.");
     exit();
 ?>

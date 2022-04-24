@@ -89,6 +89,8 @@ header, main{
     background-color: var(--containersBg);
 }
 
+/************************** I N P U T   F I E L D S **************************/
+
 .input-field {
     background-color: #888;
     color: var(--buttonFontColor);
@@ -101,6 +103,14 @@ header, main{
 /******************************** N A V B A R ********************************/
 
 /*------------------------------- H E A D E R -------------------------------*/
+
+.search {
+    font-size: 1.2em;
+}
+
+#results {
+    background-color: var(--containersBg);
+}
 
 input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
@@ -271,4 +281,35 @@ tr, td, th{
     width: 10vh;
     height: 10vh;
     margin: 2vh;
+}
+
+/*------------------------------ P R O F I L E ------------------------------*/
+
+.profile-avatar {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    bottom: 50%
+}
+
+.profile-car {
+    height: 250px;
+}
+
+.achievement {
+    height: 100px;
+}
+
+/*-------------------------- T Y P I N G   G A M E --------------------------*/
+
+.cursor {
+    background-color: var(--fontColor);
+}
+
+.correct {
+    color: green;
+}
+
+.wrong {
+    color: red;
 }
