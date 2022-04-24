@@ -22,7 +22,14 @@
             <label class="form-check-label" for="theme-switch">
               Dark / Light mode
             </label>
+          </form>
+
+
+          <!-- Your code here -->
+
+
             <?php
+              /* TO DO: add dynamic switch between accounts and database settings
 
               if (isset($_SESSION["email"]))
               {
@@ -40,8 +47,8 @@
                       include('src/includes/users.php');
                   }
               }
+              */
             ?>
-          </form>
         </main>
       </div>
     </div>
