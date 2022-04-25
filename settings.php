@@ -19,7 +19,14 @@
           <!-- Your code here -->
 
 
+
           <div class="row row-cols-1 w-100 d-flex">
+
+          <div class="col d-flex flex-row justify-content-evenly align-items-center p-5">
+            <button class="btn w-25">Account</button>
+            <button class="btn w-25">Database</button>
+          </div>
+
 
           <div class="col d-flex flex-column justify-content-evenly align-items-center p-3">
             <form class="form-check form-switch">
