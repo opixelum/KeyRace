@@ -15,20 +15,21 @@
           <?php include("src/includes/navbar.php");?>
         </header>
 
-        <main class="col ms-2 rounded rgb-shadow d-flex justify-content-center align-items-center ">
-          <form class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch"
-            id="theme-switch">
-            <label class="form-check-label" for="theme-switch">
-              Dark / Light mode
-            </label>
-
-
-
+        <main class="col ms-2 rounded rgb-shadow d-flex justify-content-center align-items-center">
           <!-- Your code here -->
 
 
-          <div class="row row-cols-1 w-100">
+          <div class="row row-cols-1 w-100 d-flex">
+
+          <div class="col d-flex flex-column justify-content-evenly align-items-center p-3">
+            <form class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch"
+              id="theme-switch">
+              <label class="form-check-label" for="theme-switch">
+                Dark / Light mode
+              </label>
+          </div>
+
               <div class="col d-flex flex-column justify-content-evenly align-items-center">
                 <label class="w-100 text-center" for="username">Username</label>
                 <input
@@ -88,15 +89,36 @@
               </div>
 
               <div class="col d-flex flex-column align-items-center">
-                <input class="" placeholder="submit" type="submit">
+                <input class="btn w-25 m-4" placeholder="submit" type="submit">
               </div>
+
+              <hr>
+
+              <div class="col d-flex flex-row justify-content-center align-items-center">
+                <input
+                id="stay-connected-chckbx"
+                name="stay-connected"
+                type="checkbox"
+                value="stay-connected"
+                >
+                <label for="stay-connected">Stay connected</label><br><br>
+              </div>  
+
+              <div class="col d-flex flex-column align-items-center">
+                <button class="btn w-25 m-4">Export Data</button>
+              </div>
+
+              <div class="col d-flex flex-column align-items-center">
+                <button class="btn w-25 bg-danger m-4">Delete Account</button>
+              </div>
+
+
+
+
+              
               
             </form>
-
-
-            
-            
-          
+      
 
 
             <?php
