@@ -311,14 +311,14 @@ const keyListener = document.addEventListener("keydown", ({ key }) => {
 const backBtn = document.querySelector("#back-btn")
 if (backBtn) {
   backBtn.addEventListener("click", () => {
-    window.location.href = "http://localhost/KeyRace/campaign.php"
+    window.location.href = "campaign.php"
   })
 }
 
 if (quest !== "8") {
   if (nextBtn) {
     nextBtn.addEventListener("click", () => {
-      window.location.href = `http://localhost/KeyRace/campaign.php?quest=${
+      window.location.href = `campaign.php?quest=${
         parseInt(quest) + 1
       }`
     })

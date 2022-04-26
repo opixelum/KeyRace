@@ -25,3 +25,4 @@
         </div>
         <script src='src/scripts/js/campaign_menu.js'></script>
     ";
+?>
