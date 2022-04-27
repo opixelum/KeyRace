@@ -50,7 +50,7 @@
                             "keyboard" => $_POST['keyboard'],
                             "role" => $_POST['role'],
                             "kc" => $_POST['kc'],
-                            "gc" => $_POST['gc']
+                            "gc" => $_POST['gc']]);
     $result = $prepared_query->fetchAll();
 
     header("location:../../../settings.php");
