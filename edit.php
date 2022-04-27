@@ -26,6 +26,7 @@
           
               $result = $prepared_query->fetchAll();
 
+
               if ($result[0]['role'] != 3)
               {
                 header("location:settings.php");
@@ -41,7 +42,7 @@
 
         <main class="col ms-2 rounded rgb-shadow">
           <div class="container">
-            <?php 
+            <?php
               include('src/scripts/php/db_connect.php');
               $q = "SELECT id, username, email, password, keyboard, role, kc, gc, avatar, banner, car FROM USER WHERE id = $_GET[id]";
               $req = $db->query($q);

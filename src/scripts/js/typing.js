@@ -324,3 +324,10 @@ if (quest !== "8") {
     })
   }
 }
+else if (quest === 8) {
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      window.location.href = "campaign.php"
+    })
+  }
+}
