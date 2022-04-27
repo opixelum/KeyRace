@@ -44,7 +44,7 @@
           <div class="container">
             <?php
               include('src/scripts/php/db_connect.php');
-              $q = "SELECT id, username, email, password, keyboard, role, kc, gc, avatar, banner, car FROM USER WHERE id = $_GET[id]";
+              $q = "SELECT id, username, email, password, keyboard, role, kc, gc FROM USER WHERE id = $_GET[id]";
               $req = $db->query($q);
               $results = $req->fetchAll(PDO::FETCH_ASSOC);
             ?>
@@ -59,9 +59,6 @@
                   echo '<tr><td>role</td><td><input name="role" type="number" value="' . $results[0]['role'] . '"></td></tr>';
                   echo '<tr><td>kc</td><td><input name="kc" type="number" value="' . $results[0]['kc'] . '"></td></tr>';
                   echo '<tr><td>gc</td><td><input name="gc" type="number" value="' . $results[0]['gc'] . '"></td></tr>';
-                  echo '<tr><td>avatar</td><td><input name="avatar" type="text" value="' . $results[0]['avatar'] . '"></td></tr>';
-                  echo '<tr><td>banner</td><td><input name="banner" type="text" value="' . $results[0]['banner'] . '"></td></tr>';
-                  echo '<tr><td>car</td><td><input name="car" type="text" value="' . $results[0]['car'] . '"></td></tr>';
                 ?>
               </table>
 
