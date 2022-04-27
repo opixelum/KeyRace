@@ -71,7 +71,7 @@
       </div>
     </div>
 
-    <script src="./src/scripts/js/read.js"></script>
+    <script src="./src/scripts/js/edit.js"></script>
     <script src="./src/scripts/js/main.js"></script>
   </body>
 </html>
