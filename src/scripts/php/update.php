@@ -42,7 +42,7 @@
     }
 
     // Update the user informations
-    $query = "UPDATE USER SET id=:id, username=:username, email=:email, keyboard=:keyboard, role=:role, kc=:kc, gc=:gc, avatar=:avatar, banner=:banner, car=:car WHERE id=$_GET[id]";
+    $query = "UPDATE USER SET id=:id, username=:username, email=:email, keyboard=:keyboard, role=:role, kc=:kc, gc=:gc WHERE id=$_GET[id]";
     $prepared_query = $db->prepare($query);
     $prepared_query->execute(["id" => $_POST['id'],
                             "username" => $_POST['username'],
@@ -50,10 +50,7 @@
                             "keyboard" => $_POST['keyboard'],
                             "role" => $_POST['role'],
                             "kc" => $_POST['kc'],
-                            "gc" => $_POST['gc'],
-                            "avatar" => $_POST['avatar'],
-                            "banner" => $_POST['banner'],
-                            "car" => $_POST['car']]);
+                            "gc" => $_POST['gc']
     $result = $prepared_query->fetchAll();
 
     header("location:../../../settings.php");
