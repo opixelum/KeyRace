@@ -106,9 +106,12 @@ const questSuccess = () => {
   statResquest.open("POST", "src/scripts/php/save_stats.php")
   statResquest.onreadystatechange = () => {
     if (statResquest.readyState === 4 && statResquest.status === 200) {
-      
+      const response = xhr.responseText
+      if (response != 1) alert("error")
     }
   }
+  request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+  statResquest.send(`wpm=${roundedWpm}&accuracy=${accuracy}`)
 }
 
 const questFailed = () => setQuestStatus("❌ Quest failed... ❌")
