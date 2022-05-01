@@ -164,7 +164,7 @@ const keyListener = document.addEventListener("keydown", ({ key }) => {
       statRequest.open("POST", "src/scripts/php/save_stats.php")
       statRequest.onreadystatechange = () => {
         if (statRequest.readyState === 4 && statRequest.status === 200) {
-          const response = xhr.responseText
+          const response = statRequest.responseText
           if (response != 1) alert("error")
         }
       }
