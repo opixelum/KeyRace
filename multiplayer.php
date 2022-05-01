@@ -121,10 +121,10 @@
             </div>
 
             <!-- Separator -->
-            <div class="separator border-start h-100"></div>
+            <div class="separator border-start h-100 p-0"></div>
 
             <!-- Chat -->
-            <div class="col-3 d-flex flex-wrap h-100 justify-content-center">
+            <div class="col-3 d-flex flex-wrap h-100 justify-content-center p-0">
               <h4>Chat</h4>
               <div class="input-field h-75 w-100 rounded"></div>
               <input id="user-message" class="input-field w-75 ps-2" type="text" placeholder="Your message here">
