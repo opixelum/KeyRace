@@ -6,7 +6,7 @@ websocket = new WebSocket(wsUri)
 // Connection is open
 websocket.onopen = () => {
     // Notify user
-    msgBox.innerHTML += `<div class="system_msg" style="color:#bbbbbb">Welcome to my "Demo WebSocket Chat box"!</div>`
+    msgBox.innerHTML += `<div class="system_msg text-white-50">Chat open</div>`
 }
 // Message received from server
 websocket.onmessage = ev => {
@@ -21,24 +21,22 @@ websocket.onmessage = ev => {
 
     switch (res_type) {
         case 'usermsg':
-            msgBox.innerHTML += `<div><span class="user_name">${user_name}</span> : <span class="user_message">${user_message}</span></div>`
+            msgBox.innerHTML += `<div><ins>${user_name}:</ins> <span class="user_message">${user_message}</span></div>`
             break;
 
         case 'system':
-            msgBox.innerHTML += `<div style="color:#bbbbbb">${user_message}</div>`
+            msgBox.innerHTML += `<div class="text-white-50">${user_message}</div>`
             break;
     }
     // Scroll message
     if (msgBox[0]) msgBox[0].scrollTop = msgBox[0].scrollHeight
 }
 
-websocket.onerror = ev => { msgBox.innerHTML += `<div class="system_error">Error Occurred - ${ev.data}</div>` }
-websocket.onclose = () => { msgBox.innerHTML += `<div class="system_msg">Connection Closed</div>` }
+websocket.onerror = ev => { msgBox.innerHTML += `<div class="system_error text-white-50">Error Occurred - ${ev.data}</div>` }
+websocket.onclose = () => { msgBox.innerHTML += `<div class="system_msg text-white-50">Connection Closed</div>` }
 
 // Message send button
-document.querySelector('#send-message').click(() => {
-    send_message()
-})
+document.querySelector('#send-message').addEventListener("click", () => send_message())
 
 // User hits enter key 
 document.querySelector("#message").addEventListener("keydown", event => {
@@ -49,24 +47,14 @@ document.querySelector("#message").addEventListener("keydown", event => {
 const send_message = () => {
     // User message text
     const message_input = document.querySelector(`#message`)
-    // User name
-    const name_input = document.querySelector(`#name`)
     
-    // If no name provided, alert
-    if(message_input.value == '') {
-        alert(`Enter your Name please!`)
-        return
-    }
-    // If no message provided, alert
-    if(message_input.value == "") {
-        alert(`Enter Some message Please!`)
-        return
-    }
+    // If no message provided, send nothing
+    if(message_input.value == "") return
 
     // Prepare JSON data
     const msg = {
         message: message_input.value,
-        name: name_input.value
+        name: "Username"
     }
     // Convert and send data to server
     websocket.send(JSON.stringify(msg))

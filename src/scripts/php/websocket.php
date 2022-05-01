@@ -1,5 +1,4 @@
 <?php
-
 $host = 'localhost';
 $port = '3307';
 $null = NULL;
