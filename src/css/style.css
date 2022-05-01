@@ -315,6 +315,20 @@ tr, td, th{
 }
 
 
+/*--------------------------------- C H A T ---------------------------------*/
+
+#user-message {
+    height: 50px;
+    border-radius: 10px 0 0 10px;
+    border: none;
+    border-right: 1px solid #000;
+}
+
+.send-btn {
+    border-radius: 0 10px 10px 0;
+}
+
+
 /*------------------------ M I S C E L L A N E O U S ------------------------*/
 
 .separator {

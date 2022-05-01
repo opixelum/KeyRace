@@ -40,33 +40,63 @@
               <div id="race" class="border-start border-end w-75">
                 <hr>
                 <div class="w-100">
-                    <img
+                  <img
                     alt="User car"
                     id="user-car"
                     src="src/images/cars/f1.png"
                     width="100px"
                     style="transform:translate(-99px)"
-                    >
+                  >
                 </div>
                 <hr>
                 <div class="w-100">
-                    <img
+                  <img
                     alt="User car"
                     id="user-car"
                     src="src/images/cars/f1.png"
                     width="100px"
                     style="transform:translate(-99px)"
-                    >
+                  >
                 </div>
                 <hr>
                 <div class="w-100">
-                    <img
+                  <img
                     alt="User car"
                     id="user-car"
                     src="src/images/cars/f1.png"
                     width="100px"
                     style="transform:translate(-99px)"
-                    >
+                  >
+                </div>
+                <hr>
+                <div class="w-100">
+                  <img
+                    alt="User car"
+                    id="user-car"
+                    src="src/images/cars/f1.png"
+                    width="100px"
+                    style="transform:translate(-99px)"
+                  >
+                </div>
+                <hr>
+                <div class="w-100">
+                  <img
+                    alt="User car"
+                    id="user-car"
+                    src="src/images/cars/f1.png"
+                    width="100px"
+                    style="transform:translate(-99px)"
+                  >
+                </div>
+                <hr>
+                <div class="w-100">
+                  <img
+                    alt="User car"
+                    id="user-car"
+                    src="src/images/cars/f1.png"
+                    width="100px"
+                    style="transform:translate(-99px)"
+                  >
                 </div>
                 <hr>
               </div>
@@ -94,8 +124,11 @@
             <div class="separator border-start h-100"></div>
 
             <!-- Chat -->
-            <div class="col-3 d-flex justify-content-center">
+            <div class="col-3 d-flex flex-wrap h-100 justify-content-center">
               <h4>Chat</h4>
+              <div class="input-field h-75 w-100 rounded"></div>
+              <input id="user-message" class="input-field w-75 ps-2" type="text" placeholder="Your message here">
+              <button class="btn send-btn w-25">Send</button>
             </div>
         </main>
       </div>
