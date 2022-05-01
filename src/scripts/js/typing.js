@@ -260,7 +260,7 @@ const keyListener = document.addEventListener("keydown", ({ key }) => {
         }
       }
       statRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
-      statRequest.send(`wpm=${roundedWpm}&accuracy=${accuracy}`)
+      statRequest.send(`wpm=${roundedWpm}&accuracy=${accuracy}&time=${seconds}`)
     }
 
     // Check if objective is completed
