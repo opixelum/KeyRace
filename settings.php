@@ -15,14 +15,16 @@
           <?php include("src/includes/navbar.php");?>
         </header>
 
-        <main class="col ms-2 rounded h-100 rgb-shadow">
+        <main class="col ms-2 rounded d-flex flex-wrap h-100 rgb-shadow">
           <form class="form-check form-switch">
             <input class="form-check-input" type="checkbox" role="switch"
             id="theme-switch">
             <label class="form-check-label" for="theme-switch">
               Dark / Light mode
             </label>
-            <?php
+          </form>
+
+          <?php
 
               if (isset($_SESSION["email"]))
               {
@@ -41,7 +43,6 @@
                   }
               }
             ?>
-          </form>
         </main>
       </div>
     </div>
