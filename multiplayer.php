@@ -129,9 +129,9 @@
             <!-- Chat -->
             <div class="col-3 d-flex flex-wrap h-100 justify-content-center p-0">
               <h4>Chat</h4>
-              <div class="input-field h-75 w-100 rounded"></div>
-              <input id="user-message" class="input-field w-75 ps-2" type="text" placeholder="Your message here">
-              <button class="btn send-btn w-25">Send</button>
+              <div id="message-box" class="input-field h-75 w-100 rounded"></div>
+              <input id="message" class="input-field w-75 ps-2" maxlength="140" type="text" placeholder="Your message here">
+              <button id="send-message" class="btn send-btn w-25">Send</button>
             </div>
         </main>
       </div>
