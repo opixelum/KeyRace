@@ -4,9 +4,9 @@ let visor = new Image()
 
 // TO DO: Get current user's assets from database 
 // Set default values
-helmet.src = "src/images/avatar/helmet/default/helmet_default_helmet_white.png"
-vest.src = "src/images/avatar/vest/vintage/ix/body_vintage_ix_marron.png"
-visor.src = "src/images/avatar/visor/default/helmet_default_visor_white.png"
+helmet.src = "src/images/avatar/helmet/default/white.png"
+vest.src = "src/images/avatar/vest/vintage/ix/marron.png"
+visor.src = "src/images/avatar/visor/default/white.png"
 let background = "white"
 
 const setHelmet = () => {
