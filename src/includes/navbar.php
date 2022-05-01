@@ -31,7 +31,7 @@
               <div class='d-flex flex-column h-50 justify-content-between'>
                 <a href='profile.php?id=$_SESSION[id]' $class>Profile</a>
                 <a href='campaign.php' $class>Campaign</a>
-                <a href='#' $class>Multiplayer</a>
+                <a href='multiplayer.php' $class>Multiplayer</a>
                 <a href='training.php' $class>Training</a>
                 <a href='leaderboard.php' $class>Leaderboard</a>
                 <a href='customization.php' $class>Customization</a>
