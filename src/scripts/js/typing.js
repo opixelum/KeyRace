@@ -100,6 +100,15 @@ const questSuccess = () => {
   setQuestStatus("🎉 Quest completed! 🎉")
 
   nextBtn.classList.remove("disabled")
+
+  // Save user stats into database
+  const statResquest = new XMLHttpRequest()
+  statResquest.open("POST", "src/scripts/php/save_stats.php")
+  statResquest.onreadystatechange = () => {
+    if (statResquest.readyState === 4 && statResquest.status === 200) {
+      
+    }
+  }
 }
 
 const questFailed = () => setQuestStatus("❌ Quest failed... ❌")
