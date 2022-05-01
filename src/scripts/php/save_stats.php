@@ -21,5 +21,14 @@
         $q = "SELECT user_id, average_wpm, highest_wpm, races_ran, races_won, time_played FROM STATS WHERE user_id = $id";
         $req = $db->query($q);
         $results = $req->fetchAll(PDO::FETCH_ASSOC);
+
+        // Check for highest wpm
+        if ($wpm > $results[0]["highest_wpm"])
+        {
+            $q = "UPDATE STATS SET highest_wpm = $wpm WHERE user_id = $id";
+        }
+
+        // Add game time
+        $q = "UPDATE STATS SET time_played = time_played + $time WHERE user_id = $id";
     }
 ?>
