@@ -249,52 +249,74 @@ const keyListener = document.addEventListener("keydown", ({ key }) => {
     // Prevent next lines to be executed when game is done
     document.removeEventListener("keydown", keyListener)
 
+    // Save stats to database
+    function saveStats() {
+      const statRequest = new XMLHttpRequest()
+      statRequest.open("POST", "src/scripts/php/save_stats.php")
+      statRequest.onreadystatechange = () => {
+        if (statRequest.readyState === 4 && statRequest.status === 200) {
+          const response = xhr.responseText
+          if (response != 1) alert("error")
+        }
+      }
+      statRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+      statRequest.send(`wpm=${roundedWpm}&accuracy=${accuracy}&time=${seconds}`)
+    }
+
     // Check if objective is completed
     switch (quest) {
       case "1":
         // 30 wpm or 80 seconds
+        saveStats()
         if (seconds < 80) questSuccess()
         else questFailed()
         break
 
       case "2":
         // 40 wpm or 60 seconds
+        saveStats()
         if (wpm > 40) questSuccess()
         else questFailed()
         break
 
       case "3":
         // 50 wpm or 50 seconds
+        saveStats()
         if (seconds < 50) questSuccess()
         else questFailed()
         break
 
       case "4":
         // 55 wpm or 45 seconds
+        saveStats()
         if (wpm > 55) questSuccess()
         else questFailed()
         break
 
       case "5":
         // 60 wpm or 40 seconds
+        saveStats()
         if (seconds < 40) questSuccess()
         else questFailed()
         break
 
       case "6":
         // 70 wpm or 35 seconds
+        saveStats()
         if (wpm > 70) questSuccess()
         else questFailed()
         break
 
       case "7":
         // 80 wpm or 30 seconds
+        saveStats()
         if (seconds < 30) questSuccess()
         else questFailed()
         break
 
       case "8":
         // 100 wpm or 25 seconds
+        saveStats()
         if (wpm > 100) questSuccess()
         else questFailed()
         break
