@@ -3,7 +3,7 @@ $host = 'localhost';
 $port = '3307';
 $null = NULL;
 
-// Create TCP/IP sream socket
+// Create TCP/IP stream socket
 $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
 // Reuseable port
 socket_set_option($socket, SOL_SOCKET, SO_REUSEADDR, 1);

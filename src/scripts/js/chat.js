@@ -1,3 +1,6 @@
+// Initialize username variable for future use
+let username
+
 // Create a new WebSocket object
 const msgBox = document.querySelector('#message-box')
 const wsUri = "ws://localhost:3307/src/script/php/websocket.php"
@@ -5,6 +8,9 @@ websocket = new WebSocket(wsUri)
 
 // Connection is open
 websocket.onopen = () => {
+    // Await getUsername() promise to get username
+    getUsername().then(res => username = res)
+
     // Notify user
     msgBox.innerHTML += `<div class="system_msg text-white-50">Chat open</div>`
 }
@@ -54,9 +60,26 @@ const send_message = () => {
     // Prepare JSON data
     const msg = {
         message: message_input.value,
-        name: "Username"
+        name: username
     }
     // Convert and send data to server
     websocket.send(JSON.stringify(msg))
     message_input.value = '' // Reset message input
+}
+
+/**
+ * Get username with AJAX
+ * @returns {Promise} Promise with username
+ */
+const getUsername = () => {
+    const username = new Promise((resolve) => {
+        const xhr = new XMLHttpRequest()
+        xhr.open("GET", "src/scripts/php/get_username.php", true)
+        xhr.send()
+        xhr.onreadystatechange = () => {
+            // If request is successful, resolve promise with username
+            if (xhr.readyState === 4 && xhr.status === 200) resolve(xhr.responseText)
+        }
+    })
+    return username
 }
