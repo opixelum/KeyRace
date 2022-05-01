@@ -157,6 +157,22 @@ const keyListener = document.addEventListener("keydown", ({ key }) => {
 
     // Prevent next lines to be executed when game is done
     document.removeEventListener("keydown", keyListener)
+
+    // Save stats to database
+    function saveStats() {
+      const statRequest = new XMLHttpRequest()
+      statRequest.open("POST", "src/scripts/php/save_stats.php")
+      statRequest.onreadystatechange = () => {
+        if (statRequest.readyState === 4 && statRequest.status === 200) {
+          const response = xhr.responseText
+          if (response != 1) alert("error")
+        }
+      }
+      statRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+      statRequest.send(`wpm=${roundedWpm}&accuracy=${accuracy}&time=${seconds}`)
+    }
+
+    saveStats()
   }
 
   // If right key was typed, move the cursor to the next character
