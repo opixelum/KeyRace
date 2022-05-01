@@ -33,9 +33,11 @@
           <?php include("src/includes/navbar.php"); ?>
         </header>
 
-        <main class="col d-flex flex-column justify-content-between align-items-center flex-wrap h-100 ms-2 rounded rgb-shadow p-5">
-            <h1 class="text-center w-100 mb-5">Training</h1>    
-            <div id="race" class="border-start border-end w-75">
+        <main class="col container h-100 ms-2 rounded rgb-shadow p-5">
+          <div class="row hstack flex-column flex-wrap h-100">
+            <!-- Race -->
+            <div class="col-8 d-flex justify-content-center flex-wrap h-100">
+              <div id="race" class="border-start border-end w-75">
                 <hr>
                 <div class="w-100">
                     <img
@@ -47,25 +49,54 @@
                     >
                 </div>
                 <hr>
+                <div class="w-100">
+                    <img
+                    alt="User car"
+                    id="user-car"
+                    src="src/images/cars/f1.png"
+                    width="100px"
+                    style="transform:translate(-99px)"
+                    >
+                </div>
+                <hr>
+                <div class="w-100">
+                    <img
+                    alt="User car"
+                    id="user-car"
+                    src="src/images/cars/f1.png"
+                    width="100px"
+                    style="transform:translate(-99px)"
+                    >
+                </div>
+                <hr>
+              </div>
+
+              <div class="container w-100">
+                  <div class="row d-flex justify-content-between w-100">
+                      <div class="col-3 ps-5">
+                          <p class="ms-5" id="time">Time: --- s</p>
+                      </div>
+                      <div class="col-3 ps-5">
+                          <p class="ms-5" id="wpm">WPM: ---</p>
+                      </div>
+                      <div class="col-3 ps-5">
+                          <p class="ms-5" id="accuracy">Accuracy: --- %</p>
+                      </div>
+                      <div class="col-3 ps-5">
+                          <p class="ms-5" id="errors">Errors: ---</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="fs-3 p-3 input-field rounded text-break" id="typing-field"></div>
             </div>
 
-            <div class="container w-100">
-                <div class="row d-flex justify-content-between w-100">
-                    <div class="col-3 ps-5">
-                        <p class="ms-5" id="time">Time: --- s</p>
-                    </div>
-                    <div class="col-3 ps-5">
-                        <p class="ms-5" id="wpm">WPM: ---</p>
-                    </div>
-                    <div class="col-3 ps-5">
-                        <p class="ms-5" id="accuracy">Accuracy: --- %</p>
-                    </div>
-                    <div class="col-3 ps-5">
-                        <p class="ms-5" id="errors">Errors: ---</p>
-                    </div>
-                </div>
+            <!-- Separator -->
+            <div class="separator border-start h-100"></div>
+
+            <!-- Chat -->
+            <div class="col-3 d-flex justify-content-center">
+              <h4>Chat</h4>
             </div>
-            <div class="fs-3 p-3 input-field rounded text-break" id="typing-field"></div>
         </main>
       </div>
     </div>
