@@ -42,4 +42,7 @@
         $req = $db->query($q);
         $results = $req->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    // Respond to request with success
+    echo 1;
 ?>
