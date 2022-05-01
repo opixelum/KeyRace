@@ -137,7 +137,8 @@
       </div>
     </div>
 
-    <script src="./src/scripts/js/main.js"></script>
-    <script src="./src/scripts/js/training.js"></script>
+    <script src="src/scripts/js/main.js"></script>
+    <script src="src/scripts/js/training.js"></script>
+    <script src="src/scripts/js/chat.js"></script>
   </body>
 </html>
