@@ -18,12 +18,10 @@ websocket.onmessage = ev => {
     const user_message = response.message
     // User name
     const user_name = response.name
-    // Color
-    const user_color = response.color
 
     switch (res_type) {
         case 'usermsg':
-            msgBox.innerHTML += `<div><span class="user_name" style="color:${user_color}">${user_name}</span> : <span class="user_message">${user_message}</span></div>`
+            msgBox.innerHTML += `<div><span class="user_name">${user_name}</span> : <span class="user_message">${user_message}</span></div>`
             break;
 
         case 'system':
@@ -31,7 +29,7 @@ websocket.onmessage = ev => {
             break;
     }
     // Scroll message
-    msgBox[0].scrollTop = msgBox[0].scrollHeight
+    if (msgBox[0]) msgBox[0].scrollTop = msgBox[0].scrollHeight
 }
 
 websocket.onerror = ev => { msgBox.innerHTML += `<div class="system_error">Error Occurred - ${ev.data}</div>` }
@@ -68,8 +66,7 @@ const send_message = () => {
     // Prepare JSON data
     const msg = {
         message: message_input.value,
-        name: name_input.value,
-        color : `<?php echo $colors[$color_pick]; ?>`
+        name: name_input.value
     }
     // Convert and send data to server
     websocket.send(JSON.stringify(msg))

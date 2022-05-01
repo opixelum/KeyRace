@@ -317,7 +317,7 @@ tr, td, th{
 
 /*--------------------------------- C H A T ---------------------------------*/
 
-#user-message {
+#message {
     height: 50px;
     border-radius: 10px 0 0 10px;
     border: none;
