@@ -8,6 +8,13 @@
   }
 ?>
 
+<?php
+
+include("src\scripts\php\db_connect.php");
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <?php
@@ -47,6 +54,8 @@
               type="password"
             ><br><br>
 
+            <span class="psw"><a href="forgotten_password.php">Mot de passe oublié ?</a></span>
+
             <input
             id="stay-connected-chckbx"
             name="stay-connected"
@@ -73,3 +82,9 @@
     <script src="./src/scripts/js/main.js"></script>
   </body>
 </html>
+
+
+
+
+
+
