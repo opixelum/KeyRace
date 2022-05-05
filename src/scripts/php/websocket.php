@@ -38,13 +38,6 @@ while (true)
 		// Perform websocket handshake
 		perform_handshaking($header, $socket_new, $host, $port);
 
-		// Get ip address of connected socket
-		socket_getpeername($socket_new, $ip);
-		// Prepare json data
-		$response = mask(json_encode(array('type' => 'system', 'message' => $ip . ' connected')));
-		// Notify all users about new connection
-		send_message($response); 
-
 		// Make room for new socket
 		$found_socket = array_search($socket, $changed);
 		unset($changed[$found_socket]);

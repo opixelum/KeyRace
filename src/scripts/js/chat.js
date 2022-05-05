@@ -27,7 +27,7 @@ websocket.onmessage = ev => {
 
     switch (res_type) {
         case 'usermsg':
-            msgBox.innerHTML += `<div><ins>${user_name}:</ins> <span class="user_message">${user_message}</span></div>`
+            msgBox.innerHTML += `<div><ins>${user_name}:</ins> <span class="user_message text-break">${user_message}</span></div>`
             break;
 
         case 'system':
