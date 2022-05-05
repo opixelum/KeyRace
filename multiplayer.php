@@ -21,8 +21,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <?php
-      $page = "training";
-      $title = "Training | KeyRace";
+      $page = "multiplayer";
+      $title = "Multiplayer | KeyRace";
       include("src/includes/head.php");
   ?>
 
