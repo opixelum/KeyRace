@@ -49,7 +49,9 @@ document.querySelector("#message").addEventListener("keydown", event => {
     if (event.which == 13) send_message()
 })
 
-// Send message
+/**
+ *  Send message to server 
+ */
 const send_message = () => {
     // User message text
     const message_input = document.querySelector(`#message`)
@@ -69,7 +71,7 @@ const send_message = () => {
 
 /**
  * Get username with AJAX
- * @returns {Promise} Promise with username
+ * @returns {Promise<string>} Promise with username
  */
 const getUsername = () => {
     const username = new Promise((resolve) => {
@@ -78,7 +80,8 @@ const getUsername = () => {
         xhr.send()
         xhr.onreadystatechange = () => {
             // If request is successful, resolve promise with username
-            if (xhr.readyState === 4 && xhr.status === 200) resolve(xhr.responseText)
+            if (xhr.readyState === 4 && xhr.status === 200)
+                resolve(xhr.responseText)
         }
     })
     return username
