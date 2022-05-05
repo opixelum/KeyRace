@@ -14,7 +14,7 @@ socket_bind($socket, 0, $port);
 // Listen to port
 socket_listen($socket);
 
-// Create & add listning socket to the list
+// Create & add listening socket to the list
 $clients = array($socket);
 
 // Start endless loop, so that our script doesn't stop
@@ -25,8 +25,8 @@ while (true)
 	// Returns the socket resources in $changed array
 	socket_select($changed, $null, $null, 0, 10);
 
-	// Check for new socket
-	if (in_array($socket, $changed))
+	// Check for new socket, block if there's already 6 sockets connected
+	if (in_array($socket, $changed) && count($clients) < 6)
 	{
 		// Accept new socket
 		$socket_new = socket_accept($socket);
