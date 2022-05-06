@@ -33,6 +33,9 @@ websocket.onmessage = ev => {
         case 'system':
             msgBox.innerHTML += `<div class="text-white-50">${user_message}</div>`
             break;
+        
+        case 'newuser':
+            
     }
     // Scroll message
     if (msgBox[0]) msgBox[0].scrollTop = msgBox[0].scrollHeight

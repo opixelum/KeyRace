@@ -37,68 +37,84 @@
           <div class="row hstack flex-column flex-wrap h-100">
             <!-- Race -->
             <div class="col-8 d-flex justify-content-center flex-wrap h-100">
-              <div id="race" class="border-start border-end w-75">
-                <hr>
-                <div class="w-100">
-                  <img
-                    alt="User car"
-                    id="user-car"
-                    src="src/images/cars/f1.png"
-                    width="100px"
-                    style="transform:translate(-99px)"
-                  >
+              <div id="race" class="container ms-5 w-100">
+                <div class="row">
+                  <div class="col-10 border-start border-top border-end">
+                    <img
+                      alt="User car"
+                      id="user-car"
+                      src="src/images/cars/f1.png"
+                      width="100px"
+                      style="transform:translate(-99px)"
+                    >
+                  </div>
+                  <div class="col-2 my-auto">Username</div>
                 </div>
-                <hr>
-                <div class="w-100">
-                  <img
-                    alt="User car"
-                    id="user-car"
-                    src="src/images/cars/f1.png"
-                    width="100px"
-                    style="transform:translate(-99px)"
-                  >
+
+                <div class="row">
+                  <div class="col-10 border-start border-top border-end">
+                    <img
+                      alt="User car"
+                      id="user-car"
+                      src="src/images/cars/f1.png"
+                      width="100px"
+                      style="transform:translate(-99px)"
+                    >
+                  </div>
+                  <div class="col-2 my-auto">Username</div>
                 </div>
-                <hr>
-                <div class="w-100">
-                  <img
-                    alt="User car"
-                    id="user-car"
-                    src="src/images/cars/f1.png"
-                    width="100px"
-                    style="transform:translate(-99px)"
-                  >
+
+                <div class="row">
+                  <div class="col-10 border-start border-top border-end">
+                    <img
+                      alt="User car"
+                      id="user-car"
+                      src="src/images/cars/f1.png"
+                      width="100px"
+                      style="transform:translate(-99px)"
+                    >
+                  </div>
+                  <div class="col-2 my-auto">Username</div>
                 </div>
-                <hr>
-                <div class="w-100">
-                  <img
-                    alt="User car"
-                    id="user-car"
-                    src="src/images/cars/f1.png"
-                    width="100px"
-                    style="transform:translate(-99px)"
-                  >
+
+                <div class="row">
+                  <div class="col-10 border-start border-top border-end">
+                    <img
+                      alt="User car"
+                      id="user-car"
+                      src="src/images/cars/f1.png"
+                      width="100px"
+                      style="transform:translate(-99px)"
+                    >
+                  </div>
+                  <div class="col-2 my-auto">Username</div>
                 </div>
-                <hr>
-                <div class="w-100">
-                  <img
-                    alt="User car"
-                    id="user-car"
-                    src="src/images/cars/f1.png"
-                    width="100px"
-                    style="transform:translate(-99px)"
-                  >
+
+                <div class="row">
+                  <div class="col-10 border-start border-top border-end">
+                    <img
+                      alt="User car"
+                      id="user-car"
+                      src="src/images/cars/f1.png"
+                      width="100px"
+                      style="transform:translate(-99px)"
+                    >
+                  </div>
+                  <div class="col-2 my-auto">Username</div>
                 </div>
-                <hr>
-                <div class="w-100">
-                  <img
-                    alt="User car"
-                    id="user-car"
-                    src="src/images/cars/f1.png"
-                    width="100px"
-                    style="transform:translate(-99px)"
-                  >
+
+                <div class="row">
+                  <div class="col-10 border">
+                    <img
+                      alt="User car"
+                      id="user-car"
+                      src="src/images/cars/f1.png"
+                      width="100px"
+                      style="transform:translate(-99px)"
+                    >
+                  </div>
+                  <div class="col-2 my-auto">Username</div>
                 </div>
-                <hr>
               </div>
 
               <!-- Stats -->
