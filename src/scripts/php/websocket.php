@@ -41,13 +41,6 @@ while (true)
 		// Perform websocket handshake
 		perform_handshaking($header, $socket_new, $host, $port);
 
-		// Get ip address of connected socket
-		socket_getpeername($socket_new, $ip);
-		// Prepare json data
-		$response = mask(json_encode(array('type' => 'system', 'message' => $ip . ' connected')));
-		// Notify all users about new connection
-		send_message($response); 
-
 		// Make room for new socket
 		$found_socket = array_search($socket, $changed);
 		unset($changed[$found_socket]);
@@ -82,8 +75,14 @@ while (true)
 						'track' => $track,
 						'socket' => $changed_socket
 					);
-					var_dump($players);
-					var_dump($clients);
+
+					// Prepare data & send it
+					$data = mask(json_encode(array
+					(
+						'type' => 'joined',
+						'username' => $username
+					)));
+					send_message($data);
 
 					break;
 
@@ -94,15 +93,13 @@ while (true)
 					// Message text
 					$message = $tst_msg['message'];
 
-					// Prepare data to be sent to client
+					// Prepare data & send it 
 					$data = mask(json_encode(array
 					(
 						'type' => 'chat',
 						'username' => $username,
 						'message' => $message
 					)));
-
-					// Send data
 					send_message($data);
 
 					break;

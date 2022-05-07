@@ -17,21 +17,7 @@ websocket.onopen = () => {
     // Await getUsername() promise to get username
     getUsername().then(res => {
         username = res
-
-        // Diplay username on corresponding track
-        for (let div of usernameDivs) {
-            if (div.innerText === "No player") {
-                div.innerText = username
-
-                // Track is the index of the current div in the usernameDivs node list
-                track = Array.prototype.indexOf.call(usernameDivs, div)
-
-                // Send current user's name & track number
-                // to all players through websocket
-                send("joined")
-                return
-            }
-        }
+        send("joined")
     })
 }
 
@@ -42,24 +28,32 @@ websocket.onmessage = ev => {
     // Message type
     const type = response.type
     // Message text
-    const chatMessage = response.message
+    const message = response.message
     // User name
-    const chatUsername = response.username
+    const username = response.username
 
     switch (type) {
         // When someone sends a message in the chat
         case 'chat':
-            msgBox.innerHTML += `<div><ins>${chatUsername}:</ins> <span class="chatMessage text-break">${chatMessage}</span></div>`
+            msgBox.innerHTML += `<div><ins>${username}:</ins> <span class="message text-break">${message}</span></div>`
             break;
 
         // If a user has joined the game
         case 'joined':
-            msgBox.innerHTML += `<div class="text-white-50">${chatMessage}</div>`
+            msgBox.innerHTML += `<div class="text-white-50">${username} has joined</div>`
+
+            // Diplay username on corresponding track
+            for (let div of usernameDivs) {
+                if (div.innerText === "No player") {
+                    div.innerText = username
+                    return
+                }
+            }
             break;
 
         // If a user has left the game
         case 'left':
-            msgBox.innerHTML += `<div class="text-white-50">${chatMessage}</div>`
+            msgBox.innerHTML += `<div class="text-white-50">${message}</div>`
             break;
     }
     // Scroll message
