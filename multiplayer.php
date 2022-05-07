@@ -48,7 +48,7 @@
                       style="transform:translate(-99px)"
                     >
                   </div>
-                  <div class="col-2 my-auto">Username</div>
+                  <div id="username" class="col-2 my-auto">No player</div>
                 </div>
 
                 <div class="row">
@@ -61,7 +61,7 @@
                       style="transform:translate(-99px)"
                     >
                   </div>
-                  <div class="col-2 my-auto">Username</div>
+                  <div id="username" class="col-2 my-auto">No player</div>
                 </div>
 
                 <div class="row">
@@ -74,7 +74,7 @@
                       style="transform:translate(-99px)"
                     >
                   </div>
-                  <div class="col-2 my-auto">Username</div>
+                  <div id="username" class="col-2 my-auto">No player</div>
                 </div>
 
                 <div class="row">
@@ -87,7 +87,7 @@
                       style="transform:translate(-99px)"
                     >
                   </div>
-                  <div class="col-2 my-auto">Username</div>
+                  <div id="username" class="col-2 my-auto">No player</div>
                 </div>
 
                 <div class="row">
@@ -100,11 +100,11 @@
                       style="transform:translate(-99px)"
                     >
                   </div>
-                  <div class="col-2 my-auto">Username</div>
+                  <div id="username" class="col-2 my-auto">No player</div>
                 </div>
 
                 <div class="row">
-                  <div class="col-10 border">
+                  <div class="col-10 border-start border-top border-end">
                     <img
                       alt="User car"
                       id="user-car"
@@ -113,7 +113,7 @@
                       style="transform:translate(-99px)"
                     >
                   </div>
-                  <div class="col-2 my-auto">Username</div>
+                  <div id="username" class="col-2 my-auto">No player</div>
                 </div>
               </div>
 
