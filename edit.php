@@ -10,7 +10,7 @@
   <body class="dark-theme">
     <div class="container-fluid vh-100 g-0">
       <div class="row h-100 p-3 g-0">
-        <header class="col-2 p-0 me-2 rounded rgb-shadow">
+        <header class="col-2 p-0 me-2 h-100 rounded rgb-shadow">
           <?php include("./src/includes/navbar.php"); ?>
         </header>
 
@@ -25,6 +25,7 @@
               $prepared_query->execute(["email" => $_SESSION["email"]]);
           
               $result = $prepared_query->fetchAll();
+
 
               if ($result[0]['role'] != 3)
               {
@@ -41,13 +42,13 @@
 
         <main class="col ms-2 rounded rgb-shadow">
           <div class="container">
-            <?php 
+            <?php
               include('src/scripts/php/db_connect.php');
-              $q = "SELECT id, username, email, password, keyboard, role, kc, gc, avatar, banner, car FROM USER WHERE id = $_GET[id]";
+              $q = "SELECT id, username, email, password, keyboard, role, kc, gc FROM USER WHERE id = $_GET[id]";
               $req = $db->query($q);
               $results = $req->fetchAll(PDO::FETCH_ASSOC);
             ?>
-            <form method="post" action="./src/scripts/php/update.php?id='<?php echo $results[0]['id'] ?>'">
+            <form method="post" action="src/scripts/php/update.php?id='<?php echo $results[0]['id'] ?>'">
               <table class="table table-bordered">
                 <?php
                   echo '<tr><td>id</td><td><input name="id" type="number" value="' . $results[0]['id'] . '"></td></tr>';
@@ -58,9 +59,6 @@
                   echo '<tr><td>role</td><td><input name="role" type="number" value="' . $results[0]['role'] . '"></td></tr>';
                   echo '<tr><td>kc</td><td><input name="kc" type="number" value="' . $results[0]['kc'] . '"></td></tr>';
                   echo '<tr><td>gc</td><td><input name="gc" type="number" value="' . $results[0]['gc'] . '"></td></tr>';
-                  echo '<tr><td>avatar</td><td><input name="avatar" type="text" value="' . $results[0]['avatar'] . '"></td></tr>';
-                  echo '<tr><td>banner</td><td><input name="banner" type="text" value="' . $results[0]['banner'] . '"></td></tr>';
-                  echo '<tr><td>car</td><td><input name="car" type="text" value="' . $results[0]['car'] . '"></td></tr>';
                 ?>
               </table>
 
@@ -73,7 +71,7 @@
       </div>
     </div>
 
-    <script src="./src/scripts/js/read.js"></script>
+    <script src="./src/scripts/js/edit.js"></script>
     <script src="./src/scripts/js/main.js"></script>
   </body>
 </html>

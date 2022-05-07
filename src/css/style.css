@@ -182,6 +182,106 @@ tr, td, th{
     border-color: var(--fontColor);
 }
 
+/* Customization */
+#assets-selection img {
+    height: fit-content;
+}
+
+#assets-selection {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#assets-selection input {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+#assets-selection label {
+    cursor: pointer;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background: #888; 
+    border-radius: 10px;
+}
+
+/* Background Selection */
+#red-div {
+    background-color: #c00;
+    width: 10vh;
+    height: 10vh;
+    margin: 2vh;
+}
+
+#green-div {
+    background-color: #0c0;
+    width: 10vh;
+    height: 10vh;
+    margin: 2vh;
+}
+
+#blue-div {
+    background-color: #00c;
+    width: 10vh;
+    height: 10vh;
+    margin: 2vh;
+}
+
+#cyan-div {
+    background-color: #0cc;
+    width: 10vh;
+    height: 10vh;
+    margin: 2vh;
+}
+
+#orange-div {
+    background-color: #ff6400;
+    width: 10vh;
+    height: 10vh;
+    margin: 2vh;
+}
+
+#pink-div {
+    background-color: #ff00ff;
+    width: 10vh;
+    height: 10vh;
+    margin: 2vh;
+}
+
+#purple-div {
+    background-color: #6400ff;
+    width: 10vh;
+    height: 10vh;
+    margin: 2vh;
+}
+
+#yellow-div {
+    background-color: yellow;
+    width: 10vh;
+    height: 10vh;
+    margin: 2vh;
+}
+
+#black-div {
+    background-color: #000;
+    width: 10vh;
+    height: 10vh;
+    margin: 2vh;
+}
+
+#white-div {
+    background-color: #fff;
+    width: 10vh;
+    height: 10vh;
+    margin: 2vh;
+}
 
 /*------------------------------ P R O F I L E ------------------------------*/
 
@@ -212,4 +312,25 @@ tr, td, th{
 
 .wrong {
     color: red;
+}
+
+
+/*--------------------------------- C H A T ---------------------------------*/
+
+#message {
+    height: 50px;
+    border-radius: 10px 0 0 10px;
+    border: none;
+    border-right: 1px solid #000;
+}
+
+.send-btn {
+    border-radius: 0 10px 10px 0;
+}
+
+
+/*------------------------ M I S C E L L A N E O U S ------------------------*/
+
+.separator {
+    width: 1px;
 }
