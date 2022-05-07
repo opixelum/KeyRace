@@ -40,8 +40,6 @@ websocket.onmessage = ev => {
 
         // If a user has joined the game
         case 'joined':
-            chatBox.innerHTML += `<div class="text-white-50">${username} has joined</div>`
-
             // Diplay username on corresponding track
             for (let div of usernameDivs) {
                 if (div.innerText === "No player") {
@@ -53,7 +51,13 @@ websocket.onmessage = ev => {
 
         // If a user has left the game
         case 'left':
-            chatBox.innerHTML += `<div class="text-white-50">${message}</div>`
+            // Remove username from corresponding track
+            for (let div of usernameDivs) {
+                if (div.innerText === username) {
+                    div.innerText = "No player"
+                    return
+                }
+            }
             break;
     }
     // Scroll message

@@ -119,6 +119,7 @@ while (true)
 			foreach ($players as $key => $player)
 			{
 				if ($player['socket'] === $changed_socket)
+					$username = $player['username'];
 					unset($players[$key]);
 			}
 
@@ -127,7 +128,11 @@ while (true)
 
 			// Notify all users about disconnected connection
 			socket_getpeername($changed_socket, $ip);
-			$response = mask(json_encode(array('type' => 'left', 'message' => $ip . ' disconnected')));
+			$response = mask(json_encode(array
+			(
+				'type' => 'left',
+				'username' => $username
+			)));
 			send_message($response);
 		}
 	}
