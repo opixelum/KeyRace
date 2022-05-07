@@ -15,7 +15,7 @@
           <?php include("src/includes/navbar.php");?>
         </header>
 
-        <main class="col ms-2 rounded rgb-shadow d-flex justify-content-center align-items-center">
+        <main class="col d-flex flex-column justify-content-between align-items-center flex-wrap h-100 ms-2 rounded rgb-shadow p-5">
 
           <div class="row row-cols-1 w-100 d-flex">
 
