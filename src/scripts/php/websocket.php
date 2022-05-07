@@ -76,13 +76,25 @@ while (true)
 						'socket' => $changed_socket
 					);
 
+					// Create array of all usernames
+					$usernames = array();
+					foreach ($players as $player)
+					{
+						if (!in_array($player['username'], $usernames))
+							$usernames[] = $player['username'];
+					}
+
 					// Prepare data & send it
 					$data = mask(json_encode(array
 					(
 						'type' => 'joined',
-						'username' => $username
+						'username' => $username,
+						'usernames' => $usernames
 					)));
 					send_message($data);
+
+					// Reset usernames array
+					$usernames = array();
 
 					break;
 

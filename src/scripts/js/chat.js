@@ -1,5 +1,6 @@
 let username // Current user's name
-let track // Current user's car track
+let track    // Current user's car track
+let players = [] // Array of players
 
 // Get all div for username display
 const usernameDivs = document.querySelectorAll(`#username`)
@@ -29,7 +30,7 @@ websocket.onmessage = ev => {
     const type = response.type
     // Message text
     const message = response.message
-    // User name
+    // Username
     const username = response.username
 
     switch (type) {
@@ -40,11 +41,20 @@ websocket.onmessage = ev => {
 
         // If a user has joined the game
         case 'joined':
+            // Get all usernames
+            const usernames = response.usernames
+            // Add each username to players array if not already in it
+            usernames.forEach(username => {
+                if (!players.includes(username))
+                    players.push(username)
+            })
+
+
             // Diplay username on corresponding track
             for (let div of usernameDivs) {
                 if (div.innerText === "No player") {
-                    div.innerText = username
-                    return
+                    const newUsername = usernames.pop()
+                    div.innerText = newUsername ? newUsername : "No player"
                 }
             }
             break;
