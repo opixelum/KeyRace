@@ -5,14 +5,14 @@ let track // Current user's car track
 const usernameDivs = document.querySelectorAll(`#username`)
 
 // Create a new WebSocket object
-const msgBox = document.querySelector('#message-box')
+const chatBox = document.querySelector('#chat-box')
 const wsUri = "ws://localhost:3307/src/script/php/websocket.php"
 websocket = new WebSocket(wsUri)
 
 // Connection is open
 websocket.onopen = () => {
     // Notify user
-    msgBox.innerHTML += `<div class="system_msg text-white-50">Chat open</div>`
+    chatBox.innerHTML += `<div class="system_msg text-white-50">Chat open</div>`
 
     // Await getUsername() promise to get username
     getUsername().then(res => {
@@ -35,12 +35,12 @@ websocket.onmessage = ev => {
     switch (type) {
         // When someone sends a message in the chat
         case 'chat':
-            msgBox.innerHTML += `<div><ins>${username}:</ins> <span class="message text-break">${message}</span></div>`
+            chatBox.innerHTML += `<div><ins>${username}:</ins> <span class="message text-break">${message}</span></div>`
             break;
 
         // If a user has joined the game
         case 'joined':
-            msgBox.innerHTML += `<div class="text-white-50">${username} has joined</div>`
+            chatBox.innerHTML += `<div class="text-white-50">${username} has joined</div>`
 
             // Diplay username on corresponding track
             for (let div of usernameDivs) {
@@ -53,15 +53,15 @@ websocket.onmessage = ev => {
 
         // If a user has left the game
         case 'left':
-            msgBox.innerHTML += `<div class="text-white-50">${message}</div>`
+            chatBox.innerHTML += `<div class="text-white-50">${message}</div>`
             break;
     }
     // Scroll message
-    if (msgBox[0]) msgBox[0].scrollTop = msgBox[0].scrollHeight
+    if (chatBox[0]) chatBox[0].scrollTop = chatBox[0].scrollHeight
 }
 
-websocket.onerror = ev => { msgBox.innerHTML += `<div class="system_error text-white-50">Error Occurred - ${ev.data}</div>` }
-websocket.onclose = () => { msgBox.innerHTML += `<div class="system_msg text-white-50">Connection Closed</div>` }
+websocket.onerror = ev => { chatBox.innerHTML += `<div class="system_error text-white-50">Error Occurred - ${ev.data}</div>` }
+websocket.onclose = () => { chatBox.innerHTML += `<div class="system_msg text-white-50">Connection Closed</div>` }
 
 // Message send button
 document.querySelector('#send-message').addEventListener("click", () => send("chat"))
