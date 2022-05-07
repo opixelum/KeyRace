@@ -15,15 +15,121 @@
           <?php include("src/includes/navbar.php");?>
         </header>
 
-        <main class="col ms-2 rounded d-flex flex-wrap h-100 rgb-shadow">
-          <form class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch"
-            id="theme-switch">
-            <label class="form-check-label" for="theme-switch">
-              Dark / Light mode
-            </label>
-          </form>
+        <main class="col ms-2 rounded rgb-shadow d-flex justify-content-center align-items-center">
+          <!-- Your code here -->
 
+
+
+          <div class="row row-cols-1 w-100 d-flex">
+
+          <div class="col d-flex flex-row justify-content-evenly align-items-center p-5">
+            <button class="btn w-25">Account</button>
+            <button class="btn w-25">Database</button>
+          </div>
+
+
+          <div class="col d-flex flex-column justify-content-evenly align-items-center p-3">
+            <form class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" role="switch"
+              id="theme-switch">
+              <label class="form-check-label" for="theme-switch">
+                Dark / Light mode
+              </label>
+          </div>
+
+              <div class="col d-flex flex-column justify-content-evenly align-items-center">
+                <label class="w-100 text-center" for="username">Username</label>
+                <input
+                class="w-50 h-75 input-field border-0 px-3 py-2 rounded"
+                type="text"
+                value="<?php 
+                  // Set cookie value to input field
+                  echo isset($_COOKIE["username"]) ? $_COOKIE["username"] : '';
+                ?>" 
+                id="username-inpt"
+                name="username"
+                placeholder="JDoe"
+                required
+                >
+              </div>
+
+              <div class="col d-flex flex-column justify-content-evenly align-items-center">
+                <label class="w-100 text-center" for="email">Email</label>
+                <input
+                  class="w-50 h-75 input-field border-0 px-3 py-2 rounded"
+                  type="email"
+                  value="<?php
+                    // Set cookie value to input field
+                    echo isset($_COOKIE["email"]) ? $_COOKIE["email"] : '';
+                  ?>" 
+                  id="email-inpt"
+                  name="email"
+                  placeholder="john.doe@email.com"
+                  required
+                >
+              </div>
+
+
+              <div class="col d-flex flex-column justify-content-evenly align-items-center">
+                <label class="w-100 text-center" for="password">Password</label>
+                <input
+                class="w-50 h-75 input-field border-0 px-3 py-2 rounded"
+                type="password"
+                id="password-inpt"
+                name="password"
+                placeholder="••••••••••••••••"
+                required
+                >
+              </div>  
+
+
+              <div class="col d-flex flex-column justify-content-evenly align-items-center">
+                <label class="w-100 text-center" for="password">New Password</label>
+                <input
+                class="w-50 h-75 input-field border-0 px-3 py-2 rounded"
+                type="password"
+                id="NewPassword-inpt"
+                name="password"
+                placeholder="••••••••••••••••"
+                required
+                >
+              </div>
+
+              <div class="col d-flex flex-column align-items-center">
+                <input class="btn w-25 m-4" placeholder="submit" type="submit">
+              </div>
+
+              <hr>
+
+              <div class="col d-flex flex-row justify-content-center align-items-center">
+                <input
+                id="stay-connected-chckbx"
+                name="stay-connected"
+                type="checkbox"
+                value="stay-connected"
+                >
+                <label for="stay-connected">Stay connected</label><br><br>
+              </div>  
+
+              <div class="col d-flex flex-column align-items-center">
+                <button class="btn w-25 m-4">Export Data</button>
+              </div>
+
+              <div class="col d-flex flex-column align-items-center">
+                <button class="btn w-25 bg-danger m-4">Delete Account</button>
+              </div>
+
+
+
+
+              
+              
+            </form>
+      
+
+
+            <?php
+              /* TO DO: add dynamic switch between accounts and database settings
           <?php
 
               if (isset($_SESSION["email"]))
@@ -42,6 +148,7 @@
                       include('src/includes/users.php');
                   }
               }
+              */
             ?>
         </main>
       </div>
