@@ -38,12 +38,7 @@ websocket.onmessage = ev => {
         // If a user has joined the game
         case 'joined':
             // Get all usernames
-            const usernames = response.usernames
-            // Add each username to players array if not already in it
-            usernames.forEach(username => {
-                if (!players.includes(username))
-                    players.push(username)
-            })
+            players = response.players
 
             // Reset username divs
             usernameDivs.forEach(div => {
@@ -52,8 +47,7 @@ websocket.onmessage = ev => {
 
             // Diplay username on corresponding div
             usernameDivs.forEach(div => {
-                const newUsername = usernames.pop()
-                console.log(newUsername)
+                const newUsername = players.pop()
                 if (div.innerText === ``) {
                     div.innerText = newUsername ? newUsername : ``
                 }

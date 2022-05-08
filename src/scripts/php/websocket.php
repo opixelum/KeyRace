@@ -66,30 +66,21 @@ while (true)
 
 			switch ($type) {
 				case 'joined':
-					// Push new user to the array
-					$players[] = array
-					(
-						'username' => $username,
-						'socket' => $changed_socket
-					);
-
-					// Create array of all usernames
-					$usernames = array();
-					foreach ($players as $player)
-						$usernames[] = $player['username'];
+					// Push new user to the array if not already in
+					if (!in_array($username, $players))
+						$players[] = $username;
+					
+					// Reset players array's indexes
+					$players = array_values($players);
 
 					// Prepare data & send it
 					$data = mask(json_encode(array
 					(
 						'type' => 'joined',
 						'username' => $username,
-						'usernames' => $usernames
+						'players' => $players
 					)));
 					send_message($data);
-
-					// Reset usernames array
-					$usernames = array();
-
 					break;
 
 				case 'chat':
@@ -105,12 +96,9 @@ while (true)
 					break;
 
 				case "left":
-					// Remove user from the array
-					foreach ($players as $key => $player)
-					{
-						if ($player['username'] == $username)
-							unset($players[$key]);
-					}
+					// Remove player from the array
+					$key = array_search($username, $players);
+					unset($players[$key]);
 
 					// Prepare data & send it
 					$data = mask(json_encode(array
@@ -141,7 +129,6 @@ while (true)
 		if ($buf === false)
 		{ 
 			$found_socket = array_search($changed_socket, $clients);
-			var_dump($players);
 			// Remove client for $clients array
 			unset($clients[$found_socket]);
 
