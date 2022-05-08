@@ -1,5 +1,3 @@
-const customizationMenu = document.querySelector("#customization-menu")
-
 /**
  * Get all the radio buttons in the customization menu.
  * Then add an event listener to each radio button.

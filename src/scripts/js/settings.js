@@ -36,7 +36,7 @@ themeSwitch.addEventListener("change", function() {
 const accountBtn = document.querySelector("#account-btn")
 if (accountBtn) {
     accountBtn.addEventListener("click", () => {
-        displayAccount()
+            
     })
 }
 
@@ -44,6 +44,20 @@ if (accountBtn) {
 const databaseBtn = document.querySelector("#database-btn")
 if (databaseBtn) {
     databaseBtn.addEventListener("click", () => {
-        displayDatabase()
+        let url = 'src/includes/users.php'
+        /*const searchInput = document.querySelector("#search-input")
+        if (searchInput.value.length > 1)
+        {
+            url += "?search=" + searchInput.value
+        }*/
+        const request = new XMLHttpRequest()
+        request.open("GET", url)
+        request.onreadystatechange = function () {
+            if (request.readyState === 4 && request.status === 200)
+            {
+                document.main.innerHTML = request.responseText
+            }
+        }
+        request.send()
     })
 }

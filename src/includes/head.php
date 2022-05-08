@@ -8,4 +8,6 @@
   <link rel="stylesheet" href="src/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="src/css/style.css">
   <title><?php echo $title ?></title>
+  <!-- Add icon -->
+  <link rel="icon" href="src/images/logo.png">
 </head>
