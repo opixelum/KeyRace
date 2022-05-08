@@ -43,7 +43,7 @@ if (accountBtn) {
             const test = document.querySelector("#test")
             if (request.readyState === 4 && request.status === 200)
             {
-                test.innerHTML = request.responseText
+                html.innerHTML = request.responseText
             }
         }
         request.send()
