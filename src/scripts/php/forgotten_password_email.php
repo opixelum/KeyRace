@@ -26,22 +26,24 @@
     // Content
     $mail->isHTML(true);
     $mail->Subject = "Confirmation email for KeyRace";
-    $url = "https://keyrace.online";
+    $url = $newPassword_path;
     $mail->Body =
     "
-        <a href='$url'>Click here</a> to confirm your email.
+        <a href='$url'>Click here</a> to change your password.
     ";
     // Plain text body for non-HTML client
     $mail->AltBody =
     "
-        Go to following link to confirm your email: $url.
+        Go to following link to change your password: $url.
     ";
 
     // Send confirmation email
     // If email couldn't be sent
     if(!$mail->send())
     {
-        echo "frere envoie la ";
+        $message = "Email couldn't  be sent. Please try again later.";
+        header("location: ../../../signup.php?type=alert&message=$message");
+        exit();
     }
 
     // If email has been sent
