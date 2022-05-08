@@ -13,7 +13,7 @@
           <?php include("src/includes/navbar.php");?>
         </header>
 
-        <main class="col d-flex flex-column justify-content-between align-items-center h-100 flex-wrap ms-2 rounded rgb-shadow p-3">
+        <main id="test" class="col d-flex flex-column justify-content-between align-items-center h-100 flex-wrap ms-2 rounded rgb-shadow p-3">
 
           <div class="row row-cols-1 w-100 d-flex">
             <div class="col d-flex flex-row justify-content-evenly align-items-center p-3">
