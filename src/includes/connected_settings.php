@@ -13,10 +13,9 @@
           <?php include("src/includes/navbar.php");?>
         </header>
 
-        <main class="col d-flex flex-column justify-content-between align-items-center flex-wrap h-100 ms-2 rounded rgb-shadow p-5">
+        <main class="col d-flex flex-column justify-content-between align-items-center h-100 flex-wrap ms-2 rounded rgb-shadow p-5">
 
           <div class="row row-cols-1 w-100 d-flex">
-
             <div class="col d-flex flex-row justify-content-evenly align-items-center p-5">
                 <button id="account-btn" class="btn w-25">Account</button>
                 <button id="database-btn" class="btn w-25">Database</button>
@@ -74,7 +73,7 @@
                 placeholder="••••••••••••••••"
                 required
                 >
-            </div>  
+            </div>
 
             <div class="col d-flex flex-column justify-content-evenly align-items-center">
                 <label class="w-100 text-center" for="password">New Password</label>
@@ -89,7 +88,7 @@
             </div>
 
             <div class="col d-flex flex-column align-items-center">
-                <input class="btn w-25 m-4" placeholder="submit" type="submit">
+                <input class="btn w-25 m-4" value="Edit" type="submit">
             </div>
 
             <hr>
