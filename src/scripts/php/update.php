@@ -30,27 +30,15 @@
         header($read_path . "role needs to be a number.");
         exit;
     }
-    if (!preg_match("@[0-9]@", $_POST['kc']))
-    {
-        header($read_path . "kc needs to be a number.");
-        exit;
-    }
-    if (!preg_match("@[0-9]@", $_POST['gc']))
-    {
-        header($read_path . "gc needs to be a number.");
-        exit;
-    }
 
     // Update the user informations
-    $query = "UPDATE USER SET id=:id, username=:username, email=:email, keyboard=:keyboard, role=:role, kc=:kc, gc=:gc WHERE id=$_GET[id]";
+    $query = "UPDATE USER SET id=:id, username=:username, email=:email, keyboard=:keyboard, role=:role WHERE id=$_GET[id]";
     $prepared_query = $db->prepare($query);
     $prepared_query->execute(["id" => $_POST['id'],
                             "username" => $_POST['username'],
                             "email" => $_POST['email'],
                             "keyboard" => $_POST['keyboard'],
-                            "role" => $_POST['role'],
-                            "kc" => $_POST['kc'],
-                            "gc" => $_POST['gc']]);
+                            "role" => $_POST['role']]);
     $result = $prepared_query->fetchAll();
 
     header("location:../../../settings.php");
