@@ -154,7 +154,7 @@
     </div>
 
     <script src="src/scripts/js/main.js"></script>
-    <script src="src/scripts/js/chat.js"></script>
+    <script src="src/scripts/js/websocket.js"></script>
     <script src="src/scripts/js/multiplayer.js"></script>
   </body>
 </html>
