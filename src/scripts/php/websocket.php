@@ -3,6 +3,9 @@ $host = 'localhost';
 $port = '3307';
 $null = NULL;
 
+// Store every players with their username, track & socket
+$players = array();
+
 // Create TCP/IP stream socket
 $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
 // Reuseable port
@@ -38,13 +41,6 @@ while (true)
 		// Perform websocket handshake
 		perform_handshaking($header, $socket_new, $host, $port);
 
-		// Get ip address of connected socket
-		socket_getpeername($socket_new, $ip);
-		// Prepare json data
-		$response = mask(json_encode(array('type' => 'system', 'message' => $ip . ' connected')));
-		// Notify all users about new connection
-		send_message($response); 
-
 		// Make room for new socket
 		$found_socket = array_search($socket, $changed);
 		unset($changed[$found_socket]);
@@ -58,19 +54,71 @@ while (true)
 		{
 			// Unmask data
 			$received_text = unmask($buf);
+
 			// JSON decode
 			$tst_msg = json_decode($received_text, true);
-			// Sender name
-			$user_name = $tst_msg['name'];
-			// Message text
-			$user_message = $tst_msg['message'];
-			// Color
-			$user_color = $tst_msg['color'];
 
-			// Prepare data to be sent to client
-			$response_text = mask(json_encode(array('type' => 'usermsg', 'name' => $user_name, 'message' => $user_message, 'color' => $user_color)));
-			// Send data
-			send_message($response_text);
+			// Get username
+			$username = $tst_msg['username'];
+
+			// Message type
+			$type = isset($tst_msg['type']) ? $tst_msg['type'] : null;
+
+			switch ($type) {
+				case 'joined':
+					// Push new user to the array if not already in
+					if (!in_array($username, $players))
+						$players[] = $username;
+					
+					// Reset players array's indexes
+					$players = array_values($players);
+
+					// Prepare data & send it
+					$data = mask(json_encode(array
+					(
+						'type' => 'joined',
+						'username' => $username,
+						'players' => $players
+					)));
+					send_message($data);
+					break;
+
+				case 'chat':
+					// Prepare data & send it 
+					$data = mask(json_encode(array
+					(
+						'type' => 'chat',
+						'username' => $username,
+						'extraData' => $tst_msg['extraData']
+					)));
+					send_message($data);
+
+					break;
+
+				case "left":
+					// Remove player from the array
+					$key = array_search($username, $players);
+					unset($players[$key]);
+
+					// Prepare data & send it
+					$data = mask(json_encode(array
+					(
+						'type' => 'left',
+						'username' => $username
+					)));
+					send_message($data);
+
+					break;
+
+				case "car":
+					send_message(mask(json_encode(array
+					(
+						'type' => 'car',
+						'username' => $username,
+						'extraData' => $tst_msg['extraData']
+					))));
+
+			}
 
 			// Exit this loop
 			break 2; 
@@ -80,13 +128,17 @@ while (true)
 		// Check disconnected client
 		if ($buf === false)
 		{ 
-			// Remove client for $clients array
 			$found_socket = array_search($changed_socket, $clients);
-			socket_getpeername($changed_socket, $ip);
+			// Remove client for $clients array
 			unset($clients[$found_socket]);
 
 			// Notify all users about disconnected connection
-			$response = mask(json_encode(array('type' => 'system', 'message' => $ip . ' disconnected')));
+			socket_getpeername($changed_socket, $ip);
+			$response = mask(json_encode(array
+			(
+				'type' => 'left',
+				'username' => $username
+			)));
 			send_message($response);
 		}
 	}
@@ -94,11 +146,11 @@ while (true)
 // Close the listening socket
 socket_close($socket);
 
-function send_message($msg)
+function send_message($data)
 {
 	global $clients;
 	foreach ($clients as $changed_socket)
-		@socket_write($changed_socket, $msg, strlen($msg));
+		@socket_write($changed_socket, $data, strlen($data));
 
 	return true;
 }

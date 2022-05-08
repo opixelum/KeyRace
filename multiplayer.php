@@ -37,68 +37,90 @@
           <div class="row hstack flex-column flex-wrap h-100">
             <!-- Race -->
             <div class="col-8 d-flex justify-content-center flex-wrap h-100">
-              <div id="race" class="border-start border-end w-75">
-                <hr>
-                <div class="w-100">
-                  <img
-                    alt="User car"
-                    id="user-car"
-                    src="src/images/cars/f1.png"
-                    width="100px"
-                    style="transform:translate(-99px)"
-                  >
+              <div id="race" class="container ms-5 w-100">
+                <div class="row">
+                  <div class="col-10 border-start border-top border-end">
+                    <img
+                      alt="User car"
+                      class="opacity-50"
+                      id="user-car"
+                      src="src/images/cars/f1.png"
+                      width="100px"
+                      style="transform:translate(-99px)"
+                    >
+                  </div>
+                  <div id="username" class="col-2 my-auto"></div>
                 </div>
-                <hr>
-                <div class="w-100">
-                  <img
-                    alt="User car"
-                    id="user-car"
-                    src="src/images/cars/f1.png"
-                    width="100px"
-                    style="transform:translate(-99px)"
-                  >
+
+                <div class="row">
+                  <div class="col-10 border-start border-top border-end">
+                    <img
+                      alt="User car"
+                      class="opacity-50"
+                      id="user-car"
+                      src="src/images/cars/f1.png"
+                      width="100px"
+                      style="transform:translate(-99px)"
+                    >
+                  </div>
+                  <div id="username" class="col-2 my-auto"></div>
                 </div>
-                <hr>
-                <div class="w-100">
-                  <img
-                    alt="User car"
-                    id="user-car"
-                    src="src/images/cars/f1.png"
-                    width="100px"
-                    style="transform:translate(-99px)"
-                  >
+
+                <div class="row">
+                  <div class="col-10 border-start border-top border-end">
+                    <img
+                      alt="User car"
+                      class="opacity-50"
+                      id="user-car"
+                      src="src/images/cars/f1.png"
+                      width="100px"
+                      style="transform:translate(-99px)"
+                    >
+                  </div>
+                  <div id="username" class="col-2 my-auto"></div>
                 </div>
-                <hr>
-                <div class="w-100">
-                  <img
-                    alt="User car"
-                    id="user-car"
-                    src="src/images/cars/f1.png"
-                    width="100px"
-                    style="transform:translate(-99px)"
-                  >
+
+                <div class="row">
+                  <div class="col-10 border-start border-top border-end">
+                    <img
+                      alt="User car"
+                      class="opacity-50"
+                      id="user-car"
+                      src="src/images/cars/f1.png"
+                      width="100px"
+                      style="transform:translate(-99px)"
+                    >
+                  </div>
+                  <div id="username" class="col-2 my-auto"></div>
                 </div>
-                <hr>
-                <div class="w-100">
-                  <img
-                    alt="User car"
-                    id="user-car"
-                    src="src/images/cars/f1.png"
-                    width="100px"
-                    style="transform:translate(-99px)"
-                  >
+
+                <div class="row">
+                  <div class="col-10 border-start border-top border-end">
+                    <img
+                      alt="User car"
+                      class="opacity-50"
+                      id="user-car"
+                      src="src/images/cars/f1.png"
+                      width="100px"
+                      style="transform:translate(-99px)"
+                    >
+                  </div>
+                  <div id="username" class="col-2 my-auto"></div>
                 </div>
-                <hr>
-                <div class="w-100">
-                  <img
-                    alt="User car"
-                    id="user-car"
-                    src="src/images/cars/f1.png"
-                    width="100px"
-                    style="transform:translate(-99px)"
-                  >
+
+                <div class="row">
+                  <div class="col-10 border-start border-top border-end">
+                    <img
+                      alt="User car"
+                      class="opacity-50"
+                      id="user-car"
+                      src="src/images/cars/f1.png"
+                      width="100px"
+                      style="transform:translate(-99px)"
+                    >
+                  </div>
+                  <div id="username" class="col-2 my-auto"></div>
                 </div>
-                <hr>
               </div>
 
               <!-- Stats -->
@@ -129,7 +151,7 @@
             <!-- Chat -->
             <div class="col-3 d-flex flex-wrap h-100 justify-content-center p-0">
               <h4>Chat</h4>
-              <div id="message-box" class="input-field h-75 w-100 rounded"></div>
+              <div id="chat-box" class="input-field h-75 w-100 rounded"></div>
               <input id="message" class="input-field w-75 ps-2" maxlength="140" type="text" placeholder="Your message here">
               <button id="send-message" class="btn send-btn w-25">Send</button>
             </div>
@@ -138,7 +160,7 @@
     </div>
 
     <script src="src/scripts/js/main.js"></script>
-    <script src="src/scripts/js/chat.js"></script>
+    <script src="src/scripts/js/websocket.js"></script>
     <script src="src/scripts/js/multiplayer.js"></script>
   </body>
 </html>
