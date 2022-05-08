@@ -80,6 +80,7 @@ while (true)
 						if (!in_array($player['username'], $usernames))
 							$usernames[] = $player['username'];
 					}
+					var_dump($usernames);
 
 					// Prepare data & send it
 					$data = mask(json_encode(array

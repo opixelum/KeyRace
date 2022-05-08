@@ -1,5 +1,4 @@
 let username // Current user's name
-let track    // Current user's car track
 let players = [] // Array of players
 
 // Get all div for username display
@@ -49,22 +48,27 @@ websocket.onmessage = ev => {
                     players.push(username)
             })
 
+            // Reset username divs
+            usernameDivs.forEach(div => {
+                div.innerText = ``
+            })
 
-            // Diplay username on corresponding track
-            for (let div of usernameDivs) {
-                if (div.innerText === "No player") {
-                    const newUsername = usernames.pop()
-                    div.innerText = newUsername ? newUsername : "No player"
+            // Diplay username on corresponding div
+            usernameDivs.forEach(div => {
+                const newUsername = usernames.pop()
+                console.log(newUsername)
+                if (div.innerText === ``) {
+                    div.innerText = newUsername ? newUsername : ``
                 }
-            }
+            })
             break;
 
         // If a user has left the game
         case 'left':
-            // Remove username from corresponding track
+            // Remove username from corresponding div
             for (let div of usernameDivs) {
                 if (div.innerText === username) {
-                    div.innerText = "No player"
+                    div.innerText = ``
                     return
                 }
             }
@@ -94,13 +98,12 @@ const send = type => {
     let data // Data to send
 
     switch (type) {
-        // Send current user's name & track number
+        // Send current user's name
         // to all players through websocket
         case "joined":
             data = {
                 type: "joined",
-                username: username,
-                track: track
+                username: username
             }
             break
 

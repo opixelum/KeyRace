@@ -48,7 +48,7 @@
                       style="transform:translate(-99px)"
                     >
                   </div>
-                  <div id="username" class="col-2 my-auto">No player</div>
+                  <div id="username" class="col-2 my-auto"></div>
                 </div>
 
                 <div class="row">
@@ -61,7 +61,7 @@
                       style="transform:translate(-99px)"
                     >
                   </div>
-                  <div id="username" class="col-2 my-auto">No player</div>
+                  <div id="username" class="col-2 my-auto"></div>
                 </div>
 
                 <div class="row">
@@ -74,7 +74,7 @@
                       style="transform:translate(-99px)"
                     >
                   </div>
-                  <div id="username" class="col-2 my-auto">No player</div>
+                  <div id="username" class="col-2 my-auto"></div>
                 </div>
 
                 <div class="row">
@@ -87,7 +87,7 @@
                       style="transform:translate(-99px)"
                     >
                   </div>
-                  <div id="username" class="col-2 my-auto">No player</div>
+                  <div id="username" class="col-2 my-auto"></div>
                 </div>
 
                 <div class="row">
@@ -100,7 +100,7 @@
                       style="transform:translate(-99px)"
                     >
                   </div>
-                  <div id="username" class="col-2 my-auto">No player</div>
+                  <div id="username" class="col-2 my-auto"></div>
                 </div>
 
                 <div class="row">
@@ -113,7 +113,7 @@
                       style="transform:translate(-99px)"
                     >
                   </div>
-                  <div id="username" class="col-2 my-auto">No player</div>
+                  <div id="username" class="col-2 my-auto"></div>
                 </div>
               </div>
 
