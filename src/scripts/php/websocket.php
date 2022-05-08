@@ -76,11 +76,7 @@ while (true)
 					// Create array of all usernames
 					$usernames = array();
 					foreach ($players as $player)
-					{
-						if (!in_array($player['username'], $usernames))
-							$usernames[] = $player['username'];
-					}
-					var_dump($usernames);
+						$usernames[] = $player['username'];
 
 					// Prepare data & send it
 					$data = mask(json_encode(array
@@ -113,6 +109,28 @@ while (true)
 					send_message($data);
 
 					break;
+
+				case "left":
+					// Get username
+					$username = $tst_msg['username'];
+
+					// Remove user from the array
+					foreach ($players as $key => $player)
+					{
+						if ($player['username'] == $username)
+							unset($players[$key]);
+					}
+
+					// Prepare data & send it
+					$data = mask(json_encode(array
+					(
+						'type' => 'left',
+						'username' => $username
+					)));
+					send_message($data);
+
+					break;
+
 			}
 
 			// Exit this loop
@@ -124,15 +142,7 @@ while (true)
 		if ($buf === false)
 		{ 
 			$found_socket = array_search($changed_socket, $clients);
-
-			// Remove player from the array
-			foreach ($players as $key => $player)
-			{
-				if ($player['socket'] === $changed_socket)
-					$username = $player['username'];
-					unset($players[$key]);
-			}
-
+			var_dump($players);
 			// Remove client for $clients array
 			unset($clients[$found_socket]);
 

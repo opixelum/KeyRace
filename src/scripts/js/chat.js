@@ -1,11 +1,9 @@
-let username // Current user's name
-let players = [] // Array of players
-
-// Get all div for username display
+let username
+let players = []
 const usernameDivs = document.querySelectorAll(`#username`)
+const chatBox = document.querySelector('#chat-box')
 
 // Create a new WebSocket object
-const chatBox = document.querySelector('#chat-box')
 const wsUri = "ws://localhost:3307/src/script/php/websocket.php"
 websocket = new WebSocket(wsUri)
 
@@ -89,6 +87,9 @@ document.querySelector("#message").addEventListener("keydown", event => {
     if (event.which == 13) send("chat")
 })
 
+// Tell websocket that user has left the game
+onbeforeunload = () => { send("left") }
+
 /**
  *  Send message to server 
  * 
@@ -125,6 +126,14 @@ const send = type => {
             // Reset message input
             message_input.value = ""
 
+            break
+
+        // When current user leaves the game
+        case "left":
+            data = {
+                type: "left",
+                username: username
+            }
             break
     }
 
