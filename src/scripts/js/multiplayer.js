@@ -96,6 +96,8 @@ const keyListener = document.addEventListener("keydown", ({ key }) => {
 
   // Compute all stats & check if objective is completed
   if (cursorIndex >= characters.length) {
+    send("car", `${(userCarDistance += 100 / text.length)}%`)
+
     endTime = new Date()
 
     // Stop car
