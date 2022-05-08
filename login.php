@@ -10,8 +10,7 @@
 
 <?php
 
-include("src\scripts\php\db_connect.php");
-
+include("src/scripts/php/db_connect.php");
 
 ?>
 
