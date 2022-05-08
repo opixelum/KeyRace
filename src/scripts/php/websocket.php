@@ -54,25 +54,22 @@ while (true)
 		{
 			// Unmask data
 			$received_text = unmask($buf);
+
 			// JSON decode
 			$tst_msg = json_decode($received_text, true);
 
 			// Message type
-			$type = $tst_msg['type'];
+			$type = isset($tst_msg['type']) ? $tst_msg['type'] : null;
 
 			switch ($type) {
 				case 'joined':
 					// Get username
 					$username = $tst_msg['username'];
 
-					// Get track number
-					$track = $tst_msg['track'];
-
 					// Push new user to the array
 					$players[] = array
 					(
 						'username' => $username,
-						'track' => $track,
 						'socket' => $changed_socket
 					);
 
