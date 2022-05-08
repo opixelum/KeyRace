@@ -41,11 +41,11 @@
       exit;
   }
 
-  $average_wpm = $result[0]["average_wpm"];
   $highest_wpm = $result[0]["highest_wpm"];
   $races_won = $result[0]["races_won"];
   $races_ran = $result[0]["races_ran"];
   $achievements = $result[0]["achievements"];
+  $time_played = $result[0]["time_played"];
 
   // Request user's car
   $query = "SELECT car FROM ASSETS WHERE user_id=:id;";
@@ -97,7 +97,7 @@
           <!-- Stats -->
           <div class="row my-4">
             <div class="col-5 d-flex justify-content-around">
-              <p class="fs-4">Average WPM: <?php echo $average_wpm ?></p>
+              <p class="fs-4">Game time: <?php echo $time_played ?> min</p>
               <p class="fs-4">Highest WPM: <?php echo $highest_wpm?></p>
             </div>
             <div class="col-2">

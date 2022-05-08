@@ -18,10 +18,9 @@
           <h1 class="mx-auto my-3">Leaderboard</h1>
           <div class="w-100 justify-content-evenly d-flex">
             <button id="record-btn" class="btn col-2">WPM record</button>
-            <button id="average-btn" class="btn col-2">WPM average</button>
             <button id="races-won-btn" class="btn col-2">Races won</button>
             <button id="races-ran-btn" class="btn col-2">Races ran</button>
-            <button id="time-btn" class="btn col-2">Game time</button>
+            <button id="time-btn" class="btn col-2">Game time (min)</button>
           </div>
             <?php
                 include('src/scripts/php/db_connect.php');
@@ -36,27 +35,20 @@
                         break;
   
                     case 2 : 
-                        $q = 'SELECT id, username, average_wpm FROM USER, STATS WHERE
-                              STATS.user_id = USER.id ORDER BY average_wpm DESC';
-                        $leaderboardTab = 'average_wpm';
-                        $leaderboardTabName = 'WPM average';
-                        break;
-  
-                    case 3 : 
                       $q = 'SELECT id, username, races_won FROM USER, STATS WHERE
                             STATS.user_id = USER.id ORDER BY races_won DESC';
                       $leaderboardTab = 'races_won';
                       $leaderboardTabName = 'Races won';
                       break;
   
-                    case 4 : 
+                    case 3 : 
                       $q = 'SELECT id, username, races_ran FROM USER, STATS WHERE
                             STATS.user_id = USER.id ORDER BY races_ran DESC';
                       $leaderboardTab = 'races_ran';
                       $leaderboardTabName = 'Races ran';
                       break;
   
-                    case 5 : 
+                    case 4 : 
                       $q = 'SELECT id, username, time_played FROM USER, STATS WHERE
                             STATS.user_id = USER.id ORDER BY time_played DESC';
                       $leaderboardTab = 'time_played';
