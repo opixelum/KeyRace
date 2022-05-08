@@ -82,7 +82,8 @@ const keyListener = document.addEventListener("keydown", ({ key }) => {
       startTime = new Date()
     }
 
-    // TODO: Make the car moving for everybody
+    // Send new car position to server
+    send("car")
   } else if (letters.includes(key) || key === " ") {
     // If wrong key (excluding non-letter keys) was typed
     cursorCharacter.classList.add("wrong")

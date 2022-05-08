@@ -97,7 +97,7 @@ while (true)
 					$username = $tst_msg['username'];
 
 					// Message text
-					$message = $tst_msg['message'];
+					$message = $tst_msg['extraData'];
 
 					// Prepare data & send it 
 					$data = mask(json_encode(array

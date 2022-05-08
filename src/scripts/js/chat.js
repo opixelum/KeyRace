@@ -80,65 +80,43 @@ websocket.onerror = ev => { chatBox.innerHTML += `<div class="system_error text-
 websocket.onclose = () => { chatBox.innerHTML += `<div class="system_msg text-white-50">Connection Closed</div>` }
 
 // Message send button
-document.querySelector('#send-message').addEventListener("click", () => send("chat"))
+document.querySelector('#send-message').addEventListener("click", () => sendChat())
 
-// User hits enter key 
+// User hits enter key for sending a chat
 document.querySelector("#message").addEventListener("keydown", event => {
-    if (event.which == 13) send("chat")
+    if (event.which == 13) sendChat()
 })
 
 // Tell websocket that user has left the game
 onbeforeunload = () => { send("left") }
 
 /**
+ * Send chat
+ */
+const sendChat = () => {
+    // Get chat 
+    let chat_input = document.querySelector("#message")
+
+    // Send it to server if it is not empty
+    if (chat_input.value != "") send("chat", chat_input.value)
+
+    // Reset chat input
+    chat_input.value = ``
+}
+
+/**
  *  Send message to server 
  * 
  * @param {string} type Type of message
+ * @param {string} extraData Either chat message or car position
  */
-const send = type => {
-    let data // Data to send
-
-    switch (type) {
-        // Send current user's name
-        // to all players through websocket
-        case "joined":
-            data = {
-                type: "joined",
-                username: username
-            }
-            break
-
-        // When current user send a message in the chat
-        case "chat":
-            // User message text        
-            const message_input = document.querySelector(`#message`)
-            
-            // If no message provided, send nothing
-            if (message_input.value == "") return
-
-            // Prepare JSON data
-            data = {
-                type: "chat",
-                username: username,
-                message: message_input.value
-            }
-
-            // Reset message input
-            message_input.value = ""
-
-            break
-
-        // When current user leaves the game
-        case "left":
-            data = {
-                type: "left",
-                username: username
-            }
-            break
-    }
-
+const send = (type, extraData = ``) => {
     // Convert and send data to server
-    websocket.send(JSON.stringify(data))
+    websocket.send(JSON.stringify({
+        type: type,
+        username: username,
+        extraData: extraData 
+    }))
 }
 
 /**
