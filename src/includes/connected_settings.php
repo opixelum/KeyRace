@@ -13,10 +13,10 @@
           <?php include("src/includes/navbar.php");?>
         </header>
 
-        <main class="col d-flex flex-column justify-content-between align-items-center h-100 flex-wrap ms-2 rounded rgb-shadow p-5">
+        <main class="col d-flex flex-column justify-content-between align-items-center h-100 flex-wrap ms-2 rounded rgb-shadow p-3">
 
           <div class="row row-cols-1 w-100 d-flex">
-            <div class="col d-flex flex-row justify-content-evenly align-items-center p-5">
+            <div class="col d-flex flex-row justify-content-evenly align-items-center p-3">
                 <button id="account-btn" class="btn w-25">Account</button>
                 <button id="database-btn" class="btn w-25">Database</button>
             </div>
@@ -88,7 +88,7 @@
             </div>
 
             <div class="col d-flex flex-column align-items-center">
-                <input class="btn w-25 m-4" value="Edit" type="submit">
+                <input class="btn w-25 m-3" value="Edit" type="submit">
             </div>
 
             <hr>
@@ -104,11 +104,11 @@
             </div>  
 
             <div class="col d-flex flex-column align-items-center">
-                <button id='export-btn' class="btn w-25 m-4">Export Data</button>
+                <button id='export-btn' class="btn w-25 m-3">Export Data</button>
             </div>
 
             <div class="col d-flex flex-column align-items-center">
-                <button class="btn w-25 bg-danger m-4">Delete Account</button>
+                <button class="btn w-25 bg-danger m-3">Delete Account</button>
             </div>
           </div>
         </main>
