@@ -42,6 +42,7 @@
                   <div class="col-10 border-start border-top border-end">
                     <img
                       alt="User car"
+                      class="opacity-50"
                       id="user-car"
                       src="src/images/cars/f1.png"
                       width="100px"
@@ -55,6 +56,7 @@
                   <div class="col-10 border-start border-top border-end">
                     <img
                       alt="User car"
+                      class="opacity-50"
                       id="user-car"
                       src="src/images/cars/f1.png"
                       width="100px"
@@ -68,6 +70,7 @@
                   <div class="col-10 border-start border-top border-end">
                     <img
                       alt="User car"
+                      class="opacity-50"
                       id="user-car"
                       src="src/images/cars/f1.png"
                       width="100px"
@@ -81,6 +84,7 @@
                   <div class="col-10 border-start border-top border-end">
                     <img
                       alt="User car"
+                      class="opacity-50"
                       id="user-car"
                       src="src/images/cars/f1.png"
                       width="100px"
@@ -94,6 +98,7 @@
                   <div class="col-10 border-start border-top border-end">
                     <img
                       alt="User car"
+                      class="opacity-50"
                       id="user-car"
                       src="src/images/cars/f1.png"
                       width="100px"
@@ -107,6 +112,7 @@
                   <div class="col-10 border-start border-top border-end">
                     <img
                       alt="User car"
+                      class="opacity-50"
                       id="user-car"
                       src="src/images/cars/f1.png"
                       width="100px"

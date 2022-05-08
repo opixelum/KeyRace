@@ -51,7 +51,11 @@ websocket.onmessage = ev => {
                 if (div.innerText === ``) {
                     div.innerText = newUsername ? newUsername : ``
                 }
+                // Set car opacity to 100% 
+                const cars = document.querySelectorAll(`#user-car`)
+                cars[players.length].classList.replace(`opacity-50`, `opacity-100`)
             })
+
             break
 
         // If a user has left the game
