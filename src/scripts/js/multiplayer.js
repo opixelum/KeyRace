@@ -74,16 +74,13 @@ const keyListener = document.addEventListener("keydown", ({ key }) => {
     cursorCharacter.classList.add("correct")
     cursorCharacter = characters[++cursorIndex]
 
-    // Make the car moving
-    userCar.style.marginLeft = `${(userCarDistance += 100 / text.length)}%`
-
     // Start stopwatch
     if (!startTime) {
       startTime = new Date()
     }
 
     // Send new car position to server
-    send("car", userCar.style.marginLeft)
+    send("car", `${(userCarDistance += 100 / text.length)}%`)
 
   } else if (letters.includes(key) || key === " ") {
     // If wrong key (excluding non-letter keys) was typed
