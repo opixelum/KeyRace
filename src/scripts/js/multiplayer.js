@@ -83,7 +83,8 @@ const keyListener = document.addEventListener("keydown", ({ key }) => {
     }
 
     // Send new car position to server
-    send("car")
+    send("car", userCar.style.marginLeft)
+
   } else if (letters.includes(key) || key === " ") {
     // If wrong key (excluding non-letter keys) was typed
     cursorCharacter.classList.add("wrong")

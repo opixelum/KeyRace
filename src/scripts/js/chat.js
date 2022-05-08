@@ -25,16 +25,15 @@ websocket.onmessage = ev => {
     const response = JSON.parse(ev.data)
     // Message type
     const type = response.type
-    // Message text
-    const message = response.message
     // Username
     const username = response.username
 
     switch (type) {
         // When someone sends a message in the chat
         case 'chat':
-            chatBox.innerHTML += `<div><ins>${username}:</ins> <span class="message text-break">${message}</span></div>`
-            break;
+            const chat = response.extraData
+            chatBox.innerHTML += `<div><ins>${username}:</ins> <span class="message text-break">${chat}</span></div>`
+            break
 
         // If a user has joined the game
         case 'joined':
@@ -59,7 +58,7 @@ websocket.onmessage = ev => {
                     div.innerText = newUsername ? newUsername : ``
                 }
             })
-            break;
+            break
 
         // If a user has left the game
         case 'left':
@@ -70,7 +69,21 @@ websocket.onmessage = ev => {
                     return
                 }
             }
-            break;
+            break
+
+        case `car`:
+            const carPosition = response.extraData
+
+            // Update car position on corresponding div
+            for (let div of usernameDivs) {
+                if (div.innerText === username) {
+                    const car = div.parentElement.querySelector(`img`)
+                    car.style.marginLeft = carPosition
+                }
+            }
+
+            break
+
     }
     // Scroll message
     if (chatBox[0]) chatBox[0].scrollTop = chatBox[0].scrollHeight
@@ -91,7 +104,8 @@ document.querySelector("#message").addEventListener("keydown", event => {
 onbeforeunload = () => { send("left") }
 
 /**
- * Send chat
+ * Send chat message to server.
+ * It calls send() function with type="chat" & extraData=chat message.
  */
 const sendChat = () => {
     // Get chat 

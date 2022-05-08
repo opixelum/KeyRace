@@ -58,14 +58,14 @@ while (true)
 			// JSON decode
 			$tst_msg = json_decode($received_text, true);
 
+			// Get username
+			$username = $tst_msg['username'];
+
 			// Message type
 			$type = isset($tst_msg['type']) ? $tst_msg['type'] : null;
 
 			switch ($type) {
 				case 'joined':
-					// Get username
-					$username = $tst_msg['username'];
-
 					// Push new user to the array
 					$players[] = array
 					(
@@ -93,27 +93,18 @@ while (true)
 					break;
 
 				case 'chat':
-					// Sender name
-					$username = $tst_msg['username'];
-
-					// Message text
-					$message = $tst_msg['extraData'];
-
 					// Prepare data & send it 
 					$data = mask(json_encode(array
 					(
 						'type' => 'chat',
 						'username' => $username,
-						'message' => $message
+						'extraData' => $tst_msg['extraData']
 					)));
 					send_message($data);
 
 					break;
 
 				case "left":
-					// Get username
-					$username = $tst_msg['username'];
-
 					// Remove user from the array
 					foreach ($players as $key => $player)
 					{
@@ -130,6 +121,14 @@ while (true)
 					send_message($data);
 
 					break;
+
+				case "car":
+					send_message(mask(json_encode(array
+					(
+						'type' => 'car',
+						'username' => $username,
+						'extraData' => $tst_msg['extraData']
+					))));
 
 			}
 
