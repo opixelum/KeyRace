@@ -27,6 +27,8 @@ websocket.onmessage = ev => {
     const type = response.type
     // Username
     const username = response.username
+    // All cars
+    const cars = document.querySelectorAll(`#user-car`)
 
     switch (type) {
         // When someone sends a message in the chat
@@ -48,11 +50,10 @@ websocket.onmessage = ev => {
             // Diplay username on corresponding div
             usernameDivs.forEach(div => {
                 const newUsername = players.pop()
-                if (div.innerText === ``) {
+                if (div.innerText === ``)
                     div.innerText = newUsername ? newUsername : ``
-                }
-                // Set car opacity to 100% 
-                const cars = document.querySelectorAll(`#user-car`)
+
+                // Set used car opacity to 100% 
                 cars[players.length].classList.replace(`opacity-50`, `opacity-100`)
             })
 
@@ -61,24 +62,27 @@ websocket.onmessage = ev => {
         // If a user has left the game
         case 'left':
             // Remove username from corresponding div
-            for (let div of usernameDivs) {
+            usernameDivs.forEach(div => {
                 if (div.innerText === username) {
                     div.innerText = ``
-                    return
+
+                // Set used car opacity to 50%
+                const index = Array.prototype.indexOf.call(usernameDivs, div)
+                cars[index].classList.replace(`opacity-100`, `opacity-50`) 
                 }
-            }
+            })
             break
 
         case `car`:
             const carPosition = response.extraData
 
             // Update car position on corresponding div
-            for (let div of usernameDivs) {
+            usernameDivs.forEach(div => {
                 if (div.innerText === username) {
                     const car = div.parentElement.querySelector(`img`)
                     car.style.marginLeft = carPosition
                 }
-            }
+            })
 
             break
 
