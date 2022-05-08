@@ -31,3 +31,19 @@ themeSwitch.addEventListener("change", function() {
         localStorage.setItem("theme", "dark")
     }
 })
+
+// Account Button
+const accountBtn = document.querySelector("#account-btn")
+if (accountBtn) {
+    accountBtn.addEventListener("click", () => {
+        displayAccount()
+    })
+}
+
+// Database Button
+const databaseBtn = document.querySelector("#database-btn")
+if (databaseBtn) {
+    databaseBtn.addEventListener("click", () => {
+        displayDatabase()
+    })
+}
