@@ -1,7 +1,7 @@
 <?php
-
     session_start();
-    //Connect to database
+
+    // Connect to database
     include("./db_connect.php");
 
     // Check if POST is set

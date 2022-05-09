@@ -256,7 +256,7 @@ const keyListener = document.addEventListener("keydown", ({ key }) => {
       statRequest.onreadystatechange = () => {
         if (statRequest.readyState === 4 && statRequest.status === 200) {
           const response = statRequest.responseText
-          if (response != 1) alert("error")
+          if (response != 1) alert("Unfortunately, an error occured when saving stats.")
         }
       }
       statRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
