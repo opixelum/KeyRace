@@ -61,23 +61,19 @@ const setBackground = () => {
 }
 
 const buildAvatar = () => {
-    const avatar = document.querySelector("#avatarCanvas")
+    const avatar = document.querySelector("#avatar-canvas")
     const context = avatar.getContext("2d")
-
-    // Set image size
-    avatar.width = 500
-    avatar.height = 500
 
     // Draw rectangle as background
     context.beginPath()
-    context.rect(0, 0, 500, 500)
+    context.rect(0, 0, avatar.width, avatar.height)
     context.fillStyle = background
     context.fill()
 
     // Place images on canvas
-    context.drawImage(vest, 0, 0)
-    context.drawImage(helmet, 0, 0)
-    context.drawImage(visor, 0, 0)
+    context.drawImage(vest, 0, 0, avatar.width, avatar.height)
+    context.drawImage(helmet, 0, 0, avatar.width, avatar.height)
+    context.drawImage(visor, 0, 0, avatar.width, avatar.height)
 }
 
 const saveAvatar = () => {

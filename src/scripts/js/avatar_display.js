@@ -44,7 +44,7 @@ function displayAvatarMaker() {
         <div id="assets-selection" class="d-flex flex-wrap border rounded-3 align-items-start h-75"></div>
       </div>
       <div class="col-6 d-flex flex-wrap justify-content-center align-items-center h-100">
-        <canvas id="avatarCanvas"></canvas>
+        <canvas id="avatar-canvas" width="500" height="500"></canvas>
         <button class="btn w-25 bg-danger mx-2" id="cancel-btn">Cancel</button>
         <button class="btn w-25 bg-success mx-2" id="save-btn">Save</button>
       </div>
