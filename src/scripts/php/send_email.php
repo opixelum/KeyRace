@@ -26,7 +26,7 @@
     // Content
     $mail->isHTML(true);
     $mail->Subject = "Confirmation email for KeyRace";
-    $url = "http://localhost/KeyRace";
+    $url = "https://keyrace.online";
     $url .= "/src/scripts/php/confirm_email.php?ckey=$ckey";
     $mail->Body =
     "
@@ -52,4 +52,3 @@
     $message .= "(if you don't see it in your inbox, check your spams).";
     header("location: ../../../login.php?type=success&message=$message");
     exit();
-?>

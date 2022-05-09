@@ -2,3 +2,4 @@ logs
 logs/*
 logs/login_attempts.csv
 logs/page_visits.csv
+*.csv
