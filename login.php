@@ -69,7 +69,7 @@
             <?php include("src/includes/captcha.php");?>
           </div>
 
-          <input class="btn" placeholder="submit" type="submit">
+          <button class="btn">Confirm</button>
         </form>
 
         <?php include("src/includes/message.php");?>                       
