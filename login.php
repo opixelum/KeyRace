@@ -23,10 +23,13 @@
           <?php include("src/includes/navbar.php");?>
         </header>
         
-        <main class="col ms-2 rounded rgb-shadow d-flex justify-content-center align-items-center">
-          <form class="d-flex justify-content-center flex-wrap" action="./src/scripts/php/login_check.php" method="POST">
-            <label class="w-100 text-center" for="email">Email</label><br>
+      <main class="col ms-2 rounded rgb-shadow d-flex justify-content-center align-items-center flex-wrap h-100">
+        <form class="d-flex justify-content-center flex-wrap h-75" action="./src/scripts/php/login_check.php" method="POST">
+          <h1>Log in</h1>
+          <div class="container d-flex justify-content-center flex-wrap w-100 h-25">
+            <label class="w-100 text-center mt-5" for="email">Email</label>
             <input
+              class="w-50 h-25 input-field border-0 px-3 py-2 rounded"
               id="email-inpt"
               name="email"
               placeholder="john.doe@email.com"
@@ -36,36 +39,41 @@
                   // Set cookie value to input field
                   echo isset($_COOKIE["email"]) ? $_COOKIE["email"] : '';
               ?>" 
-            ><br><br>
+            >
+          </div>
 
-            <label class="w-100 text-center" for="password">Password</label><br>
+
+          <div class="container d-flex justify-content-center flex-wrap w-100 h-25">
+            <label class="w-100 text-center mt-5" for="password">Password</label>
             <input
+              class="w-50 h-25 input-field border-0 px-3 py-2 rounded"
               id="password-inpt"
               name="password"
               placeholder="••••••••••••••••"
               required
               type="password"
-            ><br><br>
+            >
+          </div>  
 
-            <input
+          <input
+            class="input-field"
             id="stay-connected-chckbx"
             name="stay-connected"
             type="checkbox"
             value="stay-connected"
-            >
-            <label for="stay-connected">Stay connected</label><br><br>
+          >
+          <label for="stay-connected">Stay connected</label><br><br>
 
-            <input placeholder="submit" type="submit">
-          </form>
-
-
-          <div class="d-flex flex-column justify-content-evenly col"> 
+          <div class="d-flex flex-column justify-content-center w-100 h-25"> 
             <label class="w-100 text-center" for="captcha">Captcha</label>
             <?php include("src/includes/captcha.php");?>
-                
           </div>
 
-          <?php include("src/includes/message.php");?>
+          <input class="btn" placeholder="submit" type="submit">
+        </form>
+
+        <?php include("src/includes/message.php");?>                       
+
         </main>
       </div>
     </div>
