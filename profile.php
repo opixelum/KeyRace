@@ -84,7 +84,11 @@
               <img
                 alt="Banner"
                 class="w-100 h-100"
-                src=<?php echo "./src/images/banners/$username.png" ?>
+                src=<?php
+                  if (file_exists("src/images/banners/$username.png"))
+                    echo "src/images/banners/$username.png";
+                  else echo "src/images/banners/default.png";
+                ?>
               >
               <img
                 alt="Profile picture"
@@ -109,11 +113,10 @@
             </div>
           </div>
 
-          <!-- Username & friends list button --> 
+          <!-- Username --> 
           <div class="row">
             <div class="col d-flex flex-wrap justify-content-center">
               <h2 class="mb-3 text-center w-100"><?php echo $username ?></h3>
-              <a class="btn d-flex justify-content-center align-items-center" href="friends.php">Friends list</a>
             </div>
           </div>
 
