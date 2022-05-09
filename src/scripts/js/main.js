@@ -29,13 +29,13 @@ if (getCookie("isLoggedIn")) {
     const startBtn = document.querySelector("#start-btn")
     if (startBtn) {
         startBtn.addEventListener("click", function() {
-        window.location.href = "./training.php"
+        window.location.href = "training.php"
         })
     }
 }
 else {
     const startBtn = document.querySelector("#start-btn")
     startBtn.addEventListener("click", function() {
-    window.location.href = "./signup.php"
+    window.location.href = "signup.php"
     })
 }

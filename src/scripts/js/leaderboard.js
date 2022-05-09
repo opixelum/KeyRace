@@ -5,30 +5,23 @@ if (recordBtn) {
     })
 }
 
-const averageBtn = document.querySelector('#average-btn')
-if (averageBtn) {
-    averageBtn.addEventListener('click', () => {
+const racesWonBtn = document.querySelector('#races-won-btn')
+if (racesWonBtn) {
+    racesWonBtn.addEventListener('click', () => {
         window.location.href = 'leaderboard.php?orderedBy=2'
     })
 }
 
-const wonBtn = document.querySelector('#won-btn')
-if (wonBtn) {
-    wonBtn.addEventListener('click', () => {
+const racesRanBtn = document.querySelector('#races-ran-btn')
+if (racesRanBtn) {
+    racesRanBtn.addEventListener('click', () => {
         window.location.href = 'leaderboard.php?orderedBy=3'
-    })
-}
-
-const gameBtn = document.querySelector('#game-btn')
-if (gameBtn) {
-    gameBtn.addEventListener('click', () => {
-        window.location.href = 'leaderboard.php?orderedBy=4'
     })
 }
 
 const timeBtn = document.querySelector('#time-btn')
 if (timeBtn) {
     timeBtn.addEventListener('click', () => {
-        window.location.href = 'leaderboard.php?orderedBy=5'
+        window.location.href = 'leaderboard.php?orderedBy=4'
     })
 }
