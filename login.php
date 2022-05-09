@@ -27,7 +27,7 @@
         <form class="d-flex justify-content-center flex-wrap h-75" action="./src/scripts/php/login_check.php" method="POST">
           <h1>Log in</h1>
           <div class="container d-flex justify-content-center flex-wrap w-100 h-25">
-            <label class="w-100 text-center" for="email">Email</label>
+            <label class="w-100 text-center mt-5" for="email">Email</label>
             <input
               class="w-50 h-25 input-field border-0 px-3 py-2 rounded"
               id="email-inpt"
@@ -44,7 +44,7 @@
 
 
           <div class="container d-flex justify-content-center flex-wrap w-100 h-25">
-            <label class="w-100 text-center" for="password">Password</label>
+            <label class="w-100 text-center mt-5" for="password">Password</label>
             <input
               class="w-50 h-25 input-field border-0 px-3 py-2 rounded"
               id="password-inpt"
