@@ -1,19 +1,41 @@
 let helmet = new Image()
 let vest = new Image()
 let visor = new Image()
+let background
 
-// TO DO: Get current user's assets from database 
-// Set default values
 const assetsRoot = "src/images/avatar/"
 
-let choosenHelmet = `default/white`
-let choosenVisor = `default/white`
-let choosenVest = `vintage/ix/brown`
-let background = "white"
+// Assets saved in the database
+let savedHelmet
+let savedVisor
+let savedVest
+let savedBackground
 
-helmet.src = assetsRoot + `helmet/` + choosenHelmet + `.png`
-visor.src = assetsRoot + `visor/` + choosenVisor + `.png`
-vest.src = assetsRoot + `vest/` + choosenVest + `.png`
+// Get assets from database with AJAX
+const getAssets = new XMLHttpRequest()
+getAssets.open("GET", "src/scripts/php/get_assets.php")
+getAssets.send()
+getAssets.onreadystatechange = () => {
+    if (getAssets.readyState === 4 && getAssets.status === 200) {
+        const assets = JSON.parse(getAssets.responseText)
+        savedHelmet = assets.helmet
+        savedVisor = assets.visor
+        savedVest = assets.vest
+        savedBackground = assets.background
+
+        helmet.src = assetsRoot + `helmet/` + savedHelmet + `.png`
+        visor.src = assetsRoot + `visor/` + savedVisor + `.png`
+        vest.src = assetsRoot + `vest/` + savedVest + `.png`
+        background = savedBackground
+    }
+}
+
+
+// Assets choosen in the avatar maker
+let choosenHelmet
+let choosenVisor 
+let choosenVest
+let choosenBackground
 
 const setHelmet = () => {
     choosenHelmet = document.querySelector("input[name='helmet']:checked").value
@@ -34,7 +56,8 @@ const setVest = () => {
 }
 
 const setBackground = () => {
-    background = document.querySelector("input[name='background']:checked").value
+    choosenBackground = document.querySelector("input[name='background']:checked").value
+    background = choosenBackground
     buildAvatar()
 }
 
@@ -56,8 +79,6 @@ const buildAvatar = () => {
     context.drawImage(vest, 0, 0)
     context.drawImage(helmet, 0, 0)
     context.drawImage(visor, 0, 0)
-
-    console.log("Avatar built!")
 }
 
 const saveAvatar = () => {
