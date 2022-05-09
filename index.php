@@ -77,7 +77,10 @@
               <div
                 class="col-6 h-100 d-flex justify-content-center align-items-start"
               >
-                <button class="btn" id="start-btn">Start</button>
+                <a 
+                  class="btn w-25"
+                  href=<?php echo isset($_SESSION["id"])? "training.php" : "signup.php" ?>
+                >Start</a>
               </div>
 
               <div
