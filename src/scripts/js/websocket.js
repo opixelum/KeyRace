@@ -140,7 +140,7 @@ const send = (type, extraData = ``) => {
  * @returns {Promise<string>} Promise with username
  */
 const getUsername = () => {
-    const username = new Promise((resolve) => {
+    const username = new Promise(resolve => {
         const xhr = new XMLHttpRequest()
         xhr.open("GET", "src/scripts/php/get_username.php", true)
         xhr.send()

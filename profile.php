@@ -90,11 +90,7 @@
                   else echo "src/images/banners/default.png";
                 ?>
               >
-              <img
-                alt="Profile picture"
-                class="profile-avatar rounded-circle"
-                src=<?php echo "./src/images/avatars/$username.png" ?>
-              >
+              <canvas id="avatar-canvas" class="profile-canvas rounded-circle" width="200" height="200"></canvas>
             </div>
           </div>
 
@@ -193,5 +189,6 @@
     </div>
 
     <script src="src/scripts/js/main.js"></script>
+    <script src="src/scripts/js/avatar_maker.js"></script>
   </body>
 </html>

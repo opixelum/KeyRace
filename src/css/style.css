@@ -285,9 +285,7 @@ tr, td, th{
 
 /*------------------------------ P R O F I L E ------------------------------*/
 
-.profile-avatar {
-    width: 200px;
-    height: 200px;
+.profile-canvas {
     position: relative;
     bottom: 50%
 }

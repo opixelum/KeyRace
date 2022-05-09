@@ -12,23 +12,29 @@ let savedVest
 let savedBackground
 
 // Get assets from database with AJAX
-const xhr = new XMLHttpRequest()
-xhr.open("GET", "src/scripts/php/get_assets.php")
-xhr.send()
-xhr.onreadystatechange = () => {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-        const assets = JSON.parse(xhr.responseText)
-        savedHelmet = assets.helmet
-        savedVisor = assets.visor
-        savedVest = assets.vest
-        savedBackground = assets.background
-
-        helmet.src = assetsRoot + `helmet/` + savedHelmet + `.png`
-        visor.src = assetsRoot + `visor/` + savedVisor + `.png`
-        vest.src = assetsRoot + `vest/` + savedVest + `.png`
-        background = savedBackground
+const response = new Promise(resolve => {
+    const xhr = new XMLHttpRequest()
+    xhr.open("GET", "src/scripts/php/get_assets.php")
+    xhr.send()
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            resolve(JSON.parse(xhr.responseText))
+        }
     }
-}
+}).then(assets => {
+    savedHelmet = assets.helmet
+    savedVisor = assets.visor
+    savedVest = assets.vest
+    savedBackground = assets.background
+
+    helmet.src = assetsRoot + `helmet/` + savedHelmet + `.png`
+    visor.src = assetsRoot + `visor/` + savedVisor + `.png`
+    vest.src = assetsRoot + `vest/` + savedVest + `.png`
+
+    background = savedBackground
+
+    buildAvatar()
+})
 
 // Assets choosen in the avatar maker
 let choosenHelmet
@@ -64,16 +70,19 @@ const buildAvatar = () => {
     const avatar = document.querySelector("#avatar-canvas")
     const context = avatar.getContext("2d")
 
+    const width = avatar.width
+    const height = avatar.height
+
     // Draw rectangle as background
     context.beginPath()
-    context.rect(0, 0, avatar.width, avatar.height)
+    context.rect(0, 0, width, height)
     context.fillStyle = background
     context.fill()
 
     // Place images on canvas
-    context.drawImage(vest, 0, 0, avatar.width, avatar.height)
-    context.drawImage(helmet, 0, 0, avatar.width, avatar.height)
-    context.drawImage(visor, 0, 0, avatar.width, avatar.height)
+    context.drawImage(vest, 0, 0, width, height)
+    context.drawImage(helmet, 0, 0, width, height)
+    context.drawImage(visor, 0, 0, width, height)
 }
 
 const saveAvatar = () => {
