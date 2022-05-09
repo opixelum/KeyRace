@@ -12,12 +12,12 @@ let savedVest
 let savedBackground
 
 // Get assets from database with AJAX
-const getAssets = new XMLHttpRequest()
-getAssets.open("GET", "src/scripts/php/get_assets.php")
-getAssets.send()
-getAssets.onreadystatechange = () => {
-    if (getAssets.readyState === 4 && getAssets.status === 200) {
-        const assets = JSON.parse(getAssets.responseText)
+const xhr = new XMLHttpRequest()
+xhr.open("GET", "src/scripts/php/get_assets.php")
+xhr.send()
+xhr.onreadystatechange = () => {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+        const assets = JSON.parse(xhr.responseText)
         savedHelmet = assets.helmet
         savedVisor = assets.visor
         savedVest = assets.vest
@@ -29,7 +29,6 @@ getAssets.onreadystatechange = () => {
         background = savedBackground
     }
 }
-
 
 // Assets choosen in the avatar maker
 let choosenHelmet
