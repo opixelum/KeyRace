@@ -1,19 +1,23 @@
-<?php 
-    include('src/scripts/php/db_connect.php');
+<?php
+    include('../scripts/php/db_connect.php');
     $q = 'SELECT id, username, email, role FROM USER';
     $req = $db->query($q);
     $results = $req->fetchAll(PDO::FETCH_ASSOC);
-?>
 
-<table class="table table-bordered overflow-auto h-75">
-    <tr>
-        <th>Username</th>
-        <th>Email</th>
-        <th>Role</th>
-        <th>Actions</th>
-    </tr>
-
-    <?php
+    echo '
+          <div class="col d-flex flex-row justify-content-evenly align-items-center p-3">
+            <button id="account-btn" class="btn w-25">Account</button>
+            <button id="database-btn" class="btn w-25">Database</button>
+          </div>
+          <input type="text" id="search-input" placeholder="search">
+          <table class="table table-bordered overflow-auto h-75">
+            <tr>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Actions</th>
+            </tr>
+        ';
         foreach ($results as $key => $user) {
             echo '<tr>';
             echo '<td>' . $user['username'] . '</td>';
@@ -25,5 +29,5 @@
             echo '</td>';
             echo '</tr>';
         }
-    ?>
-</table>
+    echo '</table>';
+?>

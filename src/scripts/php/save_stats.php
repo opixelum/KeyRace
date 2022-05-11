@@ -1,7 +1,7 @@
 <?php
-
     session_start();
-    //Connect to database
+
+    // Connect to database
     include("./db_connect.php");
 
     // Check if POST is set
@@ -25,7 +25,7 @@
         $time = round($time, 2);
 
         // Select stats from the user
-        $q = "SELECT user_id, average_wpm, highest_wpm, races_ran, races_won, time_played FROM STATS WHERE user_id = $id";
+        $q = "SELECT user_id, highest_wpm, races_ran, races_won, time_played FROM STATS WHERE user_id = $id";
         $req = $db->query($q);
         $results = $req->fetchAll(PDO::FETCH_ASSOC);
 

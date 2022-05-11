@@ -52,4 +52,3 @@
     $message .= "(if you don't see it in your inbox, check your spams).";
     header("location: ../../../login.php?type=success&message=$message");
     exit();
-?>

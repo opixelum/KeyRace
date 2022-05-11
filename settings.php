@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php 
+  session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,39 +17,24 @@
           <?php include("src/includes/navbar.php");?>
         </header>
 
-        <main class="col ms-2 rounded d-flex flex-wrap h-100 rgb-shadow">
-          <form class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch"
-            id="theme-switch">
-            <label class="form-check-label" for="theme-switch">
-              Dark / Light mode
-            </label>
-          </form>
-
-          <?php
-
-              if (isset($_SESSION["email"]))
-              {
-                  include('src/scripts/php/db_connect.php');
-
-                  $query = "SELECT role FROM USER WHERE email = :email";
-                  $prepared_query = $db->prepare($query);
-              
-                  $prepared_query->execute(["email" => $_SESSION["email"]]);
-              
-                  $result = $prepared_query->fetchAll();
-
-                  if ($result[0]['role'] == 3)
-                  {
-                      include('src/includes/users.php');
-                  }
-              }
-            ?>
-        </main>
-      </div>
+        <main id="test" class="col d-flex flex-column justify-content-between align-items-center h-100 flex-wrap ms-2 rounded rgb-shadow p-3">
+        
+        <?php
+          // If user is not logged in
+          if (!isset($_SESSION["id"]))
+          {
+            include('src/includes/not_logged_in_settings.php');
+          }
+          // If user is logged in
+          else
+          {
+            include('src/includes/connected_settings.php');
+          }
+        ?>
+      </main>
     </div>
+  </div>
 
-    <script src="./src/scripts/js/settings.js"></script>
-    <script src="./src/scripts/js/main.js"></script>
-  </body>
-</html>
+  <script src="./src/scripts/js/settings.js"></script>
+  <script src="./src/scripts/js/main.js"></script>
+</body>

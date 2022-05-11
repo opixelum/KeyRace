@@ -30,8 +30,6 @@
           <div class="w-100 justify-content-evenly d-flex">
             <button id="car-btn" class="btn col-2">Car</button>
             <button id="avatar-btn" class="btn col-2">Avatar</button>
-            <button id="interface-btn" class="btn col-2">Interface</button>
-            <button id="shop-btn" class="btn col-2">Shop</button>
           </div>
 
           <!-- Customization -->

@@ -41,11 +41,11 @@
       exit;
   }
 
-  $average_wpm = $result[0]["average_wpm"];
   $highest_wpm = $result[0]["highest_wpm"];
   $races_won = $result[0]["races_won"];
   $races_ran = $result[0]["races_ran"];
   $achievements = $result[0]["achievements"];
+  $time_played = $result[0]["time_played"];
 
   // Request user's car
   $query = "SELECT car FROM ASSETS WHERE user_id=:id;";
@@ -84,20 +84,20 @@
               <img
                 alt="Banner"
                 class="w-100 h-100"
-                src=<?php echo "./src/images/banners/$username.png" ?>
+                src=<?php
+                  if (file_exists("src/images/banners/$username.png"))
+                    echo "src/images/banners/$username.png";
+                  else echo "src/images/banners/default.png";
+                ?>
               >
-              <img
-                alt="Profile picture"
-                class="profile-avatar rounded-circle"
-                src=<?php echo "./src/images/avatars/$username.png" ?>
-              >
+              <canvas id="avatar-canvas" class="profile-canvas rounded-circle" width="200" height="200"></canvas>
             </div>
           </div>
 
           <!-- Stats -->
           <div class="row my-4">
             <div class="col-5 d-flex justify-content-around">
-              <p class="fs-4">Average WPM: <?php echo $average_wpm ?></p>
+              <p class="fs-4">Game time: <?php echo $time_played ?> min</p>
               <p class="fs-4">Highest WPM: <?php echo $highest_wpm?></p>
             </div>
             <div class="col-2">
@@ -109,11 +109,10 @@
             </div>
           </div>
 
-          <!-- Username & friends list button --> 
+          <!-- Username --> 
           <div class="row">
             <div class="col d-flex flex-wrap justify-content-center">
               <h2 class="mb-3 text-center w-100"><?php echo $username ?></h3>
-              <a class="btn d-flex justify-content-center align-items-center" href="friends.php">Friends list</a>
             </div>
           </div>
 
@@ -190,5 +189,6 @@
     </div>
 
     <script src="src/scripts/js/main.js"></script>
+    <script src="src/scripts/js/avatar_maker.js"></script>
   </body>
 </html>

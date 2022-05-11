@@ -31,3 +31,44 @@ themeSwitch.addEventListener("change", function() {
         localStorage.setItem("theme", "dark")
     }
 })
+
+// Account Button
+const accountBtn = document.querySelector("#account-btn")
+if (accountBtn) {
+    accountBtn.addEventListener("click", () => {
+        let url = 'src/includes/connected_settings.php'
+        const request = new XMLHttpRequest()
+        request.open("GET", url)
+        request.onreadystatechange = function () {
+            const test = document.querySelector("#test")
+            if (request.readyState === 4 && request.status === 200)
+            {
+                html.innerHTML = request.responseText
+            }
+        }
+        request.send()
+    })
+}
+
+// Database Button
+const databaseBtn = document.querySelector("#database-btn")
+if (databaseBtn) {
+    databaseBtn.addEventListener("click", () => {
+        let url = 'src/includes/users.php'
+        const searchInput = document.querySelector("#search-input")
+        if (searchInput && searchInput.value.length > 1)
+        {
+            url += "?search=" + searchInput.value
+        }
+        const request = new XMLHttpRequest()
+        request.open("GET", url)
+        request.onreadystatechange = function () {
+            const test = document.querySelector("#test")
+            if (request.readyState === 4 && request.status === 200)
+            {
+                test.innerHTML = request.responseText
+            }
+        }
+        request.send()
+    })
+}

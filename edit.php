@@ -44,7 +44,7 @@
           <div class="container">
             <?php
               include('src/scripts/php/db_connect.php');
-              $q = "SELECT id, username, email, password, keyboard, role, kc, gc FROM USER WHERE id = $_GET[id]";
+              $q = "SELECT id, username, email, password, keyboard, role FROM USER WHERE id = $_GET[id]";
               $req = $db->query($q);
               $results = $req->fetchAll(PDO::FETCH_ASSOC);
             ?>
@@ -57,8 +57,6 @@
                   echo '<tr><td>password</td><td> °°°°°° </td></tr>';
                   echo '<tr><td>keyboard</td><td><input name="keyboard" type="number" value="' . $results[0]['keyboard'] . '"></td></tr>';
                   echo '<tr><td>role</td><td><input name="role" type="number" value="' . $results[0]['role'] . '"></td></tr>';
-                  echo '<tr><td>kc</td><td><input name="kc" type="number" value="' . $results[0]['kc'] . '"></td></tr>';
-                  echo '<tr><td>gc</td><td><input name="gc" type="number" value="' . $results[0]['gc'] . '"></td></tr>';
                 ?>
               </table>
 

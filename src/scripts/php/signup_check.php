@@ -166,56 +166,61 @@
         "ckey"     => $ckey
     ]);
 
-
-    // If query was successful
-    if ($result)
-    {
-        // Delete temporary cookies
-        setcookie("username", '', 0, "/KeyRace/signup.php");
-        setcookie("email", '', 0, "/KeyRace/signup.php");
-        setcookie("keyboard_layout", '', 0, "/KeyRace/signup.php");
-        setcookie("captchaSolved", '', 0, "/KeyRace");
-
-        // Get user id from USER table
-        $query = 'SELECT id FROM USER WHERE email = :email';
-        $prepared_query = $db->prepare($query);
-        $prepared_query->execute(["email" => $email]);
-        $result = $prepared_query->fetchAll();
-
-        // If query was successful
-        if ($result)
-        {
-            // Insert user id into STATS table
-            $query = "INSERT INTO STATS(user_id) VALUES(:id)";
-            $prepared_query = $db->prepare($query);
-            $result = $prepared_query->execute(["id" => $result[0]['id']]);
-
-            // If query was successful
-            if ($result)
-            {
-                // Send confirmation email
-                include("./send_email.php");
-
-                $message = "Accout created successfully.";
-                $message .= "Confirm your email address before logging in.";
-                header($login_path . "success&message=$message");
-                exit();
-            }
-            // If query failed, redirect to signup page with error message
-            else
-            {
-                header($signup_path . "alert&message=An error occured. Please try again.");
-                exit();
-            }
-        }
-        // If query failed, redirect to signup page with error message
-        else
-        {
-            header($signup_path . "alert&message=An error occured. Please try again.");
-            exit();
-        }
-    }
     // If query failed, redirect to signup page with error message
-    header($signup_path . "alert&message=An error occured. Please try again.");
+    if (!$result)
+    {
+        header($signup_path . "alert&message=An error occured. Please try again.");
+        exit();
+    }
+
+    // Get user id from USER table
+    $query = 'SELECT id FROM USER WHERE email = :email';
+    $prepared_query = $db->prepare($query);
+    $prepared_query->execute(["email" => $email]);
+    $result = $prepared_query->fetchAll();
+
+    // If query failed, redirect to signup page with error message
+    if (!$result) {
+        header($signup_path . "alert&message=An error occured. Please try again.");
+        exit();
+    }
+
+    $id = $result[0]["id"];
+
+    // Insert user id into STATS table
+    $query = "INSERT INTO STATS(user_id) VALUES(:id)";
+    $prepared_query = $db->prepare($query);
+    $result = $prepared_query->execute(["id" => $id]);
+
+    // If query failed, redirect to signup page with error message
+    if (!$result)
+    {
+        header($signup_path . "alert&message=An error occured. Please try again.");
+        exit();
+    }
+
+    // Insert user id into ASSETS table
+    $query = "INSERT INTO ASSETS(user_id) VALUES(:id)";
+    $prepared_query = $db->prepare($query);
+    $result = $prepared_query->execute(["id" => $id]);
+
+    // If query failed, redirect to signup page with error message
+    if (!$result)
+    {
+        header($signup_path . "alert&message=An error occured. Please try again.");
+        exit();
+    }
+
+    // Send confirmation email
+    include("./send_email.php");
+
+    // Delete temporary cookies
+    setcookie("username", '', 0, "/KeyRace/signup.php");
+    setcookie("email", '', 0, "/KeyRace/signup.php");
+    setcookie("keyboard_layout", '', 0, "/KeyRace/signup.php");
+    setcookie("captchaSolved", '', 0, "/KeyRace");
+
+    $message = "Accout created successfully.";
+    $message .= "Confirm your email address before logging in.";
+    header($login_path . "success&message=$message");
     exit();
-?>

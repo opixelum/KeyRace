@@ -128,7 +128,7 @@
               </div>
             </div>
 
-            <input class="btn w-25" type="submit" value="Submit">
+            <button class="btn w-25">Confirm</button>
           </form>
 
           <?php include("src/includes/message.php");?>
