@@ -91,7 +91,6 @@
 
     $_SESSION["id"] = $result[0]["id"];
     $_SESSION['email'] = $_POST['email'];
-    $_SESSION['username'] = $_POST['username'];
 
     $status = "success";
 

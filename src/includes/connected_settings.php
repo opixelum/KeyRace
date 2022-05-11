@@ -21,7 +21,7 @@
       type="text"
       value="<?php 
       // Set cookie value to input field
-      echo isset($_SESSION["username"]) ? $_SESSION["username"] : 'Session error';
+      echo isset($result[0]["username"]) ? $result[0]["username"] : 'Sql error';
       ?>" 
       id="username-inpt"
       name="username"
