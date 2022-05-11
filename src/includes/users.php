@@ -6,5 +6,7 @@
           </div>
           <input type="text" oninput="searchUser()" id="search-input" placeholder="search" class="input-field border-0 px-3 py-2 w-25 rounded-pill">
           ';
-          include('users_table.php');
+          echo '<div id="leaderboard" class="w-100 h-75 p-0 d-flex justify-content-center">';
+            include('users_table.php');
+          echo '</div>';
 ?>
