@@ -7,8 +7,8 @@ $search = isset($_GET['search']) ? $_GET['search'] : NULL;
 if ($search)
 {
     $q .= ' WHERE username LIKE ? OR email LIKE ?';
-    $params[] = '%' . $search . '%';
-    $params[] = '%' . $search . '%';
+    $params[] = "$search%";
+    $params[] = "$search%";
 }
 $prepared_query = $db->prepare($q);
 $prepared_query->execute($params);
