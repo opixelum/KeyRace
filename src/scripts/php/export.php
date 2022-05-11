@@ -2,14 +2,14 @@
 session_start();
 
 // Connect to db
-include('src/scripts/php/db_connect.php');
+include('db_connect.php');
 
 // Get all from informations from user
-$q = 'SELECT * FROM USER WHERE id = ' . $_SESSION['user_id'];
+$q = 'SELECT id, username, email, keyboard FROM USER WHERE id = ' . $_SESSION['id'];
 $req = $db->query($q);
 $results = $req->fetchAll(PDO::FETCH_ASSOC);
 
-require('..../includes/fpdf184/fpdf.php');
+require('../../includes/fpdf184/fpdf.php');
 
 $pdf = new FPDF();
 $pdf->AddPage();

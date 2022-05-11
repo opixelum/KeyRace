@@ -87,7 +87,7 @@
   </div>  
 
   <div class="col d-flex flex-column align-items-center">
-      <button id='export-btn' class="btn w-25 m-3">Export Data</button>
+      <a href="src/scripts/php/export.php" id='export-btn' class="btn w-25 m-3">Export Data</a>
   </div>
 
   <div class="col d-flex flex-column align-items-center">
