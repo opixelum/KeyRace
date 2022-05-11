@@ -40,7 +40,7 @@ if (accountBtn) {
         const request = new XMLHttpRequest()
         request.open("GET", url)
         request.onreadystatechange = function () {
-            const test = document.querySelector("#test")
+            const settingsMain = document.querySelector("#settings-main")
             if (request.readyState === 4 && request.status === 200)
             {
                 html.innerHTML = request.responseText
@@ -63,10 +63,10 @@ if (databaseBtn) {
         const request = new XMLHttpRequest()
         request.open("GET", url)
         request.onreadystatechange = function () {
-            const test = document.querySelector("#test")
+            const settingsMain = document.querySelector("#settings-main")
             if (request.readyState === 4 && request.status === 200)
             {
-                test.innerHTML = request.responseText
+                settingsMain.innerHTML = request.responseText
             }
         }
         request.send()

@@ -13,7 +13,7 @@
       include("src/scripts/php/db_connect.php");
 
       // Get username
-      $query = "SELECT username FROM USER WHERE id=:id;";
+      $query = "SELECT username, role FROM USER WHERE id=:id;";
       $prepared_query = $db->prepare($query);
       $prepared_query->execute(["id" => $_SESSION["id"]]);
       $result = $prepared_query->fetchAll();
@@ -26,7 +26,7 @@
           <?php include("src/includes/navbar.php");?>
         </header>
 
-        <main id="test" class="col d-flex flex-column justify-content-between align-items-center h-100 flex-wrap ms-2 rounded rgb-shadow p-3">
+        <main id="settings-main" class="col d-flex flex-column justify-content-between align-items-center h-100 flex-wrap ms-2 rounded rgb-shadow p-3">
         
         <?php
           // If user is not logged in

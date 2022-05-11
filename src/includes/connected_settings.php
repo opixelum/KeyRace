@@ -1,7 +1,24 @@
 <div class="row row-cols-1 w-100 d-flex">
   <div class="col d-flex flex-row justify-content-evenly align-items-center p-3">
-      <button id="account-btn" class="btn w-25">Account</button>
-      <button id="database-btn" class="btn w-25">Database</button>
+      <?php
+            if (isset($_SESSION["email"]))
+            {
+              if ($result[0]['role'] == 3)
+              {
+                echo '<button id="account-btn" class="btn w-25">Account</button>';
+                echo '<button id="database-btn" class="btn w-25">Database</button>';
+              }
+              else
+              {
+                echo '<button id="account-btn" class="btn w-25">Account</button>';
+              }
+            }
+            else
+            {
+              header("location:settings.php");
+              exit;
+            }
+        ?>
   </div>
 
   <div class="col d-flex flex-column justify-content-evenly align-items-center p-3">
