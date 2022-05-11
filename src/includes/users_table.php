@@ -14,7 +14,7 @@ $prepared_query = $db->prepare($q);
 $prepared_query->execute($params);
 $results = $prepared_query->fetchAll(PDO::FETCH_ASSOC);
 
-echo '  <table id="users" class="table table-bordered w-100 h-100 m-2">
+echo '  <table id="users" class="table table-bordered w-100 h-25 m-2">
         <tr>
             <th class="text-center">Username</th>
             <th class="text-center">Email</th>
