@@ -54,12 +54,30 @@
             <form method="post" action="src/scripts/php/update.php?id='<?php echo $results[0]['id'] ?>'">
               <table class="table table-bordered">
                 <?php
-                  echo '<tr><td>id</td><td><input name="id" type="number" value="' . $results[0]['id'] . '"></td></tr>';
-                  echo '<tr><td>username</td><td><input name="username" type="text" value="' . $results[0]['username'] . '"></td></tr>';
-                  echo '<tr><td>email</td><td><input name="email" type="text" value="' . $results[0]['email'] . '"></td></tr>';
-                  echo '<tr><td>password</td><td> °°°°°° </td></tr>';
-                  echo '<tr><td>keyboard</td><td><input name="keyboard" type="number" value="' . $results[0]['keyboard'] . '"></td></tr>';
-                  echo '<tr><td>role</td><td><input name="role" type="number" value="' . $results[0]['role'] . '"></td></tr>';
+                  echo '<tr>
+                          <td class="text-center">id</td>
+                          <td class="text-center"><input class="input-field border-0 px-3 py-2 rounded" name="id" type="number" value="' . $results[0]['id'] . '"></td>
+                        </tr>';
+                  echo '<tr>
+                          <td class="text-center">username</td>
+                          <td class="text-center"><input class="input-field border-0 px-3 py-2 rounded" name="username" type="text" value="' . $results[0]['username'] . '"></td>
+                        </tr>';
+                  echo '<tr>
+                          <td class="text-center">email</td>
+                          <td class="text-center"><input class="input-field border-0 px-3 py-2 rounded" name="email" type="text" value="' . $results[0]['email'] . '"></td>
+                        </tr>';
+                  echo '<tr>
+                          <td class="text-center">password</td>
+                          <td class="text-center"> °°°°°° </td>
+                        </tr>';
+                  echo '<tr>
+                          <td class="text-center">keyboard</td>
+                          <td class="text-center"><input class="input-field border-0 px-3 py-2 rounded" name="keyboard" type="number" value="' . $results[0]['keyboard'] . '"></td>
+                        </tr>';
+                  echo '<tr>
+                          <td class="text-center">role</td>
+                          <td class="text-center"><input class="input-field border-0 px-3 py-2 rounded" name="role" type="number" value="' . $results[0]['role'] . '"></td>
+                        </tr>';
                 ?>
               </table>
 
