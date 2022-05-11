@@ -100,7 +100,7 @@ const saveAvatar = () => {
         if (saveAvatar.readyState === 4 && saveAvatar.status === 200) {
             const response = saveAvatar.responseText
             if (response != 1) alert("An error occured while saving your avatar. Please try again later.")
-            else alert("Your avatar has been saved!")
+            else window.location.href = `profile.php`
         }
     }
 }
