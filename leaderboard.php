@@ -14,7 +14,7 @@
           <?php include("src/includes/navbar.php"); ?>
         </header>
 
-        <main class="col h-100 d-flex rounded flex-wrap rgb-shadow">
+        <main class="col h-100 ms-2 d-flex rounded flex-wrap rgb-shadow">
           <h1 class="mx-auto my-3">Leaderboard</h1>
           <div class="w-100 justify-content-evenly d-flex">
             <button id="record-btn" class="btn col-2">WPM record</button>
