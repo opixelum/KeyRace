@@ -13,21 +13,21 @@
           <div id="leaderboard" class="w-100 h-75 p-0 d-flex justify-content-center">
             <table class="table table-bordered w-100 h-100 m-2">
               <tr>
-                <th>Username</th>
-                <th>Email</th>
-                <th>Role</th>
-                <th>Actions</th>
+                <th class="text-center">Username</th>
+                <th class="text-center">Email</th>
+                <th class="text-center">Role</th>
+                <th class="text-center">Actions</th>
               </tr>
         ';
               foreach ($results as $key => $user) {
                   echo '<tr>';
-                  echo '<td>' . $user['username'] . '</td>';
-                  echo '<td>' . $user['email'] . '</td>';
-                  echo '<td>' . $user['role'] . '</td>';
-                  echo '<td class="text-nowrap">';
-                  echo '<a class="btn btn-primary btn-sm m-2 col-5" href="edit.php?id=' . $user['id'] . '">Edit</a>';
-                  echo '<a id="delete-Btn" class="btn btn-danger btn-sm m-2 col-5" href="./src/scripts/php/delete.php?id=' . $user['id'] . '">Delete</a>';
-                  echo '</td>';
+                    echo '<td class="text-center">' . $user['username'] . '</td>';
+                    echo '<td class="text-center">' . $user['email'] . '</td>';
+                    echo '<td class="text-center">' . $user['role'] . '</td>';
+                    echo '<td class="text-nowrap">';
+                      echo '<a class="btn btn-primary btn-sm m-2 col-5" href="edit.php?id=' . $user['id'] . '">Edit</a>';
+                      echo '<a id="delete-Btn" class="btn btn-danger btn-sm m-2 col-5" href="./src/scripts/php/delete.php?id=' . $user['id'] . '">Delete</a>';
+                    echo '</td>';
                   echo '</tr>';
             }
             echo '</table>';
