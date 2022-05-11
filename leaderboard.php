@@ -14,7 +14,7 @@
           <?php include("src/includes/navbar.php"); ?>
         </header>
 
-        <main class="col h-100 ms-2 rounded d-flex flex-wrap rgb-shadow">
+        <main class="col h-100 d-flex ms-2 rounded d-flex flex-wrap rgb-shadow">
           <h1 class="mx-auto my-3">Leaderboard</h1>
           <div class="w-100 justify-content-evenly d-flex">
             <button id="record-btn" class="btn col-2">WPM record</button>
@@ -75,7 +75,7 @@
                 $results = $req->fetchAll(PDO::FETCH_ASSOC);
             ?>
 
-            <table class="table table-bordered">
+            <table class="table table-bordered w-100 h-100 m-2">
             <tr>
                 <th>Rank</th>
                 <?php $rank = 1; ?>
