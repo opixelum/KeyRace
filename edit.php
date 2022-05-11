@@ -40,8 +40,8 @@
             }
         ?>
 
-        <main class="col ms-2 rounded rgb-shadow">
-          <div class="container">
+        <main class="col ms-2 rounded d-flex align-items-center rgb-shadow">
+          <div class="container w-75">
             <?php
               include('src/scripts/php/db_connect.php');
               $q = "SELECT id, username, email, password, keyboard, role FROM USER WHERE id = $_GET[id]";
@@ -60,8 +60,10 @@
                 ?>
               </table>
 
-              <button id="back-btn" type="button" class="btn">Back</button>
-              <input type="submit" class="btn" value="Save">
+              <div class="d-flex justify-content-center">
+                <button id="back-btn" type="button" class="btn w-25 m-2">Back</button>
+                <input type="submit" class="btn w-25 m-2" value="Save">
+              </div>
             </form>
             <?php include("./src/includes/message.php"); ?>
           </div>
