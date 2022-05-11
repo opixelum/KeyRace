@@ -19,7 +19,7 @@
       $result = $prepared_query->fetchAll();
   ?>
 
-  <body class="dark-theme">
+  <body class="dark-theme"">
     <div class="container-fluid vh-100 g-0">
       <div class="row h-100 p-3 g-0">
         <header class="col-2 p-0 me-2 h-100 rounded rgb-shadow">
