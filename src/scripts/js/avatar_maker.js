@@ -9,10 +9,24 @@ let vestName, helmetName, visorName, background
 // Images elements
 let vestImage, helmetImage, visorImage
 
+// Url for AJAX query
+let url
+
+// If user is on customization page, load assets with his user id
+if (window.location.href.includes("customization"))
+    url = "src/scripts/php/get_assets.php"
+
+// If not, it means that user is on a profile page, so load assets with the id given in the URL
+else {
+    // Get id variable from url
+    const id = window.location.search.substring(1).split("=")[1]
+    url = `src/scripts/php/get_assets.php?id=${id}`
+}
+
 // Get assets from database with AJAX
 const response = new Promise(resolve => {
     const xhr = new XMLHttpRequest()
-    xhr.open("GET", "src/scripts/php/get_assets.php")
+    xhr.open("GET", url)
     xhr.send()
     xhr.onreadystatechange = () => {
         if (xhr.readyState === 4 && xhr.status === 200) {
