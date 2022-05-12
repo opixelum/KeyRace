@@ -5,12 +5,33 @@
             {
               if ($result[0]['role'] == 3)
               {
-                echo '<button id="account-btn" class="btn w-25">Account</button>';
-                echo '<button id="database-btn" class="btn w-25">Database</button>';
+                echo
+                '
+                    <div class="col w-100 d-flex flex-row justify-content-evenly align-items-center p-3">
+                        <button 
+                        id="account-btn"
+                        class="btn w-25"
+                        onclick="showAccountSettings()"
+                        >Account</button>
+
+                        <button
+                        id="database-btn"
+                        class="btn w-25"
+                        onclick="showDatabaseSettings()"
+                        >Database</button>
+                    </div>
+                ';
               }
               else
               {
-                echo '<button id="account-btn" class="btn w-25">Account</button>';
+                echo 
+                '
+                    <button 
+                      id="account-btn"
+                      class="btn w-25"
+                      onclick="showAccountSettings()"
+                    >Account</button>
+                ';
               }
             }
             else
@@ -87,10 +108,13 @@
         >
     </div>
 
-    <div class="col d-flex flex-column align-items-center">
+    <div class="col d-flex flex-start justify-content-center">
         <input class="btn w-25 m-3" value="Edit" type="submit">
+        <div id='user-delete-btn' class="btn w-25 bg-danger m-3 d-flex justify-content-center align-items-center">Delete account</div>
     </div>
   </form>
+
+  <?php include 'src/includes/message.php'; ?>
 
   <hr>
 
@@ -106,9 +130,5 @@
 
   <div class="col d-flex flex-column align-items-center">
       <a href="src/scripts/php/export.php" id='export-btn' class="btn w-25 m-3">Export Data</a>
-  </div>
-
-  <div class="col d-flex flex-column align-items-center">
-      <button class="btn w-25 bg-danger m-3">Delete Account</button>
   </div>
 </div>

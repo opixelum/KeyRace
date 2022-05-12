@@ -30,7 +30,7 @@ echo '  <table id="users" class="table table-bordered w-100 h-25 m-2">
                 echo '<td class="text-center">' . $user['role'] . '</td>';
                 echo '<td class="text-nowrap">';
                     echo '<a class="btn btn-primary btn-sm m-2 col-5" href="edit.php?id=' . $user['id'] . '">Edit</a>';
-                    echo '<a id="delete-Btn" class="btn btn-danger btn-sm m-2 col-5" href="./src/scripts/php/delete.php?id=' . $user['id'] . '">Delete</a>';
+                    echo '<a id="delete-btn" class="btn btn-danger btn-sm m-2 col-5">Delete</a>';
                 echo '</td>';
             echo '</tr>';
         }
