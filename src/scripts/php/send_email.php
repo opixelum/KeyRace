@@ -39,7 +39,7 @@
             <br>
             <h2>This email is an automated message, please do not reply.</h2>
             <h3>You can reach us at keyrace.contact@gmail.com</h3>
-            <p>© KeyRace 2022</p>
+            <p>KeyRace 2022></p>
         </body>
     ";
     // Plain text body for non-HTML client
@@ -62,3 +62,4 @@
     $message .= "(if you don't see it in your inbox, check your spams).";
     header("location: ../../../login.php?type=success&message=$message");
     exit();
+?>

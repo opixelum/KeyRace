@@ -6,5 +6,7 @@
     $results = $req->fetchAll(PDO::FETCH_ASSOC);
 
     header("location:../../../index.php");
+
+    session_destroy();
     
 ?>
