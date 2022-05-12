@@ -35,15 +35,7 @@ themeSwitch.addEventListener("change", function() {
 // Account Button
 const showAccountSettings = () => {
     let url = 'settings.php'
-    const request = new XMLHttpRequest()
-    request.open("GET", url)
-    request.onreadystatechange = function () {
-        if (request.readyState === 4 && request.status === 200)
-        {
-            window.location.href = url
-        }
-    }
-    request.send()
+    window.location.href = url
 }
 
 // Database Button

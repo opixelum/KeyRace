@@ -5,7 +5,7 @@
             {
               if ($result[0]['role'] == 3)
               {
-                echo 
+                echo
                 '
                     <div class="col w-100 d-flex flex-row justify-content-evenly align-items-center p-3">
                         <button 
