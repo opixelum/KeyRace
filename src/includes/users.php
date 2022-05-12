@@ -9,6 +9,7 @@
             <button id="account-btn" class="btn w-25">Account</button>
             <button id="database-btn" class="btn w-25">Database</button>
           </div>
+<<<<<<< Updated upstream
           <input type="text" id="search-input" placeholder="search">
           <table class="table table-bordered overflow-auto h-75">
             <tr>
@@ -30,4 +31,11 @@
             echo '</tr>';
         }
     echo '</table>';
+=======
+          <input type="text" oninput="searchUser()" id="search-input" placeholder="Search by username or email" class="input-field border-0 px-3 py-2 w-25 rounded-pill">
+          ';
+          echo '<div id="leaderboard" class="w-100 h-75 p-0 d-flex justify-content-center">';
+            include('users_table.php');
+          echo '</div>';
+>>>>>>> Stashed changes
 ?>

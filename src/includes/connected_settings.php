@@ -70,9 +70,23 @@
       >
   </div>
 
+<<<<<<< Updated upstream
   <div class="col d-flex flex-column align-items-center">
       <input class="btn w-25 m-3" value="Edit" type="submit">
   </div>
+=======
+    <div class="col d-flex flex-start justify-content-center">
+        <input class="btn w-25 m-3" value="Edit" type="submit">
+        <button class="btn w-25 bg-danger m-3">Delete Account</button>
+    </div>
+  </form>
+>>>>>>> Stashed changes
+
+  <div class="col d-flex flex-column align-items-center">
+    
+  </div>
+
+  <?php include 'src/includes/message.php'; ?>
 
   <hr>
 
@@ -84,13 +98,16 @@
       value="stay-connected"
       >
       <label for="stay-connected">Stay connected</label><br><br>
+<<<<<<< Updated upstream
   </div>  
 
   <div class="col d-flex flex-column align-items-center">
       <button id='export-btn' class="btn w-25 m-3">Export Data</button>
+=======
+>>>>>>> Stashed changes
   </div>
 
   <div class="col d-flex flex-column align-items-center">
-      <button class="btn w-25 bg-danger m-3">Delete Account</button>
+      <a href="src/scripts/php/export.php" id='export-btn' class="btn w-25 m-3">Export Data</a>
   </div>
 </div>
