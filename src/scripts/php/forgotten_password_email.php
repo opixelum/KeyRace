@@ -41,7 +41,7 @@
     // If email couldn't be sent
     if(!$mail->send())
     {
-        $message = "Email couldn't  be sent. Please try again later.";
+        $message = "Email couldn't  be sent, please try again later.";
         header("location: ../../../signup.php?type=alert&message=$message");
         exit();
     }
