@@ -90,12 +90,7 @@
                   else echo "src/images/banners/default.png";
                 ?>
               >
-              <canvas 
-                class="profile-canvas rounded-circle"
-                id="avatar-canvas"
-                width="200"
-                height="200">
-              </canvas>
+              <canvas id="avatar-canvas" class="profile-canvas rounded-circle" width="200" height="200"></canvas>
             </div>
           </div>
 

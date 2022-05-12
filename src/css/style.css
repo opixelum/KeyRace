@@ -68,10 +68,10 @@
 
 
 @keyframes slide {
-    0% {
+    0%{
         background-position-x: 600%;
     }
-    100% {
+    100%{
         background-position-x: 0;
     }
 }
@@ -85,7 +85,7 @@ body {
     background-color: var(--bodyBg);
 }
 
-header, main {
+header, main{
     background-color: var(--containersBg);
 }
 
@@ -177,7 +177,7 @@ a {
 
 /* Array */
 
-tr, td, th {
+tr, td, th{
     color: var(--fontColor);
     border-color: var(--fontColor);
 }
@@ -204,10 +204,10 @@ tr, td, th {
 
 /* Scrollbar */
 
-::-webkit-scrollbar {
+::-webkit-scrollbar{
     width: 10px;
 }
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb{
     background: #888; 
     border-radius: 10px;
 }
@@ -331,4 +331,9 @@ tr, td, th {
 
 .separator {
     width: 1px;
+}
+
+#leaderboard {
+    overflow-y: auto;
+    overflow-x: hidden;
 }

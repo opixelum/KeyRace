@@ -85,9 +85,6 @@ const loadImage = async imageUrl => {
     return img
 }
 
-/**
- * Build avatar from assets on the canvas
- */
 const buildAvatar = () => {
     const avatar = document.querySelector("#avatar-canvas")
     if (avatar) {
@@ -131,6 +128,7 @@ const cancelAvatarEdit = () => {
  * Save avatar in database with AJAX
  */
 const saveAvatar = () => {
+    // Save avatar to database with AJAX
     const saveAvatar = new XMLHttpRequest()
     saveAvatar.open("POST", "src/scripts/php/save_avatar.php")
     saveAvatar.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
@@ -143,8 +141,8 @@ const saveAvatar = () => {
     saveAvatar.onreadystatechange = () => {
         if (saveAvatar.readyState === 4 && saveAvatar.status === 200) {
             const response = saveAvatar.responseText
-            if (response != 1) alert("Error: " + response)
-            else alert("Avatar saved successfully!")
+            if (response != 1) alert("An error occured while saving your avatar. Please try again later.")
+            else window.location.href = `profile.php`
         }
     }
 }
