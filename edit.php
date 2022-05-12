@@ -42,44 +42,14 @@
 
         <main class="col ms-2 rounded d-flex align-items-center rgb-shadow">
           <div class="container w-75">
-            <?php
-              include('src/scripts/php/db_connect.php');
-              $q = "SELECT id, username, email, password, keyboard, role FROM USER WHERE id = $_GET[id]";
-              $req = $db->query($q);
-              $results = $req->fetchAll(PDO::FETCH_ASSOC);
-            ?>
-            <div class="d-flex flex-column justify-content-center align-items-center">
-            <h1>User</h1>
+            <div class="row w-100 justify-content-center m-3">
+              <button class="btn w-25 m-3">User</button>
+              <button class="btn w-25 m-3">Assets</button>
+              <button class="btn w-25 m-3">Stats</button>
             </div>
-            <form method="post" action="src/scripts/php/update.php?id='<?php echo $results[0]['id'] ?>'">
-              <table class="table table-bordered">
-                <?php
-                  echo '<tr>
-                          <td class="text-center">id</td>
-                          <td class="text-center"><input class="input-field border-0 px-3 py-2 rounded" name="id" type="number" value="' . $results[0]['id'] . '"></td>
-                        </tr>';
-                  echo '<tr>
-                          <td class="text-center">username</td>
-                          <td class="text-center"><input class="input-field border-0 px-3 py-2 rounded" name="username" type="text" value="' . $results[0]['username'] . '"></td>
-                        </tr>';
-                  echo '<tr>
-                          <td class="text-center">email</td>
-                          <td class="text-center"><input class="input-field border-0 px-3 py-2 rounded" name="email" type="text" value="' . $results[0]['email'] . '"></td>
-                        </tr>';
-                  echo '<tr>
-                          <td class="text-center">password</td>
-                          <td class="text-center"> °°°°°° </td>
-                        </tr>';
-                  echo '<tr>
-                          <td class="text-center">keyboard</td>
-                          <td class="text-center"><input class="input-field border-0 px-3 py-2 rounded" name="keyboard" type="number" value="' . $results[0]['keyboard'] . '"></td>
-                        </tr>';
-                  echo '<tr>
-                          <td class="text-center">role</td>
-                          <td class="text-center"><input class="input-field border-0 px-3 py-2 rounded" name="role" type="number" value="' . $results[0]['role'] . '"></td>
-                        </tr>';
-                ?>
-              </table>
+              <div id="edit-user" class="row w-100 justify-content-center m-3">
+                <?php include 'src/includes/edit/edit_stats.php'; ?>
+              </div>
 
               <div class="d-flex justify-content-center">
                 <button id="back-btn" type="button" class="btn w-25 m-2">Back</button>
