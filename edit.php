@@ -43,19 +43,12 @@
         <main class="col ms-2 rounded d-flex align-items-center rgb-shadow">
           <div class="container w-75">
             <div class="row w-100 justify-content-center m-3">
-              <button class="btn w-25 m-3">User</button>
-              <button class="btn w-25 m-3">Assets</button>
-              <button class="btn w-25 m-3">Stats</button>
+              <button id="user-edit" class="btn w-25 m-3">User</button>
+              <button id="assets-edit" class="btn w-25 m-3">Assets</button>
+              <button id="stats-edit" class="btn w-25 m-3">Stats</button>
             </div>
-              <div id="edit-user" class="row w-100 justify-content-center m-3">
-                <?php include 'src/includes/edit/edit_stats.php'; ?>
+              <div id="edit-menu" class="row w-100 justify-content-center m-3">
               </div>
-
-              <div class="d-flex justify-content-center">
-                <button id="back-btn" type="button" class="btn w-25 m-2">Back</button>
-                <input type="submit" class="btn w-25 m-2" value="Save">
-              </div>
-            </form>
             <?php include("./src/includes/message.php"); ?>
           </div>
         </main>
