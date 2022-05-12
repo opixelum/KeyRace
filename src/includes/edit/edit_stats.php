@@ -8,7 +8,7 @@
 <div class="d-flex flex-column justify-content-center align-items-center">
     <h1>Stats</h1>
 </div>
-<form method="post" action="src/scripts/php/update.php?id='<?php echo $results[0]['id'] ?>'">
+<form method="post" action="src/scripts/php/update.php?id='<?php echo $results[0]['user_id'] ?>'">
 <table class="table table-bordered">
     <?php
     echo '<tr>
