@@ -487,6 +487,9 @@ const displayAvatarMaker = () => {
     })
   }
 
+  const cancelBtn = document.querySelector("#cancel-btn")
+  if (cancelBtn) cancelBtn.addEventListener("click", () => cancelAvatarEdit())
+
   const saveBtn = document.querySelector("#save-btn")
   if (saveBtn) saveBtn.addEventListener("click", () => saveAvatar())
 

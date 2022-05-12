@@ -1,15 +1,13 @@
 const assetsRoot = "src/images/avatar/"
 
+// Savec assets
+let savedVestName, savedHelmetName, savedVisorName, savedBackground
+
 // Assets used for the building process
-let vestName
-let helmetName
-let visorName
-let background
+let vestName, helmetName, visorName, background
 
 // Images elements
-let vestImage
-let helmetImage
-let visorImage
+let vestImage, helmetImage, visorImage
 
 // Get assets from database with AJAX
 const response = new Promise(resolve => {
@@ -22,12 +20,16 @@ const response = new Promise(resolve => {
         }
     }
 }).then(assets => {
+    savedBackground = assets.background
+    savedVestName = assets.vest
+    savedHelmetName = assets.helmet
+    savedVisorName = assets.visor
+
     background = assets.background
     vestName = assets.vest
     helmetName = assets.helmet
     visorName = assets.visor
 
-    background = assets.background
 
     // Load images
     loadImage(assetsRoot + "vest/" + vestName + `.png`)
@@ -105,6 +107,24 @@ const buildAvatar = () => {
         context.drawImage(helmetImage, 0, 0, width, height)
         context.drawImage(visorImage, 0, 0, width, height)
     }
+}
+
+/**
+ * Cancel avatar editing. Reset to saved assets
+ */
+const cancelAvatarEdit = () => {
+    vestName = savedVestName
+    vestImage.src = assetsRoot + "vest/" + vestName + `.png`
+
+    helmetName = savedHelmetName
+    helmetImage.src = assetsRoot + "helmet/" + helmetName + `.png`
+
+    visorName = savedVisorName
+    visorImage.src = assetsRoot + "visor/" + visorName + `.png`
+
+    background = savedBackground
+
+    buildAvatar()
 }
 
 /**
