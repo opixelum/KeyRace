@@ -121,16 +121,16 @@ const saveAvatar = () => {
     saveAvatar.open("POST", "src/scripts/php/save_avatar.php")
     saveAvatar.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
     saveAvatar.send(`\
-        background=${background}&\
         vest=${choosenVest}&\
         helmet=${choosenHelmet}&\
-        visor=${choosenVisor}\
+        visor=${choosenVisor}&\
+        background=${background}\
     `)
     saveAvatar.onreadystatechange = () => {
         if (saveAvatar.readyState === 4 && saveAvatar.status === 200) {
             const response = saveAvatar.responseText
             if (response != 1) alert("An error occured while saving your avatar. Please try again later.")
-            else alert("Your avatar has been saved!")
+            else if (response == 1) window.location.href = "profile.php"
         }
     }
 }
