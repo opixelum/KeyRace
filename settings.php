@@ -8,16 +8,15 @@
       $page = "settings";
       $title = "Settings | KeyRace";
       include("./src/includes/head.php");
-      if (isset($_SESSION["id"])) {
-          // Connect to db
-          include("src/scripts/php/db_connect.php");
 
-          // Get username
-          $query = "SELECT username, role FROM USER WHERE id=:id;";
-          $prepared_query = $db->prepare($query);
-          $prepared_query->execute(["id" => $_SESSION["id"]]);
-          $result = $prepared_query->fetchAll();
-      }
+      // Connect to db
+      include("src/scripts/php/db_connect.php");
+
+      // Get username
+      $query = "SELECT username, role FROM USER WHERE id=:id;";
+      $prepared_query = $db->prepare($query);
+      $prepared_query->execute(["id" => $_SESSION["id"]]);
+      $result = $prepared_query->fetchAll();
   ?>
 
   <body class="dark-theme">
@@ -27,7 +26,7 @@
           <?php include("src/includes/navbar.php");?>
         </header>
 
-        <main id="test" class="col d-flex flex-column justify-content-between align-items-center h-100 flex-wrap ms-2 rounded rgb-shadow p-3">
+        <main id="settings-main" class="col d-flex flex-column justify-content-between align-items-center h-100 flex-wrap ms-2 rounded rgb-shadow p-3">
         
         <?php
           // If user is not logged in

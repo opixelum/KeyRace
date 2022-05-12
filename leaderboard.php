@@ -14,7 +14,7 @@
           <?php include("src/includes/navbar.php"); ?>
         </header>
 
-        <main class="col h-100 ms-2 rounded d-flex flex-wrap rgb-shadow">
+        <main class="col h-100 ms-2 d-flex rounded flex-wrap rgb-shadow">
           <h1 class="mx-auto my-3">Leaderboard</h1>
           <div class="w-100 justify-content-evenly d-flex">
             <button id="record-btn" class="btn col-2">WPM record</button>
@@ -75,29 +75,32 @@
                 $results = $req->fetchAll(PDO::FETCH_ASSOC);
             ?>
 
-            <table class="table table-bordered">
-            <tr>
-                <th>Rank</th>
-                <?php $rank = 1; ?>
-                <th>Username</th>
-                <?php echo "<th>$leaderboardTabName</th>";?>
-                <th>Profile</th>
-            </tr>
+            <div id="leaderboard" class="w-100 h-75 p-0 d-flex justify-content-center">
+              <table class="table table-bordered w-100 h-25 m-2">
+              <tr>
+                  <th class="text-center">Rank</th>
+                  <?php $rank = 1; ?>
+                  <th class="text-center">Username</th>
+                  <?php echo "<th class='text-center'>$leaderboardTabName</th>";?>
+                  <th class="text-center">Profile</th>
+              </tr>
 
-            <?php
-                foreach ($results as $key => $stats) {
-                    echo '<tr>';
-                    echo '<td>' . $rank++ . '</td>';
-                    echo '<td>' . $stats['username'] . '</td>';
-                    echo '<td>' . $stats["$leaderboardTab"] . '</td>';
-                    echo '<td class="text-nowrap">';
-                    echo '<a class="btn btn-primary btn-sm me-2 col-6" href="profile.php?id=' . $stats['id'] . '">Profile</a>';
-                    echo '</td>';
-                    echo '</tr>';
-                }
-
-            ?>
-            </table>
+              <?php
+                  foreach ($results as $key => $stats) {
+                    if ($stats["$leaderboardTab"] != 0) {
+                      echo '<tr>';
+                        echo '<td class="text-center">' . $rank++ . '</td>';
+                        echo '<td class="text-center">' . $stats['username'] . '</td>';
+                        echo '<td class="text-center">' . $stats["$leaderboardTab"] . '</td>';
+                        echo '<td class="text-nowrap text-center">';
+                          echo '<a class="btn btn-primary btn-sm col-6" href="profile.php?id=' . $stats['id'] . '">Profile</a>';
+                        echo '</td>';
+                      echo '</tr>';
+                    }
+                  }
+              ?>
+              </table>
+            </div>
         </main>
       </div>
     </div>
