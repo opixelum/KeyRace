@@ -34,15 +34,14 @@ themeSwitch.addEventListener("change", function() {
 
 // Account Button
 const showAccountSettings = () => {
-    console.log("It works")
-    let url = 'src/includes/connected_settings.php'
+    let url = 'settings.php'
     const request = new XMLHttpRequest()
     request.open("GET", url)
     request.onreadystatechange = function () {
-        const settingsMain = document.querySelector("#settings-main")
+        const settingsHtml = document.querySelector("#settings-html")
         if (request.readyState === 4 && request.status === 200)
         {
-            html.innerHTML = request.responseText
+            window.location.href = url
         }
     }
     request.send()
