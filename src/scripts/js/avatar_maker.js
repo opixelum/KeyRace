@@ -12,6 +12,9 @@ let vestImage, helmetImage, visorImage
 // Url for AJAX query
 let url
 
+// Used for the redirect to profile page
+let id
+
 // If user is on customization page, load assets with his user id
 if (window.location.href.includes("customization"))
     url = "src/scripts/php/get_assets.php"
@@ -38,6 +41,8 @@ const response = new Promise(resolve => {
     savedVestName = assets.vest
     savedHelmetName = assets.helmet
     savedVisorName = assets.visor
+
+    id = assets.user_id
 
     background = assets.background
     vestName = assets.vest
@@ -158,7 +163,7 @@ const saveAvatar = () => {
         if (saveAvatar.readyState === 4 && saveAvatar.status === 200) {
             const response = saveAvatar.responseText
             if (response != 1) alert("An error occured while saving your avatar. Please try again later.")
-            else window.location.href = `profile.php`
+            else window.location.href = `profile.php?id=${id}`
         }
     }
 }
