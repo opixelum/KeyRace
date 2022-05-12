@@ -213,7 +213,7 @@ function displayAvatarMaker() {
             <img class="w-100" src="src/images/avatar/visor/default/cyan.png">
           </label>
           <label class="w-25">
-            <input type="radio" name="visor value="default/green">
+            <input type="radio" name="visor" value="default/green">
             <img class="w-100" src="src/images/avatar/visor/default/green.png">
           </label>
           <label class="w-25">
