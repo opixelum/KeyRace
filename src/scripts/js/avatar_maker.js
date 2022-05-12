@@ -1,15 +1,22 @@
-let helmet = new Image()
-let vest = new Image()
-let visor = new Image()
-let background
-
 const assetsRoot = "src/images/avatar/"
 
+// Assets used for the building process
+let background
+let vest
+let helmet
+let visor
+
 // Assets saved in the database
+let savedBackground
+let savedVest
 let savedHelmet
 let savedVisor
-let savedVest
-let savedBackground
+
+// Assets choosen in the avatar maker
+let choosenBackground
+let choosenVest
+let choosenHelmet
+let choosenVisor 
 
 // Get assets from database with AJAX
 const response = new Promise(resolve => {
@@ -22,25 +29,25 @@ const response = new Promise(resolve => {
         }
     }
 }).then(assets => {
+    savedBackground = assets.background
+    savedVest = assets.vest
     savedHelmet = assets.helmet
     savedVisor = assets.visor
-    savedVest = assets.vest
-    savedBackground = assets.background
-
-    helmet.src = assetsRoot + `helmet/` + savedHelmet + `.png`
-    visor.src = assetsRoot + `visor/` + savedVisor + `.png`
-    vest.src = assetsRoot + `vest/` + savedVest + `.png`
 
     background = savedBackground
 
-    buildAvatar()
-})
+    // Load images
+    loadImage(assetsRoot + "vest/" + savedVest + `.png`)
+    .then(img => vest = img)
 
-// Assets choosen in the avatar maker
-let choosenHelmet
-let choosenVisor 
-let choosenVest
-let choosenBackground
+    .then(() => loadImage(assetsRoot + "helmet/" + savedHelmet + `.png`)
+    .then(img => helmet = img))
+
+    .then(() => loadImage(assetsRoot + "visor/" + savedVisor + `.png`)
+    .then(img => visor = img))
+
+    .then(() => buildAvatar())
+})
 
 const setHelmet = () => {
     choosenHelmet = document.querySelector("input[name='helmet']:checked").value
@@ -66,35 +73,58 @@ const setBackground = () => {
     buildAvatar()
 }
 
-const buildAvatar = () => {
-    const avatar = document.querySelector("#avatar-canvas")
-    const context = avatar.getContext("2d")
-
-    const width = avatar.width
-    const height = avatar.height
-
-    // Draw rectangle as background
-    context.beginPath()
-    context.rect(0, 0, width, height)
-    context.fillStyle = background
-    context.fill()
-
-    // Place images on canvas
-    context.drawImage(vest, 0, 0, width, height)
-    context.drawImage(helmet, 0, 0, width, height)
-    context.drawImage(visor, 0, 0, width, height)
+/**
+ * Await for image to load before building avatar
+ * @param {string} imageUrl URL of image to load 
+ * @returns {HTMLImageElement} Image element
+ */
+const loadImage = async imageUrl => {
+    let img
+    const imageLoadPromise = new Promise(resolve => {
+        img = new Image()
+        img.onload = resolve
+        img.src = imageUrl
+    })
+    await imageLoadPromise
+    return img
 }
 
+/**
+ * Build avatar from assets on the canvas
+ */
+const buildAvatar = () => {
+    const avatar = document.querySelector("#avatar-canvas")
+    if (avatar) {
+        const context = avatar.getContext("2d")
+
+        const width = avatar.width
+        const height = avatar.height
+
+        // Draw rectangle as background
+        context.beginPath()
+        context.rect(0, 0, width, height)
+        context.fillStyle = background
+        context.fill()
+
+        // Place images on canvas
+        context.drawImage(vest, 0, 0, width, height)
+        context.drawImage(helmet, 0, 0, width, height)
+        context.drawImage(visor, 0, 0, width, height)
+    }
+}
+
+/**
+ * Save avatar in database with AJAX
+ */
 const saveAvatar = () => {
-    // Save avatar to database with AJAX
     const saveAvatar = new XMLHttpRequest()
     saveAvatar.open("POST", "src/scripts/php/save_avatar.php")
     saveAvatar.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
     saveAvatar.send(`\
-        helmet=${choosenHelmet}&\
-        visor=${choosenVisor}&\
+        background=${background}&\
         vest=${choosenVest}&\
-        background=${background}\
+        helmet=${choosenHelmet}&\
+        visor=${choosenVisor}\
     `)
     saveAvatar.onreadystatechange = () => {
         if (saveAvatar.readyState === 4 && saveAvatar.status === 200) {
