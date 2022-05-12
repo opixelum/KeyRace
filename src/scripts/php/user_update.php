@@ -86,11 +86,31 @@
     }
     else if (!empty($_POST['new-password']))
     {
+        $password = $_POST['new-password'];
+
+        // Store booleans for each requirement
+        $uppercase = preg_match("@[A-Z]@", $password);
+        $lowercase = preg_match("@[a-z]@", $password);
+        $number    = preg_match("@[0-9]@", $password);
+        $symbols   = preg_match("@[\w]@" , $password);
+        $length    = strlen($password) > 8;
+
+        // If password doesn't meet requirements
+        if (!($uppercase && $lowercase && $number && $symbols && $length))
+        {
+            $message = "Password doesn't meet requirements.";
+            header($signup_path . "warning&message=$message");
+            exit();
+        }
+
+        // Hash new password
+        $encrypted_password = hash("sha512", $salt . $_POST["new-password"]);
+
         $query = "UPDATE USER SET username=:username, email=:email, password=:password WHERE id=$_SESSION[id]";
         $prepared_query = $db->prepare($query);
         $prepared_query->execute(["username" => $_POST['new-username'],
                                 "email" => $_POST['new-email'],
-                                "password" => $_POST['new-password']]);
+                                "password" => $encrypted_password]);
         $result = $prepared_query->fetchAll();
     
         header("location:../../../settings.php");
