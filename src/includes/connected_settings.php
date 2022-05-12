@@ -5,12 +5,31 @@
             {
               if ($result[0]['role'] == 3)
               {
-                echo '<button id="account-btn" class="btn w-25">Account</button>';
-                echo '<button id="database-btn" class="btn w-25">Database</button>';
+                echo 
+                '
+                    <button 
+                      id="account-btn"
+                      class="btn w-25"
+                      onclick="showAccountSettings()"
+                    >Account</button>
+
+                    <button
+                      id="database-btn"
+                      class="btn w-25"
+                      onclick="showDatabaseSettings()"
+                    >Database</button>
+                ';
               }
               else
               {
-                echo '<button id="account-btn" class="btn w-25">Account</button>';
+                echo 
+                '
+                    <button 
+                      id="account-btn"
+                      class="btn w-25"
+                      onclick="showAccountSettings()"
+                    >Account</button>
+                ';
               }
             }
             else

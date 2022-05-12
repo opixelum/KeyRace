@@ -33,44 +33,39 @@ themeSwitch.addEventListener("change", function() {
 })
 
 // Account Button
-const accountBtn = document.querySelector("#account-btn")
-if (accountBtn) {
-    accountBtn.addEventListener("click", () => {
-        let url = 'src/includes/connected_settings.php'
-        const request = new XMLHttpRequest()
-        request.open("GET", url)
-        request.onreadystatechange = function () {
-            const settingsMain = document.querySelector("#settings-main")
-            if (request.readyState === 4 && request.status === 200)
-            {
-                html.innerHTML = request.responseText
-            }
+const showAccountSettings = () => {
+    console.log("It works")
+    let url = 'src/includes/connected_settings.php'
+    const request = new XMLHttpRequest()
+    request.open("GET", url)
+    request.onreadystatechange = function () {
+        const settingsMain = document.querySelector("#settings-main")
+        if (request.readyState === 4 && request.status === 200)
+        {
+            html.innerHTML = request.responseText
         }
-        request.send()
-    })
+    }
+    request.send()
 }
 
 // Database Button
-const databaseBtn = document.querySelector("#database-btn")
-if (databaseBtn) {
-    databaseBtn.addEventListener("click", () => {
-        let url = 'src/includes/users.php'
-        const searchInput = document.querySelector("#search-input")
-        if (searchInput && searchInput.value.length > 1)
+const showDatabaseSettings = () => {
+    let url = 'src/includes/users.php'
+    const searchInput = document.querySelector("#search-input")
+    if (searchInput && searchInput.value.length > 1)
+    {
+        url += "?search=" + searchInput.value
+    }
+    const request = new XMLHttpRequest()
+    request.open("GET", url)
+    request.onreadystatechange = function () {
+        const settingsMain = document.querySelector("#settings-main")
+        if (request.readyState === 4 && request.status === 200)
         {
-            url += "?search=" + searchInput.value
+            settingsMain.innerHTML = request.responseText
         }
-        const request = new XMLHttpRequest()
-        request.open("GET", url)
-        request.onreadystatechange = function () {
-            const settingsMain = document.querySelector("#settings-main")
-            if (request.readyState === 4 && request.status === 200)
-            {
-                settingsMain.innerHTML = request.responseText
-            }
-        }
-        request.send()
-    })
+    }
+    request.send()
 }
 
 // Search an user
