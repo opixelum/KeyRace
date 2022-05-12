@@ -94,7 +94,7 @@ function searchUser() {
 }
 
 
-var btnDeleteUser = document.getElementById("btn-delete-user")
+var btnDeleteUser = document.getElementById("user-delete-btn")
 // Confirmation for delete account
 if (btnDeleteUser) {
     btnDeleteUser.addEventListener("click", () => {
