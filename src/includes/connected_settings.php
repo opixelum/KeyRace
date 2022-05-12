@@ -7,17 +7,19 @@
               {
                 echo 
                 '
-                    <button 
-                      id="account-btn"
-                      class="btn w-25"
-                      onclick="showAccountSettings()"
-                    >Account</button>
+                    <div class="col w-100 d-flex flex-row justify-content-evenly align-items-center p-3">
+                        <button 
+                        id="account-btn"
+                        class="btn w-25"
+                        onclick="showAccountSettings()"
+                        >Account</button>
 
-                    <button
-                      id="database-btn"
-                      class="btn w-25"
-                      onclick="showDatabaseSettings()"
-                    >Database</button>
+                        <button
+                        id="database-btn"
+                        class="btn w-25"
+                        onclick="showDatabaseSettings()"
+                        >Database</button>
+                    </div>
                 ';
               }
               else

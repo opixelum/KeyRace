@@ -38,7 +38,6 @@ const showAccountSettings = () => {
     const request = new XMLHttpRequest()
     request.open("GET", url)
     request.onreadystatechange = function () {
-        const settingsHtml = document.querySelector("#settings-html")
         if (request.readyState === 4 && request.status === 200)
         {
             window.location.href = url
