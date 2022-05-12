@@ -38,7 +38,7 @@
               value="<?php
                   // Set cookie value to input field
                   echo isset($_COOKIE["email"]) ? $_COOKIE["email"] : '';
-              ?>"
+              ?>" 
             >
           </div>
 
@@ -64,17 +64,15 @@
           >
           <label for="stay-connected">Stay connected</label><br><br>
 
-          <div class="d-flex flex-column justify-content-center w-100 h-25 m-4"> 
+          <div class="d-flex flex-column justify-content-center w-100 h-25"> 
             <label class="w-100 text-center" for="captcha">Captcha</label>
             <?php include("src/includes/captcha.php");?>
           </div>
 
           <button class="btn">Confirm</button>
-        </form>                      
+        </form>
 
-        <div class="container d-flex justify-content-center flex-wrap w-100 m-5 pt-5">
-            <?php include("src/includes/message.php");?>
-        </div>
+        <?php include("src/includes/message.php");?>                       
 
         </main>
       </div>

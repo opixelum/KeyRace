@@ -332,8 +332,3 @@ tr, td, th {
 .separator {
     width: 1px;
 }
-
-#leaderboard {
-    overflow-y: auto;
-    overflow-x: hidden;
-}

@@ -40,7 +40,7 @@ if (accountBtn) {
         const request = new XMLHttpRequest()
         request.open("GET", url)
         request.onreadystatechange = function () {
-            const settingsMain = document.querySelector("#settings-main")
+            const test = document.querySelector("#test")
             if (request.readyState === 4 && request.status === 200)
             {
                 html.innerHTML = request.responseText
@@ -63,32 +63,12 @@ if (databaseBtn) {
         const request = new XMLHttpRequest()
         request.open("GET", url)
         request.onreadystatechange = function () {
-            const settingsMain = document.querySelector("#settings-main")
+            const test = document.querySelector("#test")
             if (request.readyState === 4 && request.status === 200)
             {
-                settingsMain.innerHTML = request.responseText
+                test.innerHTML = request.responseText
             }
         }
         request.send()
     })
-}
-
-// Search an user
-function searchUser() {
-    let url = 'src/includes/users_table.php'
-    const searchInput = document.querySelector("#search-input")
-    if (searchInput && searchInput.value.length > 1)
-    {
-        url += "?search=" + searchInput.value
-    }
-    const request = new XMLHttpRequest()
-    request.open("GET", url)
-    request.onreadystatechange = function () {
-        const users = document.querySelector("#users")
-        if (request.readyState === 4 && request.status === 200)
-        {
-            users.innerHTML = request.responseText
-        }
-    }
-    request.send()
 }

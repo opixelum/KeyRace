@@ -8,7 +8,6 @@
       $page = "settings";
       $title = "Settings | KeyRace";
       include("./src/includes/head.php");
-
       if (isset($_SESSION["id"])) {
           // Connect to db
           include("src/scripts/php/db_connect.php");
@@ -28,7 +27,7 @@
           <?php include("src/includes/navbar.php");?>
         </header>
 
-        <main id="settings-main" class="col d-flex flex-column justify-content-between align-items-center h-100 flex-wrap ms-2 rounded rgb-shadow p-3">
+        <main id="test" class="col d-flex flex-column justify-content-between align-items-center h-100 flex-wrap ms-2 rounded rgb-shadow p-3">
         
         <?php
           // If user is not logged in

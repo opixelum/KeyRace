@@ -40,51 +40,28 @@
             }
         ?>
 
-        <main class="col ms-2 rounded d-flex align-items-center rgb-shadow">
-          <div class="container w-75">
+        <main class="col ms-2 rounded rgb-shadow">
+          <div class="container">
             <?php
               include('src/scripts/php/db_connect.php');
               $q = "SELECT id, username, email, password, keyboard, role FROM USER WHERE id = $_GET[id]";
               $req = $db->query($q);
               $results = $req->fetchAll(PDO::FETCH_ASSOC);
             ?>
-            <div class="d-flex flex-column justify-content-center align-items-center">
-            <h1>User</h1>
-            </div>
             <form method="post" action="src/scripts/php/update.php?id='<?php echo $results[0]['id'] ?>'">
               <table class="table table-bordered">
                 <?php
-                  echo '<tr>
-                          <td class="text-center">id</td>
-                          <td class="text-center"><input class="input-field border-0 px-3 py-2 rounded" name="id" type="number" value="' . $results[0]['id'] . '"></td>
-                        </tr>';
-                  echo '<tr>
-                          <td class="text-center">username</td>
-                          <td class="text-center"><input class="input-field border-0 px-3 py-2 rounded" name="username" type="text" value="' . $results[0]['username'] . '"></td>
-                        </tr>';
-                  echo '<tr>
-                          <td class="text-center">email</td>
-                          <td class="text-center"><input class="input-field border-0 px-3 py-2 rounded" name="email" type="text" value="' . $results[0]['email'] . '"></td>
-                        </tr>';
-                  echo '<tr>
-                          <td class="text-center">password</td>
-                          <td class="text-center"> °°°°°° </td>
-                        </tr>';
-                  echo '<tr>
-                          <td class="text-center">keyboard</td>
-                          <td class="text-center"><input class="input-field border-0 px-3 py-2 rounded" name="keyboard" type="number" value="' . $results[0]['keyboard'] . '"></td>
-                        </tr>';
-                  echo '<tr>
-                          <td class="text-center">role</td>
-                          <td class="text-center"><input class="input-field border-0 px-3 py-2 rounded" name="role" type="number" value="' . $results[0]['role'] . '"></td>
-                        </tr>';
+                  echo '<tr><td>id</td><td><input name="id" type="number" value="' . $results[0]['id'] . '"></td></tr>';
+                  echo '<tr><td>username</td><td><input name="username" type="text" value="' . $results[0]['username'] . '"></td></tr>';
+                  echo '<tr><td>email</td><td><input name="email" type="text" value="' . $results[0]['email'] . '"></td></tr>';
+                  echo '<tr><td>password</td><td> °°°°°° </td></tr>';
+                  echo '<tr><td>keyboard</td><td><input name="keyboard" type="number" value="' . $results[0]['keyboard'] . '"></td></tr>';
+                  echo '<tr><td>role</td><td><input name="role" type="number" value="' . $results[0]['role'] . '"></td></tr>';
                 ?>
               </table>
 
-              <div class="d-flex justify-content-center">
-                <button id="back-btn" type="button" class="btn w-25 m-2">Back</button>
-                <input type="submit" class="btn w-25 m-2" value="Save">
-              </div>
+              <button id="back-btn" type="button" class="btn">Back</button>
+              <input type="submit" class="btn" value="Save">
             </form>
             <?php include("./src/includes/message.php"); ?>
           </div>
