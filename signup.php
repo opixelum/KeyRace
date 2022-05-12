@@ -26,9 +26,6 @@
         <main class="col ms-2 d-flex justify-content-center align-items-center rounded rgb-shadow"> 
           <form class="container d-flex justify-content-center flex-wrap w-75 h-75" method="POST" action="./src/scripts/php/signup_check.php">
           <h1>Sign up</h1>
-          <div class="container d-flex justify-content-center flex-wrap w-100">
-            <?php include("src/includes/message.php");?>
-          </div>
             <div class="row row-cols-2 w-100">
               <div class="col d-flex flex-column justify-content-evenly align-items-center">
                 <label class="w-100 text-center" for="username">Username</label>
@@ -133,6 +130,8 @@
 
             <button class="btn w-25">Confirm</button>
           </form>
+
+          <?php include("src/includes/message.php");?>
         </main>
       </div>
     </div>
