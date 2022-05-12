@@ -8,16 +8,6 @@
       $page = "settings";
       $title = "Settings | KeyRace";
       include("./src/includes/head.php");
-      if (isset($_SESSION["id"])) {
-          // Connect to db
-          include("src/scripts/php/db_connect.php");
-
-          // Get username
-          $query = "SELECT username, role FROM USER WHERE id=:id;";
-          $prepared_query = $db->prepare($query);
-          $prepared_query->execute(["id" => $_SESSION["id"]]);
-          $result = $prepared_query->fetchAll();
-      }
   ?>
 
   <body class="dark-theme">
