@@ -12,14 +12,17 @@ searchField.addEventListener("keyup", () => {
     return
   }
 
-  // AJAX request
   const xhr = new XMLHttpRequest()
-  xhr.open("GET", "src/scripts/php/search/search.php?q=" + query, true)
+  xhr.open("GET", "src/scripts/php/search.php?q=" + query, true)
+  xhr.send()
   xhr.onreadystatechange = () => {
     if (xhr.readyState == 4 && xhr.status == 200) {
-      document.querySelector("#results").innerHTML = xhr.responseText
-      document.querySelector("#results").classList.add("border")
+      // Display results
+      if (xhr.responseText.length > 0) {
+        document.querySelector("#results").innerHTML = xhr.responseText
+        document.querySelector("#results").classList.add("border")
+      } else
+        document.querySelector("#results").innerHTML = "No results found"
     }
   }
-  xhr.send()
 })

@@ -109,7 +109,15 @@ header, main{
 }
 
 #results {
-    background-color: var(--containersBg);
+    background-color: #888;
+    border-color: var(--fontColor);
+    color: var(--buttonFontColor);
+}
+#results a {
+    color: var(--buttonFontColor);
+}
+#results a:hover {
+    color: var(--fontColor);
 }
 
 input[type="search"]::-webkit-search-cancel-button {
