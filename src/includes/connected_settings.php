@@ -89,7 +89,7 @@
 
     <div class="col d-flex flex-start justify-content-center">
         <input class="btn w-25 m-3" value="Edit" type="submit">
-        <button class="btn w-25 bg-danger m-3">Delete Account</button>
+        <div id='user-delete-btn' class="btn w-25 bg-danger m-3 d-flex justify-content-center align-items-center">Delete account</div>
     </div>
   </form>
 
