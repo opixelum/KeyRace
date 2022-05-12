@@ -12,10 +12,7 @@
         !isset($_POST["vest"])   ||
         !isset($_POST["background"])
     )
-    {
-        echo 0;
-        die("Error: missing POST parameters.");
-    }
+        echo "Error: missing POST parameters.";
 
     // Get the user's id
     $id = $_SESSION["id"];
@@ -43,9 +40,7 @@
         "background" => $background
     ]);
 
-    if (!$prepared_statement) {
-        echo 0;
-        die("Error: failed to update user's assets.");
-    }
+    if (!$prepared_statement)
+        echo "Error: failed to update user's assets.";
 
     echo 1;
