@@ -85,6 +85,9 @@ const loadImage = async imageUrl => {
     return img
 }
 
+/**
+ * Build avatar canvas with saved/selected assets
+ */
 const buildAvatar = () => {
     const avatar = document.querySelector("#avatar-canvas")
     if (avatar) {
