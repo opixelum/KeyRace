@@ -1,5 +1,6 @@
 <?php
     include('src/scripts/php/db_connect.php');
+
     $q = "SELECT highest_wpm, races_ran, races_won, quest, achievements, time_played FROM STATS WHERE user_id = $_GET[id]";
     $req = $db->query($q);
     $results = $req->fetchAll(PDO::FETCH_ASSOC);
