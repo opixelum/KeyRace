@@ -1,15 +1,13 @@
-let helmet = new Image()
-let vest = new Image()
-let visor = new Image()
-let background
-
 const assetsRoot = "src/images/avatar/"
 
-// Assets saved in the database
-let savedHelmet
-let savedVisor
-let savedVest
-let savedBackground
+// Savec assets
+let savedVestName, savedHelmetName, savedVisorName, savedBackground
+
+// Assets used for the building process
+let vestName, helmetName, visorName, background
+
+// Images elements
+let vestImage, helmetImage, visorImage
 
 // Get assets from database with AJAX
 const response = new Promise(resolve => {
@@ -22,78 +20,124 @@ const response = new Promise(resolve => {
         }
     }
 }).then(assets => {
-    savedHelmet = assets.helmet
-    savedVisor = assets.visor
-    savedVest = assets.vest
     savedBackground = assets.background
+    savedVestName = assets.vest
+    savedHelmetName = assets.helmet
+    savedVisorName = assets.visor
 
-    helmet.src = assetsRoot + `helmet/` + savedHelmet + `.png`
-    visor.src = assetsRoot + `visor/` + savedVisor + `.png`
-    vest.src = assetsRoot + `vest/` + savedVest + `.png`
+    background = assets.background
+    vestName = assets.vest
+    helmetName = assets.helmet
+    visorName = assets.visor
 
-    background = savedBackground
+    // Load images
+    loadImage(assetsRoot + "vest/" + vestName + `.png`)
+    .then(img => vestImage = img)
 
-    buildAvatar()
+    .then(() => loadImage(assetsRoot + "helmet/" + helmetName + `.png`)
+    .then(img => helmetImage = img))
+
+    .then(() => loadImage(assetsRoot + "visor/" + visorName + `.png`)
+    .then(img => visorImage = img))
+
+    .then(() => {
+        buildAvatar()
+    })
 })
 
-// Assets choosen in the avatar maker
-let choosenHelmet
-let choosenVisor 
-let choosenVest
-let choosenBackground
+const setVest = () => {
+    vestName = document.querySelector("input[name='vest']:checked").value
+    vestImage.src = assetsRoot + "vest/" + vestName + `.png`
+    buildAvatar()
+}
 
 const setHelmet = () => {
-    choosenHelmet = document.querySelector("input[name='helmet']:checked").value
-    helmet.src = assetsRoot + "helmet/" + choosenHelmet + `.png`
+    helmetName = document.querySelector("input[name='helmet']:checked").value
+    helmetImage.src = assetsRoot + "helmet/" + helmetName + `.png`
     buildAvatar()
 }
 
 const setVisor = () => {
-    choosenVisor = document.querySelector("input[name='visor']:checked").value
-    visor.src = assetsRoot + "visor/" + choosenVisor + `.png`
-    buildAvatar()
-}
-
-const setVest = () => {
-    choosenVest = document.querySelector("input[name='vest']:checked").value
-    vest.src = assetsRoot + "vest/" + choosenVest + `.png`
+    visorName = document.querySelector("input[name='visor']:checked").value
+    visorImage.src = assetsRoot + "visor/" + visorName + `.png`
     buildAvatar()
 }
 
 const setBackground = () => {
-    choosenBackground = document.querySelector("input[name='background']:checked").value
-    background = choosenBackground
+    background = document.querySelector("input[name='background']:checked").value
     buildAvatar()
 }
 
-const buildAvatar = () => {
-    const avatar = document.querySelector("#avatar-canvas")
-    const context = avatar.getContext("2d")
-
-    const width = avatar.width
-    const height = avatar.height
-
-    // Draw rectangle as background
-    context.beginPath()
-    context.rect(0, 0, width, height)
-    context.fillStyle = background
-    context.fill()
-
-    // Place images on canvas
-    context.drawImage(vest, 0, 0, width, height)
-    context.drawImage(helmet, 0, 0, width, height)
-    context.drawImage(visor, 0, 0, width, height)
+/**
+ * Await for image to load before building avatar
+ * @param {string} imageUrl URL of image to load 
+ * @returns {HTMLImageElement} Image element
+ */
+const loadImage = async imageUrl => {
+    let img
+    const imageLoadPromise = new Promise(resolve => {
+        img = new Image()
+        img.onload = resolve
+        img.src = imageUrl
+    })
+    await imageLoadPromise
+    return img
 }
 
+/**
+ * Build avatar canvas with saved/selected assets
+ */
+const buildAvatar = () => {
+    const avatar = document.querySelector("#avatar-canvas")
+    if (avatar) {
+        const context = avatar.getContext("2d")
+
+        const width = avatar.width
+        const height = avatar.height
+
+        // Draw rectangle as background
+        context.beginPath()
+        context.rect(0, 0, width, height)
+        context.fillStyle = background
+        context.fill()
+
+        // Place images on canvas
+        context.drawImage(vestImage, 0, 0, width, height)
+        context.drawImage(helmetImage, 0, 0, width, height)
+        context.drawImage(visorImage, 0, 0, width, height)
+    }
+}
+
+/**
+ * Cancel avatar editing. Reset to saved assets
+ */
+const cancelAvatarEdit = () => {
+    vestName = savedVestName
+    vestImage.src = assetsRoot + "vest/" + vestName + `.png`
+
+    helmetName = savedHelmetName
+    helmetImage.src = assetsRoot + "helmet/" + helmetName + `.png`
+
+    visorName = savedVisorName
+    visorImage.src = assetsRoot + "visor/" + visorName + `.png`
+
+    background = savedBackground
+
+    buildAvatar()
+}
+
+/**
+ * Save avatar in database with AJAX
+ */
 const saveAvatar = () => {
     // Save avatar to database with AJAX
     const saveAvatar = new XMLHttpRequest()
     saveAvatar.open("POST", "src/scripts/php/save_avatar.php")
     saveAvatar.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
     saveAvatar.send(`\
-        helmet=${choosenHelmet}&\
-        visor=${choosenVisor}&\
-        vest=${choosenVest}&\
+        vest=${vestName}&\
+        helmet=${helmetName}&\
+        visor=${visorName}&\
         background=${background}\
     `)
     saveAvatar.onreadystatechange = () => {

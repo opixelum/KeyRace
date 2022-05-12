@@ -4,7 +4,7 @@
  *
  * @param {string} asset The type of asset that the user is selecting
  */
-const getAllRadioInputs = (asset) => {
+const getAllRadioInputs = asset => {
   // Get all the radio buttons
   const allRadioInputs = document.querySelectorAll('input[type="radio"]')
 
@@ -32,7 +32,7 @@ const getAllRadioInputs = (asset) => {
   }
 }
 
-function displayAvatarMaker() {
+const displayAvatarMaker = () => {
   const container = document.querySelector("main .container")
   container.innerHTML = `
     <div class="row align-items-center h-100">
@@ -481,6 +481,9 @@ function displayAvatarMaker() {
       getAllRadioInputs("background")
     })
   }
+
+  const cancelBtn = document.querySelector("#cancel-btn")
+  if (cancelBtn) cancelBtn.addEventListener("click", () => cancelAvatarEdit())
 
   const saveBtn = document.querySelector("#save-btn")
   if (saveBtn) saveBtn.addEventListener("click", () => saveAvatar())
