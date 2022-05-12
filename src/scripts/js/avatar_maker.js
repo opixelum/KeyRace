@@ -121,10 +121,10 @@ const saveAvatar = () => {
     saveAvatar.open("POST", "src/scripts/php/save_avatar.php")
     saveAvatar.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
     saveAvatar.send(`\
-        background=${background}&\
         vest=${choosenVest}&\
         helmet=${choosenHelmet}&\
-        visor=${choosenVisor}\
+        visor=${choosenVisor}&\
+        background=${background}\
     `)
     saveAvatar.onreadystatechange = () => {
         if (saveAvatar.readyState === 4 && saveAvatar.status === 200) {
