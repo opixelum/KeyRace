@@ -76,7 +76,7 @@
             ?>
 
             <div id="leaderboard" class="w-100 h-75 p-0 d-flex justify-content-center">
-              <table class="table table-bordered w-100 h-100 m-2">
+              <table class="table table-bordered w-100 h-25 m-2">
               <tr>
                   <th class="text-center">Rank</th>
                   <?php $rank = 1; ?>
