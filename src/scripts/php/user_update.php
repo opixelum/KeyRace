@@ -1,11 +1,10 @@
 <?php
     session_start();
-    echo $_SESSION["id"];
 
     include("db_connect.php");
 
     // Save the path
-    $read_path = "location: ../../../settings.php?type=danger&message=";
+    $read_path = "location: ../../../settings.php?";
 
     $q = "SELECT * FROM USER WHERE id = $_SESSION[id]";
     $req = $db->query($q);
@@ -17,7 +16,7 @@
 
     if (!filter_var($_POST['new-email'], FILTER_VALIDATE_EMAIL))
     {
-        header($read_path . "email needs to be an email.");
+        header($read_path . "type=danger&message=Email needs to be an email.");
         exit;
     }
 
@@ -34,7 +33,7 @@
         }
         else if ($test["email"] === $_POST["new-email"])
         {
-            header($read_path . "email is already in use.");
+            header($read_path . "type=danger&message=Email is already in use.");
             exit;
         }
     }
@@ -52,7 +51,7 @@
         }
         else if ($test["username"] === $_POST["new-username"])
         {
-            header($read_path . "username is already in use.");
+            header($read_path . "type=danger&message=Username is already in use.");
             exit;
         }
     }
@@ -63,7 +62,7 @@
     // Check if the password is correct
     if ($encrypted_password != $results[0]['password'])
     {
-        header($read_path . "password is incorrect.");
+        header($read_path . "type=danger&message=Password is incorrect.");
         exit;
     }
 
@@ -81,7 +80,7 @@
         ]);
         $result = $prepared_query->fetchAll();
 
-        header("location:../../../settings.php");
+        header($read_path . "type=success&message=Values have been changed.");
         exit;
     }
     else if (!empty($_POST['new-password']))
@@ -98,8 +97,7 @@
         // If password doesn't meet requirements
         if (!($uppercase && $lowercase && $number && $symbols && $length))
         {
-            $message = "Password doesn't meet requirements.";
-            header($signup_path . "warning&message=$message");
+            header($read_path . "type=danger&message=Password doesn't meet requirements.");
             exit();
         }
 
@@ -113,7 +111,7 @@
                                 "password" => $encrypted_password]);
         $result = $prepared_query->fetchAll();
     
-        header("location:../../../settings.php");
+        header($read_path . "type=success&message=Values have been changed.");
         exit;
     }
 ?>
