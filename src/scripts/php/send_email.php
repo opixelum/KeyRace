@@ -30,7 +30,17 @@
     $url .= "/src/scripts/php/confirm_email.php?ckey=$ckey";
     $mail->Body =
     "
-        <a href='$url'>Click here</a> to confirm your email.
+        <head><meta charset='UTF-8'></head>
+        <body>
+            <h1>Hi ! Welcome to KeyRace ! </h1>
+            <h2>Thank you for joining the KeyRace adventure.</h2>
+            <h2>You just have to confirm your email and you will be able to connect!</h2>
+            <a href='$url'>Click here</a> to confirm your email.
+            <br>
+            <h2>This email is an automated message, please do not reply.</h2>
+            <h3>You can reach us at keyrace.contact@gmail.com</h3>
+            <p>© KeyRace 2022</p>
+        </body>
     ";
     // Plain text body for non-HTML client
     $mail->AltBody =
