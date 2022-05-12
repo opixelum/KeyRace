@@ -30,7 +30,6 @@ const response = new Promise(resolve => {
     helmetName = assets.helmet
     visorName = assets.visor
 
-
     // Load images
     loadImage(assetsRoot + "vest/" + vestName + `.png`)
     .then(img => vestImage = img)
