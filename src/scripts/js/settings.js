@@ -93,10 +93,11 @@ function searchUser() {
     request.send()
 }
 
-// Confirmation for delete an user
-const btnDelete = document.querySelector('#user-delete-btn')
-if (btnDelete) {
-    btnDelete.addEventListener("click", () => {
+
+var btnDeleteUser = document.getElementById("btn-delete-user")
+// Confirmation for delete account
+if (btnDeleteUser) {
+    btnDeleteUser.addEventListener("click", () => {
         let test = confirm("Are you sure you want to delete your account?")
         if (test) {
             window.location.href = "src/scripts/php/user_delete.php"
