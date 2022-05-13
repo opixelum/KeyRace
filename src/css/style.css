@@ -191,22 +191,22 @@ tr, td, th{
 }
 
 /* Customization */
-#assets-selection img {
+#assets-selection, #car-selection img {
     height: fit-content;
 }
 
-#assets-selection {
+#assets-selection, #car-selection {
     overflow-y: auto;
     overflow-x: hidden;
 }
 
-#assets-selection input {
+#assets-selection input, #car-selection input {
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
 }
 
-#assets-selection label {
+#assets-selection label, #car-selection label {
     cursor: pointer;
 }
 
@@ -320,6 +320,9 @@ tr, td, th{
     color: red;
 }
 
+#bot-car, #user-car {
+    max-height: 50px;
+}
 
 /*--------------------------------- C H A T ---------------------------------*/
 

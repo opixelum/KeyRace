@@ -108,17 +108,53 @@
         exit();
     }
 
+    // If username is already registered
+    $query = "SELECT * FROM USER WHERE username=:username;";
+    $prepared_query = $db->prepare($query);
+    $prepared_query->execute(["username" => $username]);
+    $result = $prepared_query->fetchAll();
+
+    if ($result)
+    {
+        header($signup_path . "warning&message=Username is already used.");
+        exit();
+    }
+
     // Store booleans for each requirement
     $uppercase = preg_match("@[A-Z]@", $password);
     $lowercase = preg_match("@[a-z]@", $password);
     $number    = preg_match("@[0-9]@", $password);
-    $symbols   = preg_match("@[\w]@" , $password);
-    $length    = strlen($password) > 8;
+    $symbols   = preg_match("/[$-/:-?{-~!^_`\[\]]/" , $password);
+    $length    = strlen($password) >= 8;
 
     // If password doesn't meet requirements
-    if (!($uppercase && $lowercase && $number && $symbols && $length))
+    if (!($length))
     {
-        $message = "Password doesn't meet requirements.";
+        $message = "Password must be more than 8 characters long.";
+        header($signup_path . "warning&message=$message");
+        exit();
+    }
+    else if (!($uppercase))
+    {
+        $message = "Password must contain at least one uppercase letter.";
+        header($signup_path . "warning&message=$message");
+        exit();
+    }
+    else if (!($lowercase))
+    {
+        $message = "Password must contain at least one lowercase letter.";
+        header($signup_path . "warning&message=$message");
+        exit();
+    }
+    else if (!($number))
+    {
+        $message = "Password must contain at least one number.";
+        header($signup_path . "warning&message=$message");
+        exit();
+    }
+    else if (!($symbols))
+    {
+        $message = "Password must contain at least one symbol.";
         header($signup_path . "warning&message=$message");
         exit();
     }
@@ -224,3 +260,5 @@
     $message .= "Confirm your email address before logging in.";
     header($login_path . "success&message=$message");
     exit();
+
+?>

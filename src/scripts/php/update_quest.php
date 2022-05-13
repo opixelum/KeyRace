@@ -23,7 +23,7 @@
     if ($last_quest < $post_quest)
     {
         $new_achievements = $achievements . $post_quest;
-        $query = "UPDATE STATS SET quest=:quest, achievements=:achievements WHERE user_id=:id;";
+        $query = "UPDATE STATS SET quest = :quest, achievements = :achievements WHERE user_id=:id;";
         $prepared_query = $db->prepare($query);
         $result = $prepared_query->execute
         ([
@@ -34,6 +34,11 @@
         // If an error occured, respond to request with error
         if (!$result) echo 0;
     }
+
+    // Increment races_won 
+    $statement = "UPDATE STATS SET races_won = races_won + 1 WHERE user_id=$_SESSION[id];";
+    $result = $db->query($statement);
+    if (!$result) echo 0;
 
     // Respond to request with success
     echo 1;

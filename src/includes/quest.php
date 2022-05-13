@@ -5,34 +5,42 @@
       switch ($quest) {
         case 1:
           echo "Complete race under 80 seconds.";
+          $car = "tank";
           break;
 
         case 2:
           echo "Type faster than 40 wpm";
+          $car = "monospace";
           break;
 
         case 3:
           echo "Complete race under 50 seconds.";
+          $car = "pickup";
           break;
 
         case 4:
           echo "Type faster than 55 wpm";
+          $car = "benz";
           break;
 
         case 5:
           echo "Complete race under 40 seconds.";
+          $car = "henessi";
           break;
 
         case 6:
           echo "Type faster than 70 wpm.";
+          $car = "lambo";
           break;
 
         case 7:
           echo "Complete race under 30 seconds.";
+          $car = "f1";
           break;
 
         case 8:
           echo "Type faster than 100 wpm.";
+          $car = "jet";
           break;
       }
     ?>
@@ -44,7 +52,7 @@
     <img
       alt="Bot car"
       id="bot-car"
-      src="src/images/cars/benz.png"
+      src=<?php echo "src/images/cars/$car.png"; ?>
       width="100px"
       style="transform:translate(-99px)"
     >
@@ -54,7 +62,11 @@
     <img
       alt="User car"
       id="user-car"
-      src="src/images/cars/tank.png"
+      src=<?php 
+        echo "src/images/cars/";
+        include "src/scripts/php/get_car.php";
+        echo ".png"
+      ?>
       width="100px"
       style="transform:translate(-99px)"
     >

@@ -87,7 +87,7 @@ const questSuccess = () => {
   xhr.onreadystatechange = () => {
     if (xhr.readyState === 4 && xhr.status === 200) {
       const response = xhr.responseText
-      if (response != 1) alert("error")
+      if (response != 1) alert("Error")
     }
   }
   // Content type
