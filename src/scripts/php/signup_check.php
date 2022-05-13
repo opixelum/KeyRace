@@ -108,6 +108,18 @@
         exit();
     }
 
+    // If username is already registered
+    $query = "SELECT * FROM USER WHERE username=:username;";
+    $prepared_query = $db->prepare($query);
+    $prepared_query->execute(["username" => $username]);
+    $result = $prepared_query->fetchAll();
+
+    if ($result)
+    {
+        header($signup_path . "warning&message=Username is already used.");
+        exit();
+    }
+
     // Store booleans for each requirement
     $uppercase = preg_match("@[A-Z]@", $password);
     $lowercase = preg_match("@[a-z]@", $password);
