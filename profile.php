@@ -130,18 +130,16 @@
               <div class="container h-75">
                 <div class="row">
                   <div class='col-4 d-flex justify-content-center'>
-                    <abbr title='Complete quest 1'>
-                      <img
-                        alt='Achievement 1'
-                        <?php
-                          echo "class='achievement";
-                          echo str_contains($achievements, 1)
-                            ? "'" 
-                            : " opacity-25'";
-                          echo "src='src/images/achievement.png'";
-                        ?>
-                      >
-                    </abbr>
+                    <img
+                      alt='Achievement 1'
+                      <?php
+                        echo "class='achievement";
+                        echo str_contains($achievements, 1)
+                          ? "'" 
+                          : " opacity-25'";
+                        echo "src='src/images/achievement.png'";
+                      ?>
+                    >
                   </div>
                   <div class='col-4 d-flex justify-content-center'>
                     <abbr title='Complete quest 2'>
