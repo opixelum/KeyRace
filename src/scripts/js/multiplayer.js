@@ -44,30 +44,10 @@ errorsSpan.innerText = `Errors: 0`
 // Listen to player's keyboard
 const keyListener = document.addEventListener("keydown", ({ key }) => {
   // Key check
-  if (key === "Escape") {
-    // If player presses escape, restart the game
-    cursorCharacter.classList.remove("cursor")
-    for (let character of characters) {
-      character.classList.remove("correct")
-      character.classList.remove("wrong")
-    }
-
-    cursorIndex = 0
-    cursorCharacter = characters[cursorIndex]
-    cursorCharacter.classList.add("cursor")
-
-    startTime = null
-
-    errors = 0
-    errorsSpan.innerText = `Errors: 0`
-
-    userCarDistance = 0
-    userCar.style.marginLeft = userCarDistance
-
-    clearInterval(moving)
-  } else if (
-    key === cursorCharacter.innerText ||
-    (key === " " && cursorCharacter.innerText === "_")
+  if (
+    document.activeElement.tagName !== "INPUT" &&
+    (key === cursorCharacter.innerText ||
+    (key === " " && cursorCharacter.innerText === "_"))
   ) {
     // If right key was typed
     cursorCharacter.classList.remove("cursor")
@@ -82,7 +62,10 @@ const keyListener = document.addEventListener("keydown", ({ key }) => {
     // Send new car position to server
     send("car", `${(userCarDistance += 100 / text.length)}%`)
 
-  } else if (letters.includes(key) || key === " ") {
+  } else if (
+    document.activeElement.tagName !== "INPUT" &&
+    (letters.includes(key) || key === " ")
+  ) {
     // If wrong key (excluding non-letter keys) was typed
     cursorCharacter.classList.add("wrong")
     errors++
