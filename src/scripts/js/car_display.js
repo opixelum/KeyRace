@@ -77,14 +77,16 @@ const displayCarSelection = () => {
   const allRadioInputs = document.querySelectorAll('input[type="radio"]')
   if (allRadioInputs) {
     for (const radioInput of allRadioInputs)
-      radioInput.addEventListener("click", () => setCar())
+      radioInput.addEventListener("click", () => showCar())
   }
 
   const cancelBtn = document.querySelector("#cancel-btn")
-  if (cancelBtn) cancelBtn.addEventListener("click", () => cancelAvatarEdit())
+  if (cancelBtn) cancelBtn.addEventListener("click", () => {
+    cancelCarSelection()
+  })
 
   const saveBtn = document.querySelector("#save-btn")
-  if (saveBtn) saveBtn.addEventListener("click", () => saveAvatar())
+  if (saveBtn) saveBtn.addEventListener("click", () => saveCar())
 
-  buildAvatar()
+  loadCar()
 }

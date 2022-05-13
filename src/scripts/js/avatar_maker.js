@@ -12,6 +12,9 @@ let vestImage, helmetImage, visorImage
 // Url for AJAX query
 let url
 
+// Used for profile redirection when user save car
+let id
+
 // If user is on customization page, load assets with his user id
 if (window.location.href.includes("customization"))
     url = "src/scripts/php/get_assets.php"
@@ -24,16 +27,17 @@ else {
 }
 
 // Get assets from database with AJAX
-const response = new Promise(resolve => {
+const assetsResponse = new Promise(resolve => {
     const xhr = new XMLHttpRequest()
     xhr.open("GET", url)
     xhr.send()
     xhr.onreadystatechange = () => {
-        if (xhr.readyState === 4 && xhr.status === 200) {
+        if (xhr.readyState === 4 && xhr.status === 200)
             resolve(JSON.parse(xhr.responseText))
-        }
     }
 }).then(assets => {
+    id = assets.user_id
+
     savedBackground = assets.background
     savedVestName = assets.vest
     savedHelmetName = assets.helmet
@@ -144,7 +148,6 @@ const cancelAvatarEdit = () => {
  * Save avatar in database with AJAX
  */
 const saveAvatar = () => {
-    // Save avatar to database with AJAX
     const saveAvatar = new XMLHttpRequest()
     saveAvatar.open("POST", "src/scripts/php/save_avatar.php")
     saveAvatar.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
@@ -156,9 +159,9 @@ const saveAvatar = () => {
     `)
     saveAvatar.onreadystatechange = () => {
         if (saveAvatar.readyState === 4 && saveAvatar.status === 200) {
-            const response = saveAvatar.responseText
-            if (response != 1) alert("An error occured while saving your avatar. Please try again later.")
-            else window.location.href = `profile.php`
+            if (saveAvatar.responseText != 1)
+                alert("An error occured while saving your avatar. Please try again later.")
+            else window.location.href = `profile.php?id=${id}`
         }
     }
 }
