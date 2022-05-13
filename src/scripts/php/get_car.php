@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    if (!isset($_SESSION["id"])) session_start();
 
     // Connect to database
     require "db_connect.php";
@@ -16,5 +16,6 @@
 
     if (!$results)
         die("Error: failed to load user's assets.");
-
+    
     echo $results[0]["car"];
+?>

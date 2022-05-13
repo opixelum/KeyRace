@@ -54,7 +54,11 @@
     <img
       alt="User car"
       id="user-car"
-      src="src/images/cars/tank.png"
+      src=<?php 
+        echo "src/images/cars/";
+        include "src/scripts/php/get_car.php";
+        echo ".png"
+      ?>
       width="100px"
       style="transform:translate(-99px)"
     >
