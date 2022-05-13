@@ -51,15 +51,34 @@ const displayCarSelection = () => {
   const carSelection = document.querySelector("#car-selection")
   if (carSelection) {
     carSelection.innerHTML = `
-      <label class="w-25">
+      <label class="w-25 p-2">
         <input type="radio" name="car" value="benz">
         <img src="src/images/cars/benz.png" class="w-100">
+      </label>
+      <label class="w-25 p-2">
+        <input type="radio" name="car" value="f1">
+        <img src="src/images/cars/f1.png" class="w-100">
+      </label>
+      <label class="w-25 p-2">
+        <input type="radio" name="car" value="lambo">
+        <img src="src/images/cars/lambo.png" class="w-100">
+      </label>
+      <label class="w-25 p-2">
+        <input type="radio" name="car" value="monospace">
+        <img src="src/images/cars/monospace.png" class="w-100">
+      </label>
+      <label class="w-25 p-2">
+        <input type="radio" name="car" value="tank">
+        <img src="src/images/cars/tank.png" class="w-100">
       </label>
     `
   }
 
   const allRadioInputs = document.querySelectorAll('input[type="radio"]')
-  
+  if (allRadioInputs) {
+    for (const radioInput of allRadioInputs)
+      radioInput.addEventListener("click", () => setCar())
+  }
 
   const cancelBtn = document.querySelector("#cancel-btn")
   if (cancelBtn) cancelBtn.addEventListener("click", () => cancelAvatarEdit())

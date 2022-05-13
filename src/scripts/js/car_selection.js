@@ -1,6 +1,6 @@
-const assetsRoot = "src/images/avatar/"
+const assetsRoot = "src/images/cars/"
 
-// Savec assets
+// Saved assets
 let savedVestName, savedHelmetName, savedVisorName, savedBackground
 
 // Assets used for the building process
