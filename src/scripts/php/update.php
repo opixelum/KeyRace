@@ -84,8 +84,8 @@
         }
 
         // Update the user informations
-        $query = "UPDATE USER SET highest_wpm=:highest_wpm, races_ran=:races_ran, races_won=:races_won, quest=:quest,
-                achievements=:achievements, time_played=:time_played user_id=$_GET[id]";
+        $query = "UPDATE STATS SET highest_wpm=:highest_wpm, races_ran=:races_ran, races_won=:races_won, quest=:quest,
+                achievements=:achievements, time_played=:time_played WHERE user_id=$_GET[id]";
         $prepared_query = $db->prepare($query);
         $prepared_query->execute(["highest_wpm" => $_POST['highest_wpm'],
                                 "races_ran" => $_POST['races_ran'],
@@ -93,7 +93,27 @@
                                 "quest" => $_POST['quest'],
                                 "achievements" => $_POST['achievements'],
                                 "time_played" => $_POST['time_played']]);
-        $result = $prepared_query->fetchAll();
+        $results = $prepared_query->fetchAll();
+
+        header("location:../../../settings.php");
+
+        exit;
+    }
+
+    // Update the stats
+    else if (isset($_POST['helmet']))
+    {
+        // Update the user informations
+        $query = "UPDATE STATS SET highest_wpm=:highest_wpm, races_ran=:races_ran, races_won=:races_won, quest=:quest,
+                achievements=:achievements, time_played=:time_played WHERE user_id=$_GET[id]";
+        $prepared_query = $db->prepare($query);
+        $prepared_query->execute(["highest_wpm" => $_POST['highest_wpm'],
+                                "races_ran" => $_POST['races_ran'],
+                                "races_won" => $_POST['races_won'],
+                                "quest" => $_POST['quest'],
+                                "achievements" => $_POST['achievements'],
+                                "time_played" => $_POST['time_played']]);
+        $results = $prepared_query->fetchAll();
 
         header("location:../../../settings.php");
 

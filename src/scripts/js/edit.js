@@ -2,16 +2,15 @@ function backBtn() {
     window.location.href = "settings.php";
 }
 
+// Get id from url
+const editId = window.location.search.substring(1).split('=')[1]
+
 const saveBtn = document.querySelector(`#save-btn`)
 if (saveBtn) {
     saveBtn.addEventListener('click', () => {
-        window.location.href = `src/scripts/php/update.php`
+        window.location.href = `src/scripts/php/update.php?id=${editId}`
     })
 }
-
-// Get id from url
-const editId = window.location.search.substring(1).split('=')[1]
-console.log(editId)
 
 // If user clicked
 const userClicked = document.querySelector(`#user-edit`)
