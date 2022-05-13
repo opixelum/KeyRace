@@ -3,8 +3,7 @@ function backBtn() {
 }
 
 // Get id from url
-const editId = window.location.search.substring(1).split('=')[1]
-
+let editId = window.location.search.split('=')[1]
 const saveBtn = document.querySelector(`#save-btn`)
 if (saveBtn) {
     saveBtn.addEventListener('click', () => {

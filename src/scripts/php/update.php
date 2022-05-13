@@ -2,6 +2,7 @@
 
     include("db_connect.php");
 
+
     // Save the path
     $read_path = "location: ../../../edit.php?id=$_GET[id]&type=danger&message=";
 
@@ -9,7 +10,7 @@
     if (isset($_POST['id']))
     {
         // For check if email or username already used
-        $q = "SELECT * FROM USER WHERE id = $_GET[id]";
+        $q = "SELECT id, email, username FROM USER WHERE id = $_GET[id]";
         $req = $db->query($q);
         $results = $req->fetchAll(PDO::FETCH_ASSOC);
 

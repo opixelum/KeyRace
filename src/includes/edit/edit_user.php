@@ -9,7 +9,7 @@
     <h1>User</h1>
 </div>
 
-<form method="post" action="src/scripts/php/update.php?id='<?php echo $_GET['id'] ?>'">
+<form method="post" action="src/scripts/php/update.php?id=<?php echo $_GET["id"] ?>">
     <table class="table table-bordered">
         <?php
         echo '<tr>
