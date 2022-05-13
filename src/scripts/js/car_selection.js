@@ -19,6 +19,7 @@ const loadCar = () => {
                 resolve(xhr.responseText)
         }
     }).then(car => {
+        savedCar = car
         const selectedCar = document.querySelector("#selected-car")
         if (selectedCar)
             selectedCar.src = carRoot + car + `.png`
