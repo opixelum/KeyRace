@@ -14,27 +14,8 @@
         $req = $db->query($q);
         $results = $req->fetchAll(PDO::FETCH_ASSOC);
 
-        $old_id = $results[0]["id"];
         $old_email = $results[0]["email"];
         $old_username = $results[0]["username"];
-
-        // Check if the id is already in use
-        $q = "SELECT id FROM USER";
-        $req = $db->query($q);
-        $id = $req->fetchAll(PDO::FETCH_ASSOC);
-
-        foreach ($id as $test)
-        {
-            if ($old_id === $_POST["id"])
-            {
-                break;
-            }
-            else if ($test["id"] === $_POST["id"])
-            {
-                header($read_path . "id is already in use.");
-                exit;
-            }
-        }
 
         // Check if the email is already in use
         $q = "SELECT email FROM USER";
@@ -94,15 +75,23 @@
         }
 
         // Update the user informations
-        $query = "UPDATE USER SET id=:id, username=:username, email=:email, keyboard=:keyboard, role=:role WHERE id=$_GET[id]";
-        $prepared_query = $db->prepare($query);
-        $prepared_query->execute(["id" => $_POST['id'],
-                                "username" => $_POST['username'],
-                                "email" => $_POST['email'],
-                                "keyboard" => $_POST['keyboard'],
-                                "role" => $_POST['role']]);
-        $result = $prepared_query->fetchAll();
-
+        try 
+        {
+            $query = "UPDATE USER SET id=:id, username=:username, email=:email, keyboard=:keyboard, role=:role WHERE id=$_GET[id]";
+            $prepared_query = $db->prepare($query);
+            $prepared_query->execute(["id" => $_POST['id'],
+                                    "username" => $_POST['username'],
+                                    "email" => $_POST['email'],
+                                    "keyboard" => $_POST['keyboard'],
+                                    "role" => $_POST['role']]);
+            $result = $prepared_query->fetchAll();
+        }
+        catch (PDOException $e)
+        {
+            header($read_path . "Id is already in use.");
+            exit;
+        }
+        
         header("location:../../../settings.php");
 
         exit;
