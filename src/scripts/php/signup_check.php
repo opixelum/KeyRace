@@ -124,8 +124,8 @@
     $uppercase = preg_match("@[A-Z]@", $password);
     $lowercase = preg_match("@[a-z]@", $password);
     $number    = preg_match("@[0-9]@", $password);
-    $symbols   = preg_match("@[\w]@" , $password);
-    $length    = strlen($password) > 8;
+    $symbols   = preg_match("/[$-/:-?{-~!^_`\[\]]/" , $password);
+    $length    = strlen($password) >= 8;
 
     // If password doesn't meet requirements
     if (!($length))
@@ -134,25 +134,25 @@
         header($signup_path . "warning&message=$message");
         exit();
     }
-    if (!($uppercase))
+    else if (!($uppercase))
     {
         $message = "Password must contain at least one uppercase letter.";
         header($signup_path . "warning&message=$message");
         exit();
     }
-    if (!($lowercase))
+    else if (!($lowercase))
     {
         $message = "Password must contain at least one lowercase letter.";
         header($signup_path . "warning&message=$message");
         exit();
     }
-    if (!($number))
+    else if (!($number))
     {
         $message = "Password must contain at least one number.";
         header($signup_path . "warning&message=$message");
         exit();
     }
-    if (!($symbols))
+    else if (!($symbols))
     {
         $message = "Password must contain at least one symbol.";
         header($signup_path . "warning&message=$message");
@@ -260,3 +260,5 @@
     $message .= "Confirm your email address before logging in.";
     header($login_path . "success&message=$message");
     exit();
+
+?>
