@@ -40,7 +40,7 @@ const displayCarSelection = () => {
           <div id="car-selection" class="d-flex flex-wrap border rounded-3 align-items-start h-75"></div>
         </div>
         <div class="col-6 d-flex flex-wrap justify-content-center align-items-center h-100">
-          <img id="selected-car" alt="Selected car">
+          <img alt="Selected car" class="w-100 p-5" id="selected-car">
           <button class="btn w-25 bg-danger mx-2" id="cancel-btn">Cancel</button>
           <button class="btn w-25 bg-success mx-2" id="save-btn">Save</button>
         </div>
