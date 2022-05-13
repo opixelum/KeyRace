@@ -14,6 +14,7 @@
         $results = $req->fetchAll(PDO::FETCH_ASSOC);
 
         $old_id = $results[0]["id"];
+        echo $old_id;
         $old_email = $results[0]["email"];
         $old_username = $results[0]["username"];
 
@@ -24,13 +25,13 @@
 
         foreach ($id as $test)
         {
-            if ($old_id === $_POST['id'])
+            if ($old_id === $_POST["id"])
             {
                 break;
             }
             else if ($test["id"] === $_POST["id"])
             {
-                header($read_path . "Id is already in use.");
+                header($read_path . "id is already in use.");
                 exit;
             }
         }
