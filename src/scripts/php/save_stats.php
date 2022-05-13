@@ -38,7 +38,7 @@
         }
 
         // Add game time
-        $q = "UPDATE STATS SET time_played = time_played + $time WHERE user_id = $id";
+        $q = "UPDATE STATS SET time_played = time_played + $time, races_ran = races_ran + 1 WHERE user_id = $id";
         $req = $db->query($q);
         $results = $req->fetchAll(PDO::FETCH_ASSOC);
     }
