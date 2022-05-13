@@ -128,9 +128,33 @@
     $length    = strlen($password) > 8;
 
     // If password doesn't meet requirements
-    if (!($uppercase && $lowercase && $number && $symbols && $length))
+    if (!($length))
     {
-        $message = "Password doesn't meet requirements.";
+        $message = "Password must be more than 8 characters long.";
+        header($signup_path . "warning&message=$message");
+        exit();
+    }
+    if (!($uppercase))
+    {
+        $message = "Password must contain at least one uppercase letter.";
+        header($signup_path . "warning&message=$message");
+        exit();
+    }
+    if (!($lowercase))
+    {
+        $message = "Password must contain at least one lowercase letter.";
+        header($signup_path . "warning&message=$message");
+        exit();
+    }
+    if (!($number))
+    {
+        $message = "Password must contain at least one number.";
+        header($signup_path . "warning&message=$message");
+        exit();
+    }
+    if (!($symbols))
+    {
+        $message = "Password must contain at least one symbol.";
         header($signup_path . "warning&message=$message");
         exit();
     }
