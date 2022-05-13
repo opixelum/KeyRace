@@ -104,15 +104,15 @@
     else if (isset($_POST['helmet']))
     {
         // Update the user informations
-        $query = "UPDATE STATS SET highest_wpm=:highest_wpm, races_ran=:races_ran, races_won=:races_won, quest=:quest,
-                achievements=:achievements, time_played=:time_played WHERE user_id=$_GET[id]";
+        $query = "UPDATE ASSETS SET helmet=:helmet, visor=:visor, vest=:vest, background=:background,
+                car=:car, banner=:banner WHERE user_id=$_GET[id]";
         $prepared_query = $db->prepare($query);
-        $prepared_query->execute(["highest_wpm" => $_POST['highest_wpm'],
-                                "races_ran" => $_POST['races_ran'],
-                                "races_won" => $_POST['races_won'],
-                                "quest" => $_POST['quest'],
-                                "achievements" => $_POST['achievements'],
-                                "time_played" => $_POST['time_played']]);
+        $prepared_query->execute(["helmet" => $_POST['helmet'],
+                                "visor" => $_POST['visor'],
+                                "vest" => $_POST['vest'],
+                                "background" => $_POST['background'],
+                                "car" => $_POST['car'],
+                                "banner" => $_POST['banner']]);
         $results = $prepared_query->fetchAll();
 
         header("location:../../../settings.php");
