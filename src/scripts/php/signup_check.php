@@ -124,7 +124,7 @@
     $uppercase = preg_match("@[A-Z]@", $password);
     $lowercase = preg_match("@[a-z]@", $password);
     $number    = preg_match("@[0-9]@", $password);
-    $symbols   = preg_match("/[$-/:-?{-~!^_`\[\]]/" , $password);
+    $symbols   = preg_match("@[\W]+@" , $password);
     $length    = strlen($password) >= 8;
 
     // If password doesn't meet requirements

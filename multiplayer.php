@@ -39,16 +39,13 @@
             <div class="col-8 d-flex justify-content-center flex-wrap h-100">
               <div id="race" class="container ms-5 w-100">
                 <div class="row">
-                  <div class="col-10 border-start border-top border-end">
+                  <div class="col-10 border-start border-top border-end p-1">
                     <img
                       alt="User car"
+                      class="opacity-0"
                       id="user-car"
-                      src=<?php 
-                        echo "src/images/cars/";
-                        include "src/scripts/php/get_car.php";
-                        echo ".png"
-                      ?>
-                      width="100px"
+                      src="src/images/cars/monospace.png"
+                      width="80px"
                       style="transform:translate(-99px)"
                     >
                   </div>
@@ -56,16 +53,13 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-10 border-start border-top border-end">
+                  <div class="col-10 border-start border-top border-end p-1">
                     <img
                       alt="User car"
+                      class="opacity-0"
                       id="user-car"
-                      src=<?php 
-                        echo "src/images/cars/";
-                        include "src/scripts/php/get_car.php";
-                        echo ".png"
-                      ?>
-                      width="100px"
+                      src="src/images/cars/monospace.png"
+                      width="80px"
                       style="transform:translate(-99px)"
                     >
                   </div>
@@ -73,16 +67,13 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-10 border-start border-top border-end">
+                  <div class="col-10 border-start border-top border-end p-1">
                     <img
                       alt="User car"
+                      class="opacity-0"
                       id="user-car"
-                      src=<?php 
-                        echo "src/images/cars/";
-                        include "src/scripts/php/get_car.php";
-                        echo ".png"
-                      ?>
-                      width="100px"
+                      src="src/images/cars/monospace.png"
+                      width="80px"
                       style="transform:translate(-99px)"
                     >
                   </div>
@@ -90,16 +81,13 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-10 border-start border-top border-end">
+                  <div class="col-10 border-start border-top border-end p-1">
                     <img
                       alt="User car"
+                      class="opacity-0"
                       id="user-car"
-                      src=<?php 
-                        echo "src/images/cars/";
-                        include "src/scripts/php/get_car.php";
-                        echo ".png"
-                      ?>
-                      width="100px"
+                      src="src/images/cars/monospace.png"
+                      width="80px"
                       style="transform:translate(-99px)"
                     >
                   </div>
@@ -107,16 +95,13 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-10 border-start border-top border-end">
+                  <div class="col-10 border-start border-top border-end p-1">
                     <img
                       alt="User car"
+                      class="opacity-0"
                       id="user-car"
-                      src=<?php 
-                        echo "src/images/cars/";
-                        include "src/scripts/php/get_car.php";
-                        echo ".png"
-                      ?>
-                      width="100px"
+                      src="src/images/cars/monospace.png"
+                      width="80px"
                       style="transform:translate(-99px)"
                     >
                   </div>
@@ -124,16 +109,13 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-10 border-start border-top border-end border-bottom">
+                  <div class="col-10 border-start border-top border-end border-bottom p-1">
                     <img
                       alt="User car"
+                      class="opacity-0"
                       id="user-car"
-                      src=<?php 
-                        echo "src/images/cars/";
-                        include "src/scripts/php/get_car.php";
-                        echo ".png"
-                      ?>
-                      width="100px"
+                      src="src/images/cars/monospace.png"
+                      width="80px"
                       style="transform:translate(-99px)"
                     >
                   </div>

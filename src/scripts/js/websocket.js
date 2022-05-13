@@ -1,10 +1,11 @@
-let username
+let username, car
 let players = []
+let cars = []
 const usernameDivs = document.querySelectorAll(`#username`)
 const chatBox = document.querySelector('#chat-box')
 
 // Create a new WebSocket object
-const wsUri = "ws://keyrace.online:444/src/script/php/websocket.php"
+const wsUri = "ws://localhost:444/src/script/php/websocket.php"
 websocket = new WebSocket(wsUri)
 
 // Connection is open
@@ -13,9 +14,15 @@ websocket.onopen = () => {
     chatBox.innerHTML += `<div class="system_msg text-white-50">Chat open</div>`
 
     // Await getUsername() promise to get username
-    getUsername().then(res => {
-        username = res
-        send("joined")
+    getUsername().then(resUsername => {
+        username = resUsername
+
+        // Await getCar() promise to get car
+        getCar().then(resCar => {
+            car = resCar
+            // Send username to server
+            send("joined")
+        })
     })
 }
 
@@ -27,8 +34,8 @@ websocket.onmessage = ev => {
     const type = response.type
     // Username
     const username = response.username
-    // All cars
-    const cars = document.querySelectorAll(`#user-car`)
+    // All carImages
+    const carImages = document.querySelectorAll(`#user-car`)
 
     switch (type) {
         // When someone sends a message in the chat
@@ -41,6 +48,7 @@ websocket.onmessage = ev => {
         case 'joined':
             // Get all usernames
             players = response.players
+            cars = response.cars
 
             // Reset username divs
             usernameDivs.forEach(div => {
@@ -48,14 +56,20 @@ websocket.onmessage = ev => {
             })
 
             // Diplay username on corresponding div
-            usernameDivs.forEach(div => {
+            for (let i = 0; i < usernameDivs.length; i++) {
                 const newUsername = players.pop()
-                if (div.innerText === ``)
-                    div.innerText = newUsername ? newUsername : ``
+                const userCar = cars.pop()
+                if (usernameDivs[i].innerText === ``) {
+                    
+                    usernameDivs[i].innerText = newUsername ? newUsername : ``
 
-                // Set used car opacity to 100% 
-                cars[players.length].classList.replace(`opacity-50`, `opacity-100`)
-            })
+                    // Set used car opacity to 100% 
+                    if (userCar) {
+                        carImages[i].classList.replace(`opacity-0`, `opacity-100`)
+                        carImages[i].src = `src/images/cars/${userCar}.png`
+                    }
+                }
+            }
 
             break
 
@@ -68,7 +82,7 @@ websocket.onmessage = ev => {
 
                 // Set used car opacity to 50%
                 const index = Array.prototype.indexOf.call(usernameDivs, div)
-                cars[index].classList.replace(`opacity-100`, `opacity-50`) 
+                carImages[index].classList.replace(`opacity-100`, `opacity-0`) 
                 }
             })
             break
@@ -131,6 +145,7 @@ const send = (type, extraData = ``) => {
     websocket.send(JSON.stringify({
         type: type,
         username: username,
+        car: car,
         extraData: extraData 
     }))
 }
@@ -151,4 +166,22 @@ const getUsername = () => {
         }
     })
     return username
+}
+
+/**
+ * Get car with AJAX
+ * @returns {Promise<string>} Promise with car
+ */
+const getCar = () => {
+    const car = new Promise(resolve => {
+        const xhr = new XMLHttpRequest()
+        xhr.open("GET", "src/scripts/php/get_car.php", true)
+        xhr.send()
+        xhr.onreadystatechange = () => {
+            // If request is successful, resolve promise with username
+            if (xhr.readyState === 4 && xhr.status === 200)
+                resolve(xhr.responseText)
+        }
+    })
+    return car
 }

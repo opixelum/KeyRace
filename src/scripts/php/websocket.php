@@ -1,9 +1,12 @@
 <?php
-$host = 'keyrace.online';
+$host = 'localhost';
 $port = '444';
 $null = NULL;
 
 // Store every players with their username, track & socket
+$players = array();
+
+// Store every cars
 $players = array();
 
 // Create TCP/IP stream socket
@@ -61,24 +64,31 @@ while (true)
 			// Get username
 			$username = $tst_msg['username'];
 
+			// Get car
+			$car = $tst_msg['car'];
+
 			// Message type
 			$type = isset($tst_msg['type']) ? $tst_msg['type'] : null;
 
 			switch ($type) {
 				case 'joined':
 					// Push new user to the array if not already in
-					if (!in_array($username, $players))
+					if (!in_array($username, $players)) {
 						$players[] = $username;
-					
-					// Reset players array's indexes
+						$cars[] = $car;
+					}
+
+					// Reset players & cars array's indexes
 					$players = array_values($players);
+					$cars = array_values($cars);
 
 					// Prepare data & send it
 					$data = mask(json_encode(array
 					(
 						'type' => 'joined',
 						'username' => $username,
-						'players' => $players
+						'players' => $players,
+						'cars' => $cars
 					)));
 					send_message($data);
 					break;
@@ -99,6 +109,10 @@ while (true)
 					// Remove player from the array
 					$key = array_search($username, $players);
 					unset($players[$key]);
+
+					// Remove car from the array
+					$key = array_search($car, $cars);
+					unset($cars[$key]);
 
 					// Prepare data & send it
 					$data = mask(json_encode(array
