@@ -4,7 +4,7 @@ const usernameDivs = document.querySelectorAll(`#username`)
 const chatBox = document.querySelector('#chat-box')
 
 // Create a new WebSocket object
-const wsUri = "ws://localhost:3307/src/script/php/websocket.php"
+const wsUri = "ws://keyrace.online:444/src/script/php/websocket.php"
 websocket = new WebSocket(wsUri)
 
 // Connection is open
