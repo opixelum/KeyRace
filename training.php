@@ -38,13 +38,17 @@
             <div id="race" class="border-start border-end w-75">
                 <hr>
                 <div class="w-100">
-                    <img
+                  <img
                     alt="User car"
                     id="user-car"
-                    src="src/images/cars/f1.png"
+                    src=<?php 
+                      echo "src/images/cars/";
+                      include "src/scripts/php/get_car.php";
+                      echo ".png"
+                    ?>
                     width="100px"
                     style="transform:translate(-99px)"
-                    >
+                  >
                 </div>
                 <hr>
             </div>
