@@ -8,6 +8,69 @@
     // Update the user
     if (isset($_POST['id']))
     {
+        // For check if email or username already used
+        $q = "SELECT * FROM USER WHERE id = $_GET[id]";
+        $req = $db->query($q);
+        $results = $req->fetchAll(PDO::FETCH_ASSOC);
+
+        $old_id = $results[0]["id"];
+        $old_email = $results[0]["email"];
+        $old_username = $results[0]["username"];
+
+        // Check if the id is already in use
+        $q = "SELECT id FROM USER";
+        $req = $db->query($q);
+        $id = $req->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($id as $test)
+        {
+            if ($old_id === $_POST['id'])
+            {
+                break;
+            }
+            else if ($test["id"] === $_POST["id"])
+            {
+                header($read_path . "Id is already in use.");
+                exit;
+            }
+        }
+
+        // Check if the email is already in use
+        $q = "SELECT email FROM USER";
+        $req = $db->query($q);
+        $email = $req->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($email as $test)
+        {
+            if ($old_email === $_POST['email'])
+            {
+                break;
+            }
+            else if ($test["email"] === $_POST["email"])
+            {
+                header($read_path . "Email is already in use.");
+                exit;
+            }
+        }
+
+        // Check if the username is already in use
+        $q = "SELECT username FROM USER";
+        $req = $db->query($q);
+        $username = $req->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($username as $test)
+        {
+            if ($old_username === $_POST['username'])
+            {
+                break;
+            }
+            else if ($test["username"] === $_POST["username"])
+            {
+                header($read_path . "Username is already in use.");
+                exit;
+            }
+        }
+
         if (!preg_match("@[0-9]@", $_POST['id']))
         {
             header($read_path . "id needs to be a number.");
