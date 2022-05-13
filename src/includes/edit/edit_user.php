@@ -9,7 +9,7 @@
     <h1>User</h1>
 </div>
 
-<form method="post" action="src/scripts/php/update.php?id='<?php echo $_GET['id'] ?>'">
+<form method="post" action="src/scripts/php/update.php?id=<?php echo $_GET["id"] ?>">
     <table class="table table-bordered">
         <?php
         echo '<tr>
@@ -49,7 +49,7 @@
         ?>
     </table>
     <div class="d-flex justify-content-center">
-        <button id="back-btn" type="button" class="btn w-25 m-2">Back</button>
+        <button onclick="backBtn()" type="button" class="btn w-25 m-2">Back</button>
         <input type="submit" class="btn w-25 m-2" value="Save">
     </div>
 </form>
