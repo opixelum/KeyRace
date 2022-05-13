@@ -45,8 +45,9 @@ errorsSpan.innerText = `Errors: 0`
 const keyListener = document.addEventListener("keydown", ({ key }) => {
   // Key check
   if (
-    key === cursorCharacter.innerText ||
-    (key === " " && cursorCharacter.innerText === "_")
+    document.activeElement.tagName !== "INPUT" &&
+    (key === cursorCharacter.innerText ||
+    (key === " " && cursorCharacter.innerText === "_"))
   ) {
     // If right key was typed
     cursorCharacter.classList.remove("cursor")
@@ -61,7 +62,10 @@ const keyListener = document.addEventListener("keydown", ({ key }) => {
     // Send new car position to server
     send("car", `${(userCarDistance += 100 / text.length)}%`)
 
-  } else if (letters.includes(key) || key === " ") {
+  } else if (
+    document.activeElement.tagName !== "INPUT" &&
+    (letters.includes(key) || key === " ")
+  ) {
     // If wrong key (excluding non-letter keys) was typed
     cursorCharacter.classList.add("wrong")
     errors++
