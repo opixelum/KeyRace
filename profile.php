@@ -122,7 +122,7 @@
               <h3 class="w-100 text-center">Car</h3>
               <div class="d-flex justify-content-center flex-wrap">
                 <img alt="Car" class="h-25" <?php echo "src='./src/images/cars/$car.png'" ?>>
-                <p class="m-0 fs-5 w-100 text-center">Model: <?php echo ucfirst($car) ?></p>
+                <p class="m-0 fs-5 w-100 text-center" style="height: 1em;">Model: <?php echo ucfirst($car) ?></p>
               </div>
             </div>
 
