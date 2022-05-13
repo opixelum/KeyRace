@@ -52,7 +52,7 @@ const saveCar = () => {
     saveCar.onreadystatechange = () => {
         if (saveCar.readyState === 4 && saveCar.status === 200) {
             const response = saveCar.responseText
-            if (response != 1) alert("An error occured while saving your avatar. Please try again later.")
+            if (response != 1) alert("An error occured while saving your car. Please try again later.")
             else window.location.href = `profile.php?id=${id}`
         }
     }
