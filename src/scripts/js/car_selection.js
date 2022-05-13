@@ -49,7 +49,7 @@ const saveCar = () => {
     const saveCar = new XMLHttpRequest()
     saveCar.open("POST", "src/scripts/php/save_car.php")
     saveCar.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
-    saveCar.send(`car=${newCar}`)
+    saveCar.send(`car=${newCar ? newCar : savedCar}`)
     saveCar.onreadystatechange = () => {
         if (saveCar.readyState === 4 && saveCar.status === 200) {
             const response = saveCar.responseText
