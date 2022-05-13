@@ -14,7 +14,6 @@
         $results = $req->fetchAll(PDO::FETCH_ASSOC);
 
         $old_id = $results[0]["id"];
-        echo $old_id;
         $old_email = $results[0]["email"];
         $old_username = $results[0]["username"];
 
