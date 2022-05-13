@@ -5,9 +5,8 @@
     // Save the path
     $read_path = "location: ../../../edit.php?id=$_GET[id]&type=danger&message=";
 
-
     // Update the user
-    if (isser($_POST['id']))
+    if (isset($_POST['id']))
     {
         $q = "SELECT * FROM USER WHERE id = $_GET[id]";
         $req = $db->query($q);
@@ -50,9 +49,9 @@
     }
 
     // Update the stats
-    if (isset($_POST['highest_wpm']))
+    else if (isset($_POST['highest_wpm']))
     {
-        $q = "SELECT * FROM USER WHERE id = $_GET[id]";
+        $q = "SELECT * FROM STATS WHERE user_id = $_GET[id]";
         $req = $db->query($q);
         $results = $req->fetchAll(PDO::FETCH_ASSOC);
 

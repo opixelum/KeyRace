@@ -14,6 +14,7 @@ if (saveBtn) {
 
 // Get id from url
 const editId = window.location.search.substring(1).split('=')[1]
+console.log(editId)
 
 // If user clicked
 const userClicked = document.querySelector(`#user-edit`)
