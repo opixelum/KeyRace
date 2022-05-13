@@ -25,8 +25,8 @@
 
     // Content
     $mail->isHTML(true);
-    $mail->Subject = "Confirmation email for KeyRace";
-    $url = $newPassword_path;
+    $mail->Subject = "Change password for KeyRace";
+    $url = "localhost/keyrace/new_password.php";
     $mail->Body =
     "
         <a href='$url'>Click here</a> to change your password.

@@ -48,8 +48,6 @@
                 >
                 <button class="btn mt-2" type="submit">Change Password</button>
               </div>
-
-
             </div>
             
             <div class="row row-cols-1 w-100">
@@ -61,7 +59,3 @@
     </div>
   </body>
 </html>
-
-
-
-

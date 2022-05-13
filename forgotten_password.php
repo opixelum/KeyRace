@@ -39,8 +39,6 @@
                 >
                 <button class="btn" type="submit">Send me an email</button>
               </div>
-
-
             </div>
             
             <div class="row row-cols-1 w-100">

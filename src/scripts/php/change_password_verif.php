@@ -29,7 +29,7 @@
     $salt = "5gd87sf^h6?jytr98b!'d4qsvzy;e1sfdf3gh'4zet9qsdt16f'4ar9jbhl67ivl";
     $encrypted_password = hash("sha512", $salt . $_POST["password"]);
 
-    $sql = "UPDATE users SET password = $encrypted_password WHERE email = $email";
+    $sql = "UPDATE USER SET password = $encrypted_password WHERE email = $email";
     $statement = $db->prepare($sql);
     $statement->execute([$token, $_POST['email']]);
     echo "Votre mot de passe a été modifié";
