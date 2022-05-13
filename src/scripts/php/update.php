@@ -8,10 +8,6 @@
     // Update the user
     if (isset($_POST['id']))
     {
-        $q = "SELECT * FROM USER WHERE id = $_GET[id]";
-        $req = $db->query($q);
-        $results = $req->fetchAll(PDO::FETCH_ASSOC);
-
         if (!preg_match("@[0-9]@", $_POST['id']))
         {
             header($read_path . "id needs to be a number.");
@@ -51,10 +47,6 @@
     // Update the stats
     else if (isset($_POST['highest_wpm']))
     {
-        $q = "SELECT * FROM STATS WHERE user_id = $_GET[id]";
-        $req = $db->query($q);
-        $results = $req->fetchAll(PDO::FETCH_ASSOC);
-
         if (!preg_match("@[0-9]@", $_POST['highest_wpm']))
         {
             header($read_path . "Highest_wpm needs to be a number.");
@@ -93,8 +85,7 @@
 
         // Update the user informations
         $query = "UPDATE USER SET highest_wpm=:highest_wpm, races_ran=:races_ran, races_won=:races_won, quest=:quest,
-                achievements=:achievements, time_played=:time_played id=$_GET[id]";
-
+                achievements=:achievements, time_played=:time_played user_id=$_GET[id]";
         $prepared_query = $db->prepare($query);
         $prepared_query->execute(["highest_wpm" => $_POST['highest_wpm'],
                                 "races_ran" => $_POST['races_ran'],

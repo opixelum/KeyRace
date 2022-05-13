@@ -1,8 +1,5 @@
-const backBtn = document.querySelector(`#back-btn`)
-if (backBtn) {
-    backBtn.addEventListener('click', () => {
-        window.location.href = `settings.php`
-    })
+function backBtn() {
+    window.location.href = "settings.php";
 }
 
 const saveBtn = document.querySelector(`#save-btn`)

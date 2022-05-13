@@ -49,7 +49,7 @@
         ?>
     </table>
     <div class="d-flex justify-content-center">
-        <button id="back-btn" type="button" class="btn w-25 m-2">Back</button>
+        <button onclick="backBtn()" type="button" class="btn w-25 m-2">Back</button>
         <input type="submit" class="btn w-25 m-2" value="Save">
     </div>
 </form>
