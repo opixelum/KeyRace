@@ -25,9 +25,18 @@
         $time = round($time, 2);
 
         // Select stats from the user
-        $q = "SELECT user_id, highest_wpm, races_ran, races_won, time_played FROM STATS WHERE user_id = $id";
+        $q = "SELECT user_id, highest_wpm, races_ran, races_won, time_played, achievements FROM STATS WHERE user_id = $id";
         $req = $db->query($q);
         $results = $req->fetchAll(PDO::FETCH_ASSOC);
+
+        // Add 9th achievement if user has completed it
+        if ($wpm > 150)
+        {
+            $new_achievements = $results[0]['achievements'] . "9";
+            $q = "UPDATE STATS SET achievements = $new_achievements WHERE user_id = $id";
+            $req = $db->query($q);
+            $results = $req->fetchAll(PDO::FETCH_ASSOC);
+        }
 
         // Check for highest wpm
         if ($wpm > $results[0]["highest_wpm"])

@@ -128,57 +128,138 @@
             <div class="border-start h-100 col-6 d-flex flex-wrap justify-content-center">
               <h3 class="w-100 text-center">Achievements</h3>
               <div class="container h-75">
-
-                <?php
-                  for ($i = 0; $i < 3; $i++)
-                  {
-                    echo "<div class='row w-100'>";
-                    for ($j = 1; $j <= 3; $j++)
-                    {
-                      // Since there's only 8 achievements, the 9th one has a different logic
-                      if ($i === 2 && $j === 3)
-                      {
-                        echo 
-                        "
-                          <div class='col-4 d-flex justify-content-center'>
-                            <abbr title='Type faster than 150 wpm'>
-                              <img
-                                alt='Achievement 9'
-                                class='achievement
-                        ";
-                        echo str_contains($achievements, 9) ? "'" : "opacity-25'";
-                        echo
-                        "
-                                src='./src/images/achievement.png'
-                              >
-                            </abbr>
-                          </div>
-                        ";
-                      }
-                      else
-                      {
-                        echo 
-                        "
-                          <div class='col-4 d-flex justify-content-center'>
-                            <abbr title='Complete quest " . strval(3 * $i + $j) . "'>
-                              <img
-                                alt='Achievement " . strval(3 * $i + $j) . "'
-                                class='achievement
-                        ";
-                        echo str_contains($achievements, strval(3 * $i + $j)) ? "'" : "opacity-25'";
-                        echo
-                        "
-                                src='src/images/achievement.png'
-                              >
-                            </abbr>
-                          </div>
-                        ";
-                      }
-                    }
-                    echo "</div>";
-                  }
-                ?>
-
+                <div class="row">
+                  <div class='col-4 d-flex justify-content-center'>
+                    <abbr title='Complete quest 1'>
+                      <img
+                        alt='Achievement 1'
+                        <?php
+                          echo "class='achievement";
+                          echo str_contains($achievements, 1)
+                            ? "'" 
+                            : " opacity-25'";
+                          echo "src='src/images/achievement.png'";
+                        ?>
+                      >
+                    </abbr>
+                  </div>
+                  <div class='col-4 d-flex justify-content-center'>
+                    <abbr title='Complete quest 2'>
+                      <img
+                        alt='Achievement 2'
+                        <?php
+                          echo "class='achievement";
+                          echo str_contains($achievements, 2)
+                            ? "'" 
+                            : " opacity-25'";
+                          echo "src='src/images/achievement.png'";
+                        ?>
+                      >
+                    </abbr>
+                  </div>
+                  <div class='col-4 d-flex justify-content-center'>
+                    <abbr title='Complete quest 3'>
+                      <img
+                        alt='Achievement 3'
+                        <?php
+                          echo "class='achievement";
+                          echo str_contains($achievements, 3)
+                            ? "'" 
+                            : " opacity-25'";
+                          echo "src='src/images/achievement.png'";
+                        ?>
+                      >
+                    </abbr>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class='col-4 d-flex justify-content-center'>
+                    <abbr title='Complete quest 4'>
+                      <img
+                        alt='Achievement 4'
+                        <?php
+                          echo "class='achievement";
+                          echo str_contains($achievements, 4)
+                            ? "'" 
+                            : " opacity-25'";
+                          echo "src='src/images/achievement.png'";
+                        ?>
+                      >
+                    </abbr>
+                  </div>
+                  <div class='col-4 d-flex justify-content-center'>
+                    <abbr title='Complete quest 5'>
+                      <img
+                        alt='Achievement 5'
+                        <?php
+                          echo "class='achievement";
+                          echo str_contains($achievements, 5)
+                            ? "'" 
+                            : " opacity-25'";
+                          echo "src='src/images/achievement.png'";
+                        ?>
+                      >
+                    </abbr>
+                  </div>
+                  <div class='col-4 d-flex justify-content-center'>
+                    <abbr title='Complete quest 6'>
+                      <img
+                        alt='Achievement 6'
+                        <?php
+                          echo "class='achievement";
+                          echo str_contains($achievements, 6)
+                            ? "'" 
+                            : " opacity-25'";
+                          echo "src='src/images/achievement.png'";
+                        ?>
+                      >
+                    </abbr>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class='col-4 d-flex justify-content-center'>
+                    <abbr title='Complete quest 7'>
+                      <img
+                        alt='Achievement 7'
+                        <?php
+                          echo "class='achievement";
+                          echo str_contains($achievements, 7)
+                            ? "'" 
+                            : " opacity-25'";
+                          echo "src='src/images/achievement.png'";
+                        ?>
+                      >
+                    </abbr>
+                  </div>
+                  <div class='col-4 d-flex justify-content-center'>
+                    <abbr title='Complete quest 8'>
+                      <img
+                        alt='Achievement 8'
+                        <?php
+                          echo "class='achievement";
+                          echo str_contains($achievements, 8)
+                            ? "'" 
+                            : " opacity-25'";
+                          echo "src='src/images/achievement.png'";
+                        ?>
+                      >
+                    </abbr>
+                  </div>
+                  <div class='col-4 d-flex justify-content-center'>
+                    <abbr title='Type faster than 150 wpm'>
+                      <img
+                        alt='Achievement 9'
+                        <?php
+                          echo "class='achievement";
+                          echo str_contains($achievements, 9)
+                            ? "'" 
+                            : " opacity-25'";
+                          echo "src='src/images/achievement.png'";
+                        ?>
+                      >
+                    </abbr>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
