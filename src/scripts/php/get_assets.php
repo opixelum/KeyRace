@@ -15,6 +15,6 @@
     $results = $prepared_statement->fetchAll(PDO::FETCH_ASSOC);
 
     if (!$results)
-        die("Error: failed to load user's assets.");
+        die("An error occured while fetching assets.");
 
     echo json_encode($results[0]);

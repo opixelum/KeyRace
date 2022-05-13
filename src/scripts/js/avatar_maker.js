@@ -12,6 +12,7 @@ let vestImage, helmetImage, visorImage
 // Url for AJAX query
 let url
 
+
 // Used for profile redirection when user save car
 let id
 
@@ -42,6 +43,8 @@ const assetsResponse = new Promise(resolve => {
     savedVestName = assets.vest
     savedHelmetName = assets.helmet
     savedVisorName = assets.visor
+
+    id = assets.user_id
 
     background = assets.background
     vestName = assets.vest
