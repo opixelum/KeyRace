@@ -1,6 +1,6 @@
 <?php
-$host = 'localhost';
-$port = '3307';
+$host = 'keyrace.online';
+$port = '444';
 $null = NULL;
 
 // Store every players with their username, track & socket
